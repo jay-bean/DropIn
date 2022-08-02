@@ -57,8 +57,8 @@ module.exports = (sequelize, DataTypes) => {
   Skatepark.associate = function(models) {
     // associations can be defined here
     Skatepark.belongsTo(models.User, { foreignKey: 'userId' });
-    Skatepark.hasMany(models.Image, { as: 'images', foreignKey: 'skateparkId' });
-    Skatepark.hasMany(models.Review, { foreignKey: 'skateparkId' });
+    Skatepark.hasMany(models.Image, { as: 'images', foreignKey: 'skateparkId', onDelete: 'CASCADE', hooks: true });
+    Skatepark.hasMany(models.Review, { foreignKey: 'skateparkId', onDelete: 'CASCADE', hooks: true  });
     Skatepark.belongsToMany(models.User, {
       through: 'Favorite',
       foreignKey: 'skateparkId',
