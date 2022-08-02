@@ -30,18 +30,17 @@ export const login = (user) => async (dispatch) => {
   return response;
 };
 
-export const signup = (user) => async (dispatch) => {
-  const { username, email, password } = user;
+export const signup = data => async (dispatch) => {
+  console.log(data, 'firt data in thunk')
   const response = await csrfFetch("/api/users", {
     method: "POST",
-    body: JSON.stringify({
-      username,
-      email,
-      password,
-    }),
-  });
-  const data = await response.json();
-  dispatch(setUser(data.user));
+    body: data,
+  }, false);
+  const newUser = await response.json();
+  console.log(newUser, 'new user in thunk')
+  dispatch(setUser(newUser.user));
+  // dispatch(setUser(newUser));
+
   return response;
 };
 

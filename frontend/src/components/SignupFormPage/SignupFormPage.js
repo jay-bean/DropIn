@@ -7,7 +7,9 @@ function SignupFormPage() {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
+  const [firstName, setfirstName] = useState("");
+  const [lastName, setlastName] = useState("");
+  const [picUrl, setPicUrl] = useState({});
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
@@ -18,7 +20,15 @@ function SignupFormPage() {
     e.preventDefault();
     if (password === confirmPassword) {
       setErrors([]);
-      return dispatch(sessionActions.signup({ email, username, password }))
+      const formData = new FormData();
+      formData.append('firstName', firstName);
+      formData.append('lastName', lastName);
+      formData.append('email', email);
+      formData.append('password', password);
+      formData.append('image', picUrl);
+      console.log(picUrl, 'this is the picture originally')
+      console.log(formData, 'this is form data in formcomponent');
+      return dispatch(sessionActions.signup(formData))
         .catch(async (res) => {
           const data = await res.json();
           if (data && data.errors) setErrors(data.errors);
@@ -33,20 +43,29 @@ function SignupFormPage() {
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
       </ul>
       <label>
+        First Name
+        <input
+          type="text"
+          value={firstName}
+          onChange={(e) => setfirstName(e.target.value)}
+          required
+        />
+      </label>
+      <label>
+        Last Name
+        <input
+          type="text"
+          value={lastName}
+          onChange={(e) => setlastName(e.target.value)}
+          required
+        />
+      </label>
+      <label>
         Email
         <input
           type="text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Username
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
           required
         />
       </label>
@@ -68,6 +87,12 @@ function SignupFormPage() {
           required
         />
       </label>
+      {/* <i className="fa-solid fa-images"></i> Upload Images */}
+        <input
+          type="file"
+          name="file"
+          onChange={(e) => setPicUrl(e.target.files[0])}
+        />
       <button type="submit">Sign Up</button>
     </form>
   );
