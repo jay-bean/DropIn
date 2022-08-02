@@ -2,7 +2,7 @@ const express = require('express');
 const asyncHandler = require('express-async-handler');
 const { handleValidationErrors } = require('../../utils/validation');
 const { Skatepark, Image } = require('../../db/models');
-const { skateparkValidators, editSkateparkValidators } = require('../../validations');
+const { skateparkValidators, editSkateparkValidators } = require('../../validations/validations');
 
 const router = express.Router();
 
@@ -17,17 +17,16 @@ router.get('/',
 
 router.get('/:id(\\d+)',
   asyncHandler(async (req, res) => {
-    const skatepark = await Skatepark.findOne(req.params.id);
+    const skatepark = await Skatepark.findByPk(req.params.id);
+    console.log(skatepark, 'backend park')
     return res.status(200).json(skatepark);
   })
 );
 
 router.post('/',
   skateparkValidators,
-  handleValidationErrors,
   asyncHandler( async (req, res) => {
     const { name, description, address, city, state, zipcode, userId } = req.body;
-    handleValidationErrors
 
     if (!req.files.length) {
       return res.status(400).json(['You must provide at least one photo.']);
@@ -70,7 +69,6 @@ router.post('/',
 
 router.put(`/:id(\\d+)`,
   editSkateparkValidators,
-  handleValidationErrors,
   asyncHandler(async (req, res) => {
 
     const skatepark = await Skatepark.findByPk(req.params.id);
@@ -111,3 +109,5 @@ router.delete('/:id(\\d+)',
   })
 
 );
+
+module.exports = router;

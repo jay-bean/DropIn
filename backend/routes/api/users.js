@@ -51,13 +51,13 @@ router.post(
 );
 
 // Grabbing single user for profile page
-router.get(
-  '/:id(\\d+)',
-  requireAuth,
-  asyncHandler(async, (req, res) => {
-    const user = await User.findByPk(req.params.userId);
-    return res.json(user);
-  })
-)
+// router.get(
+//   '/:id(\\d+)',
+//   requireAuth,
+//   asyncHandler(async, (req, res) => {
+//     const user = await User.findByPk(req.params.id);
+//     return res.json(user);
+//   })
+// )
 
 module.exports = router;
