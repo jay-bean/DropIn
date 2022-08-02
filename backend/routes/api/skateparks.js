@@ -86,7 +86,7 @@ router.put(`/:id(\\d+)`,
     const imageObjs = images.map(el => {
       const image = Image.build({
         url: el.location,
-        digId: result.id
+        skateparkId: skatepark.id,
       });
       return image;
     })
