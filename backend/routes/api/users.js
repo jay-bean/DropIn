@@ -9,18 +9,18 @@ const { User } = require('../../db/models');
 const router = express.Router();
 
 const validateSignup = [
+  check('firstName')
+  .exists({ checkFalsy: true })
+  .isLength({ min: 1, max:50 })
+  .withMessage('Please provide a first name between 1 - 50 characters.'),
+  check('lastName')
+  .exists({ checkFalsy: true })
+  .isLength({ min: 1, max:50 })
+  .withMessage('Please provide a last name between 1 - 50 characters.'),
   check('email')
     .exists({ checkFalsy: true })
     .isEmail()
     .withMessage('Please provide a valid email.'),
-  check('username')
-    .exists({ checkFalsy: true })
-    .isLength({ min: 4 })
-    .withMessage('Please provide a username with at least 4 characters.'),
-  check('username')
-    .not()
-    .isEmail()
-    .withMessage('Username cannot be an email.'),
   check('password')
     .exists({ checkFalsy: true })
     .isLength({ min: 6 })
@@ -33,8 +33,14 @@ router.post(
   '/',
   validateSignup,
   asyncHandler(async (req, res) => {
-    const { email, password, username } = req.body;
-    const user = await User.signup({ email, username, password });
+    const { firstName, lastName, email, password } = req.body;
+    console.log(req.body, 'req.body')
+    const image = req.files;
+    console.log(image[0])
+    console.log(image, 'image')
+    const picUrl = image[0].location;
+    console.log(picUrl, 'pic url')
+    const user = await User.signup({ firstName, lastName, email, password, picUrl });
 
     await setTokenCookie(res, user);
 

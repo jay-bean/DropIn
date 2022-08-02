@@ -5,6 +5,14 @@ const csurf = require('csurf');
 const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
 const { ValidationError } = require('sequelize');
+const multer = require('multer');
+const aws = require('aws-sdk');
+const multerS3 = require('multer-s3');
+const s3 = new aws.S3({
+  accessKeyId: process.env.S3_ACCESS_KEY,
+  secretAccessKey: process.env.S3_ACCESS_SECRET,
+  region: "us-west-1"
+});
 
 const { environment } = require('./config');
 const routes = require('./routes');
@@ -16,6 +24,36 @@ const app = express();
 app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(express.json());
+
+const fileStorage = multerS3({
+  s3,
+  bucket: process.env.BUCKET_NAME,
+  metadata: function (req, file, cb) {
+    cb(null, { fieldName: "TESTING_METADATA" });
+  },
+  key: function (req, file, cb) {
+    cb(null, new Date().toISOString() + '-' + file.originalname);
+  },
+})
+
+const fileFilter = (_req, file, cb) => {
+  if (
+    file.mimetype === 'image/png' ||
+    file.mimetype === 'image/jpg' ||
+    file.mimetype === 'image/jpeg'
+    ) {
+      cb(null, true);
+    } else {
+      cb(null, false);
+      const err = new Error('Only .png, .jpg and .jpeg format allowed.')
+      err.statusCode = 500;
+      return cb(err);
+    }
+  };
+
+app.use(
+  multer({ storage: fileStorage, fileFilter: fileFilter }).array('image', 10)
+);
 
 if (!isProduction) {
   // enable cors only in development
