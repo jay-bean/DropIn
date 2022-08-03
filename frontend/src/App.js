@@ -8,6 +8,7 @@ import LoginForm from "./components/LoginFormPage/LoginFormPage";
 import NewSkateparkForm from "./components/Skateparks/SkateparkForm";
 import EditSkateparkForm from "./components/Skateparks/EditSkateparkForm";
 import AllSkateparks from "./components/Skateparks/Skateparks";
+import SingleSkatepark from "./components/Skateparks/SingleSkateparkPage"
 
 function App() {
   const dispatch = useDispatch();
@@ -34,6 +35,9 @@ function App() {
           </Route>
           <Route path="/skateparks/new" exact={true}>
             <NewSkateparkForm/>
+          </Route>
+          <Route path="/skateparks/:id" exact={true}>
+            <SingleSkatepark/>
           </Route>
           <Route path="/skateparks/:id/edit" exact={true}>
             <EditSkateparkForm/>

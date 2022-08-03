@@ -14,7 +14,7 @@ function AllSkateparks() {
 
   return (
     skateparksArr && skateparksArr.map(skatepark => {
-      return <Skatepark skatepark={skatepark}/>
+      return <Skatepark key={skatepark} skatepark={skatepark}/>
     })
   );
 }

@@ -105,7 +105,7 @@ router.delete('/:id(\\d+)',
   asyncHandler(async (req, res) => {
     const skatepark = await Skatepark.findByPk(req.params.id);
     await skatepark.destroy();
-    return res.json({id});
+    return res.json(skatepark);
   })
 
 );

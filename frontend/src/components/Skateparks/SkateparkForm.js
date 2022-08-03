@@ -7,7 +7,6 @@ function NewSkateparkForm() {
   const history = useHistory();
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
-  console.log(sessionUser, 'this is me');
 
   const [validationErrors, setValidationErrors] = useState([]);
   const [name, setName] = useState('');
@@ -36,13 +35,13 @@ function NewSkateparkForm() {
       formData.append('zipcode', zipcode);
       formData.append('userId', sessionUser.id);
 
-      for(const image of Object.keys(images)) {
+      for (const image of Object.keys(images)) {
         formData.append('image', images[image]);
       }
       const newSkatepark = await dispatch(addSkatepark(formData));
       if (newSkatepark) {
         window.alert('new park!');
-        // history.push(`/skateparks/${newSkatepark.id}`)
+        history.push(`/skateparks/${newSkatepark.id}`)
       }
     }
     catch (error) {

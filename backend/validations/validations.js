@@ -59,15 +59,7 @@ const editSkateparkValidators = [
     .exists({ checkFalsy: true })
     .withMessage('Please provide an address.')
     .isLength({ min: 1, max: 100 })
-    .withMessage('Address must not exceed 100 characters.')
-    .custom((value) => {
-      return Skatepark.findOne({ where: { address: value } })
-        .then((skatepark) => {
-          if (skatepark) {
-            return Promise.reject('The provided address already exists.');
-          }
-        });
-    }),
+    .withMessage('Address must not exceed 100 characters.'),
   check('city')
     .exists({ checkFalsy: true })
     .withMessage('Please provide a city.')
