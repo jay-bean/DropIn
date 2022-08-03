@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getSkateparks, removeSkatepark } from '../../store/skatepark';
 import AllReviews from '../Reviews/Reviews';
 import { getReviews } from '../../store/review';
+import Favorites from '../Favorites/Favorites';
 
 function SingleSkatepark() {
   const dispatch = useDispatch();
@@ -34,6 +35,7 @@ function SingleSkatepark() {
           <div>{skatepark.city}, {skatepark.state} {skatepark.zipcode}</div>
         </div>
       )}
+      {skatepark && <Favorites skatepark={skatepark}/>}
       {skatepark && sessionUser && skatepark.userId === sessionUser.id && (
         <div>
           <Link to={`/skateparks/${skatepark.id}/edit`}><button>Edit</button></Link>
