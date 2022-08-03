@@ -18,7 +18,6 @@ router.get('/',
 router.get('/:id(\\d+)',
   asyncHandler(async (req, res) => {
     const skatepark = await Skatepark.findByPk(req.params.id);
-    console.log(skatepark, 'backend park')
     return res.status(200).json(skatepark);
   })
 );

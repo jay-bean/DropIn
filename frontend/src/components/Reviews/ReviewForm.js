@@ -37,7 +37,6 @@ function NewSkateparkForm() {
         setRating('');
         setComment('');
         setValidationErrors([]);
-        window.alert('newreview!')
       }
     }
     catch (error) {

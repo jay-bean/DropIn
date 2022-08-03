@@ -40,7 +40,6 @@ function NewSkateparkForm() {
       }
       const newSkatepark = await dispatch(addSkatepark(formData));
       if (newSkatepark) {
-        window.alert('new park!');
         history.push(`/skateparks/${newSkatepark.id}`)
       }
     }
