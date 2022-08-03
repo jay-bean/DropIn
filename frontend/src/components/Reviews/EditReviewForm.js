@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { editReview } from '../../store/review';
 
-function EditReviewForm({ review }) {
+function EditReviewForm({ review, setShowModal }) {
   const history = useHistory();
   const dispatch = useDispatch();
   const skateparkParam = useParams();
@@ -17,7 +17,7 @@ function EditReviewForm({ review }) {
     setValidationErrors([]);
     setRating(0);
     setComment('');
-    history.push("/")
+    setShowModal(false);
   };
 
   const handleSubmit = async (e) => {
@@ -37,7 +37,7 @@ function EditReviewForm({ review }) {
         setRating('');
         setComment('');
         setValidationErrors([]);
-        window.alert('updatedreview!')
+        setShowModal(false);
       }
     }
     catch (error) {
