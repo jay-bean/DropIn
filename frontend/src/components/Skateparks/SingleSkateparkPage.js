@@ -7,8 +7,8 @@ import AllReviews from '../Reviews/Reviews';
 function SingleSkatepark() {
   const dispatch = useDispatch();
   const history = useHistory();
-  const { skateparkId } = useParams();
-  const skatepark = useSelector(state => state.skateparks[skateparkId]);
+  const skateparkParam = useParams();
+  const skatepark = useSelector(state => state.skateparks[skateparkParam.id]);
   const sessionUser = useSelector(state => state.session.user);
 
   const deleteHandler = async () => {

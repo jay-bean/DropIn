@@ -6,7 +6,7 @@ import { editReview } from '../../store/review';
 function EditReviewForm({ review }) {
   const history = useHistory();
   const dispatch = useDispatch();
-  const { skateparkId } = useParams();
+  const skateparkParam = useParams();
   const sessionUser = useSelector(state => state.session.user);
 
   const [validationErrors, setValidationErrors] = useState([]);
@@ -28,7 +28,7 @@ function EditReviewForm({ review }) {
         rating,
         comment,
         userId: sessionUser.id,
-        skateparkId
+        skateparkId: skateparkParam.id
       }
 
       const updatedReview = await dispatch(editReview(data));

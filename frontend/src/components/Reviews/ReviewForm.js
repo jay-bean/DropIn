@@ -6,7 +6,7 @@ import { addReview } from '../../store/review';
 function NewSkateparkForm() {
   const history = useHistory();
   const dispatch = useDispatch();
-  const { skateparkId } = useParams();
+  const skateparkParam = useParams();
   const sessionUser = useSelector(state => state.session.user);
 
   const [validationErrors, setValidationErrors] = useState([]);
@@ -28,7 +28,7 @@ function NewSkateparkForm() {
         rating,
         comment,
         userId: sessionUser.id,
-        skateparkId
+        skateparkId: skateparkParam.id
       }
 
       const newReview = await dispatch(addReview(data));
@@ -42,7 +42,8 @@ function NewSkateparkForm() {
     }
     catch (error) {
       const err = await error.json();
-      setValidationErrors(err);
+      if (error.status >= 500) setValidationErrors([err.message])
+      else setValidationErrors(err);
     }
   }
 

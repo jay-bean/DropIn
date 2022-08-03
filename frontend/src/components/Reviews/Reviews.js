@@ -7,8 +7,14 @@ import { getReviews } from '../../store/review';
 function AllReviews({ skatepark }) {
   const dispatch = useDispatch();
   const reviews = useSelector(state => state.reviews);
-
-  let reviewsArr = Object.values(reviews).filter(review => review.skateparkId === skatepark.id)
+  console.log(reviews)
+  let reviewsArray;
+  let reviewsArr;
+  if (reviews) {
+    reviewsArray = Object.values(reviews)
+    reviewsArr = reviewsArray.filter(review => review.skateparkId === skatepark.id)
+  }
+  console.log(reviewsArr)
   useEffect(() => {
     dispatch(getReviews());
   }, [dispatch]);
@@ -19,7 +25,7 @@ function AllReviews({ skatepark }) {
         <p>Leave a review</p>
         <ReviewForm/>
       </div>
-      {skatepark && reviewsArr && reviewsArr.map(review => <Review key={review.id} review={review}/>)}
+      {skatepark && reviewsArr.length > 0 && reviewsArr.map(review => <Review key={review.id} review={review}/>)}
     </>
   );
 }

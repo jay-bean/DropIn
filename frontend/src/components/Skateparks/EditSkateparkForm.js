@@ -7,8 +7,8 @@ function EditSkateparkForm() {
   const history = useHistory();
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
-  const { skateparkId } = useParams();
-  const skatepark = useSelector(state => state.skateparks[skateparkId]);
+  const skateparkParam = useParams();
+  const skatepark = useSelector(state => state.skateparks[skateparkParam.id]);
 
   const [validationErrors, setValidationErrors] = useState([]);
   const [name, setName] = useState(skatepark ? skatepark.name : '');
