@@ -62,12 +62,16 @@ module.exports = (sequelize, DataTypes) => {
     Skatepark.belongsToMany(models.User, {
       through: 'Favorite',
       foreignKey: 'skateparkId',
-      otherKey: 'userId'
+      otherKey: 'userId',
+      onDelete: 'CASCADE',
+      hooks: true
     });
     Skatepark.belongsToMany(models.Tag, {
       through: 'Parktag',
       foreignKey: 'skateparkId',
-      otherKey: 'tagId'
+      otherKey: 'tagId',
+      onDelete: 'CASCADE',
+      hooks: true
     });
   };
   return Skatepark;

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Review from './review';
+import Review from './Review';
+import ReviewForm from './ReviewForm';
 import { getReviews } from '../../store/review';
 
 function AllReviews({ skatepark }) {

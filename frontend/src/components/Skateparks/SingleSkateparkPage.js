@@ -2,14 +2,14 @@ import { useHistory, useParams, Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSkateparks, removeSkatepark } from '../../store/skatepark';
+import AllReviews from '../Reviews/Reviews';
 
 function SingleSkatepark() {
   const dispatch = useDispatch();
   const history = useHistory();
-  const skateparkParam = useParams();
-  const skatepark = useSelector(state => state.skateparks[skateparkParam.id]);
+  const { skateparkId } = useParams();
+  const skatepark = useSelector(state => state.skateparks[skateparkId]);
   const sessionUser = useSelector(state => state.session.user);
-  console.log(skateparkParam, 'this is the params');
 
   const deleteHandler = async () => {
     const deletedSkatepark = await dispatch(removeSkatepark(skatepark));
@@ -37,6 +37,7 @@ function SingleSkatepark() {
           <button onClick={deleteHandler}>Delete</button>
         </div>
       )}
+      <AllReviews/>
     </div>
   );
 }

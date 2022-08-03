@@ -1,6 +1,51 @@
-import { useSelector } from "react-redux";
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useHistory, useParams } from 'react-router-dom';
+import { editReview } from '../../store/review';
 
 function EditReviewForm({ review }) {
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const { skateparkId } = useParams();
+  const sessionUser = useSelector(state => state.session.user);
+
+  const [validationErrors, setValidationErrors] = useState([]);
+  const [rating, setRating] = useState(review ? review.rating : 0);
+  const [comment, setComment] = useState(review ? review.comment : '');
+
+  const handleCancel = () => {
+    setValidationErrors([]);
+    setRating(0);
+    setComment('');
+    history.push("/")
+  };
+
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+
+      const data = {
+        rating,
+        comment,
+        userId: sessionUser.id,
+        skateparkId
+      }
+
+      const updatedReview = await dispatch(editReview(data));
+
+      if (updatedReview) {
+        setRating('');
+        setComment('');
+        setValidationErrors([]);
+        window.alert('newreview!')
+      }
+    }
+    catch (error) {
+      const err = await error.json();
+      setValidationErrors(err);
+    }
+  }
+
   return (
     <div>
       <h1>Edit Review Form</h1>
