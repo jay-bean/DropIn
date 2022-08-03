@@ -76,7 +76,20 @@ const editSkateparkValidators = [
   handleValidationErrors
 ];
 
+const reviewValidators = [
+  check('rating')
+    .exists({ checkFalsy: true })
+    .withMessage('Please provide a rating.'),
+  check('comment')
+    .exists({ checkFalsy: true })
+    .withMessage('Please provide a review for the skatepark.')
+    .isLength({ min: 1, max: 255 })
+    .withMessage('Review must not exceed 255 characters.'),
+  handleValidationErrors
+];
+
 module.exports = {
   skateparkValidators,
-  editSkateparkValidators
+  editSkateparkValidators,
+  reviewValidators
 }
