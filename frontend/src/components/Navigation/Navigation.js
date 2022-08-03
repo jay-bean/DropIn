@@ -12,24 +12,24 @@ function Navigation({ isLoaded }){
   if (sessionUser) {
     sessionLinks = (
       <div className='nav-prof'>
-        <NavLink exact to="/skateparks/new">+ Skatepark</NavLink>
+        <NavLink className='skatepark-nav'exact to="/skateparks/new">+ Skatepark</NavLink>
         <ProfileButton user={sessionUser} />
       </div>
     );
   } else {
     sessionLinks = (
-      <>
+      <div className='nav-prof-demo'>
         <DemoUser/>
-        <NavLink to="/login">Log in</NavLink>
-        <NavLink to="/signup">Sign Up</NavLink>
-      </>
+        <NavLink to="/signup"><button className='signup-nav-btn'>Sign Up</button></NavLink>
+        <NavLink to="/login"><button className='login-nav-btn'>Log in</button></NavLink>
+      </div>
     );
   }
 
   return (
      <ul className='nav-ul'>
       <li className='navbar-container'>
-        <NavLink exact to="/skateparks">Explore</NavLink>
+        <NavLink id='explore' exact to="/skateparks">Explore</NavLink>
         <NavLink id='drop-in' exact to="/">Drop In</NavLink>
         {isLoaded && sessionLinks}
       </li>

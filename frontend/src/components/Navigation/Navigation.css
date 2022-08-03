@@ -14,19 +14,85 @@
   height: 60px;
   width: 100%;
   align-items: center;
-  border: 0;
-  outline: 0;
   font-size: 100%;
-  vertical-align: baseline;
   background: transparent;
   padding: 0;
 }
 
-.navbar-container a,
-.profile-btn-container {
+.navbar-container a {
   text-decoration: none;
   color: #414141;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.profile-btn-container {
+  margin-right: 20px;
+}
+
+.skatepark-nav {
+  font-size: 18px;
+  margin-right: 4px;
+}
+
+.fa-regular {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.login-nav-btn {
+  margin-left: 6px;
+  background-color: transparent;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.36;
+  height: 32px;
+  padding: 0 16px;
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all .2s ease-out;
+  color: #414141;
+  border: 2px solid #9f9f9f;
+}
+
+.login-nav-btn:hover {
+  background-color: #ebebeb;
+}
+
+.signup-nav-btn {
+  margin-left: 20px;
+  border-color: #428a13;
+  background-color: #428a13;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.36;
+  height: 32px;
+  padding: 0 16px;
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all .2s ease-out;
+  color: #ffffff;
+  border: 2px solid transparent;
+}
+
+.signup-nav-btn:hover {
+  border-color: #326c0b;
+  background-color: #326c0b;
 }
 
 #drop-in {
@@ -34,9 +100,23 @@
   font-size: 28px;
   font-weight: bold;
   color: #2a2a2a9a;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#explore {
+  font-size: 18px;
 }
 
 .nav-prof {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav-prof-demo {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -51,5 +131,5 @@
 }
 
 .fa-thin.fa-circle-user {
-  width: 30px;
+  width: 50px;
 }
