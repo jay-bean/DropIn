@@ -45,15 +45,14 @@ function NewSkateparkForm() {
     }
     catch (error) {
       const err = await error.json();
-      if (error.status >= 500) setValidationErrors([err.message])
-      else setValidationErrors(err);
+      setValidationErrors(err.errors);
     }
   }
 
   return (
     <div>
       <h1>Skatepark Form</h1>
-      {validationErrors.length > 0 && (
+      {validationErrors && validationErrors.length > 0 && (
         validationErrors.map(error => {
           return <div key={error}>{error}</div>
         })

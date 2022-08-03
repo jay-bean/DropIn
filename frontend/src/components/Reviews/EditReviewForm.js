@@ -42,7 +42,7 @@ function EditReviewForm({ review, setShowModal }) {
     }
     catch (error) {
       const err = await error.json();
-      setValidationErrors(err);
+      setValidationErrors(err.errors);
     }
   }
 

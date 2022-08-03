@@ -1,6 +1,5 @@
 const { check } = require('express-validator');
 const { Skatepark } = require('../db/models');
-const { Op } = require("sequelize");
 const { handleValidationErrors } = require('../utils/validation');
 
 const skateparkValidators = [
@@ -39,7 +38,11 @@ const skateparkValidators = [
     .withMessage('State must not exceed 100 characters.'),
   check('zipcode')
     .exists({ checkFalsy: true })
-    .withMessage('Please provide a zipcode.'),
+    .withMessage('Please provide a zipcode.')
+    .isInt()
+    .withMessage('Zipcode must be a number.')
+    .isPostalCode('US')
+    .withMessage('Zipcode must be a valid US Postal Code.'),
   handleValidationErrors
 ];
 
@@ -71,8 +74,12 @@ const editSkateparkValidators = [
     .isLength({ min: 1, max: 100 })
     .withMessage('State must not exceed 100 characters.'),
   check('zipcode')
-    .exists({ checkFalsy: true })
-    .withMessage('Please provide a zipcode.'),
+  .exists({ checkFalsy: true })
+  .withMessage('Please provide a zipcode.')
+  .isInt()
+  .withMessage('Zipcode must be a number.')
+  .isPostalCode('US')
+  .withMessage('Zipcode must be a valid US Postal Code.'),
   handleValidationErrors
 ];
 

@@ -13,12 +13,12 @@ function NewSkateparkForm() {
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState('');
 
-  const handleCancel = () => {
-    setValidationErrors([]);
-    setRating(0);
-    setComment('');
-    history.push("/")
-  };
+  // const handleCancel = () => {
+  //   setValidationErrors([]);
+  //   setRating(0);
+  //   setComment('');
+  //   history.push("/")
+  // };
 
   const handleSubmit = async (e) => {
     try {
@@ -42,7 +42,7 @@ function NewSkateparkForm() {
     catch (error) {
       const err = await error.json();
       if (error.status >= 500) setValidationErrors([err.message])
-      else setValidationErrors(err);
+      else setValidationErrors(err.errors);
     }
   }
 
@@ -75,7 +75,7 @@ function NewSkateparkForm() {
       />
       <div>
         <button type="submit">Submit</button>
-        <button type="button" onClick={handleCancel}>Cancel</button>
+        {/* <button type="button" onClick={handleCancel}>Cancel</button> */}
       </div>
     </form>
   </div>

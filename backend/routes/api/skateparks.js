@@ -1,6 +1,5 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
-const { handleValidationErrors } = require('../../utils/validation');
 const { Skatepark, Image } = require('../../db/models');
 const { skateparkValidators, editSkateparkValidators } = require('../../validations/validations');
 
