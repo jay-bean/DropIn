@@ -7,13 +7,16 @@ const router = express.Router();
 router.get('/',
   asyncHandler(async (req, res) => {
 
-    const sessionUser = req.session.user;
-    if (sessionUser) {
+    const { user } = req;
+    console.log(res.locals, 'req')
+    console.log(user, 'this is the session user');
+    if (user) {
       const favorites = await Favorite.findAll({
         where: {
-          userId: sessionUser.id
+          userId: user.id
         }
       })
+      return res.status(200).json(favorites);
     }
   })
 );
