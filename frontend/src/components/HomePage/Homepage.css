@@ -1,0 +1,22 @@
+#homepage-container {
+  width: 100%;
+}
+
+.homepage-img {
+  background-image: url(https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/AA065D57-400F-4691-B03F-5B2512CF2137.jpeg);
+  background-color: rgba(0, 0, 0, 0.362);
+  height: 300px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: white;
+  z-index: 0;
+  text-align: center;
+}
+
+.home-page-title {
+  font-size: 60px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: auto;
+}

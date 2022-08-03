@@ -9,6 +9,8 @@ import NewSkateparkForm from "./components/Skateparks/SkateparkForm";
 import EditSkateparkForm from "./components/Skateparks/EditSkateparkForm";
 import AllSkateparks from "./components/Skateparks/Skateparks";
 import SingleSkatepark from "./components/Skateparks/SingleSkateparkPage"
+import Homepage from "./components/HomePage/Homepage";
+import './index.css';
 
 function App() {
   const dispatch = useDispatch();
@@ -18,7 +20,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <>
+    <div id="full-page-container">
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
@@ -41,10 +43,11 @@ function App() {
             <EditSkateparkForm/>
           </Route>
           <Route path="/" exact={true}>
+            <Homepage/>
           </Route>
         </Switch>
       )}
-    </>
+    </div>
   );
 }
 
