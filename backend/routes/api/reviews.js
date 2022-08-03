@@ -1,7 +1,7 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 const { Review } = require('../../db/models');
-const { reviewValidators, editReviewValidators } = require('../../validations/validations');
+const { reviewValidators } = require('../../validations/validations');
 
 const router = express.Router();
 
@@ -33,12 +33,12 @@ router.put('/:id(\\d+)',
   reviewValidators,
   asyncHandler(async (req, res) => {
     const { rating , comment } = req.body;
-
+    console.log(req.params.id, 'backend')
     const updatedReview = await Review.findByPk(req.params.id);
     updatedReview.rating = rating;
     updatedReview.comment = comment;
 
-    const result = await editReview.save();
+    const result = await updatedReview.save();
     return res.status(200).json(result);
   })
 );

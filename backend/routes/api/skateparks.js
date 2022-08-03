@@ -32,7 +32,7 @@ router.post('/',
       return res.status(400).json(['You must provide at least one photo.']);
     }
     // lat long check here
-    const skatePark = Skatepark.build({
+    const skatePark = await Skatepark.build({
       name,
       description,
       address,

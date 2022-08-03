@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSkateparks, removeSkatepark } from '../../store/skatepark';
 import AllReviews from '../Reviews/Reviews';
+import { getReviews } from '../../store/review';
 
 function SingleSkatepark() {
   const dispatch = useDispatch();
@@ -10,6 +11,7 @@ function SingleSkatepark() {
   const skateparkParam = useParams();
   const skatepark = useSelector(state => state.skateparks[skateparkParam.id]);
   const sessionUser = useSelector(state => state.session.user);
+  const reviews = useSelector(state => state.reviews);
 
   const deleteHandler = async () => {
     const deletedSkatepark = await dispatch(removeSkatepark(skatepark));
@@ -18,6 +20,7 @@ function SingleSkatepark() {
 
   useEffect(() => {
     dispatch(getSkateparks());
+    dispatch(getReviews())
   }, [dispatch]);
 
   return (
@@ -37,7 +40,7 @@ function SingleSkatepark() {
           <button onClick={deleteHandler}>Delete</button>
         </div>
       )}
-      <AllReviews/>
+      {reviews && <AllReviews reviews={reviews} skatepark={skatepark}/>}
     </div>
   );
 }

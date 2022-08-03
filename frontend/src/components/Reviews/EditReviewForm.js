@@ -31,13 +31,13 @@ function EditReviewForm({ review }) {
         skateparkId: skateparkParam.id
       }
 
-      const updatedReview = await dispatch(editReview(data));
+      const updatedReview = await dispatch(editReview(data, review.id));
 
       if (updatedReview) {
         setRating('');
         setComment('');
         setValidationErrors([]);
-        window.alert('newreview!')
+        window.alert('updatedreview!')
       }
     }
     catch (error) {

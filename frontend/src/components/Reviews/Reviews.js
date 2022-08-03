@@ -1,23 +1,14 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import Review from './Review';
 import ReviewForm from './ReviewForm';
-import { getReviews } from '../../store/review';
 
-function AllReviews({ skatepark }) {
-  const dispatch = useDispatch();
-  const reviews = useSelector(state => state.reviews);
-  console.log(reviews)
-  let reviewsArray;
+function AllReviews({ skatepark, reviews }) {
+
   let reviewsArr;
   if (reviews) {
-    reviewsArray = Object.values(reviews)
-    reviewsArr = reviewsArray.filter(review => review.skateparkId === skatepark.id)
+    reviewsArr = Object.values(reviews);
   }
-  console.log(reviewsArr)
-  useEffect(() => {
-    dispatch(getReviews());
-  }, [dispatch]);
+  let filteredReviews;
+  if (reviewsArr.length > 0 && skatepark) filteredReviews = reviewsArr.filter(review => review.skateparkId === skatepark.id);
 
   return (
     <>
@@ -25,7 +16,7 @@ function AllReviews({ skatepark }) {
         <p>Leave a review</p>
         <ReviewForm/>
       </div>
-      {skatepark && reviewsArr.length > 0 && reviewsArr.map(review => <Review key={review.id} review={review}/>)}
+      {skatepark && filteredReviews && filteredReviews.length > 0 && filteredReviews.map(review => <Review key={review.id} review={review}/>)}
     </>
   );
 }
