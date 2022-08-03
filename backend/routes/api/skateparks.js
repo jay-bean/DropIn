@@ -1,6 +1,5 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
-const { handleValidationErrors } = require('../../utils/validation');
 const { Skatepark, Image } = require('../../db/models');
 const { skateparkValidators, editSkateparkValidators } = require('../../validations/validations');
 
@@ -18,7 +17,6 @@ router.get('/',
 router.get('/:id(\\d+)',
   asyncHandler(async (req, res) => {
     const skatepark = await Skatepark.findByPk(req.params.id);
-    console.log(skatepark, 'backend park')
     return res.status(200).json(skatepark);
   })
 );
@@ -32,7 +30,7 @@ router.post('/',
       return res.status(400).json(['You must provide at least one photo.']);
     }
     // lat long check here
-    const skatePark = Skatepark.build({
+    const skatePark = await Skatepark.build({
       name,
       description,
       address,
@@ -105,7 +103,7 @@ router.delete('/:id(\\d+)',
   asyncHandler(async (req, res) => {
     const skatepark = await Skatepark.findByPk(req.params.id);
     await skatepark.destroy();
-    return res.json({id});
+    return res.json(skatepark);
   })
 
 );

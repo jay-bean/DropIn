@@ -13,9 +13,11 @@ function AllSkateparks() {
   }, [dispatch]);
 
   return (
-    skateparksArr && skateparksArr.map(skatepark => {
-      return <Skatepark skatepark={skatepark}/>
-    })
+    <div id='skateparks-container'>
+    {skateparksArr && skateparksArr.map(skatepark => {
+      return <Skatepark key={skatepark.id} skatepark={skatepark}/>
+    })}
+    </div>
   );
 }
 

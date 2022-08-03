@@ -1,6 +1,5 @@
 const { check } = require('express-validator');
 const { Skatepark } = require('../db/models');
-const { Op } = require("sequelize");
 const { handleValidationErrors } = require('../utils/validation');
 
 const skateparkValidators = [
@@ -39,7 +38,11 @@ const skateparkValidators = [
     .withMessage('State must not exceed 100 characters.'),
   check('zipcode')
     .exists({ checkFalsy: true })
-    .withMessage('Please provide a zipcode.'),
+    .withMessage('Please provide a zipcode.')
+    .isInt()
+    .withMessage('Zipcode must be a number.')
+    .isPostalCode('US')
+    .withMessage('Zipcode must be a valid US Postal Code.'),
   handleValidationErrors
 ];
 
@@ -59,15 +62,7 @@ const editSkateparkValidators = [
     .exists({ checkFalsy: true })
     .withMessage('Please provide an address.')
     .isLength({ min: 1, max: 100 })
-    .withMessage('Address must not exceed 100 characters.')
-    .custom((value) => {
-      return Skatepark.findOne({ where: { address: value } })
-        .then((skatepark) => {
-          if (skatepark) {
-            return Promise.reject('The provided address already exists.');
-          }
-        });
-    }),
+    .withMessage('Address must not exceed 100 characters.'),
   check('city')
     .exists({ checkFalsy: true })
     .withMessage('Please provide a city.')
@@ -79,12 +74,31 @@ const editSkateparkValidators = [
     .isLength({ min: 1, max: 100 })
     .withMessage('State must not exceed 100 characters.'),
   check('zipcode')
+  .exists({ checkFalsy: true })
+  .withMessage('Please provide a zipcode.')
+  .isInt()
+  .withMessage('Zipcode must be a number.')
+  .isPostalCode('US')
+  .withMessage('Zipcode must be a valid US Postal Code.'),
+  handleValidationErrors
+];
+
+const reviewValidators = [
+  check('rating')
     .exists({ checkFalsy: true })
-    .withMessage('Please provide a zipcode.'),
+    .withMessage('Please provide a rating.')
+    .isInt({ min: 1, max: 5 })
+    .withMessage('Rating must be a number between 1 and 5.'),
+  check('comment')
+    .exists({ checkFalsy: true })
+    .withMessage('Please provide a review for the skatepark.')
+    .isLength({ min: 1, max: 255 })
+    .withMessage('Review must not exceed 255 characters.'),
   handleValidationErrors
 ];
 
 module.exports = {
   skateparkValidators,
-  editSkateparkValidators
+  editSkateparkValidators,
+  reviewValidators
 }

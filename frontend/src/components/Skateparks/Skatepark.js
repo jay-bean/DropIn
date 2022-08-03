@@ -1,24 +1,17 @@
-import { useParams, Link, useHistory } from 'react-router-dom';
-import { useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux';
-import { getSkateparks, removeSkatepark } from '../../store/skatepark';
-import EditSkateparkForm from './EditSkateparkForm';
+import { Link } from 'react-router-dom';
+import './skatepark-card.css';
 
 function Skatepark({ skatepark }) {
   return (
-    <>
-      {/* {skatepark.images.length > 0 && skatepark.images.map(image => {
-        return (
-          <img src={image.url}/>
-        );
-      })} */}
-      {skatepark.images.length > 0 && (<img src={skatepark.images[0].url}/>)}
-      <div>{skatepark.name}</div>
-      <div>{skatepark.description}</div>
-      <div>{skatepark.address}</div>
-      <div>{skatepark.city}, {skatepark.state} {skatepark.zipcode}</div>
-
-    </>
+    skatepark &&
+      <div className='explore-page-cards'>
+        {skatepark.images.length > 0 && (<Link to={`/skateparks/${skatepark.id}`}><img src={skatepark.images[0].url} style={{width: '200px'}}/></Link>)}
+        <Link to={`/skateparks/${skatepark.id}`}><div>{skatepark.name}</div></Link>
+        <div>{skatepark.address}</div>
+        <div>{skatepark.city}, {skatepark.state} {skatepark.zipcode}</div>
+        <img src="https://img.icons8.com/material/48/000000/hearts--v1.png"/>
+        <img src="https://img.icons8.com/material-outlined/48/000000/hearts.png"/>
+      </div>
   );
 }
 

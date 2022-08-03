@@ -31,13 +31,11 @@ export const login = (user) => async (dispatch) => {
 };
 
 export const signup = data => async (dispatch) => {
-  console.log(data, 'firt data in thunk')
   const response = await csrfFetch("/api/users", {
     method: "POST",
     body: data,
   }, false);
   const newUser = await response.json();
-  console.log(newUser, 'new user in thunk')
   dispatch(setUser(newUser.user));
   // dispatch(setUser(newUser));
 

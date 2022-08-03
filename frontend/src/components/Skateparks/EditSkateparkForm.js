@@ -25,8 +25,8 @@ function EditSkateparkForm() {
 
   const handleCancel = () => {
     setValidationErrors([]);
-    history.push("/")
-  };
+    history.push(`/skateparks/${skatepark.id}`)
+  }
 
   const handleSubmit = async (e) => {
     try {
@@ -41,19 +41,17 @@ function EditSkateparkForm() {
       formData.append('zipcode', zipcode);
       formData.append('userId', sessionUser.id);
 
-      for(const image of Object.keys(images)) {
+      for (const image of Object.keys(images)) {
         formData.append('image', images[image]);
       }
       const updatedSkatepark = await dispatch(editSkatepark(formData, skatepark.id));
       if (updatedSkatepark) {
-        window.alert('edited park!');
-        // history.push(`/skateparks/${newSkatepark.id}`)
+        history.push(`/skateparks/${updatedSkatepark.id}`)
       }
     }
     catch (error) {
       const err = await error.json();
-      if (error.status >= 500) setValidationErrors([err.message])
-      else setValidationErrors(err);
+      setValidationErrors(err.errors);
     }
   }
 

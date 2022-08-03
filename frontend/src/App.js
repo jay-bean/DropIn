@@ -8,6 +8,7 @@ import LoginForm from "./components/LoginFormPage/LoginFormPage";
 import NewSkateparkForm from "./components/Skateparks/SkateparkForm";
 import EditSkateparkForm from "./components/Skateparks/EditSkateparkForm";
 import AllSkateparks from "./components/Skateparks/Skateparks";
+import SingleSkatepark from "./components/Skateparks/SingleSkateparkPage"
 
 function App() {
   const dispatch = useDispatch();
@@ -21,8 +22,6 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route path="/" exact={true}>
-          </Route>
           <Route path="/signup" exact={true}>
             <SignupFormPage />
           </Route>
@@ -35,8 +34,13 @@ function App() {
           <Route path="/skateparks/new" exact={true}>
             <NewSkateparkForm/>
           </Route>
+          <Route path="/skateparks/:id" exact={true}>
+            <SingleSkatepark/>
+          </Route>
           <Route path="/skateparks/:id/edit" exact={true}>
             <EditSkateparkForm/>
+          </Route>
+          <Route path="/" exact={true}>
           </Route>
         </Switch>
       )}

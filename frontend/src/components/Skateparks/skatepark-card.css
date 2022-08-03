@@ -1,0 +1,10 @@
+#skateparks-container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.explore-page-cards {
+  width: 300px;
+  height: 400px;
+  border: 1px solid black;
+}

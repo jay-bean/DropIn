@@ -26,8 +26,6 @@ function SignupFormPage() {
       formData.append('email', email);
       formData.append('password', password);
       formData.append('image', picUrl);
-      console.log(picUrl, 'this is the picture originally')
-      console.log(formData, 'this is form data in formcomponent');
       return dispatch(sessionActions.signup(formData))
         .catch(async (res) => {
           const data = await res.json();
