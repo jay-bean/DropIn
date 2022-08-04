@@ -13,43 +13,29 @@ function Favorites({ skateparkId }) {
   }
 
   const [favorited, setFavorited] = useState(false);
-  // const [heart, setHeart] = useState(false);
-
-  // if (existingFavorite) setHeart(true);
 
   const favoritesHandler = async () => {
     try {
       setFavorited(!favorited);
       if (!existingFavorite && skateparkId) {
-        console.log(favorited, 'fave');
-        console.log(skateparkId)
         const data = {
           userId: sessionUser.id,
           skateparkId
         }
-        console.log(data, 'dattaaaa')
-
-        const newFavorite = await dispatch(addFavorite(data));
-
-        if (newFavorite) {
-          window.alert('worky')
-        }
+        await dispatch(addFavorite(data));
       }
       else {
-        const removedFavorite = await dispatch(removeFavorite(existingFavorite.id));
-        if (removedFavorite) window.alert('delete workyyy');
+        await dispatch(removeFavorite(existingFavorite.id));
       }
     }
     catch (error) {
-      console.log(error, 'error')
       const err = await error.json();
-      console.log(err, 'err')
       throw err;
     }
   }
 
   useEffect(() => {
-    dispatch(getFavorites())
+    dispatch(getFavorites());
   }, [dispatch])
 
   return (

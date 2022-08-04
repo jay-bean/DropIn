@@ -43,7 +43,7 @@ router.delete('/:id(\\d+)',
     const favorite = await Favorite.findOne({ where: { id: req.params.id } });
     console.log(favorite, 'backendfave')
     await favorite.destroy();
-    return res.json(favorite);
+    return res.json(req.params.id);
   })
 );
 

@@ -37,7 +37,7 @@ function TagSelect({ selectedTag, setSelectedTag, tagIdArr }) {
     },
   ];
 
-  console.log(tagOptions.filter(tag => tagIdArr.includes(tag.value)), 'tagoptions');
+  // console.log(tagOptions.filter(tag => tagIdArr.includes(tag.value)), 'tagoptions');
 
 
   const tagHandler = (e) => {
@@ -48,7 +48,7 @@ function TagSelect({ selectedTag, setSelectedTag, tagIdArr }) {
     <Select
       className="dropdown"
       placeholder="Select Option"
-      defaultValue={tagOptions.filter(tag => tagIdArr.includes(tag.value))}
+      defaultValue={tagIdArr ? tagOptions.filter(tag => tagIdArr.includes(tag.value)) : ''}
       value={tagOptions.filter(tag => selectedTag.includes(tag.value))}
       options={tagOptions}
       onChange={tagHandler}

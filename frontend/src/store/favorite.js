@@ -14,9 +14,9 @@ const add = favorite => ({
   favorite
 })
 
-const remove = favorite => ({
+const remove = favoriteId => ({
   type: REMOVE,
-  favorite
+  favoriteId
 })
 
 export const getFavorites = () => async dispatch => {
@@ -53,12 +53,12 @@ export const removeFavorite = id => async dispatch => {
       method: 'DELETE',
     });
 
-    const favorite = await response.json();
-    dispatch(remove(favorite));
-    return favorite;
+    const favoriteId = await response.json();
+    dispatch(remove(favoriteId));
+    return favoriteId;
   }
   catch (error) {
-
+    throw error
   }
 }
 
@@ -76,7 +76,7 @@ const favoriteReducer = (state = initialState, action) => {
       newState[action.favorite.id] = action.favorite
       return newState;
     case REMOVE:
-      delete newState[action.favorite.id]
+      delete newState[action.favoriteId]
       return newState
     default:
       return state;
