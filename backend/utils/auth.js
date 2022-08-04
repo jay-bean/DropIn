@@ -27,7 +27,6 @@ const setTokenCookie = (res, user) => {
 };
 
 const restoreUser = (req, res, next) => {
-  console.log("\n\n\nrestoreUser called\n\n\n");
   // token parsed from cookies
   const { token } = req.cookies;
 

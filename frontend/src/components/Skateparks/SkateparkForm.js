@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { addSkatepark } from '../../store/skatepark';
-import { getTags } from '../../store/tag';
 import TagSelect from './TagSelect';
 
 function NewSkateparkForm() {
   const history = useHistory();
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
-  const tags = useSelector(state => state.tags);
   const [validationErrors, setValidationErrors] = useState([]);
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
@@ -19,15 +17,6 @@ function NewSkateparkForm() {
   const [zipcode, setZipcode] = useState(0);
   const [images, setImages] = useState({});
   const [selectedTag, setSelectedTag] = useState([])
-
-  let tagsArr;
-  if (tags) {
-    tagsArr = Object.values(tags);
-  }
-
-  useEffect(() => {
-    dispatch(getTags());
-  }, [dispatch])
 
   const handleCancel = () => {
     setValidationErrors([]);
@@ -50,12 +39,13 @@ function NewSkateparkForm() {
       for (const image of Object.keys(images)) {
         formData.append('image', images[image]);
       }
+      for (const tag of selectedTag) {
+        formData.append('tag', tag)
+      }
       const newSkatepark = await dispatch(addSkatepark(formData));
       if (newSkatepark) {
         history.push(`/skateparks/${newSkatepark.id}`)
       }
-
-      
     }
     catch (error) {
       const err = await error.json();

@@ -39,7 +39,6 @@ function TagSelect({ selectedTag, setSelectedTag }) {
 
   const tagHandler = (e) => {
     setSelectedTag(Array.isArray(e) ? e.map(tag => tag.value) : null);
-    console.log(selectedTag)
   }
 
   return (<Select

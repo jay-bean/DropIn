@@ -5,13 +5,13 @@ import sessionReducer from './session';
 import skateparkReducer from './skatepark';
 import reviewReducer from './review';
 import favoriteReducer from './favorite';
-import tagReducer from './tag';
+import parktagReducer from './parktag';
 
 const rootReducer = combineReducers({
   session: sessionReducer,
   skateparks: skateparkReducer,
   reviews: reviewReducer,
-  tags: tagReducer,
+  parktags: parktagReducer,
   favorites: favoriteReducer
 });
 

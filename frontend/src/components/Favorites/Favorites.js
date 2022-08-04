@@ -10,13 +10,12 @@ function Favorites({ skateparkId }) {
   let existingFavorite;
   if (favorites && sessionUser) {
     existingFavorite = Object.values(favorites).find(fav => fav.skateparkId === skateparkId && fav.userId === sessionUser.id);
-    console.log(existingFavorite, 'existy')
   }
 
   const [favorited, setFavorited] = useState(false);
+  // const [heart, setHeart] = useState(false);
 
-  const toggleFavorite = () => {
-  }
+  // if (existingFavorite) setHeart(true);
 
   const favoritesHandler = async () => {
     try {
@@ -38,7 +37,7 @@ function Favorites({ skateparkId }) {
       }
       else {
         const removedFavorite = await dispatch(removeFavorite(existingFavorite.id));
-        if (removedFavorite) window.alert('delete workyyy')
+        if (removedFavorite) window.alert('delete workyyy');
       }
     }
     catch (error) {
@@ -56,7 +55,6 @@ function Favorites({ skateparkId }) {
   return (
     <div>
       <div onClick={() => {
-        toggleFavorite();
         favoritesHandler();
       }}>
         {existingFavorite ? <img src="https://img.icons8.com/material/48/000000/hearts--v1.png"/> : <img src="https://img.icons8.com/material-outlined/48/000000/hearts.png"/>}
