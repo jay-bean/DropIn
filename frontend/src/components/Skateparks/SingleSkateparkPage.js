@@ -35,7 +35,7 @@ function SingleSkatepark() {
           <div>{skatepark.city}, {skatepark.state} {skatepark.zipcode}</div>
         </div>
       )}
-      {skatepark && <Favorites skatepark={skatepark}/>}
+      {skatepark && <Favorites skateparkId={skatepark.id}/>}
       {skatepark && sessionUser && skatepark.userId === sessionUser.id && (
         <div>
           <Link to={`/skateparks/${skatepark.id}/edit`}><button>Edit</button></Link>

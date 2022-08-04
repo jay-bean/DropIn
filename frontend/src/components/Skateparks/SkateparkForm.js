@@ -54,6 +54,8 @@ function NewSkateparkForm() {
       if (newSkatepark) {
         history.push(`/skateparks/${newSkatepark.id}`)
       }
+
+      
     }
     catch (error) {
       const err = await error.json();

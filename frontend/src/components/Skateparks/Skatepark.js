@@ -10,7 +10,7 @@ function Skatepark({ skatepark }) {
         <Link to={`/skateparks/${skatepark.id}`}><div>{skatepark.name}</div></Link>
         <div>{skatepark.address}</div>
         <div>{skatepark.city}, {skatepark.state} {skatepark.zipcode}</div>
-        <Favorites skatepark={skatepark}/>
+        <Favorites skateparkId={skatepark.id}/>
       </div>
   );
 }

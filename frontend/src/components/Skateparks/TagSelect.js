@@ -1,9 +1,7 @@
-import { useState } from 'react';
 import Select from 'react-select';
 
-function TagSelect() {
-  
-  console.log(selectedTag, 'upttop')
+function TagSelect({ selectedTag, setSelectedTag }) {
+
   const tagOptions = [
     {
       value: 1,
