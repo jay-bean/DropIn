@@ -4,11 +4,15 @@ import thunk from 'redux-thunk';
 import sessionReducer from './session';
 import skateparkReducer from './skatepark';
 import reviewReducer from './review';
+import favoriteReducer from './favorite';
+import parktagReducer from './parktag';
 
 const rootReducer = combineReducers({
   session: sessionReducer,
   skateparks: skateparkReducer,
-  reviews: reviewReducer
+  reviews: reviewReducer,
+  parktags: parktagReducer,
+  favorites: favoriteReducer
 });
 
 let enhancer;

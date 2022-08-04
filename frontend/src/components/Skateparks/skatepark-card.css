@@ -8,3 +8,9 @@
   height: 400px;
   border: 1px solid black;
 }
+
+#tags-div {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}

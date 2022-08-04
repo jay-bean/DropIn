@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { addSkatepark } from '../../store/skatepark';
+import TagSelect from './TagSelect';
 
 function NewSkateparkForm() {
   const history = useHistory();
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
-
   const [validationErrors, setValidationErrors] = useState([]);
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
@@ -16,6 +16,7 @@ function NewSkateparkForm() {
   const [state, setState] = useState('');
   const [zipcode, setZipcode] = useState(0);
   const [images, setImages] = useState({});
+  const [selectedTag, setSelectedTag] = useState([])
 
   const handleCancel = () => {
     setValidationErrors([]);
@@ -37,6 +38,9 @@ function NewSkateparkForm() {
 
       for (const image of Object.keys(images)) {
         formData.append('image', images[image]);
+      }
+      for (const tag of selectedTag) {
+        formData.append('tag', tag)
       }
       const newSkatepark = await dispatch(addSkatepark(formData));
       if (newSkatepark) {
@@ -113,18 +117,19 @@ function NewSkateparkForm() {
         />
 
         <div>
-        <i className="fa-solid fa-images"> Upload Images</i>
-        <input
-          type="file"
-          multiple
-          name="file"
-          onChange={(e) => setImages(e.target.files)}
-        />
+          <i className="fa-solid fa-images"> Upload Images</i>
+          <input
+            type="file"
+            multiple
+            name="file"
+            onChange={(e) => setImages(e.target.files)}
+          />
         </div>
         <div>
           <button type="submit">Submit</button>
           <button type="button" onClick={handleCancel}>Cancel</button>
         </div>
+        <TagSelect selectedTag={selectedTag} setSelectedTag={setSelectedTag}/>
       </form>
     </div>
   );

@@ -22,7 +22,7 @@ function DemoUser() {
 
   return (
     <>
-      <button onClick={handleDemoLogin}>Demo User</button>
+      <button className='login-nav-btn' onClick={handleDemoLogin}>Demo</button>
       {errors.length ? errors.map((error, index) => (
         <div key={index}>{error}</div>
       )) : null}

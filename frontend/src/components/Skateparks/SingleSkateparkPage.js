@@ -5,6 +5,7 @@ import { getSkateparks, removeSkatepark } from '../../store/skatepark';
 import AllReviews from '../Reviews/Reviews';
 import { getReviews } from '../../store/review';
 import Favorites from '../Favorites/Favorites';
+import { getParktags } from '../../store/parktag';
 
 function SingleSkatepark() {
   const dispatch = useDispatch();
@@ -13,6 +14,14 @@ function SingleSkatepark() {
   const skatepark = useSelector(state => state.skateparks[skateparkParam.id]);
   const sessionUser = useSelector(state => state.session.user);
   const reviews = useSelector(state => state.reviews);
+  const parktags = useSelector(state => state.parktags);
+
+  let skateparkTags;
+  if (parktags && skatepark) {
+    console.log(parktags, 'this is all parktags')
+    skateparkTags = Object.values(parktags).filter(parktag => parktag.skateparkId === skatepark.id)
+    console.log(skateparkTags, 'skateparkTags');
+  }
 
   const deleteHandler = async () => {
     const deletedSkatepark = await dispatch(removeSkatepark(skatepark));
@@ -21,7 +30,8 @@ function SingleSkatepark() {
 
   useEffect(() => {
     dispatch(getSkateparks());
-    dispatch(getReviews())
+    dispatch(getReviews());
+    dispatch(getParktags());
   }, [dispatch]);
 
   return (
@@ -35,7 +45,12 @@ function SingleSkatepark() {
           <div>{skatepark.city}, {skatepark.state} {skatepark.zipcode}</div>
         </div>
       )}
-      {skatepark && <Favorites skatepark={skatepark}/>}
+      {skatepark && skateparkTags.length > 0 && skateparkTags.map(parktag => {
+        return (
+          <div>{parktag.Tag.type}</div>
+        );
+      })}
+      {skatepark && <Favorites skateparkId={skatepark.id}/>}
       {skatepark && sessionUser && skatepark.userId === sessionUser.id && (
         <div>
           <Link to={`/skateparks/${skatepark.id}/edit`}><button>Edit</button></Link>

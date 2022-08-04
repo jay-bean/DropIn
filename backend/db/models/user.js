@@ -99,7 +99,7 @@ module.exports = (sequelize, DataTypes) => {
     User.belongsToMany(models.Skatepark, {
       through: 'Favorite',
       foreignKey: 'userId',
-      otherKey: 'skatparkId'
+      otherKey: 'skateparkId'
     });
   };
   return User;

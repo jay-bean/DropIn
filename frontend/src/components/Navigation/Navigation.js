@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
-import LoginForm from '../LoginFormPage/LoginFormPage';
 import './Navigation.css';
 import DemoUser from '../DemoUser/DemoUser';
 
@@ -12,24 +11,26 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <div className='nav-prof'>
+        <NavLink className='skatepark-nav'exact to="/skateparks/new">+ Skatepark</NavLink>
+        <ProfileButton user={sessionUser} />
+      </div>
     );
   } else {
     sessionLinks = (
-      <>
+      <div className='nav-prof-demo'>
         <DemoUser/>
-        <NavLink to="/login">Log in</NavLink>
-        <NavLink to="/signup">Sign Up</NavLink>
-      </>
+        <NavLink to="/signup"><button className='signup-nav-btn'>Sign Up</button></NavLink>
+        <NavLink to="/login"><button className='login-nav-btn'>Log in</button></NavLink>
+      </div>
     );
   }
 
   return (
-    <ul>
-      <li>
-        <NavLink exact to="/skateparks">Explore</NavLink>
-        <NavLink exact to="/">Home</NavLink>
-        <NavLink exact to="/skateparks/new">Add Skatepark</NavLink>
+     <ul className='nav-ul'>
+      <li className='navbar-container'>
+        <NavLink id='explore' exact to="/skateparks">Explore</NavLink>
+        <NavLink id='drop-in' exact to="/">Drop In</NavLink>
         {isLoaded && sessionLinks}
       </li>
     </ul>

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
+import { getParktags } from '../../store/parktag';
 import { getSkateparks, editSkatepark } from '../../store/skatepark';
+import TagSelect from './TagSelect';
 
 function EditSkateparkForm() {
   const history = useHistory();
@@ -9,6 +11,7 @@ function EditSkateparkForm() {
   const sessionUser = useSelector(state => state.session.user);
   const skateparkParam = useParams();
   const skatepark = useSelector(state => state.skateparks[skateparkParam.id]);
+  const parktags = useSelector(state => state.parktags);
 
   const [validationErrors, setValidationErrors] = useState([]);
   const [name, setName] = useState(skatepark ? skatepark.name : '');
@@ -18,9 +21,27 @@ function EditSkateparkForm() {
   const [state, setState] = useState(skatepark ? skatepark.state : '');
   const [zipcode, setZipcode] = useState(skatepark ? skatepark.zipcode : 0);
   const [images, setImages] = useState({});
+  const [selectedTag, setSelectedTag] = useState([]);
+
+  let skateparkTags;
+  if (parktags && skatepark) {
+    console.log(parktags, 'this is all parktags')
+    skateparkTags = Object.values(parktags).filter(parktag => parktag.skateparkId === skatepark.id)
+    console.log(skateparkTags, 'skateparkTags');
+  }
+  const tagIdArr = [];
+  if (skateparkTags) {
+    console.log(skateparkTags, 'tags array');
+    skateparkTags.map(tag => tagIdArr.push(tag.tagId));
+    console.log(tagIdArr, 'tagIdArr')
+  }
+  // defaultValue={[colourOptions[2], colourOptions[3]]}
+
+  // posssible way to set persisting data ^^^
 
   useEffect(() => {
-    dispatch(getSkateparks())
+    dispatch(getSkateparks());
+    dispatch(getParktags());
   }, [dispatch])
 
   const handleCancel = () => {
@@ -131,6 +152,7 @@ function EditSkateparkForm() {
           <button type="submit">Submit</button>
           <button type="button" onClick={handleCancel}>Cancel</button>
         </div>
+        {tagIdArr && <TagSelect tagIdArr={tagIdArr} selectedTag={selectedTag} setSelectedTag={setSelectedTag}/>}
       </form>
     </div>
   );

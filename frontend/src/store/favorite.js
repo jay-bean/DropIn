@@ -46,10 +46,11 @@ export const addFavorite = data => async dispatch => {
   }
 }
 
-export const deleteFavorite = data => async dispatch => {
+export const removeFavorite = id => async dispatch => {
   try {
-    const response = await csrfFetch(`/api/favorites/${data.id}`, {
-      methods: 'DELETE',
+    console.log(id, 'id in thunk')
+    const response = await csrfFetch(`/api/favorites/${id}`, {
+      method: 'DELETE',
     });
 
     const favorite = await response.json();
@@ -81,3 +82,5 @@ const favoriteReducer = (state = initialState, action) => {
       return state;
   }
 }
+
+export default favoriteReducer;

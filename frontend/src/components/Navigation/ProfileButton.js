@@ -7,8 +7,7 @@ function ProfileButton({ user }) {
   const [showMenu, setShowMenu] = useState(false);
 
   const openMenu = () => {
-    if (showMenu) return;
-    setShowMenu(true);
+    setShowMenu((prev) => !prev);
   };
 
   useEffect(() => {
@@ -29,20 +28,22 @@ function ProfileButton({ user }) {
   };
 
   return (
-    <>
-      <button onClick={openMenu}>
-        <i className="fas fa-user-circle" />
+    <div className="profile-btn-container">
+      <button className="prof-btn" onClick={openMenu}>
+      <i className="fa-regular fa-circle-user"></i>
       </button>
+
+      
       {showMenu && (
         <ul className="profile-dropdown">
-          <li>{user.firstName} {user.lastName}</li>
-          <li>{user.email}</li>
-          <li>
-            <button onClick={logout}>Log Out</button>
+          <li className="prof-li">{user.firstName} {user.lastName}</li>
+          <li className="prof-li">{user.email}</li>
+          <li className="prof-li">
+            <button className="prof-logout" onClick={logout}>Log Out</button>
           </li>
         </ul>
       )}
-    </>
+    </div>
   );
 }
 

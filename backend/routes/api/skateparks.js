@@ -1,6 +1,6 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
-const { Skatepark, Image } = require('../../db/models');
+const { Skatepark, Image, Parktag } = require('../../db/models');
 const { skateparkValidators, editSkateparkValidators } = require('../../validations/validations');
 
 const router = express.Router();
@@ -24,7 +24,7 @@ router.get('/:id(\\d+)',
 router.post('/',
   skateparkValidators,
   asyncHandler( async (req, res) => {
-    const { name, description, address, city, state, zipcode, userId } = req.body;
+    const { name, description, address, city, state, zipcode, userId, tag } = req.body;
 
     if (!req.files.length) {
       return res.status(400).json(['You must provide at least one photo.']);
@@ -53,11 +53,20 @@ router.post('/',
       return image;
     })
 
-    const resImages = await Promise.all(imageObjs.map(async (image) => await image.save()))
+    const resImages = await Promise.all(imageObjs.map(async (image) => await image.save()));
+
+    const resTags = tag.map(async (singleTag) => {
+      const newParktag = Parktag.create({
+        skateparkId: result.id,
+        tagId: singleTag
+      });
+      return newParktag;
+    })
 
     const response = {
         ...result.dataValues,
-        images: resImages
+        images: resImages,
+        tags: resTags
     }
 
     return res.status(200).json(response);
