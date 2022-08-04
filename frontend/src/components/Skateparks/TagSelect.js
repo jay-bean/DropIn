@@ -1,7 +1,7 @@
 import Select from 'react-select';
 
-function TagSelect({ selectedTag, setSelectedTag }) {
-
+function TagSelect({ selectedTag, setSelectedTag, tagIdArr }) {
+  console.log(selectedTag, 'selected tag');
   const tagOptions = [
     {
       value: 1,
@@ -37,19 +37,25 @@ function TagSelect({ selectedTag, setSelectedTag }) {
     },
   ];
 
+  console.log(tagOptions.filter(tag => tagIdArr.includes(tag.value)), 'tagoptions');
+
+
   const tagHandler = (e) => {
     setSelectedTag(Array.isArray(e) ? e.map(tag => tag.value) : null);
   }
 
-  return (<Select
-  className="dropdown"
-  placeholder="Select Option"
-  value={tagOptions.filter(tagOptions => selectedTag.includes(tagOptions.value))}
-  options={tagOptions}
-  onChange={tagHandler}
-  isMulti={true}
-  isClearable={true}
-  />);
+  return (
+    <Select
+      className="dropdown"
+      placeholder="Select Option"
+      defaultValue={tagOptions.filter(tag => tagIdArr.includes(tag.value))}
+      value={tagOptions.filter(tag => selectedTag.includes(tag.value))}
+      options={tagOptions}
+      onChange={tagHandler}
+      isMulti={true}
+      isClearable={true}
+    />
+  );
 }
 
 export default TagSelect;
