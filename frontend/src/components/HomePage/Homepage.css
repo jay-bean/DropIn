@@ -35,7 +35,7 @@
   grid-column: 1 / 2;
   margin: 0;
   margin-top: 40px;
-  margin-left: 70px;
+  margin-left: 130px;
   height: 20px;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -43,7 +43,8 @@
 .skate-card-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 30px;
 }
 
 .homepage-banner-imgs {
@@ -84,7 +85,7 @@
 
 .homepage-tags-section {
   background-color: #f2f2f2;
-  height: 350px;
+  height: 400px;
   padding: 30px 90px;
   background-color: #f2f2f2;
   display: grid;
@@ -92,25 +93,93 @@
   grid-template-rows: auto;
 }
 
-.homepage-tags-section-h2 {
+.home-page-tags-h2-p-div {
   grid-column: 1 / 2;
+  grid-row: 1 / 2;
   margin: 0;
-  margin-left: 70px;
+  margin-bottom: 70px;
+  margin-left: 130px;
+  height: 20px;
+}
+
+.homepage-tags-section-h2 {
   height: 20px;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.homepage-tags-p {
+  height: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+}
+
+.homepage-tags-titles {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
 .homepage-tags-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 120px;
 }
 
-.homepage-tags {
-  width: 200px;
-  height: 200px;
+.homepage-tag-pipe {
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
-  background-image: url(https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/memo.jpeg);
+  transition: transform .2s;
+}
+
+.homepage-tag-pipe:hover {
+  transform: scale(1.1);
+}
+
+.homepage-tag-bowl {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  transition: transform .2s;
+}
+
+.homepage-tag-bowl:hover {
+  transform: scale(1.1);
+}
+
+.homepage-tag-street {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  transition: transform .2s;
+}
+
+.homepage-tag-street:hover {
+  transform: scale(1.1);
+}
+
+.homepage-tag-pump {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  transition: transform .2s;
+}
+
+.homepage-tag-pump:hover {
+  transform: scale(1.1);
+}
+
+.homepage-tag-grid {
+  display: grid;
+  grid-template-columns: 1fr;
   text-align: center;
-  font-size: 26px;
+}
+
+.homepage-tag-img-divs {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  overflow: hidden;
 }

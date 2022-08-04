@@ -10,17 +10,17 @@ function ProfileButton({ user }) {
     setShowMenu((prev) => !prev);
   };
 
-  // useEffect(() => {
-  //   if (!showMenu) return;
+  useEffect(() => {
+    if (!showMenu) return;
 
-  //   const closeMenu = () => {
-  //     setShowMenu(false);
-  //   };
+    const closeMenu = () => {
+      setShowMenu(false);
+    };
 
-  //   document.addEventListener('click', closeMenu);
+    document.addEventListener('click', closeMenu);
 
-  //   return () => document.removeEventListener("click", closeMenu);
-  // }, [showMenu]);
+    return () => document.removeEventListener("click", closeMenu);
+  }, [showMenu]);
 
   const logout = (e) => {
     e.preventDefault();
@@ -32,6 +32,8 @@ function ProfileButton({ user }) {
       <button className="prof-btn" onClick={openMenu}>
       <i className="fa-regular fa-circle-user"></i>
       </button>
+
+      
       {showMenu && (
         <ul className="profile-dropdown">
           <li className="prof-li">{user.firstName} {user.lastName}</li>

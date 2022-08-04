@@ -41,14 +41,14 @@
 
 .profile-dropdown {
   position: relative;
-  margin-top: 92%;
+  margin-top: 94%;
   background-color: #f9f9f9;
-  width: 100px;
+  width: 200px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   padding: 12px 4px;
-  z-index: 1;
   border-radius: 6px;
   display: grid;
+  z-index: 1;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
 }
@@ -149,7 +149,7 @@
   font-size: 28px;
   font-weight: bold;
   color: #2a2a2aad;
-  position: absolute;
+  position: relative;
   text-align: center;
   width: 50%;
   box-sizing: border-box;

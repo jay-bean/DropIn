@@ -28,7 +28,7 @@ function Homepage() {
           {skateparks && skateparkArr && skateparkArr.length > 0 && skateparkArr.map(skatepark => {
             return (
               <div className='skatepark-card' key={skatepark.id}>
-                {skatepark.images && skatepark.images.length > 0 && <Link className='homepage-img-container' to={`/skateparks/${skatepark.id}`}><img className='homepage-banner-imgs' src={skatepark.images[1].url}/></Link>}
+                {skatepark.images && skatepark.images.length > 0 && <Link className='homepage-img-container' to={`/skateparks/${skatepark.id}`}><img className='homepage-banner-imgs' src={skatepark.images[0].url}/></Link>}
                 <div>Star rating here</div>
                 <div>{skatepark.name}</div>
                 <div>{skatepark.city}, {skatepark.state}</div>
@@ -41,12 +41,27 @@ function Homepage() {
 
       </div>
       <div className='homepage-tags-section'>
-        <h2 className='homepage-tags-section-h2'>There's a park for everyone.</h2>
+        <div className='home-page-tags-h2-p-div'>
+          <h2 className='homepage-tags-section-h2'>There's a park for everyone.</h2>
+          <p className='homepage-tags-p'>Choose an option to be taken to all the parks with that feature.</p>
+        </div>
         <div className='homepage-tags-container'>
-          <div className='homepage-tags'>Half pipe</div>
-          <div className='homepage-tags'>Bowl<img className='homepage-tags-img'/></div>
-          <div className='homepage-tags'>Street<img className='homepage-tags-img'/></div>
-          <div className='homepage-tags'>Pump Track<img className='homepage-tags-img'/></div>
+          <div className='homepage-tag-grid'>
+            <div className='homepage-tags-titles'>Half pipe</div>
+            <div className='homepage-tag-img-divs'><img src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/d03d91464d0268a58b8c79303d0fbcd4_-queensland-gold-coast-city-upper-coomera-upper-coomera-skateparkhtml.jpg' className='homepage-tag-pipe'/></div>
+          </div>
+          <div className='homepage-tag-grid'>
+            <div className='homepage-tags-titles'>Bowl</div>
+            <div className='homepage-tag-img-divs'><img src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/West-Kelowna-4.jpg' className='homepage-tag-bowl'/></div>
+          </div>
+          <div className='homepage-tag-grid'>
+            <div className='homepage-tags-titles'>Street</div>
+            <div className='homepage-tag-img-divs'><img src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/Ulysses-Skate-Park_SpeakEasy-Colorado-Skate-Park-Directory-1.jpg' className='homepage-tag-street'/></div>
+          </div>
+          <div className='homepage-tag-grid'>
+            <div className='homepage-tags-titles'>Pump Track</div>
+            <div className='homepage-tag-img-divs'><img src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/velosolutions-pump-track-broomfield-image2.jpg' className='homepage-tag-pump'/></div>
+          </div>
         </div>
       </div>
     </div>
