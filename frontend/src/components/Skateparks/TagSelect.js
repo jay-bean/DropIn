@@ -2,7 +2,8 @@ import { useState } from 'react';
 import Select from 'react-select';
 
 function TagSelect() {
-  const [selectedTag, setSelectedTag] = useState([])
+  
+  console.log(selectedTag, 'upttop')
   const tagOptions = [
     {
       value: 1,
@@ -40,12 +41,13 @@ function TagSelect() {
 
   const tagHandler = (e) => {
     setSelectedTag(Array.isArray(e) ? e.map(tag => tag.value) : null);
+    console.log(selectedTag)
   }
 
   return (<Select
   className="dropdown"
   placeholder="Select Option"
-  value={tagOptions.filter(tagOptions => selectedTag.includes(tagOptions.value))} // set selected values
+  value={tagOptions.filter(tagOptions => selectedTag.includes(tagOptions.value))}
   options={tagOptions}
   onChange={tagHandler}
   isMulti={true}

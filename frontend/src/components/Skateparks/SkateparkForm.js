@@ -18,6 +18,7 @@ function NewSkateparkForm() {
   const [state, setState] = useState('');
   const [zipcode, setZipcode] = useState(0);
   const [images, setImages] = useState({});
+  const [selectedTag, setSelectedTag] = useState([])
 
   let tagsArr;
   if (tags) {
@@ -136,7 +137,7 @@ function NewSkateparkForm() {
           <button type="submit">Submit</button>
           <button type="button" onClick={handleCancel}>Cancel</button>
         </div>
-        <TagSelect/>
+        <TagSelect selectedTag={selectedTag} setSelectedTag={setSelectedTag}/>
       </form>
     </div>
   );

@@ -11,13 +11,8 @@ function Homepage() {
 
   let skateparkArr;
   if (skateparks) {
-    skateparkArr = [];
-    console.log(skateparks[1], 'woo')
-    skateparkArr.push(skateparks[1])
-    skateparkArr.push(skateparks[2])
-    skateparkArr.push(skateparks[3])
-    skateparkArr.push(skateparks[4])
-    console.log(skateparkArr)
+    skateparkArr = Object.values(skateparks).slice(0, 4);
+    console.log(skateparkArr, 'skatepark array')
   }
 
   useEffect(() => {
@@ -34,11 +29,24 @@ function Homepage() {
             return (
               <div className='skatepark-card' key={skatepark.id}>
                 {skatepark.images && skatepark.images.length > 0 && <Link className='homepage-img-container' to={`/skateparks/${skatepark.id}`}><img className='homepage-banner-imgs' src={skatepark.images[1].url}/></Link>}
+                <div>Star rating here</div>
                 <div>{skatepark.name}</div>
                 <div>{skatepark.city}, {skatepark.state}</div>
               </div>
             );
           })}
+        </div>
+      </div>
+      <div className='homepage-banner-2'>
+
+      </div>
+      <div className='homepage-tags-section'>
+        <h2 className='homepage-tags-section-h2'>There's a park for everyone.</h2>
+        <div className='homepage-tags-container'>
+          <div className='homepage-tags'>Half pipe</div>
+          <div className='homepage-tags'>Bowl<img className='homepage-tags-img'/></div>
+          <div className='homepage-tags'>Street<img className='homepage-tags-img'/></div>
+          <div className='homepage-tags'>Pump Track<img className='homepage-tags-img'/></div>
         </div>
       </div>
     </div>
