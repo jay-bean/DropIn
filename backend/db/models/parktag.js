@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Parktag.associate = function(models) {
     // associations can be defined here
-    Parktag.belongsTo(models.User, {foreignKey: 'userId'})
+    Parktag.belongsTo(models.Tag, {foreignKey: 'tagId'})
     Parktag.belongsTo(models.Skatepark, {foreignKey: 'skateparkId'})
   };
   return Parktag;

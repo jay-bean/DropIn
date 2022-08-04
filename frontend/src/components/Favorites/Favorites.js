@@ -13,7 +13,8 @@ function Favorites({ skateparkId }) {
     console.log(existingFavorite, 'existy')
   }
 
-  const [favorited, setFavorited] = useState(existingFavorite ? true : false);
+  const [favorited, setFavorited] = useState(false);
+
   const toggleFavorite = () => {
   }
 
@@ -58,7 +59,7 @@ function Favorites({ skateparkId }) {
         toggleFavorite();
         favoritesHandler();
       }}>
-        {favorited ? <img src="https://img.icons8.com/material/48/000000/hearts--v1.png"/> : <img src="https://img.icons8.com/material-outlined/48/000000/hearts.png"/>}
+        {existingFavorite ? <img src="https://img.icons8.com/material/48/000000/hearts--v1.png"/> : <img src="https://img.icons8.com/material-outlined/48/000000/hearts.png"/>}
       </div>
     </div>
   );
