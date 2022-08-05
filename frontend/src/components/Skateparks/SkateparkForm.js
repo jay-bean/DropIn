@@ -126,7 +126,6 @@ function NewSkateparkForm() {
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               />
-
             <label className='skatepark-form-img-div'>
               <i className="fa-solid fa-images"> Upload Images</i>
               <p className='skatepark-form-p'>*please upload at least one photo</p>

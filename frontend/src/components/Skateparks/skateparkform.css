@@ -172,6 +172,7 @@
   font-size: 13px;
   font-weight: 700;
   line-height: 1.36;
+  letter-spacing: 1px;
   height: 32px;
   padding: 20px 16px;
   position: relative;
@@ -188,7 +189,11 @@
   border: 2px solid #b1b1b1;
 }
 
-.image-input {
+.fa-solid:hover {
+  background-color: #ebebeb;
+}
+
+input[type="file"] {
   display: none;
 }
 
