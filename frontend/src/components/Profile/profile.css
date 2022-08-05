@@ -7,15 +7,13 @@
   height: fit-content;
   color: #000000;
   position: relative;
-  /* margin-top: 8px;
-  margin-bottom: 8px; */
   border-top: 1px solid rgba(159, 159, 159, 0.405);
 }
 
 .first-buffer-flex {
   display: flex;
   flex-direction: row;
-  margin: 8px 10%;
+  margin: 8px 20%;
   border-bottom: 1px solid rgba(159, 159, 159, 0.405);
   line-height: 20px;
   letter-spacing: 1px;
@@ -38,7 +36,7 @@
 .second-buffer-flex {
   display: flex;
   flex-direction: row;
-  margin: 0 10%;
+  margin: 0 20%;
   line-height: 10px;
   letter-spacing: 1px;
   gap: 30px;
@@ -52,7 +50,8 @@
   justify-content: center;
   height: calc(100vh - 136px);
   font-family: Arial, Helvetica, sans-serif;
-  width: 100%;
+  margin: 0 20%;
+  margin-right: 20%;
 }
 
 .profile-box {
@@ -62,7 +61,6 @@
   box-shadow: 2px 0 4px 0 rgb(0 0 0 / 10%);
   border: 1px solid #ccc;
   width: 100%;
-  margin: 0 10%;
 }
 
 .profile-flex-container {
@@ -81,6 +79,37 @@
   background: #f2f2f2;
   border: 1px solid #e6e6e6;
   height: 60px;
+}
+
+.profile-container-header-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto 30px;
+  align-items: center;
+}
+
+.prof-headers {
+  font-size: 20px;
+}
+
+.profile-edit-btn {
+  background-color:  #219ad8;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.36;
+  height: 32px;
+  padding: 6px 10px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all .2s ease-out;
+  color: #ffffff;
+  border: 2px solid transparent;
+}
+
+.profile-edit-btn:hover {
+  background-color:  #49ade0;
 }
 
 .profile-image-div {

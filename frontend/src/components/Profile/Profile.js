@@ -27,7 +27,9 @@ function Profile() {
 
             <div className='profile-column-one'>
               <div className='profile-container-header'>
-                <h2>Profile</h2>
+                <div className='profile-container-header-flex'>
+                  <h2 className='prof-headers'>Profile</h2><button className='profile-edit-btn'>Edit Profile</button>
+                </div>
               </div>
               <div className='profile-image-div'>
                 <div className='image-flex-column'>
