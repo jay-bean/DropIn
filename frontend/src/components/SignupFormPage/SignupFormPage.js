@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import * as sessionActions from "../../store/session";
+import './SignupForm.css';
 
 function SignupFormPage() {
   const dispatch = useDispatch();
@@ -36,63 +37,72 @@ function SignupFormPage() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <ul>
-        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-      </ul>
-      <label>
-        First Name
-        <input
-          type="text"
-          value={firstName}
-          onChange={(e) => setfirstName(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Last Name
-        <input
-          type="text"
-          value={lastName}
-          onChange={(e) => setlastName(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Email
-        <input
-          type="text"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Password
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Confirm Password
-        <input
-          type="password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          required
-        />
-      </label>
-      {/* <i className="fa-solid fa-images"></i> Upload Images */}
-        <input
-          type="file"
-          name="file"
-          onChange={(e) => setPicUrl(e.target.files[0])}
-        />
-      <button type="submit">Sign Up</button>
-    </form>
+    <div className="signup-page">
+      <div className="signup-form-div">
+        <form className="signup-form" onSubmit={handleSubmit}>
+          <h2 className="signup-form-header h2-head">Create your free account</h2>
+          <label className="signup-labels">*All fields are required</label>
+          <input
+            className="signup-input"
+            placeholder="First Name"
+            type="text"
+            value={firstName}
+            onChange={(e) => setfirstName(e.target.value)}
+            required
+            />
+          <input
+            className="signup-input"
+            placeholder="Last Name"
+            type="text"
+            value={lastName}
+            onChange={(e) => setlastName(e.target.value)}
+            required
+            />
+          <input
+            className="signup-input"
+            placeholder="Email"
+            type="text"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            />
+          <input
+            className="signup-input"
+            placeholder="Password"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            />
+          <input
+            className="signup-input"
+            placeholder="Confirm Password"
+            type="password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            required
+            />
+          <label className='signup-img-div'>
+            <i className="fa-solid fa-images">Upload Photo</i>
+            <p className='skatepark-form-p-signup'>*Optional</p>
+            <input
+              className='image-input'
+              type="file"
+              name="file"
+              onChange={(e) => setPicUrl(e.target.files[0])}
+            />
+          </label>
+          <ul>
+            {errors.map((error, idx) => <li className='signup-errors' key={idx}>{error}</li>)}
+          </ul>
+          <button className="signup-btn" type="submit">Sign Up</button>
+          <div className="signup-login-div">
+            <p>Already have an account?</p>
+            <Link className='signup-login-link' to='/login'>Log in</Link>
+          </div>
+        </form>
+      </div>
+    </div>
   );
 }
 

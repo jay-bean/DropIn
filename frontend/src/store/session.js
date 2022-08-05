@@ -16,6 +16,22 @@ const removeUser = () => {
   };
 };
 
+export const editUser = (formData, id) => async (dispatch) => {
+  console.log(formData, 'inside thunk')
+  try {
+    const response = await csrfFetch(`/api/users/${id}`, {
+      method: 'PUT',
+      body: formData
+    }, false);
+    const user = await response.json();
+    console.log(user.result, 'user inside thunk')
+    dispatch(setUser(user.result));
+    return user;
+  }
+  catch (error) {
+    throw error
+  }
+}
 export const login = (user) => async (dispatch) => {
   const { credential, password } = user;
   const response = await csrfFetch('/api/session', {
@@ -37,7 +53,6 @@ export const signup = data => async (dispatch) => {
   }, false);
   const newUser = await response.json();
   dispatch(setUser(newUser.user));
-  // dispatch(setUser(newUser));
 
   return response;
 };

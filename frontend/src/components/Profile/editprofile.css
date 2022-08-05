@@ -1,16 +1,16 @@
-.signup-page {
-  background-image: url(https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/signup-login-background.jpg);
+.profile-edit-page {
+  background-image: url(https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/profile-edit.jpg);
   background-size: cover !important;
   background-position: center center;
   width: 100%;
   height: 900px;
 }
 
-.signup-form-div {
-  padding-top: 140px
+.profile-form-div {
+  padding-top: 120px
 }
 
-.signup-form {
+.profile-edit-form {
   max-width: 480px;
   padding: 24px;
   display: flex;
@@ -21,20 +21,16 @@
   margin: auto;
 }
 
-.signup-form-header {
-  font-size: 16px;
+.profile-edit-header {
+  font-size: 24px;
   line-height: 22px;
   font-weight: 700;
   color: #414141;
   margin-top: 8px;
-}
-
-.h2-head {
-  font-size: 24px;
   text-align: center;
 }
 
-.signup-input {
+.profile-edit-input {
   color: #414141;
   margin: 4px 0px;
   padding: 10px 16px;
@@ -46,7 +42,7 @@
   margin-bottom: 20px;
 }
 
-.signup-labels {
+.profile-edit-labels {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 8px;
   transform: translate(14px, -6px) scale(0.75);
@@ -59,7 +55,7 @@
   margin-bottom: 10px;
 }
 
-.signup-btn {
+.profile-edit-submit-btn {
   border-color: #428a13;
   background-color: #428a13;
   font-size: 13px;
@@ -79,38 +75,35 @@
   transition: all .2s ease-out;
   color: #ffffff;
   border: 2px solid transparent;
+  margin-bottom: 20px;
 }
 
-.skatepark-form-p-signup {
-  font-style: italic;
-  color: #428a13;
+.profile-edit-submit-btn:hover {
+  border-color: #326c0b;
+  background-color: #326c0b;
 }
 
-.signup-img-div {
-  display: flex;
+.profile-edit-cancel-btn {
+  background-color: transparent;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.36;
+  height: 32px;
+  padding: 20px 20px;
+  position: relative;
+  display: inline-flex;
   flex-direction: row;
+  box-sizing: border-box;
+  max-width: 100%;
   align-items: center;
-  gap: 10px;
-}
-
-.signup-login-div {
-  display: flex;
-  flex-direction: row;
   justify-content: center;
-  align-items: center;
-  gap: 4px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all .2s ease-out;
+  color: #414141;
+  border: 2px solid #9f9f9f;
 }
 
-.signup-login-link {
-  text-decoration: none;
-  color: #428a13;
-}
-
-.signup-login-link:hover {
-  color: #4fad10;
-}
-
-.signup-errors {
-  list-style: none;
-  color: red;
+.profile-edit-cancel-btn:hover {
+  background-color: #b1b1b1;
 }

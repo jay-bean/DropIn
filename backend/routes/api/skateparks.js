@@ -29,6 +29,9 @@ router.post('/',
     if (!req.files.length) {
       return res.status(400).json(['You must provide at least one photo.']);
     }
+    if (!req.body.tag) {
+      return res.status(400).json(['You must provide at least one tag to describe your park.']);
+    }
     // lat long check here
     const skatePark = await Skatepark.build({
       name,
@@ -77,6 +80,9 @@ router.post('/',
 router.put(`/:id(\\d+)`,
   editSkateparkValidators,
   asyncHandler(async (req, res) => {
+    if (!req.body.tag) {
+      return res.status(400).json(['You must provide at least one tag to describe your park.']);
+    }
 
     const skatepark = await Skatepark.findByPk(req.params.id);
     skatepark.name = req.body.name;

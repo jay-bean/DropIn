@@ -12,6 +12,8 @@ import SingleSkatepark from "./components/Skateparks/SingleSkateparkPage"
 import Homepage from "./components/HomePage/Homepage";
 import './index.css';
 import Profile from "./components/Profile/Profile";
+import EditProfile from "./components/Profile/EditProfile";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const dispatch = useDispatch();
@@ -34,6 +36,9 @@ function App() {
           <Route path="/profile" exact={true}>
             <Profile />
           </Route>
+          <Route path="/profile/edit" exact={true}>
+            <EditProfile />
+          </Route>
           <Route path="/skateparks" exact={true}>
             <AllSkateparks/>
           </Route>
@@ -51,6 +56,7 @@ function App() {
           </Route>
         </Switch>
       )}
+      <Footer/>
     </div>
   );
 }

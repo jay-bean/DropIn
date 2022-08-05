@@ -6,6 +6,7 @@
   font-family: Arial, Helvetica, sans-serif;
   margin-left: 10%;
   margin-right: 10%;
+
 }
 
 .skatepark-form-buffer {
@@ -225,8 +226,5 @@ input[type="file"] {
 
 .search-wrapper {
   border-radius: 8px;
-}
-
-.option:hover {
-  background-color: aqua;
+  background-color: #ffffff;
 }
