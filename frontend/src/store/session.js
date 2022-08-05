@@ -37,8 +37,7 @@ export const signup = data => async (dispatch) => {
   }, false);
   const newUser = await response.json();
   dispatch(setUser(newUser.user));
-  // dispatch(setUser(newUser));
-
+  
   return response;
 };
 

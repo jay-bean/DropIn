@@ -34,9 +34,20 @@ router.post(
   validateSignup,
   asyncHandler(async (req, res) => {
     const { firstName, lastName, email, password } = req.body;
-    const image = req.files;
-    const picUrl = image[0].location;
-    const user = await User.signup({ firstName, lastName, email, password, picUrl });
+    // console.log(req.files)
+    // console.log(req.files[0].location)
+    let image;
+    let picUrl;
+    let user;
+    if (req.files.length) {
+      image = req.files;
+      picUrl = image[0].location;
+      user = await User.signup({ firstName, lastName, email, password, picUrl });
+    }
+    else {
+      picUrl = 'https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/73-730477_first-name-profile-image-placeholder-png.png';
+      user = await User.signup({ firstName, lastName, email, password, picUrl })
+    }
 
     await setTokenCookie(res, user);
 
@@ -45,15 +56,5 @@ router.post(
     });
   }),
 );
-
-// Grabbing single user for profile page
-// router.get(
-//   '/:id(\\d+)',
-//   requireAuth,
-//   asyncHandler(async, (req, res) => {
-//     const user = await User.findByPk(req.params.id);
-//     return res.json(user);
-//   })
-// )
 
 module.exports = router;
