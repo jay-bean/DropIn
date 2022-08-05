@@ -34,8 +34,7 @@ router.post(
   validateSignup,
   asyncHandler(async (req, res) => {
     const { firstName, lastName, email, password } = req.body;
-    // console.log(req.files)
-    // console.log(req.files[0].location)
+
     let image;
     let picUrl;
     let user;
@@ -53,6 +52,31 @@ router.post(
 
     return res.json({
       user,
+    });
+  }),
+);
+
+// edit profile
+router.put(
+  '/:id(\\d+)',
+  validateSignup,
+  asyncHandler(async (req, res) => {
+
+    const user = await User.findByPk(req.params.id);
+    user.firstName = req.body.firstName;
+    user.lastName = req.body.lastName;
+    user.email = req.body.email;
+    user.password = req.body.password;
+
+    if (req.files.length) {
+      const image = req.files;
+      user.picUrl = image[0].location;
+    }
+
+    const result = await user.save();
+
+    return res.json({
+      result,
     });
   }),
 );
