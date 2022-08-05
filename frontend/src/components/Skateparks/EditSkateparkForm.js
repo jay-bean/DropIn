@@ -63,7 +63,7 @@ function EditSkateparkForm() {
         formData.append('image', images[image]);
       }
       for (const tag of selectedTag) {
-        formData.append('tag', Number(tag))
+        formData.append('tag', tag)
       }
       const updatedSkatepark = await dispatch(editSkatepark(formData, skatepark.id));
       if (updatedSkatepark) {

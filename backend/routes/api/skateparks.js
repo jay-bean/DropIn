@@ -120,10 +120,14 @@ router.put(`/:id(\\d+)`,
     console.log(addTags.length, 'added tags');
     console.log(removeTags.length, 'deleted tags');
 
+    console.log(typeof addTags[0], 'added tags');
+    console.log(typeof removeTags[0].tagId, 'deleted tags');
+
     const destroyedTags = await Promise.all(removeTags.map(async tag => {
+      console.log(tag, 'tag inside destroyer')
       const deleteTag = await Parktag.findOne({
         where: {
-          tagId: tag,
+          tagId: tag.tagId,
           skateparkId: req.params.id
         }
       });
@@ -131,6 +135,7 @@ router.put(`/:id(\\d+)`,
     }));
 
     const resTags = await Promise.all(addTags.map(async tag => {
+      console.log(tag, 'tag inside of restags')
       const newParktag = await Parktag.create({
           tagId: tag,
           skateparkId: req.params.id
@@ -138,6 +143,8 @@ router.put(`/:id(\\d+)`,
       return newParktag;
     }));
 
+    console.log(resTags, resTags[0], 'res tags added tags')
+    console.log(destroyedTags, destroyedTags[0], 'destroyed tags')
 
 
     const resImages = await Promise.all(imageObjs.map(async (image) => await image.save()))
