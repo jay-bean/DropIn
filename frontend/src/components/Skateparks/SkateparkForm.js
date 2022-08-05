@@ -132,15 +132,17 @@ function NewSkateparkForm() {
             />
 
             <div className='skatepark-form-img-div'>
-              <i className="fa-solid fa-images"> Upload Images</i>
               <p className='skatepark-form-p'>*please upload at least one photo</p>
-              <input
-                className='image-input'
-                type="file"
-                multiple
-                name="file"
-                onChange={(e) => setImages(e.target.files)}
-              />
+              <label className='image-upload'>
+                <i className="fa-solid fa-images">Image Upload</i>
+                <input
+                  className='image-input'
+                  type="file"
+                  multiple
+                  name="file"
+                  onChange={(e) => setImages(e.target.files)}
+                />
+              </label>
             </div>
             <div className='skatepark-form-btn-div'>
               <button className='skatepark-form-submit' type="submit">Submit</button>
