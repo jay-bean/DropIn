@@ -133,7 +133,7 @@ function NewSkateparkForm() {
 
             <div className='skatepark-form-img-div'>
               <i className="fa-solid fa-images"> Upload Images</i>
-              <p className='skatepark-form-p'>please upload at least one photo</p>
+              <p className='skatepark-form-p'>*please upload at least one photo</p>
               <input
                 className='image-input'
                 type="file"

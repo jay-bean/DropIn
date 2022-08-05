@@ -40,6 +40,25 @@
   border-bottom: thin solid rgba(189, 189, 189, 0.444);
 }
 
+.skatepark-form {
+  display: flex;
+  flex-direction: column;
+  height: 96%;
+}
+
+.skatepark-form-required {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* All p tags */
+.skatepark-form-p {
+  font-style: italic;
+  color: rgb(0, 8, 255);
+}
+
 .skatepark-form-label {
   margin: 10px;
 }
@@ -72,6 +91,25 @@
   margin-top: 30px;
 }
 
+.description-input {
+  margin: 4px auto;
+  font-size: 16px;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  border-radius: 8px;
+  border: 1px solid #e6e6e6;
+  width: 80%;
+  height: 100%;
+  padding: 12px 16px;
+  color: #414141;
+  max-height: 113px;
+  margin-bottom: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .skatepark-form-submit {
   margin-left: 20px;
   border-color: #428a13;
@@ -80,7 +118,7 @@
   font-weight: 700;
   line-height: 1.36;
   height: 32px;
-  padding: 0 16px;
+  padding: 12px 20px;
   position: relative;
   display: inline-flex;
   flex-direction: row;
@@ -107,7 +145,7 @@
   font-weight: 700;
   line-height: 1.36;
   height: 32px;
-  padding: 0 16px;
+  padding: 12px 20px;
   position: relative;
   display: inline-flex;
   flex-direction: row;
@@ -126,6 +164,7 @@
   background-color: #ebebeb;
 }
 
+/* image upload */
 .fa-solid {
   margin-left: 6px;
   background-color: #ffffff;
@@ -133,7 +172,7 @@
   font-weight: 700;
   line-height: 1.36;
   height: 32px;
-  padding: 0 16px;
+  padding: 20px 16px;
   position: relative;
   display: inline-flex;
   flex-direction: row;
@@ -152,42 +191,6 @@
   display: none;
 }
 
-.description-input {
-  margin: 4px auto;
-  font-size: 16px;
-  font-weight: 400;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
-  letter-spacing: normal;
-  border-radius: 8px;
-  border: 1px solid #e6e6e6;
-  width: 80%;
-  height: 100%;
-  padding: 12px 16px;
-  color: #414141;
-  max-height: 113px;
-  margin-bottom: 20px;
-}
-
-.skatepark-form {
-  display: flex;
-  flex-direction: column;
-  height: 96%;
-}
-
-.skatepark-form-required {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.skatepark-form-p {
-  font-style: italic;
-  color: rgb(0, 8, 255);
-}
-
 .skatepark-form-img-div {
   display: flex;
   flex-direction: row;
@@ -196,15 +199,29 @@
   margin-bottom: 20px;
 }
 
+.skatepark-form-btn-div {
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+/* multiselect */
+
 .tag-select-comp {
   margin: auto;
   margin-bottom: 10px;
   width: 90%;
 }
 
-.skatepark-form-btn-div {
-  margin: 20px;
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
+.chip {
+  background-color: #0144ff;
+}
+
+.search-wrapper {
+  border-radius: 8px;
+}
+
+.option:hover {
+  background-color: aqua;
 }
