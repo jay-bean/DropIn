@@ -34,7 +34,7 @@ function Profile() {
               <div className='profile-image-div'>
                 <div className='image-flex-column'>
                   {sessionUser.picUrl ? <img className='profile-image' src={sessionUser.picUrl}/> : <img className='profile-image' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/73-730477_first-name-profile-image-placeholder-png.png'/>}
-                  {!sessionUser.picUrl && <Link className='add-profile-photo' to='profile/edit'><i class="fa-solid fa-plus profile-img">Add photo</i></Link>}
+                  {!sessionUser.picUrl && <Link className='add-profile-photo' to='profile/edit'><i className="fa-solid fa-plus profile-img">Add photo</i></Link>}
                 </div>
               </div>
             </div>

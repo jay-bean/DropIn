@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import * as sessionActions from "../../store/session";
+import './editprofile.css';
 
 function EditProfile() {
   const dispatch = useDispatch();
@@ -49,65 +50,72 @@ function EditProfile() {
   };
 
   return (
-    sessionUser &&
-    (<form onSubmit={handleSubmit}>
-      <ul>
-        {errors.map((error, index) => <li key={index}>{error}</li>)}
-      </ul>
-      <label>
-        First Name
-        <input
-          type="text"
-          value={firstName}
-          onChange={(e) => setfirstName(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Last Name
-        <input
-          type="text"
-          value={lastName}
-          onChange={(e) => setlastName(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Email
-        <input
-          type="text"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Password
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Confirm Password
-        <input
-          type="password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          required
-        />
-      </label>
-      <i className="fa-solid fa-images"></i> Upload Images
-        <input
-          type="file"
-          name="file"
-          onChange={(e) => setPicUrl(e.target.files[0])}
-        />
-      <button type="submit">Submit</button>
-      <button onClick={handleCancel} type="button">Cancel</button>
-    </form>)
+    <div className="profile-edit-page">
+      <div className="profile-form-div">
+      {sessionUser &&
+        (<form
+          onSubmit={handleSubmit}
+          className='profile-edit-form'
+        >
+          <h2 className="profile-edit-header h2-head">Edit Profile</h2>
+          <label className="profile-edit-labels">First Name</label>
+            <input
+              className="profile-edit-input"
+              type="text"
+              value={firstName}
+              onChange={(e) => setfirstName(e.target.value)}
+              required
+              />
+          <label className="profile-edit-labels">Last Name</label>
+            <input
+             className="profile-edit-input"
+              type="text"
+              value={lastName}
+              onChange={(e) => setlastName(e.target.value)}
+              required
+              />
+          <label className="profile-edit-labels">Email</label>
+            <input
+             className="profile-edit-input"
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              />
+          <label className="profile-edit-labels">Password</label>
+            <input
+             className="profile-edit-input"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              />
+          <label className="profile-edit-labels">Confirm Password</label>
+            <input
+             className="profile-edit-input"
+              type="password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+              />
+          <div className='signup-img-div'>
+            <i className="fa-solid fa-images">Upload Photo</i>
+            <p className='skatepark-form-p-signup'>* photo optional</p>
+            <input
+              className='image-input'
+              type="file"
+              name="file"
+              onChange={(e) => setPicUrl(e.target.files[0])}
+            />
+          </div>
+          <ul>
+            {errors.map((error, index) => <li className="signup-errors" key={index}>{error}</li>)}
+          </ul>
+          <button className="profile-edit-submit-btn" type="submit">Submit</button>
+          <button className="profile-edit-cancel-btn" onClick={handleCancel} type="button">Cancel</button>
+        </form>)}
+      </div>
+    </div>
   );
 }
 
