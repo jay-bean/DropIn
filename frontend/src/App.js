@@ -13,6 +13,7 @@ import Homepage from "./components/HomePage/Homepage";
 import './index.css';
 import Profile from "./components/Profile/Profile";
 import EditProfile from "./components/Profile/EditProfile";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const dispatch = useDispatch();
@@ -55,6 +56,7 @@ function App() {
           </Route>
         </Switch>
       )}
+      <Footer/>
     </div>
   );
 }

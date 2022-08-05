@@ -221,8 +221,5 @@
 
 .search-wrapper {
   border-radius: 8px;
-}
-
-.option:hover {
-  background-color: aqua;
+  background-color: #ffffff;
 }

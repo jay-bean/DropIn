@@ -82,7 +82,7 @@ function SignupFormPage() {
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
             />
-          <div className='signup-img-div'>
+          <label className='signup-img-div'>
             <i className="fa-solid fa-images">Upload Photo</i>
             <p className='skatepark-form-p-signup'>*Optional</p>
             <input
@@ -91,7 +91,7 @@ function SignupFormPage() {
               name="file"
               onChange={(e) => setPicUrl(e.target.files[0])}
             />
-          </div>
+          </label>
           <ul>
             {errors.map((error, idx) => <li className='signup-errors' key={idx}>{error}</li>)}
           </ul>

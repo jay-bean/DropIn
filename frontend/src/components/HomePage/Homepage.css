@@ -91,6 +91,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
+  padding-bottom: 50px;
 }
 
 .home-page-tags-h2-p-div {
