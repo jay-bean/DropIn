@@ -57,7 +57,7 @@ function NewSkateparkForm() {
     <form
       onSubmit={handleSubmit}
     >
-      <label> Rating:</label>
+      <label>*Rating:</label>
       <input
         type="rating"
         required
@@ -65,7 +65,7 @@ function NewSkateparkForm() {
         onChange={(e) => setRating(e.target.value)}
       />
 
-      <label>Comment:</label>
+      <label>*Comment:</label>
       <textarea
         type="comment"
         placeholder="Tell us about the park..."

@@ -11,6 +11,7 @@ import AllSkateparks from "./components/Skateparks/Skateparks";
 import SingleSkatepark from "./components/Skateparks/SingleSkateparkPage"
 import Homepage from "./components/HomePage/Homepage";
 import './index.css';
+import Profile from "./components/Profile/Profile";
 
 function App() {
   const dispatch = useDispatch();
@@ -29,6 +30,9 @@ function App() {
           </Route>
           <Route path="/login" exact={true}>
             <LoginForm />
+          </Route>
+          <Route path="/profile" exact={true}>
+            <Profile />
           </Route>
           <Route path="/skateparks" exact={true}>
             <AllSkateparks/>
