@@ -18,6 +18,17 @@ export const getParktags = () => async dispatch => {
   }
 }
 
+export const getTags = async () => {
+  try {
+    const response = await fetch(`/api/parktags/tags`);
+    const tags = await response.json();
+    return tags;
+  }
+  catch (error) {
+    throw error
+  }
+}
+
 const initialState = {};
 
 const parktagReducer = (state = initialState, action) => {

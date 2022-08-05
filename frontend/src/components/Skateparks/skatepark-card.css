@@ -1,12 +1,23 @@
 #skateparks-container {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column;
+  height: 100%;
 }
 
-.explore-page-cards {
-  width: 300px;
-  height: 400px;
-  border: 1px solid black;
+.explore-page-card-container {
+  border: 1px solid rgba(195, 195, 195, 0.477);
+  padding: 0;
+  margin: 32px 24px;
+
+}
+
+.explore-page-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: 100%;
+  border-radius: 16px;
+  height: 390px;
 }
 
 #tags-div {

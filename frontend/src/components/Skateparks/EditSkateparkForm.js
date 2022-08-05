@@ -4,6 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { getParktags } from '../../store/parktag';
 import { getSkateparks, editSkatepark } from '../../store/skatepark';
 import TagSelect from './TagSelect';
+import './skateparkform.css';
 
 function EditSkateparkForm() {
   const history = useHistory();
@@ -35,9 +36,6 @@ function EditSkateparkForm() {
     skateparkTags.map(tag => tagIdArr.push(tag.tagId));
     console.log(tagIdArr, 'tagIdArr')
   }
-  // defaultValue={[colourOptions[2], colourOptions[3]]}
-
-  // posssible way to set persisting data ^^^
 
   useEffect(() => {
     dispatch(getSkateparks());
@@ -65,6 +63,9 @@ function EditSkateparkForm() {
       for (const image of Object.keys(images)) {
         formData.append('image', images[image]);
       }
+      for (const tag of selectedTag) {
+        formData.append('tag', tag)
+      }
       const updatedSkatepark = await dispatch(editSkatepark(formData, skatepark.id));
       if (updatedSkatepark) {
         history.push(`/skateparks/${updatedSkatepark.id}`)
@@ -78,82 +79,103 @@ function EditSkateparkForm() {
 
   return (
     <div>
-      <h1>Skatepark Form</h1>
-      {validationErrors.length > 0 && (
-        validationErrors.map(error => {
-          return <div key={error}>{error}</div>
-        })
-      )}
-      <form
-        onSubmit={handleSubmit}
-        encType="multipart/form-data"
-      >
-        <label> Name of Park:</label>
-        <input
-          type="name"
-          required
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+      <div className='skatepark-form-buffer'></div>
+        <div className='skatepark-form-page'>
+          <div className='skatepark-form-div'>
+            <h1 className='skatepark-form-h1'>Skatepark Form</h1>
+            {validationErrors && validationErrors.length > 0 && (
+              validationErrors.map(error => {
+                return <div key={error}>{error}</div>
+              })
+            )}
+            <form
+              className='skatepark-form'
+              onSubmit={handleSubmit}
+              encType="multipart/form-data"
+            >
+            <div className='skatepark-form-required'>
+              <label className='skatepark-form-label'>*Name of Park:</label>
+              <p className='skatepark-form-p'>* all fields required</p>
+            </div>
+              <input
+                className='skatepark-form-input'
+                type="name"
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
 
-        <label>Description:</label>
-        <textarea
-          rows="4"
-          cols="30"
-          type="description"
-          placeholder="Tell us about the park..."
-          required
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
 
-        <label>Address:</label>
-        <input
-          type="address"
-          required
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-        />
+              <label className='skatepark-form-label'>*Address:</label>
+              <input
+                className='skatepark-form-input'
+                type="address"
+                required
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+              />
+              <div className='skatepark-form-location'>
+                <label className='skatepark-form-label'>*City:</label>
+                <input
+                  className='skatepark-form-input'
+                  type="city"
+                  required
+                  value={city}
+                  onChange={(e) => setCity(e.target.value)}
+                />
 
-        <label>City:</label>
-        <input
-          type="city"
-          required
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
-        />
+                <label className='skatepark-form-label'>*State:</label>
+                <input
+                  className='skatepark-form-input'
+                  type="state"
+                  required
+                  value={state}
+                  onChange={(e) => setState(e.target.value)}
+                />
 
-        <label>State:</label>
-        <input
-          type="state"
-          required
-          value={state}
-          onChange={(e) => setState(e.target.value)}
-        />
+                <label className='skatepark-form-label'>*Zipcode:</label>
+                <input
+                  className='skatepark-form-input'
+                  type="zipcode"
+                  required
+                  value={zipcode}
+                  onChange={(e) => setZipcode(e.target.value)}
+                />
+              </div>
 
-        <label>Zipcode:</label>
-        <input
-          type="zipcode"
-          required
-          value={zipcode}
-          onChange={(e) => setZipcode(e.target.value)}
-        />
+              <p className='skatepark-form-p'>From the drop down below choose at least one feature to describe the park.</p>
+              {tagIdArr && <TagSelect tagIdArr={tagIdArr} selectedTag={selectedTag} setSelectedTag={setSelectedTag}/>}
+              <label className='skatepark-form-label'>*Description:</label>
+              <textarea
+                className='description-input'
+                rows="4"
+                cols="30"
+                type="description"
+                placeholder="Tell us about the park..."
+                required
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              />
 
-        <div>
-        <i className="fa-solid fa-images"> Upload Images</i>
-        <input
-          type="file"
-          multiple
-          name="file"
-          onChange={(e) => setImages(e.target.files)}
-        />
+
+              <div className='skatepark-form-img-div'>
+                <i className="fa-solid fa-images"> Upload Images</i>
+                <p className='skatepark-form-p'>*please upload at least one photo</p>
+                <input
+                  className='image-input'
+                  type="file"
+                  multiple
+                  name="file"
+                  onChange={(e) => setImages(e.target.files)}
+                />
+              </div>
+              <div className='skatepark-form-btn-div'>
+                <button className='skatepark-form-submit' type="submit">Submit</button>
+                <button className='skatepark-form-cancel' type="button" onClick={handleCancel}>Cancel</button>
+              </div>
+            </form>
+          </div>
         </div>
-        <div>
-          <button type="submit">Submit</button>
-          <button type="button" onClick={handleCancel}>Cancel</button>
-        </div>
-        {tagIdArr && <TagSelect tagIdArr={tagIdArr} selectedTag={selectedTag} setSelectedTag={setSelectedTag}/>}
-      </form>
     </div>
   );
 }
