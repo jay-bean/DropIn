@@ -63,7 +63,7 @@ function EditSkateparkForm() {
         formData.append('image', images[image]);
       }
       for (const tag of selectedTag) {
-        formData.append('tag', tag)
+        formData.append('tag', Number(tag))
       }
       const updatedSkatepark = await dispatch(editSkatepark(formData, skatepark.id));
       if (updatedSkatepark) {
@@ -79,7 +79,7 @@ function EditSkateparkForm() {
   return (
     <div>
       <h1>Skatepark Form</h1>
-      {validationErrors.length > 0 && (
+      {validationErrors && validationErrors.length > 0 && (
         validationErrors.map(error => {
           return <div key={error}>{error}</div>
         })

@@ -27,7 +27,7 @@ function TagSelect({ selectedTag, setSelectedTag, tagIdArr }) {
     <Multiselect
       options={tags}
       displayValue="label"
-      selectedValues={tags.filter(tag => tagIdArr.includes(tag.value))}
+      selectedValues={tagIdArr ? tags.filter(tag => tagIdArr.includes(tag.value)): ''}
       onSelect={tagHandler}
       onRemove={tagHandler}
       on

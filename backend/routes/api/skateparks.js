@@ -100,13 +100,45 @@ router.put(`/:id(\\d+)`,
 
     const tags = req.body.tag;
 
-    const resTags = tags.map(async (singleTag) => {
-      const newParktag = Parktag.create({
-        skateparkId: result.id,
-        tagId: singleTag
+    const oldTags = await Parktag.findAll({
+      attributes: ['tagId'],
+      where: {
+        skateparkId: req.params.id
+      },
+      raw: true
+    })
+
+    console.log(oldTags, 'oldtags');
+    console.log(tags);
+
+    const removeTags = oldTags.filter(tag => !tags.includes(String(tag.tagId)));
+    const oldTagsIds = oldTags.map(tag => tag.tagId);
+    const addTags = tags.filter(tag => !oldTagsIds.includes(Number(tag)));
+
+    console.log(oldTagsIds, 'goodness')
+
+    console.log(addTags.length, 'added tags');
+    console.log(removeTags.length, 'deleted tags');
+
+    const destroyedTags = await Promise.all(removeTags.map(async tag => {
+      const deleteTag = await Parktag.findOne({
+        where: {
+          tagId: tag,
+          skateparkId: req.params.id
+        }
+      });
+      return await deleteTag.destroy();
+    }));
+
+    const resTags = await Promise.all(addTags.map(async tag => {
+      const newParktag = await Parktag.create({
+          tagId: tag,
+          skateparkId: req.params.id
       });
       return newParktag;
-    })
+    }));
+
+
 
     const resImages = await Promise.all(imageObjs.map(async (image) => await image.save()))
 
