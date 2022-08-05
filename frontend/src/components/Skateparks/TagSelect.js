@@ -4,11 +4,9 @@ import { Multiselect } from "multiselect-react-dropdown";
 
 function TagSelect({ selectedTag, setSelectedTag, tagIdArr }) {
   const [tags, setTags] = useState([]);
-  console.log(selectedTag, 'selected options to send back')
   useEffect(() => {
     (async () =>{
       const allTags = await getTags();
-      console.log(allTags, 'allllll')
       const formattedTags = allTags.map(tag => {
         return ({
           value: tag.id,

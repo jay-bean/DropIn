@@ -16,7 +16,6 @@ function AllSkateparks() {
     dispatch(getSkateparks());
     (async () => {
       const allTags = await getTags();
-      console.log(allTags, 'allllll')
       setTags(allTags)
     })();
   }, [dispatch]);

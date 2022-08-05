@@ -37,9 +37,7 @@ router.post('/',
 
 router.delete('/:id(\\d+)',
   asyncHandler(async (req, res) => {
-    console.log(req.params.id);
     const favorite = await Favorite.findOne({ where: { id: req.params.id } });
-    console.log(favorite, 'backendfave')
     await favorite.destroy();
     return res.json(req.params.id);
   })

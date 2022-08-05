@@ -48,7 +48,6 @@ export const addFavorite = data => async dispatch => {
 
 export const removeFavorite = id => async dispatch => {
   try {
-    console.log(id, 'id in thunk')
     const response = await csrfFetch(`/api/favorites/${id}`, {
       method: 'DELETE',
     });
