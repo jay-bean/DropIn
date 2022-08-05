@@ -1,59 +1,36 @@
-import Select from 'react-select';
+import { useEffect, useState } from 'react';
+import { getTags } from '../../store/parktag';
+import { Multiselect } from "multiselect-react-dropdown";
 
 function TagSelect({ selectedTag, setSelectedTag, tagIdArr }) {
-  console.log(selectedTag, 'selected tag');
-  const tagOptions = [
-    {
-      value: 1,
-      label: 'Half pipe'
-    },
-    {
-      value: 2,
-      label: 'Bowl'
-    },
-    {
-      value: 3,
-      label: 'Pool'
-    },
-    {
-      value: 4,
-      label: 'Snake run'
-    },
-    {
-      value: 5,
-      label: 'Street'
-    },
-    {
-      value: 6,
-      label: 'Rails'
-    },
-    {
-      value: 7,
-      label: 'Ledges'
-    },
-    {
-      value: 8,
-      label: 'Pump Track'
-    },
-  ];
-
-  // console.log(tagOptions.filter(tag => tagIdArr.includes(tag.value)), 'tagoptions');
-
+  const [tags, setTags] = useState([]);
+  console.log(selectedTag, 'selected options to send back')
+  useEffect(() => {
+    (async () =>{
+      const allTags = await getTags();
+      console.log(allTags, 'allllll')
+      const formattedTags = allTags.map(tag => {
+        return ({
+          value: tag.id,
+          label: tag.type
+        });
+      })
+      setTags(formattedTags)
+    })();
+  }, [])
 
   const tagHandler = (e) => {
     setSelectedTag(Array.isArray(e) ? e.map(tag => tag.value) : null);
   }
 
   return (
-    <Select
-      className="dropdown"
-      placeholder="Select Option"
-      defaultValue={tagIdArr ? tagOptions.filter(tag => tagIdArr.includes(tag.value)) : ''}
-      value={tagOptions.filter(tag => selectedTag.includes(tag.value))}
-      options={tagOptions}
-      onChange={tagHandler}
-      isMulti={true}
-      isClearable={true}
+    <Multiselect
+      options={tags}
+      displayValue="label"
+      selectedValues={tags.filter(tag => tagIdArr.includes(tag.value))}
+      onSelect={tagHandler}
+      onRemove={tagHandler}
+      on
     />
   );
 }

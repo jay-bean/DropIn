@@ -98,11 +98,22 @@ router.put(`/:id(\\d+)`,
       return image;
     })
 
+    const tags = req.body.tag;
+
+    const resTags = tags.map(async (singleTag) => {
+      const newParktag = Parktag.create({
+        skateparkId: result.id,
+        tagId: singleTag
+      });
+      return newParktag;
+    })
+
     const resImages = await Promise.all(imageObjs.map(async (image) => await image.save()))
 
     const response = {
       ...result.dataValues,
-      images: resImages
+      images: resImages,
+      tags: resTags
   }
     return res.status(200).json(response);
   })

@@ -20,7 +20,6 @@ function SingleSkatepark() {
   if (parktags && skatepark) {
     console.log(parktags, 'this is all parktags')
     skateparkTags = Object.values(parktags).filter(parktag => parktag.skateparkId === skatepark.id)
-    console.log(skateparkTags, 'skateparkTags');
   }
 
   const deleteHandler = async () => {

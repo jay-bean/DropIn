@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Skatepark from './Skatepark';
 import { getSkateparks } from '../../store/skatepark';
+import './explore-page.css';
 
 function AllSkateparks() {
   const dispatch = useDispatch();
@@ -16,18 +17,25 @@ function AllSkateparks() {
   return (
     <div id='skateparks-container'>
       <div id='tags-div'>
-        <div>Half pipe</div>
-        <div>Bowl</div>
-        <div>Pool</div>
-        <div>Snake run</div>
-        <div>Street</div>
-        <div>Rails</div>
-        <div>Ledges</div>
-        <div>Pump track</div>
+        <p id='tags-p'>Search goes here</p>
+        <div className='tag-btn-div'>
+          <div className='tag-btn'>Half pipe</div>
+          <div className='tag-btn'>Bowl</div>
+          <div className='tag-btn'>Pool</div>
+          <div className='tag-btn'>Snake run</div>
+          <div className='tag-btn'>Street</div>
+          <div className='tag-btn'>Rails</div>
+          <div className='tag-btn'>Ledges</div>
+          <div className='tag-btn'>Pump track</div>
+        </div>
       </div>
-      {skateparksArr && skateparksArr.map(skatepark => {
-        return <Skatepark key={skatepark.id} skatepark={skatepark}/>
-      })}
+      <div className='map-list-container'>
+        <div className='skatepark-card-div'>
+          {skateparksArr && skateparksArr.map(skatepark => {
+            return <Skatepark key={skatepark.id} skatepark={skatepark}/>
+          })}
+        </div>
+      </div>
     </div>
   );
 }

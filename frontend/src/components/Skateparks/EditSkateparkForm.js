@@ -35,9 +35,6 @@ function EditSkateparkForm() {
     skateparkTags.map(tag => tagIdArr.push(tag.tagId));
     console.log(tagIdArr, 'tagIdArr')
   }
-  // defaultValue={[colourOptions[2], colourOptions[3]]}
-
-  // posssible way to set persisting data ^^^
 
   useEffect(() => {
     dispatch(getSkateparks());
@@ -64,6 +61,9 @@ function EditSkateparkForm() {
 
       for (const image of Object.keys(images)) {
         formData.append('image', images[image]);
+      }
+      for (const tag of selectedTag) {
+        formData.append('tag', tag)
       }
       const updatedSkatepark = await dispatch(editSkatepark(formData, skatepark.id));
       if (updatedSkatepark) {

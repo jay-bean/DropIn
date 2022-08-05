@@ -8,9 +8,7 @@ const router = express.Router();
 router.get('/',
   requireAuth,
   asyncHandler(async (req, res) => {
-
     const { user } = req;
-    console.log(user, 'this is the session user');
     if (user) {
       const favorites = await Favorite.findAll({
         attributes: { include: ['id'] },
