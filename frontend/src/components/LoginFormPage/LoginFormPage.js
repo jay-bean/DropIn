@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import './LoginForm.css';
 
 function LoginForm() {
@@ -26,37 +26,39 @@ function LoginForm() {
   }
 
   return (
-    <>
-      <div className='login-form-page-content'>
-        <h1>Log in</h1>
-        {errors.length ? (
-          <ul className='login-form-errors'>
-            {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-          </ul>
-        ) : null}
+    <div className='login-page'>
+      <div className='login-form-div'>
         <form className='login-form' onSubmit={handleSubmit}>
-          <label>
-            Email
+          <h2 className="signup-form-header h2-head">Log in and let's skate</h2>
             <input
+              className='signup-input'
+              placeholder='Email'
               type="text"
               value={credential}
               onChange={(e) => setCredential(e.target.value)}
               required
-            />
-          </label>
-          <label>
-            Password
+              />
             <input
+              className='signup-input'
+              placeholder='Password'
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-            />
-          </label>
-          <button type="submit">Log In</button>
+              />
+          {errors.length ? (
+            <ul className='login-form-errors'>
+              {errors.map((error, idx) => <li className='signup-errors' key={idx}>{error}</li>)}
+            </ul>
+          ) : null}
+          <button className="signup-btn" type="submit">Log In</button>
+          <div className="signup-login-div">
+            <p>Don't have an account?</p>
+            <Link className='signup-login-link' to='/signup'>Sign up</Link>
+          </div>
         </form>
       </div>
-    </>
+    </div>
   );
 }
 
