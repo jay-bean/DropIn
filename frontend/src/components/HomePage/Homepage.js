@@ -12,7 +12,6 @@ function Homepage() {
   let skateparkArr;
   if (skateparks) {
     skateparkArr = Object.values(skateparks).slice(0, 4);
-    console.log(skateparkArr, 'skatepark array')
   }
 
   useEffect(() => {

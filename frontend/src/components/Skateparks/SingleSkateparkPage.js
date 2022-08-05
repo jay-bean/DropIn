@@ -18,7 +18,6 @@ function SingleSkatepark() {
 
   let skateparkTags;
   if (parktags && skatepark) {
-    console.log(parktags, 'this is all parktags')
     skateparkTags = Object.values(parktags).filter(parktag => parktag.skateparkId === skatepark.id)
   }
 
