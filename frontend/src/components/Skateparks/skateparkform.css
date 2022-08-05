@@ -1,0 +1,210 @@
+.skatepark-form-page {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: calc(100vh - 136px);
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.skatepark-form-buffer {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  top: 0;
+  height: 30px;
+  width: 100%;
+  align-items: center;
+  font-size: 100%;
+  background: transparent;
+  padding: 0;
+  border-top: 1px solid rgba(159, 159, 159, 0.405);
+}
+
+.skatepark-form-div {
+  background: #f2f2f2;
+  width: 70%;
+  padding-bottom: 50px;
+  height: 100%;
+  box-shadow: 2px 0 4px 0 rgb(0 0 0 / 10%);
+  border: 1px solid #ccc;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.skatepark-form-h1 {
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: thin solid rgba(189, 189, 189, 0.444);
+}
+
+.skatepark-form-label {
+  margin: 10px;
+}
+
+.skatepark-form-input {
+  height: 40px;
+  margin: 5px auto;
+  font-size: 16px;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  border-radius: 8px;
+  border: 1px solid #e6e6e6;
+  width: 80%;
+  height: 20%;
+  padding: 12px 16px;
+  color: #414141;
+  height: 18px;
+}
+
+.skatepark-form-location {
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-right: 6%;
+  margin-top: 30px;
+}
+
+.skatepark-form-submit {
+  margin-left: 20px;
+  border-color: #428a13;
+  background-color: #428a13;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.36;
+  height: 32px;
+  padding: 0 16px;
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all .2s ease-out;
+  color: #ffffff;
+  border: 2px solid transparent;
+}
+
+.skatepark-form-submit:hover {
+  border-color: #326c0b;
+  background-color: #326c0b;
+}
+
+.skatepark-form-cancel {
+  margin-left: 6px;
+  background-color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.36;
+  height: 32px;
+  padding: 0 16px;
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all .2s ease-out;
+  color: #414141;
+  border: 2px solid #b1b1b1;
+}
+
+.skatepark-form-cancel:hover {
+  background-color: #ebebeb;
+}
+
+.fa-solid {
+  margin-left: 6px;
+  background-color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.36;
+  height: 32px;
+  padding: 0 16px;
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all .2s ease-out;
+  color: #414141;
+  border: 2px solid #b1b1b1;
+}
+
+.image-input {
+  display: none;
+}
+
+.description-input {
+  margin: 4px auto;
+  font-size: 16px;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  border-radius: 8px;
+  border: 1px solid #e6e6e6;
+  width: 80%;
+  height: 100%;
+  padding: 12px 16px;
+  color: #414141;
+  max-height: 113px;
+  margin-bottom: 20px;
+}
+
+.skatepark-form {
+  display: flex;
+  flex-direction: column;
+  height: 96%;
+}
+
+.skatepark-form-required {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skatepark-form-p {
+  font-style: italic;
+  color: rgb(0, 8, 255);
+}
+
+.skatepark-form-img-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tag-select-comp {
+  margin: auto;
+  margin-bottom: 10px;
+  width: 90%;
+}
+
+.skatepark-form-btn-div {
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}

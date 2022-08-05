@@ -5,7 +5,7 @@
 }
 
 .explore-page-card-container {
-  border: 1px solid black;
+  border: 1px solid rgba(195, 195, 195, 0.477);
   padding: 0;
   margin: 32px 24px;
 
@@ -17,6 +17,7 @@
   position: relative;
   max-width: 100%;
   border-radius: 16px;
+  height: 390px;
 }
 
 #tags-div {

@@ -25,6 +25,7 @@ function TagSelect({ selectedTag, setSelectedTag, tagIdArr }) {
 
   return (
     <Multiselect
+      className='tag-select-comp'
       options={tags}
       displayValue="label"
       selectedValues={tagIdArr ? tags.filter(tag => tagIdArr.includes(tag.value)): ''}
