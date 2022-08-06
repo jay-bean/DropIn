@@ -87,7 +87,7 @@ function EditSkateparkForm() {
               >
             <div className='skatepark-form-required'>
               <label className='skatepark-form-label'>*Name of Park:</label>
-              <p className='skatepark-form-p'>* all fields required</p>
+              <p className='skatepark-form-p'>* all fields are required</p>
             </div>
               <input
                 className='skatepark-form-input'
@@ -152,7 +152,7 @@ function EditSkateparkForm() {
 
               <label className='skatepark-form-img-div'>
                 <i className="fa-solid fa-images"> Upload Images</i>
-                <p className='skatepark-form-p'>*please upload at least one photo</p>
+                <p className='skatepark-form-p'>photo upload optional</p>
                 <input
                   className='image-input'
                   type="file"

@@ -56,14 +56,14 @@ function AllSkateparks() {
             {(currentViewableParks.length === 0) ?
               allParks && allParks.length && allParks.map(skatepark => {
                 return (
-                  <div key={skatepark.id}>{skatepark.name}
+                  <div key={skatepark.id}>
                     <Skatepark skatepark={skatepark}/>
                   </div>
                 );
               }) :
               currentViewableParks && currentViewableParks.length && currentViewableParks.map(parktag => {
                 return (
-                  <div key={parktag.id}>{parktag.Skatepark.name}
+                  <div key={parktag.id}>
                     <Skatepark skatepark={parktag.Skatepark}/>
                   </div>
                 );

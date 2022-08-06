@@ -2,6 +2,10 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.prof-page {
+  margin-bottom: 40px;
+}
+
 .first-buffer {
   height: 60px;
   height: fit-content;
@@ -48,8 +52,8 @@
   position: relative;
   display: flex;
   justify-content: center;
-  height: calc(100vh - 136px);
-  font-family: Arial, Helvetica, sans-serif;
+  height: calc(100vh - 120px);
+    font-family: Arial, Helvetica, sans-serif;
   margin: 0 20%;
   margin-right: 20%;
 }
@@ -57,7 +61,7 @@
 .profile-box {
   background: #f2f2f2;
   padding-bottom: 50px;
-  height: 100%;
+  height: 92%;
   box-shadow: 2px 0 4px 0 rgb(0 0 0 / 10%);
   border: 1px solid #ccc;
   width: 100%;
@@ -66,6 +70,7 @@
 .profile-flex-container {
   display: flex;
   flex-direction: row;
+  height: 100%;
 }
 
 /* first column */
@@ -113,11 +118,12 @@
 }
 
 .profile-image-div {
-  height: 220px;
+  height: 28.7%;
   background-color: #ffffff;
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 40px;
 }
 
 .image-flex-column {
@@ -151,11 +157,68 @@
   border: thin solid rgba(194, 194, 194, 0.442);
 }
 
+.profile-name-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-name {
+  font-size: 24px;
+  font-weight: 300;
+  color: #4f4c3e;
+  margin: 0;
+}
+
+.profile-name-p {
+  font-weight: 300;
+  color: #4f4c3e;
+}
+
+/* review and favorite section */
+
+.second-containers {
+  height: 46px;
+}
+
+.second-flex {
+  height: 100%;
+}
+
+.review-div {
+  height: 28.7%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.review-flex-column {
+  width: 80%;
+  text-align: center;
+}
+
+.review-flex-comments {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.profile-favorite-explore {
+  text-decoration: none;
+  color: #428a13;
+}
+
+.profile-favorite-explore:hover {
+  text-decoration: underline;
+}
+
 /* second column */
 .profile-column-two {
   width: 35%;
   height: 100%;
-  background-color: beige;
 }
 
 .contribute {
@@ -164,9 +227,27 @@
   margin-right: 5%;
 }
 
-.profile-add-contribute {
+.add-park-contribute-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  height: 50px;
   text-decoration: none;
 }
+
+.plus-sign {
+  font-family: 'Rubik', sans-serif;
+  font-size: 40px;
+  color: #4f4c3e;
+}
+
+.profile-add-contribute {
+  text-decoration: none;
+  color: #428a13;
+}
+
 .profile-add-contribute:hover {
   text-decoration: underline;
 }
+
