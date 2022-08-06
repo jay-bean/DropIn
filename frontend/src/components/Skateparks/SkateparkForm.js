@@ -68,7 +68,7 @@ function NewSkateparkForm() {
             >
             <div className='skatepark-form-required'>
               <label className='skatepark-form-label'>*Name of Park:</label>
-              <p className='skatepark-form-p'>* all fields required</p>
+              <p className='skatepark-form-p'>* all fields are required</p>
             </div>
             <input
               className='skatepark-form-input'

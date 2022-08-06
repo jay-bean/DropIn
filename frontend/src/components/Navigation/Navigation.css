@@ -41,11 +41,11 @@
 
 .profile-dropdown {
   position: relative;
-  margin-top: 122%;
+  margin-top: 140%;
   background-color: #f9f9f9;
   width: 200px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px 4px;
+  padding: 0;
   border-radius: 6px;
   display: grid;
   z-index: 1;
@@ -54,9 +54,20 @@
 }
 
 .prof-li {
+  padding-top: 10px;
+  padding-left: 12px;
   list-style: none;
   height: 32px;
-  margin-left: 10px;
+  align-self: center;
+  cursor: pointer;
+}
+
+.top {
+  padding-top: 10px;
+}
+
+.prof-li:hover {
+  background-color: #bebebe9f;
 }
 
 .prof-logout {

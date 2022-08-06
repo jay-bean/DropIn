@@ -59,19 +59,17 @@ module.exports = (sequelize, DataTypes) => {
     Skatepark.belongsTo(models.User, { foreignKey: 'userId' });
     Skatepark.hasMany(models.Image, { as: 'images', foreignKey: 'skateparkId', onDelete: 'CASCADE', hooks: true });
     Skatepark.hasMany(models.Review, { foreignKey: 'skateparkId', onDelete: 'CASCADE', hooks: true  });
+    Skatepark.hasMany(models.Parktag, { foreignKey: 'skateparkId', onDelete: 'CASCADE', hooks: true });
+    Skatepark.hasMany(models.Favorite, { foreignKey: 'skateparkId', onDelete: 'CASCADE', hooks: true });
     Skatepark.belongsToMany(models.User, {
       through: 'Favorite',
       foreignKey: 'skateparkId',
       otherKey: 'userId',
-      onDelete: 'CASCADE',
-      hooks: true
     });
     Skatepark.belongsToMany(models.Tag, {
       through: 'Parktag',
       foreignKey: 'skateparkId',
       otherKey: 'tagId',
-      onDelete: 'CASCADE',
-      hooks: true
     });
   };
   return Skatepark;
