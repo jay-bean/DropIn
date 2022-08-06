@@ -50,13 +50,14 @@ function NewSkateparkForm() {
     }
     catch (error) {
       const err = await error.json();
+      console.log(err, 'this is err frontend')
       if (error.status >= 500) setValidationErrors([err.message])
-      else setValidationErrors(err);
+      else setValidationErrors(err.errors);
     }
   }
 
   return (
-    <div>
+    <>
       <div className='skatepark-form-buffer'></div>
       <div className='skatepark-form-page'>
         <div className='skatepark-form-div'>
@@ -149,7 +150,7 @@ function NewSkateparkForm() {
           </form>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

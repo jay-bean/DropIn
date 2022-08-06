@@ -14,6 +14,7 @@ import './index.css';
 import Profile from "./components/Profile/Profile";
 import EditProfile from "./components/Profile/EditProfile";
 import Footer from "./components/Footer/Footer";
+import AboutPage from "./components/AboutPage/AboutPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -50,6 +51,9 @@ function App() {
           </Route>
           <Route path="/skateparks/:id/edit" exact={true}>
             <EditSkateparkForm/>
+          </Route>
+          <Route path="/about" exact={true}>
+            <AboutPage/>
           </Route>
           <Route path="/" exact={true}>
             <Homepage/>

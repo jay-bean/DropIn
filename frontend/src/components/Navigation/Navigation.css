@@ -144,6 +144,21 @@
   background-color: #326c0b;
 }
 
+.explore-about-div {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+#explore {
+  font-size: 18px;
+}
+
+.about-me {
+  font-size: 18px;
+
+}
+
 #drop-in {
   font-family: 'Rubik', sans-serif;
   font-size: 28px;
@@ -151,14 +166,11 @@
   color: #2a2a2aad;
   position: relative;
   text-align: center;
-  width: 50%;
+  width: 40%;
   box-sizing: border-box;
   margin: 0 auto;
 }
 
-#explore {
-  font-size: 18px;
-}
 
 .nav-prof {
   display: flex;
