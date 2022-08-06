@@ -55,6 +55,30 @@ function App() {
           <Route path="/skateparks" exact={true}>
             <AllSkateparks/>
           </Route>
+          <Route path="/skateparks/Half pipe" exact={true}>
+            <AllSkateparks tagId={1}/>
+          </Route>
+          <Route path="/skateparks/Bowl" exact={true}>
+            <AllSkateparks tagId={2}/>
+          </Route>
+          <Route path="/skateparks/Pool" exact={true}>
+            <AllSkateparks tagId={3}/>
+          </Route>
+          <Route path="/skateparks/Snake run" exact={true}>
+            <AllSkateparks tagId={4}/>
+          </Route>
+          <Route path="/skateparks/Street" exact={true}>
+            <AllSkateparks tagId={5}/>
+          </Route>
+          <Route path="/skateparks/Rails" exact={true}>
+            <AllSkateparks tagId={6}/>
+          </Route>
+          <Route path="/skateparks/Ledges" exact={true}>
+            <AllSkateparks tagId={7}/>
+          </Route>
+          <Route path="/skateparks/Pump Track" exact={true}>
+            <AllSkateparks tagId={8}/>
+          </Route>
           <Route path="/skateparks/new" exact={true}>
             <NewSkateparkForm/>
           </Route>

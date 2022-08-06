@@ -175,6 +175,8 @@
   display: grid;
   grid-template-columns: 1fr;
   text-align: center;
+  text-decoration: none;
+  color: #333;
 }
 
 .homepage-tag-img-divs {

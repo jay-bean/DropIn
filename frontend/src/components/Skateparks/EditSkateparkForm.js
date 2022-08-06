@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useHistory, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { getParktags } from '../../store/parktag';
 import { getSkateparks, editSkatepark } from '../../store/skatepark';
 import TagSelect from './TagSelect';
 import './skateparkform.css';
 
-function EditSkateparkForm() {
-  const history = useHistory();
+function EditSkateparkForm({ setShowEditForm }) {
   const dispatch = useDispatch();
-  const sessionUser = useSelector(state => state.session.user);
   const skateparkParam = useParams();
+  const sessionUser = useSelector(state => state.session.user);
   const skatepark = useSelector(state => state.skateparks[skateparkParam.id]);
   const parktags = useSelector(state => state.parktags);
 
@@ -40,7 +39,7 @@ function EditSkateparkForm() {
 
   const handleCancel = () => {
     setValidationErrors([]);
-    history.push(`/skateparks/${skatepark.id}`)
+    setShowEditForm(false)
   }
 
   const handleSubmit = async (e) => {
@@ -64,7 +63,7 @@ function EditSkateparkForm() {
       }
       const updatedSkatepark = await dispatch(editSkatepark(formData, skatepark.id));
       if (updatedSkatepark) {
-        history.push(`/skateparks/${updatedSkatepark.id}`)
+        setShowEditForm(false);
       }
     }
     catch (error) {
@@ -96,8 +95,6 @@ function EditSkateparkForm() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 />
-
-
               <label className='skatepark-form-label'>*Address:</label>
               <input
                 className='skatepark-form-input'
@@ -134,7 +131,6 @@ function EditSkateparkForm() {
                   onChange={(e) => setZipcode(e.target.value)}
                   />
               </div>
-
               <p className='skatepark-form-p'>From the drop down below choose at least one feature to describe the park.</p>
               {tagIdArr && <TagSelect tagIdArr={tagIdArr} selectedTag={selectedTag} setSelectedTag={setSelectedTag}/>}
               <label className='skatepark-form-label'>*Description:</label>
@@ -148,8 +144,6 @@ function EditSkateparkForm() {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 />
-
-
               <label className='skatepark-form-img-div'>
                 <i className="fa-solid fa-images"> Upload Images</i>
                 <p className='skatepark-form-p'>photo upload optional</p>

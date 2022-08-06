@@ -45,22 +45,22 @@ function Homepage() {
           <p className='homepage-tags-p'>Choose an option to be taken to all the parks with that feature.</p>
         </div>
         <div className='homepage-tags-container'>
-          <div className='homepage-tag-grid'>
-            <div className='homepage-tags-titles'>Half pipe</div>
+          <Link to={`/skateparks/Half pipe`} className='homepage-tag-grid'>
+            <div className='homepage-tags-titles'>Half Pipe</div>
             <div className='homepage-tag-img-divs'><img src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/d03d91464d0268a58b8c79303d0fbcd4_-queensland-gold-coast-city-upper-coomera-upper-coomera-skateparkhtml.jpg' className='homepage-tag-pipe'/></div>
-          </div>
-          <div className='homepage-tag-grid'>
+          </Link>
+          <Link to={`/skateparks/Bowl`} className='homepage-tag-grid'>
             <div className='homepage-tags-titles'>Bowl</div>
             <div className='homepage-tag-img-divs'><img src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/West-Kelowna-4.jpg' className='homepage-tag-bowl'/></div>
-          </div>
-          <div className='homepage-tag-grid'>
+          </Link>
+          <Link to={`/skateparks/Street`} className='homepage-tag-grid'>
             <div className='homepage-tags-titles'>Street</div>
             <div className='homepage-tag-img-divs'><img src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/Ulysses-Skate-Park_SpeakEasy-Colorado-Skate-Park-Directory-1.jpg' className='homepage-tag-street'/></div>
-          </div>
-          <div className='homepage-tag-grid'>
+          </Link>
+          <Link to={`/skateparks/Pump Track`} className='homepage-tag-grid'>
             <div className='homepage-tags-titles'>Pump Track</div>
             <div className='homepage-tag-img-divs'><img src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/velosolutions-pump-track-broomfield-image2.jpg' className='homepage-tag-pump'/></div>
-          </div>
+          </Link>
         </div>
       </div>
     </div>
