@@ -20,8 +20,6 @@ function AllSkateparks() {
     allParks = Object.values(skateparks);
   }
 
-  console.log(currentViewableParks)
-
   const handleTagClick = (index) => {
     setSelectedTagButton([index]);
     if (parktags) {

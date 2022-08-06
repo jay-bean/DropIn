@@ -32,7 +32,6 @@ function EditProfile() {
         formData.append('email', email);
         formData.append('password', password);
         formData.append('image', picUrl);
-        console.log(formData, 'this is form dataaaa')
         const updatedUser = await dispatch(sessionActions.editUser(formData, sessionUser.id))
 
         if (updatedUser) {

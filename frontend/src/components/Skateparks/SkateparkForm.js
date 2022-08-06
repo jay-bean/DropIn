@@ -50,7 +50,6 @@ function NewSkateparkForm() {
     }
     catch (error) {
       const err = await error.json();
-      console.log(err, 'this is err frontend')
       if (error.status >= 500) setValidationErrors([err.message])
       else setValidationErrors(err.errors);
     }

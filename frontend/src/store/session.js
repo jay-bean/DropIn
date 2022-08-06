@@ -17,14 +17,12 @@ const removeUser = () => {
 };
 
 export const editUser = (formData, id) => async (dispatch) => {
-  console.log(formData, 'inside thunk')
   try {
     const response = await csrfFetch(`/api/users/${id}`, {
       method: 'PUT',
       body: formData
     }, false);
     const user = await response.json();
-    console.log(user.result, 'user inside thunk')
     dispatch(setUser(user.result));
     return user;
   }
