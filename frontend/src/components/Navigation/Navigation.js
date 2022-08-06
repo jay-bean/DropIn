@@ -29,7 +29,10 @@ function Navigation({ isLoaded }){
   return (
      <ul className='nav-ul'>
       <li className='navbar-container'>
-        <NavLink id='explore' exact to="/skateparks">Explore</NavLink>
+        <div className='explore-about-div'>
+          <NavLink id='explore' exact to="/skateparks">Explore</NavLink>
+          <NavLink className='about-me' exact to="/about">About</NavLink>
+        </div>
         <NavLink id='drop-in' exact to="/">Drop In</NavLink>
         {isLoaded && sessionLinks}
       </li>

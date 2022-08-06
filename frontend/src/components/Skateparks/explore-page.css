@@ -57,10 +57,37 @@
 }
 
 .skatepark-card-div {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
   position: absolute;
   background-color: #ffffff;
   width: 400px;
   height: 100%;
   box-shadow: 2px 0 4px 0 rgb(0 0 0 / 10%);
   overflow-y: scroll;
+}
+
+.skatepark-card-holder {
+  position: absolute;
+  background-color: #ffffff;
+  width: 400px;
+  height: 100%;
+  box-shadow: 2px 0 4px 0 rgb(0 0 0 / 10%);
+  overflow-y: scroll;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.activebtn {
+  background-color: #326c0b;
+  color: #ffffff;
+}
+
+.activebtn:hover {
+  color: #ffffff;
+}
+
+.filtered {
+
 }
