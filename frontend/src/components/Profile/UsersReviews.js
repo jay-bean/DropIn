@@ -1,4 +1,29 @@
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { getReviews } from '../../store/review';
+import { getSkateparks } from '../../store/skatepark';
+import Review from '../Reviews/Review';
+
+import './profile.css';
+import './usersreviews.css';
+
 function UsersReviews() {
+  const dispatch = useDispatch();
+  const sessionUser = useSelector(state => state.session.user);
+  const reviews = useSelector(state => state.reviews);
+  const skateparks = useSelector(state => state.skateparks);
+
+  let usersReviews;
+  if (reviews && sessionUser) {
+    usersReviews = Object.values(reviews).filter(review => review.userId === sessionUser.id)
+  }
+
+  useEffect(() => {
+    dispatch(getReviews());
+    dispatch(getSkateparks());
+  }, [dispatch]);
+
   return (
     sessionUser &&
      ( <div className='prof-page'>
@@ -9,10 +34,10 @@ function UsersReviews() {
           </div>
           <div className='second-buffer'>
             <div className='second-buffer-flex'>
-              <Link className={'profile-links active-prof-links'} to='/profile'>Profile</Link>
-              <Link className={'profile-links'} to='/profile/skateparks'>Skateparks</Link>
-              <Link className={'profile-links'} to='/profile/favorites'>Favorites</Link>
-              <Link className={'profile-links'} to='/profile/reviews'>Reviews</Link>
+              <Link className='profile-links' to='/profile'>Profile</Link>
+              <Link className='profile-links' to='/profile/skateparks'>Skateparks</Link>
+              <Link className='profile-links' to='/profile/favorites'>Favorites</Link>
+              <Link className='profile-links active-prof-links' to='/profile/reviews'>Reviews</Link>
             </div>
           </div>
         <div className='profile-page-content'>
@@ -22,40 +47,10 @@ function UsersReviews() {
             <div className='profile-column-one'>
               <div className='profile-container-header'>
                 <div className='profile-container-header-flex'>
-                  <h2 className='prof-headers'>Profile</h2><Link to='/profile/edit'><button className='profile-edit-btn'>Edit Profile</button></Link>
-                </div>
-              </div>
-              <div className='profile-image-div'>
-                <div className='image-flex-column'>
-                  {sessionUser.picUrl ? <img className='profile-image' src={sessionUser.picUrl}/> : <img className='profile-image' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/73-730477_first-name-profile-image-placeholder-png.png'/>}
-                  {!sessionUser.picUrl && <Link className='add-profile-photo' to='profile/edit'><i className="fa-solid fa-plus profile-img">Add photo</i></Link>}
-                </div>
-                <div className='profile-name-div'>
-                  <h3 className='profile-name'>{sessionUser.firstName} {sessionUser.lastName}</h3>
-                  <p className='profile-name-p'>{sessionUser.email}</p>
-                </div>
-              </div>
-
-              <div className='profile-container-header second-containers'>
-                <div className='profile-container-header-flex second-flex'>
                   <h2 className='prof-headers'>Reviews</h2>
                 </div>
               </div>
-              <div className='review-div'>
-                <div className='review-flex-column'>
-                  {usersReviews && usersReviews.length ? <><h4>You currently have {usersReviews.length} reviews.</h4><p> Head on over to the review tab if you would like to make any changes to them.</p></> : <p>You currently don't have any reviews.</p>}
-                </div>
-              </div>
-
-              <div className='profile-container-header second-containers'>
-                <div className='profile-container-header-flex second-flex'>
-                  <h2 className='prof-headers'>Favorites</h2>
-                </div>
-              </div>
-              <div className='review-div'>
-                <div className='review-flex-column'>
-                  {favoritesArr && favoritesArr.length ? <><h4>You have favorited {favoritesArr.length} skateparks!</h4><p> Head on over to the favorites tab if you would like to see which parks those are.</p></> : <p>You currently don't have any favorites. <Link className='profile-favorite-explore' to='/skateparks'>Explore</Link></p>}
-                </div>
+              <div className='review-container-profile'>
               </div>
             </div>
 

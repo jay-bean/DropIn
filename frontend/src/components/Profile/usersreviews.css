@@ -1,0 +1,12 @@
+.review-container-profile {
+  height: 98.4%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+}
+
+.review-container-profile div {
+  width: 80%;
+}
