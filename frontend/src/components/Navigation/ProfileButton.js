@@ -39,13 +39,11 @@ function ProfileButton({ user }) {
 
       {showMenu && (
         <ul className="profile-dropdown">
-          <li className="prof-li"><Link to='/profile'>Profile</Link></li>
-          <li className="prof-li">Skateparks</li>
-          <li className="prof-li">Favorites</li>
-          <li className="prof-li">Reviews</li>
-          <li className="prof-li">
-            <button className="prof-logout" onClick={logout}>Log Out</button>
-          </li>
+          <Link to='/profile'><li className="prof-li top">Profile</li></Link>
+          <Link to ='/profile/skateparks'><li className="prof-li">Skateparks</li></Link>
+          <Link to='/profile/favorites'><li className="prof-li">Favorites</li></Link>
+          <Link to='/profile/reviews'><li className="prof-li">Reviews</li></Link>
+          <li className="prof-li" onClick={logout}>Log out</li>
         </ul>
       )}
     </div>

@@ -34,7 +34,6 @@
   height: fit-content;
   color: #000000;
   position: relative;
-  margin-bottom: 8px;
 }
 
 .second-buffer-flex {
@@ -46,6 +45,27 @@
   gap: 30px;
   padding-left: 20px;
   align-items: center;
+}
+
+.profile-links {
+  text-decoration: none;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  color: #414141;
+  border-bottom: 2px solid transparent;
+}
+
+.profile-links:hover {
+  border-bottom: 2px solid rgb(212, 212, 212);
+}
+
+.active-prof-links {
+  color: #428a13;
+}
+
+.active-prof-links:hover {
+  color: #428a13;
+  border-bottom: 2px solid grey;
 }
 
 .profile-page-content {
@@ -165,13 +185,13 @@
 .profile-name {
   font-size: 24px;
   font-weight: 300;
-  color: #4f4c3e;
+  color: #414141;
   margin: 0;
 }
 
 .profile-name-p {
   font-weight: 300;
-  color: #4f4c3e;
+  color: #414141;
 }
 
 /* review and favorite section */
@@ -239,7 +259,7 @@
 .plus-sign {
   font-family: 'Rubik', sans-serif;
   font-size: 40px;
-  color: #4f4c3e;
+  color: #414141;
 }
 
 .profile-add-contribute {
@@ -250,4 +270,3 @@
 .profile-add-contribute:hover {
   text-decoration: underline;
 }
-

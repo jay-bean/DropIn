@@ -1,34 +1,5 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { getFavorites } from '../../store/favorite';
-import { getReviews } from '../../store/review';
-import { getSkateparks } from '../../store/skatepark';
-import './profile.css';
-
-function Profile() {
-  const dispatch = useDispatch();
-  const sessionUser = useSelector(state => state.session.user);
-  const reviews = useSelector(state => state.reviews);
-  const favorites = useSelector(state => state.favorites);
-
-  let usersReviews;
-  if (reviews && sessionUser) {
-    usersReviews = Object.values(reviews).filter(review => review.userId === sessionUser.id)
-  }
-
-  let favoritesArr;
-  if (favorites) {
-    favoritesArr = Object.values(favorites);
-  }
-
-  useEffect(() => {
-    dispatch(getReviews());
-    dispatch(getFavorites());
-    dispatch(getSkateparks());
-  }, [dispatch]);
-
-  return(
+function UsersReviews() {
+  return (
     sessionUser &&
      ( <div className='prof-page'>
         <div className='first-buffer'>
@@ -103,4 +74,4 @@ function Profile() {
   );
 }
 
-export default Profile;
+export default UsersReviews;

@@ -1,0 +1,12 @@
+.skatepark-container-profile {
+  height: 98.4%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+}
+
+.skatepark-container-profile div {
+  width: 80%;
+}

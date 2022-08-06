@@ -15,6 +15,9 @@ import Profile from "./components/Profile/Profile";
 import EditProfile from "./components/Profile/EditProfile";
 import Footer from "./components/Footer/Footer";
 import AboutPage from "./components/AboutPage/AboutPage";
+import UsersReviews from "./components/Profile/UsersReviews";
+import UsersSkateparks from "./components/Profile/UsersSkateparks";
+import UsersFavorites from "./components/Profile/UsersFavorites";
 
 function App() {
   const dispatch = useDispatch();
@@ -36,6 +39,15 @@ function App() {
           </Route>
           <Route path="/profile" exact={true}>
             <Profile />
+          </Route>
+          <Route path="/profile/reviews" exact={true}>
+            <UsersReviews />
+          </Route>
+          <Route path="/profile/favorites" exact={true}>
+            <UsersFavorites />
+          </Route>
+          <Route path="/profile/skateparks" exact={true}>
+            <UsersSkateparks />
           </Route>
           <Route path="/profile/edit" exact={true}>
             <EditProfile />

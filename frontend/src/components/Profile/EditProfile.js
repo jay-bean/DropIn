@@ -57,7 +57,7 @@ function EditProfile() {
           className='profile-edit-form'
         >
           <h2 className="profile-edit-header h2-head">Edit Profile</h2>
-          <label className="profile-edit-labels">First Name</label>
+          <label className="profile-edit-labels">* First Name</label>
             <input
               className="profile-edit-input"
               type="text"
@@ -65,7 +65,7 @@ function EditProfile() {
               onChange={(e) => setfirstName(e.target.value)}
               required
               />
-          <label className="profile-edit-labels">Last Name</label>
+          <label className="profile-edit-labels">* Last Name</label>
             <input
              className="profile-edit-input"
               type="text"
@@ -73,7 +73,7 @@ function EditProfile() {
               onChange={(e) => setlastName(e.target.value)}
               required
               />
-          <label className="profile-edit-labels">Email</label>
+          <label className="profile-edit-labels">* Email</label>
             <input
              className="profile-edit-input"
               type="text"
@@ -81,7 +81,7 @@ function EditProfile() {
               onChange={(e) => setEmail(e.target.value)}
               required
               />
-          <label className="profile-edit-labels">Password</label>
+          <label className="profile-edit-labels">* Password</label>
             <input
              className="profile-edit-input"
               type="password"
@@ -89,7 +89,7 @@ function EditProfile() {
               onChange={(e) => setPassword(e.target.value)}
               required
               />
-          <label className="profile-edit-labels">Confirm Password</label>
+          <label className="profile-edit-labels">* Confirm Password</label>
             <input
              className="profile-edit-input"
               type="password"
