@@ -23,7 +23,7 @@ function Footer() {
           <Link className='footer-headers' to='/skateparks'><h2>Explore</h2></Link>
           {tags && tags.length && tags.map(tag => {
             return (
-              <Link className='footer-tags' key={tag.id}>{tag.type}</Link>
+              <Link to={`/skateparks/${tag.type}`} className='footer-tags' key={tag.id}>{tag.type}</Link>
             );
           })}
         </div>
@@ -49,8 +49,6 @@ function Footer() {
           </div>
         }
         <div>
-          {/* <img className='footer-image' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/849CAC2F-E102-4E84-B765-193F9371D96A.png' ></img> */}
-          {/* <img className='footer-image' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/kids-teens-skaters-skateboard.jpeg'/> */}
           <img className='footer-image' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/Los_Angeles_skateboarders.jpeg'/>
           <div className='footer-wheels-div'>
             <h2 className='footer-wheels-header'>All Wheels Welcomed</h2>

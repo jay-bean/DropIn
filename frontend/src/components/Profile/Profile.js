@@ -25,7 +25,6 @@ function Profile() {
   useEffect(() => {
     dispatch(getReviews());
     dispatch(getFavorites());
-    dispatch(getSkateparks());
   }, [dispatch]);
 
   return(
