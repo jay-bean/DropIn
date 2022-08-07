@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getFavorites, addFavorite, removeFavorite } from "../../store/favorite";
 import { useDispatch, useSelector } from 'react-redux';
+import './favorite.css';
 
 function Favorites({ skateparkId }) {
   const dispatch = useDispatch();
@@ -43,7 +44,7 @@ function Favorites({ skateparkId }) {
       <div onClick={() => {
         favoritesHandler();
       }}>
-        {existingFavorite ? <img src="https://img.icons8.com/material/48/000000/hearts--v1.png"/> : <img src="https://img.icons8.com/material-outlined/48/000000/hearts.png"/>}
+        {existingFavorite ? <img className="heart" src="https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/heart.png"/> : <img className="heart" src="https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/heart+(1).png"/>}
       </div>
     </div>
   );

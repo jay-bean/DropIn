@@ -1,0 +1,12 @@
+.heart {
+  width: 30px;
+  top: 10%;
+  left: 10%;
+  transform: translate(0%, -66%);
+  color: rgb(169, 0, 0);
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
