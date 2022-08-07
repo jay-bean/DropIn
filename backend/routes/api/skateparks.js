@@ -2,6 +2,7 @@ const express = require('express');
 const asyncHandler = require('express-async-handler');
 const { Skatepark, Image, Parktag } = require('../../db/models');
 const { skateparkValidators, editSkateparkValidators } = require('../../validations/validations');
+const axios = require('axios').default;
 
 const router = express.Router();
 
@@ -33,17 +34,47 @@ router.post('/',
     if (!tag) {
       return res.status(400).json({errors: ['You must provide at least one tag to describe your park.']});
     }
+
+    // construct full addresss
+    const fullAddress = `${address}, ${city}, ${state}, ${zipcode}`;
+    // construct full url
+    const url = `${process.env.GEOCODING_BASE_URL}${fullAddress}&key=${process.env.GOOGLE_API_KEY}`;
+    console.log(fullAddress);
+    console.log(url);
+    // make api request using axios
+    const geocodeResponse = await axios.get(url);
+    console.log(geocodeResponse.data);
+    // if no worky
+    if (!geocodeResponse.data.results.length) {
+      return res.status(400).json({errors: ['You must provide a valid address.']});
+    }
+    // extract lat and long from respone
+    const lat = geocodeResponse.data.results[0].geometry.location.lat;
+    console.log(lat, 'lat')
+    const long = geocodeResponse.data.results[0].geometry.location.lng;
+    console.log(long, 'long litttttle dooooogie')
+
+    const formattedAddress = geocodeResponse.data.results[0].formatted_address.split(', ');
+    const formattedStreetAddress = formattedAddress[0];
+    const formattedCity = formattedAddress[1];
+    const formattedState = formattedAddress[2].split(' ')[0];
+    const formattedZipcode = formattedAddress[2].split(' ')[1];
+    console.log(formattedStreetAddress, 'hi')
+    console.log(formattedCity, 'ho')
+    console.log(formattedState, 'hooe')
+    console.log(formattedZipcode, 'hoeey')
+
     // lat long check here
     const skatePark = await Skatepark.build({
       name,
       description,
-      address,
-      city,
-      state,
-      zipcode,
+      address: formattedStreetAddress,
+      city: formattedCity,
+      state: formattedState,
+      zipcode: formattedZipcode,
       userId,
-      lat: 1,
-      long: 1,
+      lat,
+      long
     });
 
     const result = await skatePark.save({raw: true});

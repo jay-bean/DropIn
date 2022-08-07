@@ -34,11 +34,11 @@ module.exports = {
         allowNull: false,
       },
       lat: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.FLOAT,
         allowNull: false,
       },
       long: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.FLOAT,
         allowNull: false,
       },
       userId: {
