@@ -20,6 +20,18 @@
   height: 390px;
 }
 
+.explore-card-img-container {
+  width: 352px;
+  overflow: hidden;
+}
+
+.explore-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .3s ease-in-out;
+}
+
 #tags-div {
   display: flex;
   flex-direction: row;
