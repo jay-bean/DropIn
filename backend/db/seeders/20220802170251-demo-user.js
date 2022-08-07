@@ -5,9 +5,9 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Users', [
       {
-        firstName: 'Demo',
-        lastName: 'Lition',
-        email: 'demo@user.io',
+        firstName: 'Skater',
+        lastName: 'Boy',
+        email: 'seeyou@laterboy.io',
         hashedPassword: bcrypt.hashSync('password')
       },
     ], {});
@@ -15,7 +15,7 @@ module.exports = {
 
   down: (queryInterface, Sequelize) => {
     return queryInterface.bulkDelete('Users', {
-      firstName: 'Demo'
+      firstName: 'Skater'
     }, {});
   }
 };
