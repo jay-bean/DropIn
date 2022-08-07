@@ -3,6 +3,7 @@ import Favorites from '../Favorites/Favorites';
 import './skatepark-card.css';
 
 function Skatepark({ skatepark }) {
+  console.log(skatepark);
   return (
     skatepark &&
       <div  className='explore-page-card-container'>
