@@ -47,21 +47,24 @@
   gap: 30px;
 }
 
-.homepage-banner-imgs {
-  width: 300px;
+
+.homepage-img-container {
+  max-width: 300px;
+  max-height: 225.2px;
   border-radius: 15px;
-  transition: transform .2s;
+  overflow: hidden;
+}
+
+.homepage-banner-imgs {
+  max-width: 300px;
+  min-height: 225.2px;
+  border-radius: 15px;
+  transition: transform .3s ease-in-out;
+  object-fit: cover;
 }
 
 .homepage-banner-imgs:hover {
   transform: scale(1.1);
-}
-
-.homepage-img-container {
-  width: 300px;
-  height: 225.2px;
-  border-radius: 15px;
-  overflow: hidden;
 }
 
 .skatepark-card {
