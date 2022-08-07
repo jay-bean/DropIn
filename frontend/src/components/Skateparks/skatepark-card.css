@@ -5,35 +5,80 @@
 }
 
 .explore-page-card-container {
-  border: 1px solid rgba(195, 195, 195, 0.477);
   padding: 0;
   margin: 32px 24px;
-
 }
 
 .explore-page-card {
+  text-decoration: none;
   display: flex;
   flex-direction: column;
   position: relative;
   max-width: 100%;
   border-radius: 16px;
-  height: 390px;
+  height: 330px;
+  gap: 16px
+}
+
+.image-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .explore-card-img-container {
   width: 352px;
+  height: 234px;
   overflow: hidden;
+  border-radius: 16px;
 }
 
 .explore-card-img {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
+  flex-shrink: 0;
+  min-width: 352px;
+  min-height: 234px;
+  border-radius: 16px;
   transition: transform .3s ease-in-out;
+}
+
+.explore-card-img:hover {
+  transform: scale(1.1);
+}
+
+.explore-card-word-section {
+  width: 352px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 auto;
+}
+
+.explore-card-park-name {
+  color: #333;
+  font-size: 20px;
+  text-decoration: none;
 }
 
 #tags-div {
   display: flex;
   flex-direction: row;
   width: 100%;
+}
+
+.explore-card-addy-fave-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.explore-card-address-div {
+  text-decoration: none;
+}
+
+.explore-card-address {
+  color: rgb(100, 100, 100);
 }
