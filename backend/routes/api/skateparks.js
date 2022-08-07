@@ -54,14 +54,24 @@ router.post('/',
     const long = geocodeResponse.data.results[0].geometry.location.lng;
     console.log(long, 'long litttttle dooooogie')
 
+    const formattedAddress = geocodeResponse.data.results[0].formatted_address.split(', ');
+    const formattedStreetAddress = formattedAddress[0];
+    const formattedCity = formattedAddress[1];
+    const formattedState = formattedAddress[2].split(' ')[0];
+    const formattedZipcode = formattedAddress[2].split(' ')[1];
+    console.log(formattedStreetAddress, 'hi')
+    console.log(formattedCity, 'ho')
+    console.log(formattedState, 'hooe')
+    console.log(formattedZipcode, 'hoeey')
+
     // lat long check here
     const skatePark = await Skatepark.build({
       name,
       description,
-      address,
-      city,
-      state,
-      zipcode,
+      address: formattedStreetAddress,
+      city: formattedCity,
+      state: formattedState,
+      zipcode: formattedZipcode,
       userId,
       lat,
       long
