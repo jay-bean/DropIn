@@ -75,6 +75,10 @@ body {
   color: #414141;
 }
 
+.footer-prof-p:hover {
+  text-decoration: underline;
+}
+
 .footer-img-flex {
   display: flex;
   flex-direction: column;

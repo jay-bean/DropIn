@@ -30,10 +30,10 @@ function Footer() {
         {sessionUser &&
           <div className='footer-prof'>
             <Link className='footer-headers' to='/profile'><h2>Profile</h2></Link>
-            <p className='footer-prof-p'>Account</p>
-            <p className='footer-prof-p'>Skateparks</p>
-            <p className='footer-prof-p'>Favorites</p>
-            <p className='footer-prof-p'>Reviews</p>
+            <Link className='footer-prof-p' to='/profile'><p>Account</p></Link>
+            <Link className='footer-prof-p' to='/profile/skateparks'><p>Skateparks</p></Link>
+            <Link className='footer-prof-p' to='/profile/favorites'><p>Favorites</p></Link>
+            <Link className='footer-prof-p' to='/profile/reviews'><p>Reviews</p></Link>
           </div>}
         <div className='footer-about'>
           <Link className='footer-headers' to='/about'><h2>About</h2></Link>
