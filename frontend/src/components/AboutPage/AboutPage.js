@@ -14,13 +14,13 @@ function AboutPage() {
         </div>
         <div className="about-me-container">
             <div className="about-me-img">
-              <img className="about-me-img" src='https://avatars.githubusercontent.com/u/46910262?v=4' alt="jay"/>
+              <img className="about-me-img" src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/aboutmeimage.jpeg' alt="jay"/>
             </div>
           <div className='about-me-link-div'>
             <h3 className="about-me-name">Jay Hutts</h3>
             <div>
-              <a href="https://github.com/jay-bean"><img className='about-me-img-links' src="https://t2marketinginternational.com/wp-content/uploads/2018/06/Github-Logo-450x450.png" alt="github logo"/></a>
-              <a href="https://www.linkedin.com/in/jay-hutts-300ab9180/"><img className='about-me-img-links' src="https://www.maryville.edu/wp-content/uploads/2015/11/Linkedin-logo-1-550x550-300x300.png" alt="linked-in logo"/></a>
+              <a href="https://github.com/jay-bean"><img className='about-me-img-links' src="https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/Github-Logo.png" alt="github logo"/></a>
+              <a href="https://www.linkedin.com/in/jay-hutts-300ab9180/"><img className='about-me-img-links' src="https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/Linkedin-logo.png" alt="linked-in logo"/></a>
             </div>
           </div>
           <div>
