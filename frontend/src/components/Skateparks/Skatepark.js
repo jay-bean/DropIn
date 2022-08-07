@@ -7,7 +7,7 @@ function Skatepark({ skatepark }) {
     skatepark &&
       <div className='explore-page-card-container'>
         <div className='explore-page-card'>
-          {skatepark.images && skatepark.images.length > 0 && (<Link to={`/skateparks/${skatepark.id}`}><img src={skatepark.images[0].url} style={{width: '200px'}}/></Link>)}
+          {skatepark.images && skatepark.images.length > 0 && (<Link className='explore-card-img-container' to={`/skateparks/${skatepark.id}`}><img className='explore-card-img' src={skatepark.images[0].url} style={{width: '200px'}}/></Link>)}
           <Link to={`/skateparks/${skatepark.id}`}><div>{skatepark.name}</div></Link>
           <div>{skatepark.address}</div>
           <div>{skatepark.city}, {skatepark.state} {skatepark.zipcode}</div>
