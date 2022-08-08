@@ -16,7 +16,13 @@ function Review({ review }) {
     <div>
     {review &&
       <div className="review">
-        <div>Rating: {review.rating}</div>
+        <div>
+          <div className="review-user-info">
+            <img src={review.User.picUrl} style={{width: '60px', height: '60px', borderRadius: "50%"}}/>
+            <p>{review.User.firstName} {review.User.lastName}</p>
+          </div>
+        </div>
+        <div className="review-rating">Rating: {review.rating}</div>
         <div className="review-comment">Review: {review.comment}</div>
         {sessionUser && sessionUser.id === review.userId && (
           <div>

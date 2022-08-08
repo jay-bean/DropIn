@@ -1,0 +1,13 @@
+.review-create-btn {
+  width: 85%;
+  border-color: #428a13;
+  background-color: #428a13;
+  color: #ffffff;
+  height: 48px;
+  cursor: pointer;
+  border-radius: 9999px;
+  margin: 0 7.5%;
+  border: 2px solid transparent;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}

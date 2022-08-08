@@ -3,8 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { addReview } from '../../store/review';
 
-function NewSkateparkForm() {
-  const history = useHistory();
+function NewReviewForm({ setShowModal }) {
   const dispatch = useDispatch();
   const skateparkParam = useParams();
   const sessionUser = useSelector(state => state.session.user);
@@ -13,12 +12,12 @@ function NewSkateparkForm() {
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState('');
 
-  // const handleCancel = () => {
-  //   setValidationErrors([]);
-  //   setRating(0);
-  //   setComment('');
-  //   history.push("/")
-  // };
+  const handleCancel = () => {
+    setValidationErrors([]);
+    setRating(0);
+    setComment('');
+    setShowModal(false)
+  };
 
   const handleSubmit = async (e) => {
     try {
@@ -48,7 +47,6 @@ function NewSkateparkForm() {
 
   return (
     <div>
-    <h1>New Review Form</h1>
     {validationErrors.length > 0 && (
       validationErrors.map(error => {
         return <div key={error}>{error}</div>
@@ -57,7 +55,7 @@ function NewSkateparkForm() {
     <form
       onSubmit={handleSubmit}
     >
-      <label>*Rating:</label>
+      <label> Rating:</label>
       <input
         type="rating"
         required
@@ -65,7 +63,7 @@ function NewSkateparkForm() {
         onChange={(e) => setRating(e.target.value)}
       />
 
-      <label>*Comment:</label>
+      <label>Comment:</label>
       <textarea
         type="comment"
         placeholder="Tell us about the park..."
@@ -82,4 +80,4 @@ function NewSkateparkForm() {
   );
 }
 
-export default NewSkateparkForm;
+export default NewReviewForm;

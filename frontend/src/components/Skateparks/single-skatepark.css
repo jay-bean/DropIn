@@ -84,6 +84,8 @@
 
 .single-park-details-div {
   border-top: thin solid rgba(206, 206, 206, 0.455);
+  display: flex;
+  flex-direction: row;
 }
 
 .single-park-name-flex {
@@ -101,7 +103,7 @@
 }
 
 .single-park-description {
-  width: 65%;
+  width: 85%;
   line-height: 1.30;
   margin: 30px 0;
   font-size: 18px;
@@ -186,4 +188,19 @@
 
 .single-park-delete-btn:hover {
   background-color: #ececec;
+}
+
+.single-park-map-div {
+  margin-right: 40px;
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+
+.skatepark-review-name {
+  font-size: 23px;
+  text-align: center;
+}
+
+.skatepark-average-rating {
+  text-align: center;
 }

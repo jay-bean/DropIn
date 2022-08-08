@@ -4,22 +4,22 @@
   align-items: flex-start;
   gap: 10px;
   padding: 10px;
-  border-radius: 16px;
   width: 352px;
   margin: auto 10%;
   margin-left: 15%;
-  border: thin solid #b4b4b4;
+  border-top: thin solid #b4b4b481;
 }
 
-.review-skatepark-name {
-  margin-bottom: 8px;
-  font-size: 18px;
+.review-rating {
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 .review-comment {
   height: 100px;
   width: 346px;
-  margin: 0;
+  margin: 0 10px;
+
   text-align: left;
   line-height: 1.50;
   overflow-y: scroll;
@@ -79,4 +79,12 @@
 
 .review-delete-btn:hover {
   background-color: #efefef;
+}
+
+.review-user-info {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }

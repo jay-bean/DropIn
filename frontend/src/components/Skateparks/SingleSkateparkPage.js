@@ -8,6 +8,7 @@ import Favorites from '../Favorites/Favorites';
 import { getParktags } from '../../store/parktag';
 import EditSkateparkForm from './EditSkateparkForm';
 import './single-skatepark.css';
+import SingleParkMap from '../Map/SingleParkMap';
 
 function SingleSkatepark() {
   const dispatch = useDispatch();
@@ -50,30 +51,35 @@ function SingleSkatepark() {
               {skatepark && skatepark.images.length > 0 && skatepark.images.map(image => <img className='single-park-imgs' key={image.id} src={image.url}/>)}
             </div>
             <div className='single-park-details-div'>
-              {skatepark && (
-                <div>
-                  <div className='single-park-name-flex'>
-                    <div className='single-park-name'>{skatepark.name}</div>
-                    {skatepark && <Favorites skateparkId={skatepark.id}/>}
+              <div>
+                {skatepark && (
+                  <div>
+                    <div className='single-park-name-flex'>
+                      <div className='single-park-name'>{skatepark.name}</div>
+                      {skatepark && <Favorites skateparkId={skatepark.id}/>}
+                    </div>
+                    <div className='single-park-tags-div'>
+                      {skatepark && skateparkTags.length > 0 && skateparkTags.map(parktag => {
+                        return (
+                          <div className='single-park-tag' key={parktag.id}>{parktag.Tag.type}</div>
+                        );
+                      })}
+                    </div>
+                    <div className='single-park-description'>{skatepark.description}</div>
+                    <div className='single-park-address'>{skatepark.address}</div>
+                    <div className='single-park-address'>{skatepark.city}, {skatepark.state} {skatepark.zipcode}</div>
                   </div>
-                  <div className='single-park-tags-div'>
-                    {skatepark && skateparkTags.length > 0 && skateparkTags.map(parktag => {
-                      return (
-                        <div className='single-park-tag' key={parktag.id}>{parktag.Tag.type}</div>
-                      );
-                    })}
+                )}
+                {skatepark && sessionUser && skatepark.userId === sessionUser.id && (
+                  <div className='single-park-btns'>
+                    <button className='single-park-edit-btn' onClick={editFormHandler}>Edit</button>
+                    <button className='single-park-delete-btn' onClick={deleteHandler}>Delete</button>
                   </div>
-                  <div className='single-park-description'>{skatepark.description}</div>
-                  <div className='single-park-address'>{skatepark.address}</div>
-                  <div className='single-park-address'>{skatepark.city}, {skatepark.state} {skatepark.zipcode}</div>
+                )}
+              </div>
+                <div className='single-park-map-div'>
+                  {skatepark && <SingleParkMap skatepark={skatepark}/>}
                 </div>
-              )}
-              {skatepark && sessionUser && skatepark.userId === sessionUser.id && (
-                <div className='single-park-btns'>
-                  <button className='single-park-edit-btn' onClick={editFormHandler}>Edit</button>
-                  <button className='single-park-delete-btn' onClick={deleteHandler}>Delete</button>
-                </div>
-              )}
             </div>
           </div>
         </div>
