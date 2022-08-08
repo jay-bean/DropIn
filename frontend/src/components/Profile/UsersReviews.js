@@ -2,26 +2,23 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getReviews } from '../../store/review';
-import { getSkateparks } from '../../store/skatepark';
 import Review from '../Reviews/Review';
-
+import Skatepark from '../Skateparks/Skatepark';
 import './profile.css';
-import './usersreviews.css';
 
 function UsersReviews() {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const reviews = useSelector(state => state.reviews);
-  const skateparks = useSelector(state => state.skateparks);
 
   let usersReviews;
   if (reviews && sessionUser) {
     usersReviews = Object.values(reviews).filter(review => review.userId === sessionUser.id)
+    console.log(usersReviews, 'usersreviews')
   }
 
   useEffect(() => {
     dispatch(getReviews());
-    dispatch(getSkateparks());
   }, [dispatch]);
 
   return (
@@ -50,7 +47,18 @@ function UsersReviews() {
                   <h2 className='prof-headers'>Reviews</h2>
                 </div>
               </div>
-              <div className='review-container-profile'>
+              <div className='all-container-profile'>
+                <div className='review-flex-column'>
+                  {usersReviews && usersReviews.length ? usersReviews.map(review => {
+                    console.log(review,'review inside map')
+                    return (
+                      <div key={review.id}>
+                        <Skatepark skatepark={review.Skatepark}/>
+                        <Review review={review}/>
+                      </div>
+                    );
+                  }) : null}
+                </div>
               </div>
             </div>
 
@@ -59,8 +67,10 @@ function UsersReviews() {
                 <h3>Contribute</h3>
                   <Link className='add-park-contribute-flex' to='/skateparks/new'><p className='plus-sign'>+</p><p className='profile-add-contribute'>Add a skatepark</p></Link>
               </div>
+              <div className='add-descriptor-div'>
+                {usersReviews && usersReviews.length ? <p className='add-descriptor'>To your left is all of the reviews you have made. You can edit and delete your reviews from here. If you want to checkout the park you left the review on click the image for more details.</p> : <p className='add-descriptor'>You currently don't have any reviews. <Link className='profile-favorite-explore' to='/skateparks'>Explore</Link></p>}
+              </div>
             </div>
-
           </div>
         </div>
         </div>

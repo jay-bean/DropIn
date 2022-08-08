@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
 import EditReviewForm from './EditReviewForm';
 
-function EditReviewFormModal({ review }) {
+function EditReviewFormModal({ review, skatepark }) {
   const [showModal, setShowModal] = useState(false);
 
   return (
     <>
-      <button className='login-btn' onClick={() => setShowModal(true)}>Edit</button>
+      <button className='review-edit-btn' onClick={() => setShowModal(true)}>Edit</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <EditReviewForm review={review} setShowModal={setShowModal}/>
+          <EditReviewForm skatepark={skatepark} review={review} setShowModal={setShowModal}/>
         </Modal>
       )}
     </>

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getFavorites } from '../../store/favorite';
-import { getSkateparks } from '../../store/skatepark';
+import Skatepark from '../Skateparks/Skatepark';
 import './profile.css';
 
 function UsersFavorites() {
@@ -16,7 +16,6 @@ function UsersFavorites() {
   }
 
   useEffect(() => {
-    dispatch(getSkateparks());
     dispatch(getFavorites());
   }, [dispatch]);
 
@@ -43,36 +42,27 @@ function UsersFavorites() {
             <div className='profile-column-one'>
               <div className='profile-container-header'>
                 <div className='profile-container-header-flex'>
-                  <h2 className='prof-headers'>Profile</h2><Link to='/profile/edit'><button className='profile-edit-btn'>Edit Profile</button></Link>
-                </div>
-              </div>
-              <div className='profile-image-div'>
-                <div className='image-flex-column'>
-                  {sessionUser.picUrl ? <img className='profile-image' src={sessionUser.picUrl}/> : <img className='profile-image' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/73-730477_first-name-profile-image-placeholder-png.png'/>}
-                  {!sessionUser.picUrl && <Link className='add-profile-photo' to='profile/edit'><i className="fa-solid fa-plus profile-img">Add photo</i></Link>}
-                </div>
-                <div className='profile-name-div'>
-                  <h3 className='profile-name'>{sessionUser.firstName} {sessionUser.lastName}</h3>
-                  <p className='profile-name-p'>{sessionUser.email}</p>
-                </div>
-              </div>
-
-              <div className='profile-container-header second-containers'>
-                <div className='profile-container-header-flex second-flex'>
                   <h2 className='prof-headers'>Favorites</h2>
                 </div>
               </div>
-              <div className='review-div'>
+              <div className='all-container-profile'>
                 <div className='review-flex-column'>
-                  {favoritesArr && favoritesArr.length ? <><h4>You have favorited {favoritesArr.length} skateparks!</h4><p> Head on over to the favorites tab if you would like to see which parks those are.</p></> : <p>You currently don't have any favorites. <Link className='profile-favorite-explore' to='/skateparks'>Explore</Link></p>}
+                  {favoritesArr && favoritesArr.length ? favoritesArr.map(favorite => {
+                    console.log(favorite,'fave')
+                    return (
+                      <Skatepark skatepark={favorite.Skatepark}/>
+                    );
+                  }) : null}
                 </div>
               </div>
             </div>
-
             <div className='profile-column-two'>
               <div className='contribute'>
                 <h3>Contribute</h3>
                   <Link className='add-park-contribute-flex' to='/skateparks/new'><p className='plus-sign'>+</p><p className='profile-add-contribute'>Add a skatepark</p></Link>
+              </div>
+              <div className='add-descriptor-div'>
+                {favoritesArr && favoritesArr.length ? <p className='add-descriptor'>To your left is all of the skateparks you have favorited. Click on any of them to view more details.</p> : <p className='add-descriptor'>You currently don't have any favorites. <Link className='profile-favorite-explore' to='/skateparks'>Explore</Link></p>}
               </div>
             </div>
 

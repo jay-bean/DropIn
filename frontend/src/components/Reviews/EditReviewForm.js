@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useHistory, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { editReview } from '../../store/review';
 
-function EditReviewForm({ review, setShowModal }) {
-  const history = useHistory();
+function EditReviewForm({ review, setShowModal, skatepark }) {
   const dispatch = useDispatch();
   const skateparkParam = useParams();
   const sessionUser = useSelector(state => state.session.user);
@@ -28,7 +27,7 @@ function EditReviewForm({ review, setShowModal }) {
         rating,
         comment,
         userId: sessionUser.id,
-        skateparkId: skateparkParam.id
+        skateparkId: skateparkParam ? skateparkParam.id : skatepark.id
       }
 
       const updatedReview = await dispatch(editReview(data, review.id));

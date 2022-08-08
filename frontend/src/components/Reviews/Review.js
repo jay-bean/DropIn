@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import EditReviewFormModal from "./EditReviewFormModal";
 import { removeReview } from '../../store/review';
+import './single-review.css';
+
 
 function Review({ review }) {
   const dispatch = useDispatch();
@@ -13,15 +15,16 @@ function Review({ review }) {
   return (
     <div>
     {review &&
-      <div>
-        <div>{review.rating}</div>
-        <div>{review.comment}</div>
+      <div className="review">
+        <div>Rating: {review.rating}</div>
+        <div className="review-comment">Review: {review.comment}</div>
         {sessionUser && sessionUser.id === review.userId && (
           <div>
-            <EditReviewFormModal review={review}/>
-            <button onClick={deleteHandler}>Delete</button>
+            <EditReviewFormModal skatepark={review.Skatepark} review={review}/>
+            <button className="review-delete-btn" onClick={deleteHandler}>Delete</button>
          </div>
         )}
+        <div className="review-buffer"></div>
       </div>}
       </div>
   );

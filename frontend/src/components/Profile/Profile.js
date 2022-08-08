@@ -71,7 +71,7 @@ function Profile() {
               </div>
               <div className='review-div'>
                 <div className='review-flex-column'>
-                  {usersReviews && usersReviews.length ? <><h4>You currently have {usersReviews.length} reviews.</h4><p> Head on over to the review tab if you would like to make any changes to them.</p></> : <p>You currently don't have any reviews.</p>}
+                  {usersReviews && usersReviews.length ? <><h4>You currently have {usersReviews.length} reviews.</h4><p className='profile-p'> Head on over to the review tab if you would like to make any changes to them.</p></> : <p className='profile-p'>You currently don't have any reviews. <Link className='profile-favorite-explore' to='/skateparks'>Explore</Link></p>}
                 </div>
               </div>
 
@@ -82,7 +82,7 @@ function Profile() {
               </div>
               <div className='review-div'>
                 <div className='review-flex-column'>
-                  {favoritesArr && favoritesArr.length ? <><h4>You have favorited {favoritesArr.length} skateparks!</h4><p> Head on over to the favorites tab if you would like to see which parks those are.</p></> : <p>You currently don't have any favorites. <Link className='profile-favorite-explore' to='/skateparks'>Explore</Link></p>}
+                  {favoritesArr && favoritesArr.length ? <><h4>You have favorited {favoritesArr.length} skateparks!</h4><p className='profile-p'> Head on over to the favorites tab if you would like to see which parks those are.</p></> : <p className='profile-p'>You currently don't have any favorites. <Link className='profile-favorite-explore' to='/skateparks'>Explore</Link></p>}
                 </div>
               </div>
             </div>
@@ -91,6 +91,9 @@ function Profile() {
               <div className='contribute'>
                 <h3>Contribute</h3>
                   <Link className='add-park-contribute-flex' to='/skateparks/new'><p className='plus-sign'>+</p><p className='profile-add-contribute'>Add a skatepark</p></Link>
+              </div>
+              <div className='add-descriptor-div'>
+                <p className='add-descriptor'>Welcome to Drop In! Thanks for being apart of the community {sessionUser.firstName}. Our goal is to help you find your next skatepark with ease. Now go out there and drop in!</p>
               </div>
             </div>
 

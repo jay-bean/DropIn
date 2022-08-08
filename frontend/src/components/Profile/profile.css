@@ -270,3 +270,7 @@
 .profile-add-contribute:hover {
   text-decoration: underline;
 }
+
+.profile-p {
+  margin: auto 16%;
+}
