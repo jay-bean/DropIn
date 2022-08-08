@@ -21,7 +21,6 @@ function EditSkateparkForm({ setShowEditForm }) {
   const [state, setState] = useState(skatepark ? skatepark.state : '');
   const [zipcode, setZipcode] = useState(skatepark ? skatepark.zipcode : 0);
   const [images, setImages] = useState({});
-  const [selectedTag, setSelectedTag] = useState([]);
 
   let skateparkTags;
   if (parktags && skatepark) {
@@ -31,6 +30,8 @@ function EditSkateparkForm({ setShowEditForm }) {
   if (skateparkTags) {
     skateparkTags.map(tag => tagIdArr.push(tag.tagId));
   }
+  
+  const [selectedTag, setSelectedTag] = useState(tagIdArr.length ? tagIdArr : '');
 
   useEffect(() => {
     dispatch(getSkateparks());
@@ -58,6 +59,7 @@ function EditSkateparkForm({ setShowEditForm }) {
       for (const image of Object.keys(images)) {
         formData.append('image', images[image]);
       }
+      console.log(selectedTag, 'selectedtaggg');
       for (const tag of selectedTag) {
         formData.append('tag', tag)
       }
@@ -69,7 +71,7 @@ function EditSkateparkForm({ setShowEditForm }) {
     catch (error) {
       const err = await error.json();
       if (error.status >= 500) setValidationErrors([err.message])
-      else setValidationErrors(err);
+      else setValidationErrors(err.errors);
     }
   }
 

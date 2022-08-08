@@ -5,10 +5,10 @@ import Skatepark from './Skatepark';
 import { getSkateparks } from '../../store/skatepark';
 import { getTags } from '../../store/parktag';
 import { getParktags } from '../../store/parktag';
+import Map from '../Map/Map';
 import './explore-page.css';
 
 function AllSkateparks({ tagId }) {
-  console.log(tagId, 'first line ')
   const dispatch = useDispatch();
   const parktags = useSelector(state => state.parktags);
   const skateparks = useSelector(state => state.skateparks);
@@ -72,6 +72,7 @@ function AllSkateparks({ tagId }) {
             }
           </div>
         </div>
+      {<div><Map allParks={allParks} filteredParks={filteredParks} tagId={tagId}/></div>}
       </div>
     </div>
   );

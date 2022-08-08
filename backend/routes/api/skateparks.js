@@ -39,32 +39,22 @@ router.post('/',
     const fullAddress = `${address}, ${city}, ${state}, ${zipcode}`;
     // construct full url
     const url = `${process.env.GEOCODING_BASE_URL}${fullAddress}&key=${process.env.GOOGLE_API_KEY}`;
-    console.log(fullAddress);
-    console.log(url);
     // make api request using axios
     const geocodeResponse = await axios.get(url);
-    console.log(geocodeResponse.data);
     // if no worky
     if (!geocodeResponse.data.results.length) {
       return res.status(400).json({errors: ['You must provide a valid address.']});
     }
     // extract lat and long from respone
     const lat = geocodeResponse.data.results[0].geometry.location.lat;
-    console.log(lat, 'lat')
     const long = geocodeResponse.data.results[0].geometry.location.lng;
-    console.log(long, 'long litttttle dooooogie')
 
     const formattedAddress = geocodeResponse.data.results[0].formatted_address.split(', ');
     const formattedStreetAddress = formattedAddress[0];
     const formattedCity = formattedAddress[1];
     const formattedState = formattedAddress[2].split(' ')[0];
     const formattedZipcode = formattedAddress[2].split(' ')[1];
-    console.log(formattedStreetAddress, 'hi')
-    console.log(formattedCity, 'ho')
-    console.log(formattedState, 'hooe')
-    console.log(formattedZipcode, 'hoeey')
 
-    // lat long check here
     const skatePark = await Skatepark.build({
       name,
       description,
@@ -112,18 +102,49 @@ router.post('/',
 router.put(`/:id(\\d+)`,
   editSkateparkValidators,
   asyncHandler(async (req, res) => {
+    console.log(req.body, 'req.body');
+    console.log(req.body.tag, 'tags')
     if (!req.body.tag) {
       return res.status(400).json({errors: ['You must provide at least one tag to describe your park.']});
     }
 
+    // construct full addresss
+    const fullAddress = `${req.body.address}, ${req.body.city}, ${req.body.state}, ${req.body.zipcode}`;
+    console.log(fullAddress, 'fulladdy')
+    // construct full url
+    const url = `${process.env.GEOCODING_BASE_URL}${fullAddress}&key=${process.env.GOOGLE_API_KEY}`;
+    console.log(url, 'url')
+    // make api request using axios
+    const geocodeResponse = await axios.get(url);
+    console.log(geocodeResponse, 'this is geo response')
+    // if no worky
+    if (!geocodeResponse.data.results.length) {
+      return res.status(400).json({errors: ['You must provide a valid address.']});
+    }
+    // extract lat and long from respone
+    const lat = geocodeResponse.data.results[0].geometry.location.lat;
+    const long = geocodeResponse.data.results[0].geometry.location.lng;
+    console.log(lat, long, 'this is lat n long')
+    const formattedAddress = geocodeResponse.data.results[0].formatted_address.split(', ');
+    const formattedStreetAddress = formattedAddress[0];
+    const formattedCity = formattedAddress[1];
+    const formattedState = formattedAddress[2].split(' ')[0];
+    const formattedZipcode = formattedAddress[2].split(' ')[1];
+    console.log(formattedAddress, 'formatted address');
+    console.log(formattedStreetAddress, 'street format');
+    console.log(formattedCity, 'city format');
+    console.log(formattedState, 'formatted state');
+    console.log(formattedZipcode, 'formatted zipcode');
+
     const skatepark = await Skatepark.findByPk(req.params.id);
     skatepark.name = req.body.name;
     skatepark.description = req.body.description;
-    skatepark.address = req.body.address;
-    skatepark.city = req.body.city;
-    skatepark.state = req.body.state;
-    skatepark.zipcode = req.body.zipcode;
-    // if they change the address i'll need to do a lat/long check
+    skatepark.address = formattedStreetAddress;
+    skatepark.city = formattedCity;
+    skatepark.state = formattedState;
+    skatepark.zipcode = formattedZipcode;
+    skatepark.lat = lat;
+    skatepark.long = long;
 
     const result = await skatepark.save();
 
@@ -180,7 +201,6 @@ router.put(`/:id(\\d+)`,
         return newParktag;
       }));
     }
-
 
     const resImages = await Promise.all(imageObjs.map(async (image) => await image.save()))
 

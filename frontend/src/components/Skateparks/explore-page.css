@@ -53,8 +53,13 @@
 }
 
 .map-list-container {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  /* gap: ; */
   position: relative;
   height: calc(100vh - 124px);
+  /* margin: 0 1%; */
 }
 
 .skatepark-card-div {
@@ -69,7 +74,7 @@
 }
 
 .skatepark-card-holder {
-  position: absolute;
+  /* position: absolute; */
   background-color: #ffffff;
   width: 400px;
   height: 100%;
@@ -91,4 +96,10 @@
 
 .filtered {
 
+}
+
+/* maps */
+.google-map {
+  width: 915px;
+  height: 788px;
 }
