@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { GoogleMap, useJsApiLoader, MarkerF, InfoWindowF } from '@react-google-maps/api';
 import '../Skateparks/explore-page.css';
 import SkateparkSnippet from '../Skateparks/SkateparkSnippet';
@@ -31,6 +31,14 @@ function Map({ allParks, filteredParks, tagId, activeMarker, setActiveMarker }) 
     id: 'google-map-script',
     googleMapsApiKey: "AIzaSyD1pifB4N1PgR85IcIvLVvfV2etG6Sb0-g"
   })
+
+  useEffect(() => {
+    document.getElementById('explore').addEventListener('mouseover', closeSkateparkSnippet );
+  },[]);
+
+  let closeSkateparkSnippet = () => {
+    setActiveMarker(null);
+  }
 
   return isLoaded ? (
       <GoogleMap
