@@ -8,5 +8,14 @@
 }
 
 .skatepark-container-profile div {
-  width: 80%;
+  width: fit-content;
+}
+
+.skatepark-prof-descriptor-div {
+ margin: auto 4%;
+}
+
+.skatepark-prof-descriptor {
+  line-height: 1.60;
+  font-size: 16px;
 }

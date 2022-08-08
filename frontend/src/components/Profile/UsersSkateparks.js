@@ -43,7 +43,7 @@ function UsersSkateparks() {
            <div className='profile-column-one'>
              <div className='profile-container-header'>
                <div className='profile-container-header-flex'>
-                 <h2 className='prof-headers'>Skateparks</h2><Link to='/skateparks/new'><button className='profile-edit-btn'>Add Skatepark</button></Link>
+                 <h2 className='prof-headers'>Skateparks</h2>
                </div>
              </div>
              <div className='skatepark-container-profile'>
@@ -56,10 +56,18 @@ function UsersSkateparks() {
            </div>
 
            <div className='profile-column-two'>
-             <div className='contribute'>
-               <h3>Contribute</h3>
-                 <Link className='add-park-contribute-flex' to='/skateparks/new'><p className='plus-sign'>+</p><p className='profile-add-contribute'>Add a skatepark</p></Link>
-             </div>
+              <div className='contribute'>
+                <h3>Contribute</h3>
+                  <Link className='add-park-contribute-flex' to='/skateparks/new'><p className='plus-sign'>+</p><p className='profile-add-contribute'>Add a skatepark</p></Link>
+              </div>
+            {usersSkateparks && usersSkateparks.length ?
+              (<div className='skatepark-prof-descriptor-div'>
+                <p className='skatepark-prof-descriptor'>These all of the skateparks that you have contributed to the website so far. Click on any of them to view, edit or delete.</p>
+              </div>) :
+              <div className='skatepark-prof-descriptor-div'>
+                <p className='skatepark-prof-descriptor'>You currently haven't added any skateparks to the site. If you have one in mind that you don't see click the link above!</p>
+              </div>
+            }
            </div>
 
          </div>
