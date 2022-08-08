@@ -1,0 +1,189 @@
+/* .single-park-page {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+} */
+
+.single-park-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  height: calc(100vh - 124px);
+  gap: 10px;
+}
+
+.all-reviews-singlepark-container {
+  background-color: #ffffff;
+  width: 400px;
+  height: 100%;
+  box-shadow: 2px 0 4px 0 rgb(0 0 0 / 10%);
+  overflow-y: scroll;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.all-reviews-div {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  position: absolute;
+  background-color: #ffffff;
+  width: 400px;
+  height: 100%;
+  box-shadow: 2px 0 4px 0 rgb(0 0 0 / 10%);
+  overflow-y: scroll;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.all-reviews-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto 5%;
+}
+
+.all-reviews-flex div .review {
+  margin: 20px 0;
+}
+
+.single-park-details-container {
+  margin-top: 10px;
+  margin-left: 420px;
+  width: '1328px';
+  height: '100%';
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+/* .single-park-imgs-div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  padding-bottom: 10px;
+  max-width: 280px;
+  height: max-content;
+  gap: 10px
+} */
+
+.single-park-imgs-div {
+  display: flex;
+  flex-flow: row wrap;
+  padding-bottom: 10px;
+  height: max-content;
+  gap: 10px;
+}
+
+.single-park-imgs {
+  max-width: 280px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.single-park-details-div {
+  border-top: thin solid rgba(206, 206, 206, 0.455);
+}
+
+.single-park-name-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 23px;
+  gap: 40px;
+}
+
+.single-park-name {
+  font-size: 23px;
+  margin-bottom: 30px;
+  padding: 12px 0;
+}
+
+.single-park-description {
+  width: 65%;
+  line-height: 1.30;
+  margin: 30px 0;
+  font-size: 18px;
+}
+
+.single-park-tags-div {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+}
+
+.single-park-tag {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.36;
+  padding: 5.5px 12px;
+  color: #326c0b;
+  border: 1px solid #326c0b;
+  border-radius: 8px;
+}
+
+.single-park-address {
+  color: #535353;
+}
+
+.single-park-btns {
+  margin-top: 30px;
+}
+
+.single-park-edit-btn {
+  margin-left: 20px;
+  border-color: #428a13;
+  background-color: #428a13;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.36;
+  height: 32px;
+  padding: 0 18px;
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all .2s ease-out;
+  color: #ffffff;
+  border: 2px solid transparent;
+}
+
+.single-park-edit-btn:hover {
+  border-color: #326c0b;
+  background-color: #326c0b;
+}
+
+.single-park-delete-btn {
+  margin-left: 9px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.36;
+  height: 32px;
+  padding: 0 18px;
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all .2s ease-out;
+  color: #414141;
+  border: 2px solid #9f9f9f;
+  background-color: transparent;
+}
+
+.single-park-delete-btn:hover {
+  background-color: #ececec;
+}

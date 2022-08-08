@@ -18,10 +18,11 @@
 
 .review-comment {
   height: 100px;
+  width: 346px;
   margin: 0;
   text-align: left;
   line-height: 1.50;
-  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .review-edit-btn {
