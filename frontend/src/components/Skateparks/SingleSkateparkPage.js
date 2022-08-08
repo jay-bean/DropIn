@@ -26,8 +26,10 @@ function SingleSkatepark() {
   }
 
   const deleteHandler = async () => {
-    const deletedSkatepark = await dispatch(removeSkatepark(skatepark));
-    if (deletedSkatepark) history.push("/skateparks");
+    if (window.confirm('Are you sure you want to delete this skatepark?')) {
+      const deletedSkatepark = await dispatch(removeSkatepark(skatepark));
+      if (deletedSkatepark) history.push("/skateparks");
+    }
   }
 
   const editFormHandler = async () => {
