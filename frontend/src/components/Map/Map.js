@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { GoogleMap, useJsApiLoader, MarkerF, InfoWindowF } from '@react-google-maps/api';
 import '../Skateparks/explore-page.css';
-import ActiveSkatepark from '../Skateparks/ActiveSkatepark';
+import SkateparkSnippet from '../Skateparks/SkateparkSnippet';
 
 const containerStyle = {
   width: '1328px',
@@ -38,6 +38,7 @@ function Map({ allParks, filteredParks, tagId }) {
 
   return isLoaded ? (
       <GoogleMap
+        onMouseOver={() => setActiveMarker(null)}
         className='google-map'
         mapContainerStyle={containerStyle}
         center={center}
@@ -53,7 +54,7 @@ function Map({ allParks, filteredParks, tagId }) {
             >
               {activeMarker === sp.id ? (
                 <InfoWindowF>
-                  <ActiveSkatepark skatepark={sp}/>
+                  <SkateparkSnippet skatepark={sp}/>
                 </InfoWindowF>
               ) : null}
             </MarkerF>
@@ -69,7 +70,7 @@ function Map({ allParks, filteredParks, tagId }) {
             >
               {activeMarker === sp.Skatepark.id ? (
                 <InfoWindowF>
-                  <ActiveSkatepark skatepark={sp.Skatepark}/>
+                  <SkateparkSnippet skatepark={sp.Skatepark}/>
                 </InfoWindowF>
               ) : null}
             </MarkerF>

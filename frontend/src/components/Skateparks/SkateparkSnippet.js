@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import Favorites from '../Favorites/Favorites';
 import './skatepark-card.css';
 
-function ActiveSkatepark({ skatepark }) {
+function SkateparkSnippet({ skatepark }) {
   return (
     skatepark &&
       <div  className='explore-page-card-container'>
@@ -25,4 +25,4 @@ function ActiveSkatepark({ skatepark }) {
   );
 }
 
-export default ActiveSkatepark;
+export default SkateparkSnippet;
