@@ -17,7 +17,7 @@ const center = {
 function Map({ allParks, filteredParks, tagId }) {
   const mappedSkateparks = tagId ? filteredParks : allParks;
   const [activeMarker, setActiveMarker] = useState(null);
-
+  console.log(mappedSkateparks, 'always something bro')
   const activeParkHandler = (marker) => {
     if (marker === activeMarker) {
       return;
@@ -51,9 +51,9 @@ function Map({ allParks, filteredParks, tagId }) {
               position={{ lat: sp.lat, lng: sp.long }}
               onMouseOver={() => {activeParkHandler(sp.id)}}
             >
-              {activeMarker === sp.Skatepark.id ? (
+              {activeMarker === sp.id ? (
                 <InfoWindowF>
-                  <Link>{sp.name}</Link>
+                  <ActiveSkatepark skatepark={sp}/>
                 </InfoWindowF>
               ) : null}
             </MarkerF>
