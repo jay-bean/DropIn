@@ -52,7 +52,8 @@ function UsersReviews() {
                   {usersReviews && usersReviews.length ? usersReviews.map(review => {
                     console.log(review,'review inside map')
                     return (
-                      <div key={review.id}>
+                     review && review.Skatepark &&
+                       <div key={review.id}>
                         <Skatepark skatepark={review.Skatepark}/>
                         <Review review={review}/>
                       </div>
