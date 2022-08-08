@@ -34,6 +34,7 @@ function Map({ allParks, filteredParks, tagId, activeMarker, setActiveMarker }) 
 
   useEffect(() => {
     document.getElementById('explore').addEventListener('mouseover', closeSkateparkSnippet );
+    document.getElementById('footer-explore').addEventListener('mouseover', closeSkateparkSnippet);
   },[]);
 
   let closeSkateparkSnippet = () => {
