@@ -102,21 +102,16 @@ router.post('/',
 router.put(`/:id(\\d+)`,
   editSkateparkValidators,
   asyncHandler(async (req, res) => {
-    console.log(req.body, 'req.body');
-    console.log(req.body.tag, 'tags')
     if (!req.body.tag) {
       return res.status(400).json({errors: ['You must provide at least one tag to describe your park.']});
     }
 
     // construct full addresss
     const fullAddress = `${req.body.address}, ${req.body.city}, ${req.body.state}, ${req.body.zipcode}`;
-    console.log(fullAddress, 'fulladdy')
     // construct full url
     const url = `${process.env.GEOCODING_BASE_URL}${fullAddress}&key=${process.env.GOOGLE_API_KEY}`;
-    console.log(url, 'url')
     // make api request using axios
     const geocodeResponse = await axios.get(url);
-    console.log(geocodeResponse, 'this is geo response')
     // if no worky
     if (!geocodeResponse.data.results.length) {
       return res.status(400).json({errors: ['You must provide a valid address.']});
@@ -124,17 +119,11 @@ router.put(`/:id(\\d+)`,
     // extract lat and long from respone
     const lat = geocodeResponse.data.results[0].geometry.location.lat;
     const long = geocodeResponse.data.results[0].geometry.location.lng;
-    console.log(lat, long, 'this is lat n long')
     const formattedAddress = geocodeResponse.data.results[0].formatted_address.split(', ');
     const formattedStreetAddress = formattedAddress[0];
     const formattedCity = formattedAddress[1];
     const formattedState = formattedAddress[2].split(' ')[0];
     const formattedZipcode = formattedAddress[2].split(' ')[1];
-    console.log(formattedAddress, 'formatted address');
-    console.log(formattedStreetAddress, 'street format');
-    console.log(formattedCity, 'city format');
-    console.log(formattedState, 'formatted state');
-    console.log(formattedZipcode, 'formatted zipcode');
 
     const skatepark = await Skatepark.findByPk(req.params.id);
     skatepark.name = req.body.name;

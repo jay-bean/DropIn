@@ -1,0 +1,86 @@
+.snippet-container {
+  padding: 0;
+  width: 300px;
+  overflow: hidden;
+  margin-right: 1px;
+}
+
+.gm-style .gm-style-iw-c {
+  border-radius: 16px;
+  width: 300px;
+  padding: 0;
+  height: 120px;
+  overflow: hidden;
+}
+
+.snippet-card {
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  width: 240px;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+.snippet-image-container {
+  width: 80px;
+  height: 100%;
+  object-fit: cover;
+  display: flex;
+  flex-direction: row;
+}
+
+.snippet-card-img-container {
+  overflow: hidden;
+}
+
+.snippet-card-img {
+  height: 137px;
+  object-fit: cover;
+  flex-shrink: 0;
+  transition: transform .3s ease-in-out;
+}
+
+.snippet-card-img:hover {
+  transform: scale(1.1);
+}
+
+.snippet-card-word-section {
+  width: 352px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 auto;
+}
+
+.snippet-card-park-name {
+  color: #333;
+  font-size: 20px;
+  text-decoration: none;
+  margin-top: 6px;
+}
+
+#tags-div {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.snippet-card-addy-fave-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.snippet-card-address-div {
+  text-decoration: none;
+  width: 100px;
+}
+
+.snippet-card-address {
+  color: rgb(100, 100, 100);
+  width: 140px;
+}
