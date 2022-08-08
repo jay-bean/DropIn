@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import { GoogleMap, useJsApiLoader, MarkerF, InfoWindowF } from '@react-google-maps/api';
 import '../Skateparks/explore-page.css';
 import SkateparkSnippet from '../Skateparks/SkateparkSnippet';
+import '../Skateparks/skatepark-snippet.css';
 
 const containerStyle = {
   width: '1328px',
@@ -17,7 +17,7 @@ const center = {
 function Map({ allParks, filteredParks, tagId }) {
   const mappedSkateparks = tagId ? filteredParks : allParks;
   const [activeMarker, setActiveMarker] = useState(null);
-  console.log(mappedSkateparks, 'always something bro')
+
   const activeParkHandler = (marker) => {
     if (marker === activeMarker) {
       return;
@@ -32,13 +32,9 @@ function Map({ allParks, filteredParks, tagId }) {
     googleMapsApiKey: "AIzaSyD1pifB4N1PgR85IcIvLVvfV2etG6Sb0-g"
   })
 
-  const onMarkerLoad = marker => {
-    console.log('marker: ', marker)
-  }
-
   return isLoaded ? (
       <GoogleMap
-        onMouseOver={() => setActiveMarker(null)}
+        onClick={() => setActiveMarker(null)}
         className='google-map'
         mapContainerStyle={containerStyle}
         center={center}
@@ -48,7 +44,6 @@ function Map({ allParks, filteredParks, tagId }) {
           return (
             <MarkerF
               key={index}
-              onLoad={onMarkerLoad}
               position={{ lat: sp.lat, lng: sp.long }}
               onMouseOver={() => {activeParkHandler(sp.id)}}
             >
@@ -64,7 +59,6 @@ function Map({ allParks, filteredParks, tagId }) {
           return (
             <MarkerF
               key={index}
-              onLoad={onMarkerLoad}
               position={{ lat: sp.Skatepark.lat, lng: sp.Skatepark.long }}
               onMouseOver={() => {activeParkHandler(sp.Skatepark.id)}}
             >
