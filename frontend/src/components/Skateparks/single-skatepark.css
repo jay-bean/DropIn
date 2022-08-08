@@ -1,8 +1,6 @@
-/* .single-park-page {
-  display: flex;
-  flex-flow: column;
-  height: 100%;
-} */
+.single-park-details-left-column {
+  min-width: 760px;
+}
 
 .single-park-container {
   display: flex;

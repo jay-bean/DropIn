@@ -1,6 +1,6 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
-const { Review, Skatepark, Image, User } = require('../../db/models');
+const { Review, Skatepark, Image } = require('../../db/models');
 const { reviewValidators } = require('../../validations/validations');
 
 const router = express.Router();
@@ -8,7 +8,7 @@ const router = express.Router();
 router.get('/',
   asyncHandler(async (_req, res) => {
     const reviews = await Review.findAll({
-      include: [{model: Skatepark, include: [{model: Image, as: 'images'}]}, {model: User}],
+      include: [{model: Skatepark, include: [{model: Image, as: 'images'}]}],
     });
     return res.status(200).json(reviews);
   })

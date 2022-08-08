@@ -55,7 +55,7 @@ function SingleSkatepark() {
             <div className='single-park-details-div'>
               <div>
                 {skatepark && (
-                  <div>
+                  <div className='single-park-details-left-column'>
                     <div className='single-park-name-flex'>
                       <div className='single-park-name'>{skatepark.name}</div>
                       {skatepark && <Favorites skateparkId={skatepark.id}/>}

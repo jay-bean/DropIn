@@ -17,7 +17,7 @@ function NewReviewForm({ setShowModal, skatepark }) {
     setValidationErrors([]);
     setRating(0);
     setComment('');
-    setShowModal(false)
+    setShowModal(false);
   };
 
   const handleSubmit = async (e) => {
@@ -37,6 +37,7 @@ function NewReviewForm({ setShowModal, skatepark }) {
         setRating('');
         setComment('');
         setValidationErrors([]);
+        setShowModal(false);
       }
     }
     catch (error) {
