@@ -53,23 +53,22 @@ function AllSkateparks({ tagId }) {
       <div className='map-list-container'>
         <div className='skatepark-card-holder'>
           <div className='skatepark-card-div'>
-            {!tagId &&
-              allParks && allParks.length && allParks.map(skatepark => {
+            {!tagId && allParks && allParks.length ? allParks.map(skatepark => {
                 return (
                   <div key={skatepark.id}>
                     <Skatepark skatepark={skatepark}/>
                   </div>
                 );
               })
-            }
-            {tagId && filteredParks && filteredParks.length && filteredParks.map(parktag => {
+            : null}
+            {tagId && filteredParks && filteredParks.length ? filteredParks.map(parktag => {
               return (
                 <div key={parktag.id}>
                   <Skatepark skatepark={parktag.Skatepark}/>
                 </div>
               );
               })
-            }
+            : null}
           </div>
         </div>
       {<div><Map allParks={allParks} filteredParks={filteredParks} tagId={tagId}/></div>}
