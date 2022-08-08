@@ -19,7 +19,7 @@ function Footer() {
   return (
     <div className="footer">
       <div className='footer-flex'>
-        <div className='footer-explore'>
+        <div id='footer-explore'>
           <Link className='footer-headers' to='/skateparks'><h2>Explore</h2></Link>
           {tags && tags.length && tags.map(tag => {
             return (

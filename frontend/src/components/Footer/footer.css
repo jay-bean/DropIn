@@ -27,7 +27,7 @@ body {
   color: #333;;
 }
 
-.footer-explore {
+#footer-explore {
   display: flex;
   flex-direction: column;
 }
