@@ -7,6 +7,7 @@
   width: 352px;
   margin: auto 10%;
   margin-left: 15%;
+  margin-bottom: 0;
   border-top: thin solid #b4b4b481;
 }
 
@@ -87,4 +88,13 @@
   gap: 30px;
   margin-top: 10px;
   margin-bottom: 20px;
+}
+
+.review-user-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.single-review-btns-div{
+  margin-top: 20px;
 }

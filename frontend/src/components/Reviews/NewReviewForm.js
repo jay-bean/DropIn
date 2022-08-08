@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { addReview } from '../../store/review';
+import './new-review.css';
 
-function NewReviewForm({ setShowModal }) {
+function NewReviewForm({ setShowModal, skatepark }) {
   const dispatch = useDispatch();
   const skateparkParam = useParams();
   const sessionUser = useSelector(state => state.session.user);
@@ -46,37 +47,44 @@ function NewReviewForm({ setShowModal }) {
   }
 
   return (
-    <div>
-    {validationErrors.length > 0 && (
-      validationErrors.map(error => {
-        return <div key={error}>{error}</div>
-      })
-    )}
-    <form
-      onSubmit={handleSubmit}
-    >
-      <label> Rating:</label>
-      <input
-        type="rating"
-        required
-        value={rating}
-        onChange={(e) => setRating(e.target.value)}
-      />
-
-      <label>Comment:</label>
-      <textarea
-        type="comment"
-        placeholder="Tell us about the park..."
-        required
-        value={comment}
-        onChange={(e) => setComment(e.target.value)}
-      />
-      <div>
-        <button type="submit">Submit</button>
-        {/* <button type="button" onClick={handleCancel}>Cancel</button> */}
+    <div className='new-review-form-container'>
+      <div className='new-review-cancelbtn-div'>
+        <button className='new-review-cancel-btn' type="button" onClick={handleCancel}>X</button>
       </div>
-    </form>
-  </div>
+      <form
+        className='new-review-form'
+        onSubmit={handleSubmit}
+        >
+        {skatepark && <div className='new-review-skatepark-name'>{skatepark.name}</div>}
+        <label className='new-review-label'> Rating:</label>
+        <input
+          className='new-review-input'
+          type="rating"
+          required
+          value={rating}
+          onChange={(e) => setRating(e.target.value)}
+          />
+
+        <label className='new-review-label'>Comment:</label>
+        <textarea
+          rows={8}
+          className='new-review-input'
+          type="comment"
+          placeholder="Tell us about the park..."
+          required
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
+          />
+        {validationErrors.length > 0 && (
+          validationErrors.map(error => {
+            return <div key={error}>{error}</div>
+          })
+        )}
+        <div className='new-review-submit-div'>
+          <button className='new-review-submit' type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
   );
 }
 

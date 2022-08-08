@@ -18,19 +18,18 @@ function Review({ review }) {
       <div className="review">
         <div>
           <div className="review-user-info">
-            <img src={review.User.picUrl} style={{width: '60px', height: '60px', borderRadius: "50%"}}/>
-            <p>{review.User.firstName} {review.User.lastName}</p>
+            <img src={review.User.picUrl} style={{width: '70px', height: '70px', borderRadius: "50%"}}/>
+            <p className="review-user-name">{review.User.firstName} {review.User.lastName}</p>
           </div>
         </div>
         <div className="review-rating">Rating: {review.rating}</div>
         <div className="review-comment">Review: {review.comment}</div>
         {sessionUser && sessionUser.id === review.userId && (
-          <div>
+          <div className="single-review-btns-div">
             <EditReviewFormModal skatepark={review.Skatepark} review={review}/>
             <button className="review-delete-btn" onClick={deleteHandler}>Delete</button>
          </div>
         )}
-        <div className="review-buffer"></div>
       </div>}
       </div>
   );

@@ -3,7 +3,7 @@ import { Modal } from '../../context/Modal';
 import NewReviewForm from './NewReviewForm';
 import './new-review.css';
 
-function NewReviewFormModal() {
+function NewReviewFormModal({ skatepark }) {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -11,7 +11,7 @@ function NewReviewFormModal() {
       <button className='review-create-btn' onClick={() => setShowModal(true)}>Write Review</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <NewReviewForm setShowModal={setShowModal}/>
+          <NewReviewForm skatepark={skatepark} setShowModal={setShowModal}/>
         </Modal>
       )}
     </>
