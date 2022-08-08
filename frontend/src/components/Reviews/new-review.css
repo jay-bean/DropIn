@@ -101,3 +101,7 @@
   border-color: #326c0b;
   background-color: #326c0b;
 }
+
+.review-errors {
+  color: red;
+}

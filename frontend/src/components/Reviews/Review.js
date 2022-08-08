@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { getUsers } from "../../store/user";
 
 
-function Review({ review }) {
+function Review({ review, skatepark }) {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const user = useSelector(state => state.users[review.userId]);
@@ -35,7 +35,7 @@ function Review({ review }) {
         <div className="review-comment">Review: {review.comment}</div>
         {sessionUser && sessionUser.id === review.userId && (
           <div className="single-review-btns-div">
-            <EditReviewFormModal skatepark={review.Skatepark} review={review}/>
+            <EditReviewFormModal skatepark={skatepark} review={review}/>
             <button className="review-delete-btn" onClick={deleteHandler}>Delete</button>
          </div>
         )}

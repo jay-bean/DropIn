@@ -57,7 +57,7 @@ function NewReviewForm({ setShowModal, skatepark }) {
         onSubmit={handleSubmit}
         >
         {skatepark && <div className='new-review-skatepark-name'>{skatepark.name}</div>}
-        <label className='new-review-label'> Rating:</label>
+        <label className='new-review-label'>* Rating:</label>
         <input
           className='new-review-input'
           type="rating"
@@ -66,7 +66,7 @@ function NewReviewForm({ setShowModal, skatepark }) {
           onChange={(e) => setRating(e.target.value)}
           />
 
-        <label className='new-review-label'>Comment:</label>
+        <label className='new-review-label'>* Comment:</label>
         <textarea
           rows={8}
           className='new-review-input'
@@ -78,7 +78,7 @@ function NewReviewForm({ setShowModal, skatepark }) {
           />
         {validationErrors.length > 0 && (
           validationErrors.map(error => {
-            return <div key={error}>{error}</div>
+            return <div className='review-errors' key={error}>{error}</div>
           })
         )}
         <div className='new-review-submit-div'>
