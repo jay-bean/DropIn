@@ -14,9 +14,9 @@ const center = {
   lng: -104.8213634
 };
 
-function Map({ allParks, filteredParks, tagId }) {
+function Map({ allParks, filteredParks, tagId, activeMarker, setActiveMarker }) {
   const mappedSkateparks = tagId ? filteredParks : allParks;
-  const [activeMarker, setActiveMarker] = useState(null);
+  // const [activeMarker, setActiveMarker] = useState(null);
 
   const activeParkHandler = (marker) => {
     if (marker === activeMarker) {

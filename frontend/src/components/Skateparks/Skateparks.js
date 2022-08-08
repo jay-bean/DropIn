@@ -15,6 +15,7 @@ function AllSkateparks({ tagId }) {
 
   const [tags, setTags] = useState([]);
   const [selectedTagButton, setSelectedTagButton] = useState(['all']);
+  const [activeMarker, setActiveMarker] = useState(null);
 
   let allParks;
   if (skateparks) {
@@ -23,6 +24,7 @@ function AllSkateparks({ tagId }) {
 
   const handleTagClick = (index) => {
     setSelectedTagButton([index]);
+    setActiveMarker(null);
   }
 
   let filteredParks;
@@ -71,7 +73,7 @@ function AllSkateparks({ tagId }) {
             : null}
           </div>
         </div>
-      {<div><Map allParks={allParks} filteredParks={filteredParks} tagId={tagId}/></div>}
+      {<div><Map setActiveMarker={setActiveMarker} activeMarker={activeMarker} allParks={allParks} filteredParks={filteredParks} tagId={tagId}/></div>}
       </div>
     </div>
   );
