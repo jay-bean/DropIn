@@ -30,7 +30,7 @@
   color: #333;
   font-size: 14px;
   border-radius: 24px;
-  background-color: #fff;
+  background-color: #ffffff;
   border: 1px solid #ccc;
   height: 32px;
   display: flex;
@@ -55,11 +55,19 @@
 .map-list-container {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
-  /* gap: ; */
   position: relative;
   height: calc(100vh - 124px);
-  /* margin: 0 1%; */
+}
+
+.skatepark-card-holder {
+  background-color: #ffffff;
+  width: 400px;
+  height: 100%;
+  box-shadow: 2px 0 4px 0 rgb(0 0 0 / 10%);
+  overflow-y: scroll;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
 }
 
 .skatepark-card-div {
@@ -73,18 +81,6 @@
   overflow-y: scroll;
 }
 
-.skatepark-card-holder {
-  /* position: absolute; */
-  background-color: #ffffff;
-  width: 400px;
-  height: 100%;
-  box-shadow: 2px 0 4px 0 rgb(0 0 0 / 10%);
-  overflow-y: scroll;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-}
-
 .activebtn {
   background-color: #326c0b;
   color: #ffffff;
@@ -92,14 +88,4 @@
 
 .activebtn:hover {
   color: #ffffff;
-}
-
-.filtered {
-
-}
-
-/* maps */
-.google-map {
-  width: 915px;
-  height: 788px;
 }

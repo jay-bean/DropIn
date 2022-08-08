@@ -7,6 +7,8 @@ import { getReviews } from '../../store/review';
 import Favorites from '../Favorites/Favorites';
 import { getParktags } from '../../store/parktag';
 import EditSkateparkForm from './EditSkateparkForm';
+import './single-skatepark.css';
+import SingleParkMap from '../Map/SingleParkMap';
 
 function SingleSkatepark() {
   const dispatch = useDispatch();
@@ -24,8 +26,10 @@ function SingleSkatepark() {
   }
 
   const deleteHandler = async () => {
-    const deletedSkatepark = await dispatch(removeSkatepark(skatepark));
-    if (deletedSkatepark) history.push("/skateparks");
+    if (window.confirm('Are you sure you want to delete this skatepark?')) {
+      const deletedSkatepark = await dispatch(removeSkatepark(skatepark));
+      if (deletedSkatepark) history.push("/skateparks");
+    }
   }
 
   const editFormHandler = async () => {
@@ -40,30 +44,50 @@ function SingleSkatepark() {
 
   return (
     !showEditForm ?
-      <div>
-        {skatepark && skatepark.images.length > 0 && skatepark.images.map(image => <img key={image.id} src={image.url} style={{width: '300px'}}/>)}
-        {skatepark && (
-          <div>
-            <div>{skatepark.name}</div>
-            <div>{skatepark.description}</div>
-            <div>{skatepark.address}</div>
-            <div>{skatepark.city}, {skatepark.state} {skatepark.zipcode}</div>
+
+      <div className='single-park-page'>
+        <div className='single-park-container'>
+          {reviews && <AllReviews className='all-reviews-singlepark-container' reviews={reviews} skatepark={skatepark}/>}
+          <div className='single-park-details-container'>
+            <div className='single-park-imgs-div'>
+              {skatepark && skatepark.images.length > 0 && skatepark.images.map(image => <img className='single-park-imgs' key={image.id} src={image.url}/>)}
+            </div>
+            <div className='single-park-details-div'>
+              <div>
+                {skatepark && (
+                  <div className='single-park-details-left-column'>
+                    <div className='single-park-name-flex'>
+                      <div className='single-park-name'>{skatepark.name}</div>
+                      {skatepark && <Favorites skateparkId={skatepark.id}/>}
+                    </div>
+                    <div className='single-park-tags-div'>
+                      {skatepark && skateparkTags.length > 0 && skateparkTags.map(parktag => {
+                        return (
+                          <div className='single-park-tag' key={parktag.id}>{parktag.Tag.type}</div>
+                        );
+                      })}
+                    </div>
+                    <div className='single-park-description'>{skatepark.description}</div>
+                    <div className='single-park-address'>{skatepark.address}</div>
+                    <div className='single-park-address'>{skatepark.city}, {skatepark.state} {skatepark.zipcode}</div>
+                  </div>
+                )}
+                {skatepark && sessionUser && skatepark.userId === sessionUser.id && (
+                  <div className='single-park-btns'>
+                    <button className='single-park-edit-btn' onClick={editFormHandler}>Edit</button>
+                    <button className='single-park-delete-btn' onClick={deleteHandler}>Delete</button>
+                  </div>
+                )}
+              </div>
+                <div className='single-park-map-div'>
+                  {skatepark && <SingleParkMap skatepark={skatepark}/>}
+                </div>
+            </div>
           </div>
-        )}
-        {skatepark && skateparkTags.length > 0 && skateparkTags.map(parktag => {
-          return (
-            <div key={parktag.id}>{parktag.Tag.type}</div>
-          );
-        })}
-        {skatepark && <Favorites skateparkId={skatepark.id}/>}
-        {skatepark && sessionUser && skatepark.userId === sessionUser.id && (
-          <div>
-            <button onClick={editFormHandler}>Edit</button>
-            <button onClick={deleteHandler}>Delete</button>
-          </div>
-        )}
-        {reviews && <AllReviews reviews={reviews} skatepark={skatepark}/>}
-      </div> :
+        </div>
+      </div>
+
+      :
       <EditSkateparkForm setShowEditForm={setShowEditForm}/>
   );
 }

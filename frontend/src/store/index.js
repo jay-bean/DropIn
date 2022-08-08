@@ -6,13 +6,15 @@ import skateparkReducer from './skatepark';
 import reviewReducer from './review';
 import favoriteReducer from './favorite';
 import parktagReducer from './parktag';
+import userReducer from './user';
 
 const rootReducer = combineReducers({
   session: sessionReducer,
   skateparks: skateparkReducer,
   reviews: reviewReducer,
   parktags: parktagReducer,
-  favorites: favoriteReducer
+  favorites: favoriteReducer,
+  users: userReducer
 });
 
 let enhancer;

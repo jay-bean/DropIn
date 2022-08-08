@@ -102,3 +102,31 @@
   margin-left: 60px;
   line-height: 1.60;
 }
+
+.frameworks-container {
+  display: flex;
+  flex-direction: row;
+  gap: 120px;
+  align-items: center;
+  margin-top: 6%;
+}
+
+.frameworks-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.frameworks-div {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+.framework {
+  background-color: #ffffff;
+  padding: 10px 23px;
+  /* border-radius: 10px; */
+  border-top: 4px solid rgb(181, 181, 181);
+  border-bottom: 4px solid rgb(200, 200, 200);
+
+}

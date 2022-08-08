@@ -27,6 +27,16 @@ function AboutPage() {
             <p className='about-me-p'>Drop In is an AllTrails clone. Instead of trails, it is based off of skateparks. I personally use AllTrails to locate and look up information on trails, and I thought 'this would be a cool idea for skateparks!', and so the idea was born. This is my second solo project I have completed so far. I have put a lot of time and care into this project and I am really proud of it. I hope you enjoy the site as well! </p>
           </div>
         </div>
+        <div className='frameworks-container'>
+          <p className='frameworks-title'>Frameworks and libraries used:</p>
+          <div className='frameworks-div'>
+            <p className='framework'>Javascript</p>
+            <p className='framework'>Express</p>
+            <p className='framework'>React</p>
+            <p className='framework'>Axios</p>
+            <p className='framework'>Google Maps API</p>
+          </div>
+        </div>
       </div>
     </>
   );

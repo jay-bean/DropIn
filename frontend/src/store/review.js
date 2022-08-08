@@ -37,6 +37,7 @@ export const getReviews = () => async dispatch => {
 };
 
 export const addReview = data => async dispatch => {
+  console.log(data,'data in thunk')
   try {
     const response = await csrfFetch(`/api/reviews`, {
       method: 'POST',
@@ -44,6 +45,7 @@ export const addReview = data => async dispatch => {
     });
 
     const review = await response.json();
+    console.log(review, 'in thunk')
     dispatch(add(review));
     return review;
   }

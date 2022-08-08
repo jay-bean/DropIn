@@ -1,4 +1,4 @@
-.skatepark-container-profile {
+.all-container-profile {
   height: 98.4%;
   background-color: #ffffff;
   display: flex;
@@ -7,6 +7,10 @@
   overflow-y: scroll;
 }
 
-.skatepark-container-profile div {
-  width: 80%;
+.add-descriptor-div {
+  margin: auto 6%;
+}
+
+.add-descriptor {
+  line-height: 1.60;
 }

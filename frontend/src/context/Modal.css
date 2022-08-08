@@ -22,7 +22,9 @@
   position: absolute;
   background-color:white;
   width: 40%;
-  height: 400px;
+  height: 500px;
+  width: 524px;
+  border-radius: 16px;
 }
 
 /* .login-form-errors {

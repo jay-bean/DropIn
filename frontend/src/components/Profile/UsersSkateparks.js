@@ -43,15 +43,15 @@ function UsersSkateparks() {
            <div className='profile-column-one'>
              <div className='profile-container-header'>
                <div className='profile-container-header-flex'>
-                 <h2 className='prof-headers'>Skateparks</h2><Link to='/skateparks/new'><button className='profile-edit-btn'>Add Skatepark</button></Link>
+                 <h2 className='prof-headers'>Skateparks</h2>
                </div>
              </div>
-             <div className='skatepark-container-profile'>
-              {usersSkateparks && usersSkateparks.length && usersSkateparks.map(skatepark => {
+             <div className='all-container-profile'>
+              {usersSkateparks && usersSkateparks.length ? usersSkateparks.map(skatepark => {
                 return (
                   <Skatepark skatepark={skatepark}/>
                 );
-              })}
+              }) : null}
              </div>
            </div>
 
@@ -59,6 +59,9 @@ function UsersSkateparks() {
              <div className='contribute'>
                <h3>Contribute</h3>
                  <Link className='add-park-contribute-flex' to='/skateparks/new'><p className='plus-sign'>+</p><p className='profile-add-contribute'>Add a skatepark</p></Link>
+             </div>
+             <div className='add-descriptor-div'>
+              {usersSkateparks && usersSkateparks.length ? <p className='add-descriptor'>Here you can view all of the skateparks you have contributed to the site so far. Click on any of them to view, edit, or delete.</p> : <p className='add-descriptor'>You currently haven't added a skatepark to the site. If you have one in mind that you don't see click the link above!</p>}
              </div>
            </div>
 

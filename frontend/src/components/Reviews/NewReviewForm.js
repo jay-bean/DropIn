@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { editReview } from '../../store/review';
+import { useHistory, useParams } from 'react-router-dom';
+import { addReview } from '../../store/review';
+import './new-review.css';
 
-function EditReviewForm({ review, setShowModal, skatepark }) {
+function NewReviewForm({ setShowModal, skatepark }) {
   const dispatch = useDispatch();
   const skateparkParam = useParams();
   const sessionUser = useSelector(state => state.session.user);
 
   const [validationErrors, setValidationErrors] = useState([]);
-  const [rating, setRating] = useState(review ? review.rating : 0);
-  const [comment, setComment] = useState(review ? review.comment : '');
+  const [rating, setRating] = useState(0);
+  const [comment, setComment] = useState('');
 
   const handleCancel = () => {
     setValidationErrors([]);
@@ -27,12 +28,12 @@ function EditReviewForm({ review, setShowModal, skatepark }) {
         rating,
         comment,
         userId: sessionUser.id,
-        skateparkId: skateparkParam ? skateparkParam.id : skatepark.id
+        skateparkId: skateparkParam.id
       }
 
-      const updatedReview = await dispatch(editReview(data, review.id));
+      const newReview = await dispatch(addReview(data));
 
-      if (updatedReview) {
+      if (newReview) {
         setRating('');
         setComment('');
         setValidationErrors([]);
@@ -41,7 +42,8 @@ function EditReviewForm({ review, setShowModal, skatepark }) {
     }
     catch (error) {
       const err = await error.json();
-      setValidationErrors(err.errors);
+      if (error.status >= 500) setValidationErrors([err.message])
+      else setValidationErrors(err.errors);
     }
   }
 
@@ -87,4 +89,4 @@ function EditReviewForm({ review, setShowModal, skatepark }) {
   );
 }
 
-export default EditReviewForm;
+export default NewReviewForm;

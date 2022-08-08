@@ -1,6 +1,6 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
-const { Favorite } = require('../../db/models');
+const { Favorite, Skatepark, Image } = require('../../db/models');
 const { requireAuth } = require('../../utils/auth');
 
 const router = express.Router();
@@ -12,6 +12,7 @@ router.get('/',
     if (user) {
       const favorites = await Favorite.findAll({
         attributes: { include: ['id'] },
+        include: [{model: Skatepark, include: [{model: Image, as: 'images'}]}],
         where: {
           userId: user.id
         }
