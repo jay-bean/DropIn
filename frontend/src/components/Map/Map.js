@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react';
-import { GoogleMap, useJsApiLoader, MarkerF } from '@react-google-maps/api';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { GoogleMap, useJsApiLoader, MarkerF, InfoWindowF } from '@react-google-maps/api';
 import '../Skateparks/explore-page.css';
+import ActiveSkatepark from '../Skateparks/ActiveSkatepark';
 
 const containerStyle = {
   width: '1328px',
@@ -14,8 +15,18 @@ const center = {
 };
 
 function Map({ allParks, filteredParks, tagId }) {
-  console.log(filteredParks, 'fparks')
   const mappedSkateparks = tagId ? filteredParks : allParks;
+  const [activeMarker, setActiveMarker] = useState(null);
+
+  const activeParkHandler = (marker) => {
+    if (marker === activeMarker) {
+      return;
+    }
+    else {
+      setActiveMarker(marker);
+    }
+  }
+
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: "AIzaSyD1pifB4N1PgR85IcIvLVvfV2etG6Sb0-g"
@@ -38,7 +49,14 @@ function Map({ allParks, filteredParks, tagId }) {
               key={index}
               onLoad={onMarkerLoad}
               position={{ lat: sp.lat, lng: sp.long }}
-            />
+              onMouseOver={() => {activeParkHandler(sp.id)}}
+            >
+              {activeMarker === sp.Skatepark.id ? (
+                <InfoWindowF>
+                  <Link>{sp.name}</Link>
+                </InfoWindowF>
+              ) : null}
+            </MarkerF>
           );
          })}
         {tagId && mappedSkateparks.map((sp, index) => {
@@ -47,7 +65,14 @@ function Map({ allParks, filteredParks, tagId }) {
               key={index}
               onLoad={onMarkerLoad}
               position={{ lat: sp.Skatepark.lat, lng: sp.Skatepark.long }}
-            />
+              onMouseOver={() => {activeParkHandler(sp.Skatepark.id)}}
+            >
+              {activeMarker === sp.Skatepark.id ? (
+                <InfoWindowF>
+                  <ActiveSkatepark skatepark={sp.Skatepark}/>
+                </InfoWindowF>
+              ) : null}
+            </MarkerF>
           );
          })}
       </GoogleMap>
