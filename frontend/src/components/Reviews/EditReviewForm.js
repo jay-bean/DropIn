@@ -46,35 +46,41 @@ function EditReviewForm({ review, setShowModal, skatepark }) {
   }
 
   return (
-    <div>
-      <h1>Edit Review Form</h1>
-      {validationErrors.length > 0 && (
-        validationErrors.map(error => {
-          return <div key={error}>{error}</div>
-        })
-      )}
+    <div className='new-review-form-container'>
+      <div className='new-review-cancelbtn-div'>
+        <button className='new-review-cancel-btn' type="button" onClick={handleCancel}>X</button>
+      </div>
       <form
+        className='new-review-form'
         onSubmit={handleSubmit}
-      >
-        <label> Rating:</label>
+        >
+        {skatepark && <div className='new-review-skatepark-name'>{skatepark.name}</div>}
+        <label className='new-review-label'> Rating:</label>
         <input
+          className='new-review-input'
           type="rating"
           required
           value={rating}
           onChange={(e) => setRating(e.target.value)}
-        />
+          />
 
-        <label>Comment:</label>
+        <label className='new-review-label'>Comment:</label>
         <textarea
+          rows={8}
+          className='new-review-input'
           type="comment"
           placeholder="Tell us about the park..."
           required
           value={comment}
           onChange={(e) => setComment(e.target.value)}
-        />
-        <div>
-          <button type="submit">Submit</button>
-          <button type="button" onClick={handleCancel}>Cancel</button>
+          />
+        {validationErrors.length > 0 && (
+          validationErrors.map(error => {
+            return <div key={error}>{error}</div>
+          })
+        )}
+        <div className='new-review-submit-div'>
+          <button className='new-review-submit' type="submit">Submit</button>
         </div>
       </form>
     </div>
