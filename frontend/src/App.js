@@ -18,7 +18,6 @@ import AboutPage from "./components/AboutPage/AboutPage";
 import UsersReviews from "./components/Profile/UsersReviews";
 import UsersSkateparks from "./components/Profile/UsersSkateparks";
 import UsersFavorites from "./components/Profile/UsersFavorites";
-import StarRating from "./components/Reviews/StarRating";
 
 function App() {
   const dispatch = useDispatch();
@@ -94,9 +93,6 @@ function App() {
           </Route>
           <Route path="/" exact={true}>
             <Homepage/>
-          </Route>
-          <Route path="/stars" exact={true}>
-            <StarRating/>
           </Route>
         </Switch>
       )}

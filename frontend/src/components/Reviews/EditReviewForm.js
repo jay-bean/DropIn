@@ -49,7 +49,7 @@ function EditReviewForm({ review, setShowModal, skatepark }) {
   return (
     <div className='new-review-form-container'>
       <div className='new-review-cancelbtn-div'>
-        <button className='new-review-cancel-btn' type="button" onClick={handleCancel}>X</button>
+        <button className='new-review-cancel-btn' type="button" onClick={handleCancel}><img className='new-review-cancel-img' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/close.png' alt='x'/></button>
       </div>
       <form
         className='new-review-form'
@@ -62,7 +62,7 @@ function EditReviewForm({ review, setShowModal, skatepark }) {
             index += 1;
             return (
               <button
-                style={{backgroundColor: 'transparent', border: 'none', width: '22px', height: '20px'}}
+                style={{backgroundColor: 'transparent', border: 'none', width: '40px', height: '40px'}}
                 type="button"
                 key={index}
                 className={index <= rating || hover ? "on" : "off"}
@@ -72,7 +72,7 @@ function EditReviewForm({ review, setShowModal, skatepark }) {
               >
                 <img
                   className='star-img'
-                  src={index <= hover ? "https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/star+(5).png" : "https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/star+(4).png"}
+                  src={index <= hover ? "https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/star+(7).png" : "https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/star+(6).png"}
                   alt={index <= rating || hover ? "filled star" : "empty star"}
                 />
               </button>

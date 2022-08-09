@@ -10,10 +10,8 @@
   border: 2px solid transparent;
   margin-top: 30px;
   margin-bottom: 30px;
+  font-size: 18px;
 }
-
-/* .new-review-form-container {
-} */
 
 .new-review-form {
   padding: 30px;
@@ -36,13 +34,23 @@
 }
 
 .new-review-cancelbtn-div:hover {
-  background-color: #e0e0e0;
+  background-color: #f1f1f1;
 }
 
 .new-review-cancel-btn {
   transition: 200ms ease-in-out 0s;
-  font-size: 24px;
   border: none;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-review-cancel-img {
+  transition: 200ms ease-in-out 0s;
+  width: 20px;
+  height: 20px;
   color: #333;
   background-color: transparent;
   font-family: Arial, Helvetica, sans-serif;
@@ -70,11 +78,11 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  height: 32px;
 }
 
 .new-review-submit {
-  margin-top: 60px;
-  margin-right: 30px;
+  margin-top: 10px;
   border-color: #428a13;
   background-color: #428a13;
   font-family: Arial, Helvetica, sans-serif;
@@ -112,11 +120,17 @@
   flex-direction: row;
   max-width: 100px;
   justify-content: flex-start;
+  gap: 8px;
 }
 
 .star-img {
   display: flex;
   flex-direction: row;
-  width: 22px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
+}
+
+.star-img:hover {
+  width: 42px;
+  height: 42px;
 }

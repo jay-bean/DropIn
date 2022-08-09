@@ -1,3 +1,7 @@
+.single-review-container {
+  height: 270px;
+}
+
 .review {
   display: flex;
   flex-direction: column;
@@ -20,7 +24,7 @@
   height: 100px;
   width: 346px;
   margin: 0 10px;
-
+  word-wrap: break-word;
   text-align: left;
   line-height: 1.50;
   overflow-y: scroll;
@@ -93,8 +97,63 @@
 .review-user-name {
   font-size: 18px;
   font-weight: bold;
+  margin: 0;
+  margin-left: 10px;
 }
 
 .single-review-btns-div{
-  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+/* stars */
+
+.single-review-star-name-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+#single-review-star-btns {
+  width: 18px;
+  height: 18px;
+  background-color: transparent;
+  border: none;
+  margin: auto 3px;
+}
+
+.single-review-star-img {
+  width: 18px;
+  height: 18px;
+}
+
+/* all reviews page stars */
+
+.average-star-container {
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+}
+
+#average-star-btns {
+  width: 26px;
+  height: 26px;
+  background-color: transparent;
+  border: none;
+  margin: auto 3px;
+}
+
+.average-star-img {
+  width: 26px;
+  height: 26px;
+}
+
+.average-star-p {
+  text-align: center;
+  margin: 0;
+  font-size: 16px;
 }
