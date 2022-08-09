@@ -31,12 +31,11 @@ function ProfileButton({ user }) {
   };
 
   return (
+
     <div className="profile-btn-container">
       <button className="prof-btn" onClick={openMenu}>
-      <i className="fa-regular fa-circle-user"></i>
+        <i className="fa-regular fa-circle-user"></i>
       </button>
-
-
       {showMenu && (
         <ul className="profile-dropdown">
           <Link to='/profile'><li className="prof-li top">Profile</li></Link>
