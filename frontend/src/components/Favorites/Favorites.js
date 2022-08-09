@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getFavorites, addFavorite, removeFavorite } from "../../store/favorite";
 import { useDispatch, useSelector } from 'react-redux';
+import { Redirect } from "react-router-dom";
 import './favorite.css';
 
 function Favorites({ skateparkId }) {
@@ -37,7 +38,9 @@ function Favorites({ skateparkId }) {
   }
 
   useEffect(() => {
-    if (sessionUser) dispatch(getFavorites());
+    if (sessionUser) {
+      dispatch(getFavorites());
+    }
   }, [dispatch])
 
   return (

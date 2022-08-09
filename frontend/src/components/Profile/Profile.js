@@ -99,7 +99,7 @@ function Profile() {
           </div>
         </div>
         </div>
-      </div>) :  <Redirect to="/explore" />
+      </div>) :  <Redirect to="/" />
 
   );
 }
