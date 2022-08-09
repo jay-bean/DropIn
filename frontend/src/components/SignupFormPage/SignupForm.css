@@ -113,4 +113,5 @@
 .signup-errors {
   list-style: none;
   color: red;
+  margin-bottom: 4px;
 }

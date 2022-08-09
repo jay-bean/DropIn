@@ -26,7 +26,7 @@ function Review({ review, skatepark }) {
         <div>
           {user &&
             <div className="review-user-info">
-              {sessionUser.picUrl ? <img src={user.picUrl} style={{width: '60px', height: '60px', borderRadius: "50%"}} alt='user profile'/> : <img style={{width: '60px', height: '60px', borderRadius: "50%"}} src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/73-730477_first-name-profile-image-placeholder-png.png' alt="profile placeholder"/>}
+              { user && user.picUrl ? <img src={user.picUrl} style={{width: '60px', height: '60px', borderRadius: "50%"}} alt='user profile'/> : <img style={{width: '60px', height: '60px', borderRadius: "50%"}} src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/73-730477_first-name-profile-image-placeholder-png.png' alt="profile placeholder"/>}
               <div className="single-review-star-name-container">
                 <p className="review-user-name">{user.firstName} {user.lastName}</p>
                 <div className="single-review-star-rating-div">
