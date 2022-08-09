@@ -26,7 +26,7 @@ function Review({ review, skatepark }) {
         <div>
           {user &&
             <div className="review-user-info">
-              <img src={user.picUrl} style={{width: '70px', height: '70px', borderRadius: "50%"}}/>
+              {sessionUser.picUrl ? <img src={user.picUrl} style={{width: '70px', height: '70px', borderRadius: "50%"}}/> : <img style={{width: '70px', height: '70px', borderRadius: "50%"}} src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/73-730477_first-name-profile-image-placeholder-png.png'/>}
               <p className="review-user-name">{user.firstName} {user.lastName}</p>
             </div>
           }
