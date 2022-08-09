@@ -37,14 +37,12 @@ function Favorites({ skateparkId }) {
   }
 
   useEffect(() => {
-    dispatch(getFavorites());
+    if (sessionUser) dispatch(getFavorites());
   }, [dispatch])
 
   return (
     <div>
-      <div onClick={() => {
-        favoritesHandler();
-      }}>
+      <div onClick={favoritesHandler}>
         {existingFavorite ? <img className="heart" src="https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/heart.png"/> : <img className="heart" src="https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/heart+(1).png"/>}
       </div>
     </div>
