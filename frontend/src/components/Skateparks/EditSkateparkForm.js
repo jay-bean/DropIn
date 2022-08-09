@@ -6,7 +6,7 @@ import { getSkateparks, editSkatepark } from '../../store/skatepark';
 import TagSelect from './TagSelect';
 import './skateparkform.css';
 
-function EditSkateparkForm({ setShowEditForm }) {
+function EditSkateparkForm({ setDidUpdate, setShowEditForm }) {
   const dispatch = useDispatch();
   const skateparkParam = useParams();
   const sessionUser = useSelector(state => state.session.user);
@@ -30,7 +30,7 @@ function EditSkateparkForm({ setShowEditForm }) {
   if (skateparkTags) {
     skateparkTags.map(tag => tagIdArr.push(tag.tagId));
   }
-  
+
   const [selectedTag, setSelectedTag] = useState(tagIdArr.length ? tagIdArr : '');
 
   useEffect(() => {
@@ -65,6 +65,7 @@ function EditSkateparkForm({ setShowEditForm }) {
       }
       const updatedSkatepark = await dispatch(editSkatepark(formData, skatepark.id));
       if (updatedSkatepark) {
+        setDidUpdate(true);
         setShowEditForm(false);
       }
     }

@@ -11,6 +11,7 @@ router.get('/',
     const skateparks = await Skatepark.findAll({
       include: [{model: Image, as: 'images'}]
     });
+
     return res.status(200).json(skateparks);
   })
 );
@@ -135,7 +136,7 @@ router.put(`/:id(\\d+)`,
     skatepark.lat = lat;
     skatepark.long = long;
 
-    const result = await skatepark.save();
+    await skatepark.save();
 
     const images = req.files;
     const imageObjs = images.map(el => {
@@ -165,7 +166,6 @@ router.put(`/:id(\\d+)`,
     let addTags;
     let removeTags;
     let oldTagsIds;
-    let resTags;
     let destroyedTags;
     if (tags) {
       removeTags = oldTags.filter(tag => !tags.includes(String(tag.tagId)));
@@ -173,16 +173,18 @@ router.put(`/:id(\\d+)`,
       addTags = tags.filter(tag => !oldTagsIds.includes(Number(tag)));
       destroyedTags = await Promise.all(removeTags.map(async tag => {
         const deleteTag = await Parktag.findOne({
+          attributes: { include: ['id'] },
           where: {
             tagId: tag.tagId,
             skateparkId: req.params.id
           }
         });
-       await deleteTag.destroy();
-       return ;
+        console.log(deleteTag, 'deletetagggggg');
+        await deleteTag.destroy();
+        return deleteTag.id;
       }));
 
-      resTags = await Promise.all(addTags.map(async tag => {
+      await Promise.all(addTags.map(async tag => {
         const newParktag = await Parktag.create({
             tagId: tag,
             skateparkId: req.params.id
@@ -191,14 +193,30 @@ router.put(`/:id(\\d+)`,
       }));
     }
 
-    const resImages = await Promise.all(imageObjs.map(async (image) => await image.save()))
+    await Promise.all(imageObjs.map(async (image) => await image.save()));
+
+
+    const updatedSkatepark = await Skatepark.findByPk(req.params.id);
+
+    const updatedTags = await Parktag.findAll({
+      attributes: { include: ['id'] },
+      where: { skateparkId: req.params.id},
+      raw: true
+    });
+
+    const updatedImages = await Image.findAll({
+      where: { skateparkId: req.params.id},
+      raw: true
+    })
 
     const response = {
-      ...result.dataValues,
-      images: resImages,
-      tags: resTags,
+      ...updatedSkatepark.dataValues,
+      images: updatedImages,
+      tags: updatedTags,
       destroyedTags
-  }
+    }
+
+    console.log(response, 'response')
     return res.status(200).json(response);
   })
 );

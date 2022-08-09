@@ -1,9 +1,15 @@
 import { csrfFetch } from './csrf';
 
 const LOAD = 'parktags/LOAD';
+const REMOVE = 'parktags/REMOVE';
 
 const load = parktags => ({
   type: LOAD,
+  parktags
+})
+
+const remove = parktags => ({
+  type: REMOVE,
   parktags
 })
 
@@ -29,6 +35,16 @@ export const getTags = async () => {
   }
 }
 
+export const removeParktags = parktags => async dispatch => {
+  try {
+    dispatch(remove(parktags));
+    return parktags;
+  }
+  catch (error) {
+    throw error;
+  }
+}
+
 const initialState = {};
 
 const parktagReducer = (state = initialState, action) => {
@@ -39,6 +55,11 @@ const parktagReducer = (state = initialState, action) => {
         newState[parktag.id] = parktag;
       });
       return newState;
+    case REMOVE:
+      action.parktags.forEach(id => {
+        delete newState[id]
+      })
+      return newState
     default:
       return state;
   }

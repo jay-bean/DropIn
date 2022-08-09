@@ -19,6 +19,7 @@ function SingleSkatepark() {
   const reviews = useSelector(state => state.reviews);
   const parktags = useSelector(state => state.parktags);
   const [showEditForm, setShowEditForm] = useState(false);
+  const [didUpdate, setDidUpdate] = useState(false);
 
   let skateparkTags;
   if (parktags && skatepark) {
@@ -40,7 +41,7 @@ function SingleSkatepark() {
     dispatch(getSkateparks());
     dispatch(getReviews());
     dispatch(getParktags());
-  }, [dispatch, showEditForm]);
+  }, [dispatch]);
 
   return (
     !showEditForm ?
@@ -53,6 +54,7 @@ function SingleSkatepark() {
               {skatepark && skatepark.images.length > 0 && skatepark.images.map(image => <img className='single-park-imgs' key={image.id} src={image.url}/>)}
             </div>
             <div className='single-park-details-div'>
+              {didUpdate && <div>Update SuccessFul!!</div>}
               <div>
                 {skatepark && (
                   <div className='single-park-details-left-column'>
@@ -88,7 +90,7 @@ function SingleSkatepark() {
       </div>
 
       :
-      <EditSkateparkForm setShowEditForm={setShowEditForm}/>
+      <EditSkateparkForm setDidUpdate={setDidUpdate} setShowEditForm={setShowEditForm}/>
   );
 }
 
