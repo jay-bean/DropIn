@@ -8,7 +8,7 @@ function PageNotFound() {
       <div className='page-not-found-div'>
         <h1 className='h1-page-not-found'>404</h1>
         <h3 className='h3-page-not-found'>Looks like you 360'd a little too far.</h3>
-        <Link className='link-page-not-found' to='/'>Home</Link>
+        <Link className='link-page-not-found' to='/'><button className='link-page-not-found-btn'>Home</button></Link>
       </div>
     </div>
   );
