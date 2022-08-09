@@ -1,23 +1,10 @@
-.profile-edit-page {
-  background-image: url(https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/profile-edit.jpg);
-  background-size: cover !important;
-  background-position: center center;
-  width: 100%;
-  height: 900px;
-}
-
-.profile-form-div {
-  padding-top: 120px
-}
-
 .profile-edit-form {
-  max-width: 480px;
+
+  width: 90%;
   padding: 24px;
   display: flex;
   flex-direction: column;
-  border-radius: 16px;
   background: #fff;
-  box-shadow: 0 8px 16px 0 rgb(0 0 0 / 24%), 0 0 8px 0 rgb(0 0 0 / 8%);
   margin: auto;
 }
 
@@ -55,6 +42,13 @@
   margin-bottom: 10px;
 }
 
+.profile-edit-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
 .profile-edit-submit-btn {
   border-color: #428a13;
   background-color: #428a13;
@@ -62,12 +56,12 @@
   font-weight: 700;
   line-height: 1.36;
   height: 32px;
-  padding: 20px 20px;
+  padding: 16px 20px;
   position: relative;
   display: inline-flex;
   flex-direction: row;
   box-sizing: border-box;
-  max-width: 100%;
+  max-width: 40%;
   align-items: center;
   justify-content: center;
   border-radius: 9999px;
@@ -89,12 +83,12 @@
   font-weight: 700;
   line-height: 1.36;
   height: 32px;
-  padding: 20px 20px;
+  padding: 16px 20px;
   position: relative;
   display: inline-flex;
   flex-direction: row;
   box-sizing: border-box;
-  max-width: 100%;
+  max-width: 40%;
   align-items: center;
   justify-content: center;
   border-radius: 9999px;
