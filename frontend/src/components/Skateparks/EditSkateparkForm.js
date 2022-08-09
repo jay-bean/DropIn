@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, Redirect } from 'react-router-dom';
 import { getParktags } from '../../store/parktag';
 import { getSkateparks, editSkatepark } from '../../store/skatepark';
 import TagSelect from './TagSelect';
@@ -76,6 +76,7 @@ function EditSkateparkForm({ setDidUpdate, setShowEditForm }) {
   }
 
   return (
+    sessionUser ?
     <div>
       <div className='skatepark-form-buffer'></div>
         <div className='skatepark-form-page'>
@@ -169,7 +170,7 @@ function EditSkateparkForm({ setDidUpdate, setShowEditForm }) {
             </form>
           </div>
         </div>
-    </div>
+    </div> : <Redirect to="/" />
   );
 }
 

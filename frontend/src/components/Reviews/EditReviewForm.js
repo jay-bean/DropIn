@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, Redirect } from 'react-router-dom';
 import { editReview } from '../../store/review';
 
 function EditReviewForm({ review, setShowModal, skatepark }) {
@@ -47,6 +47,7 @@ function EditReviewForm({ review, setShowModal, skatepark }) {
   }
 
   return (
+    sessionUser ?
     <div className='new-review-form-container'>
       <div className='new-review-cancelbtn-div'>
         <button className='new-review-cancel-btn' type="button" onClick={handleCancel}><img className='new-review-cancel-img' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/close.png' alt='x'/></button>
@@ -98,7 +99,7 @@ function EditReviewForm({ review, setShowModal, skatepark }) {
           <button className='new-review-submit' type="submit">Submit</button>
         </div>
       </form>
-    </div>
+    </div> : <Redirect to="/" />
   );
 }
 

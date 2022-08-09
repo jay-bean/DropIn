@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { getFavorites } from '../../store/favorite';
 import Skatepark from '../Skateparks/Skatepark';
 import './profile.css';
@@ -20,7 +20,7 @@ function UsersFavorites() {
   }, [dispatch]);
 
   return (
-    sessionUser &&
+    sessionUser ?
      ( <div className='prof-page'>
         <div className='first-buffer'>
           <div className='first-buffer-flex'>
@@ -68,7 +68,7 @@ function UsersFavorites() {
           </div>
         </div>
         </div>
-      </div>)
+      </div>) : <Redirect to="/" />
 
   );
 }

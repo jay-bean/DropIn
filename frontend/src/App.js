@@ -18,6 +18,7 @@ import AboutPage from "./components/AboutPage/AboutPage";
 import UsersReviews from "./components/Profile/UsersReviews";
 import UsersSkateparks from "./components/Profile/UsersSkateparks";
 import UsersFavorites from "./components/Profile/UsersFavorites";
+import PageNotFound from "./components/PageNotFound/PageNotFound";
 
 function App() {
   const dispatch = useDispatch();
@@ -93,6 +94,9 @@ function App() {
           </Route>
           <Route path="/" exact={true}>
             <Homepage/>
+          </Route>
+          <Route path='*'>
+            <PageNotFound/>
           </Route>
         </Switch>
       )}
