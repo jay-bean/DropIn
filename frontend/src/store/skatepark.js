@@ -62,7 +62,6 @@ export const editSkatepark = (data, id) => async dispatch => {
 
     const skatepark = await response.json();
     dispatch(update(skatepark));
-    console.log(skatepark.destroyedTags, 'tags array')
     dispatch(removeParktags(skatepark.destroyedTags));
     dispatch(getParktags());
     return skatepark;
@@ -79,7 +78,6 @@ export const removeSkatepark = data => async dispatch => {
     });
 
     const skatepark = await response.json();
-    console.log(skatepark, 'skatepark in thuunk')
     dispatch(remove(skatepark));
     return skatepark;
   }

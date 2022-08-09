@@ -48,7 +48,6 @@ function UsersFavorites() {
               <div className='all-container-profile'>
                 <div className='review-flex-column'>
                   {favoritesArr && favoritesArr.length ? favoritesArr.map(favorite => {
-                    console.log(favorite,'fave')
                     return (
                       <Skatepark skatepark={favorite.Skatepark}/>
                     );

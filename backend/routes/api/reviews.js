@@ -18,16 +18,13 @@ router.post('/',
   reviewValidators,
   asyncHandler(async (req, res) => {
     const { rating, comment, userId, skateparkId } = req.body;
-    console.log(req.body, 'reqbodyyy');
     const newReview = await Review.build({
       rating,
       comment,
       userId,
       skateparkId
     });
-    console.log(newReview, 'new reviewwww');
     const result = await newReview.save();
-    console.log(result, 'this is result')
     return res.status(200).json(result);
   })
 );

@@ -179,7 +179,6 @@ router.put(`/:id(\\d+)`,
             skateparkId: req.params.id
           }
         });
-        console.log(deleteTag, 'deletetagggggg');
         await deleteTag.destroy();
         return deleteTag.id;
       }));
@@ -216,7 +215,6 @@ router.put(`/:id(\\d+)`,
       destroyedTags
     }
 
-    console.log(response, 'response')
     return res.status(200).json(response);
   })
 );

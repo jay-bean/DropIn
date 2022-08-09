@@ -54,7 +54,6 @@ function SingleSkatepark() {
               {skatepark && skatepark.images.length > 0 && skatepark.images.map(image => <img className='single-park-imgs' key={image.id} src={image.url}/>)}
             </div>
             <div className='single-park-details-div'>
-              {didUpdate && <div>Update SuccessFul!!</div>}
               <div>
                 {skatepark && (
                   <div className='single-park-details-left-column'>
