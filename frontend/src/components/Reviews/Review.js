@@ -20,19 +20,40 @@ function Review({ review, skatepark }) {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="single-review-container">
     {review &&
       <div className="review">
         <div>
           {user &&
             <div className="review-user-info">
-              <img src={user.picUrl} style={{width: '70px', height: '70px', borderRadius: "50%"}}/>
-              <p className="review-user-name">{user.firstName} {user.lastName}</p>
+              {sessionUser.picUrl ? <img src={user.picUrl} style={{width: '60px', height: '60px', borderRadius: "50%"}} alt='user profile'/> : <img style={{width: '60px', height: '60px', borderRadius: "50%"}} src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/73-730477_first-name-profile-image-placeholder-png.png' alt="profile placeholder"/>}
+              <div className="single-review-star-name-container">
+                <p className="review-user-name">{user.firstName} {user.lastName}</p>
+                <div className="single-review-star-rating-div">
+                  {[...Array(5).keys()].map((index) => {
+                    index += 1;
+                    return (
+                      <button
+                        id="single-review-star-btns"
+                        type="button"
+                        key={index}
+                        className={index <= review.rating ? "on" : "off"}
+                      >
+                        <img
+                          className='single-review-star-img'
+                          src={index <= review.rating ? "https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/star+(7).png" : "https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/star+(6).png"}
+                          alt={index <= review.rating ? "filled star" : "empty star"}
+                        />
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
             </div>
           }
         </div>
-        <div className="review-rating">Rating: {review.rating}</div>
-        <div className="review-comment">Review: {review.comment}</div>
+        <div className="review-comment">{review.comment}</div>
         {sessionUser && sessionUser.id === review.userId && (
           <div className="single-review-btns-div">
             <EditReviewFormModal skatepark={skatepark} review={review}/>
