@@ -17,6 +17,7 @@ function Favorites({ skateparkId }) {
 
   const favoritesHandler = async () => {
     try {
+      if (!sessionUser) return window.alert('You must be logged in to favorite a skatepark.');
       setFavorited(!favorited);
       if (!existingFavorite && skateparkId) {
         const data = {

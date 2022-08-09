@@ -4,7 +4,7 @@ import EditReviewForm from './EditReviewForm';
 
 function EditReviewFormModal({ review, skatepark }) {
   const [showModal, setShowModal] = useState(false);
-
+  
   return (
     <>
       <button className='review-edit-btn' onClick={() => setShowModal(true)}>Edit</button>
