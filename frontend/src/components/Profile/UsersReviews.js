@@ -13,7 +13,7 @@ function UsersReviews() {
 
   let usersReviews;
   if (reviews && sessionUser) {
-    usersReviews = Object.values(reviews).filter(review => review.userId === sessionUser.id)
+    usersReviews = Object.values(reviews).filter(review => review.userId === sessionUser.id).reverse()
   }
 
   useEffect(() => {
