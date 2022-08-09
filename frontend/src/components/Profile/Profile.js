@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getFavorites } from '../../store/favorite';
 import { getReviews } from '../../store/review';
-import { getSkateparks } from '../../store/skatepark';
 import './profile.css';
 
 function Profile() {
@@ -34,7 +33,7 @@ function Profile() {
           <div className='first-buffer-flex'>
             <p>Member</p><p className='carrot'>{'>'}</p><p>{sessionUser.firstName} {sessionUser.lastName}</p>
           </div>
-          </div>
+        </div>
           <div className='second-buffer'>
             <div className='second-buffer-flex'>
               <Link className={'profile-links active-prof-links'} to='/profile'>Profile</Link>
@@ -71,7 +70,7 @@ function Profile() {
               </div>
               <div className='review-div'>
                 <div className='review-flex-column'>
-                  {usersReviews && usersReviews.length ? <><h4>You currently have {usersReviews.length} reviews.</h4><p className='profile-p'> Head on over to the review tab if you would like to make any changes to them.</p></> : <p className='profile-p'>You currently don't have any reviews. <Link className='profile-favorite-explore' to='/skateparks'>Explore</Link></p>}
+                  {usersReviews && usersReviews.length ? <><h4>You currently have {usersReviews.length} reviews.</h4><p className='profile-p'> Head on over to your <Link className='profile-favorite-explore' to='/profile/reviews'>reviews</Link> tab if you would like to make any changes.</p></> : <p className='profile-p'>You currently don't have any reviews. <Link className='profile-favorite-explore' to='/skateparks'>Explore</Link></p>}
                 </div>
               </div>
 
@@ -82,7 +81,7 @@ function Profile() {
               </div>
               <div className='review-div'>
                 <div className='review-flex-column'>
-                  {favoritesArr && favoritesArr.length ? <><h4>You have favorited {favoritesArr.length} skateparks!</h4><p className='profile-p'> Head on over to the favorites tab if you would like to see which parks those are.</p></> : <p className='profile-p'>You currently don't have any favorites. <Link className='profile-favorite-explore' to='/skateparks'>Explore</Link></p>}
+                  {favoritesArr && favoritesArr.length ? <><h4>You have favorited {favoritesArr.length} skateparks!</h4><p className='profile-p'> Head on over to your <Link className='profile-favorite-explore' to='/profile/favorites'>favorites</Link> tab if you would like to see which parks those are.</p></> : <p className='profile-p'>You currently don't have any favorites. <Link className='profile-favorite-explore' to='/skateparks'>Explore</Link></p>}
                 </div>
               </div>
             </div>

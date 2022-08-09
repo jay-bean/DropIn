@@ -48,7 +48,7 @@ function AllReviews({ skatepark, reviews }) {
                         );
                       })} {filteredReviews.length === 1 ? <p className='average-star-p'>{filteredReviews.length} Review</p> : <p className='average-star-p'>{filteredReviews.length} Reviews</p>}
                     </div>
-                  </div> : <p className='average-star-p'>currently doesn't have any reviews.</p>}
+                  </div> : <p className='average-star-p'>This park currently doesn't have any reviews.</p>}
               </div>
             </div>
           }
