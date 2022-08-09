@@ -47,19 +47,19 @@ function Homepage() {
         <div className='homepage-tags-container'>
           <Link to={`/skateparks/Half pipe`} className='homepage-tag-grid'>
             <div className='homepage-tags-titles'>Half Pipe</div>
-            <div className='homepage-tag-img-divs'><img src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/d03d91464d0268a58b8c79303d0fbcd4_-queensland-gold-coast-city-upper-coomera-upper-coomera-skateparkhtml.jpg' className='homepage-tag-pipe'/></div>
+            <div className='homepage-tag-img-divs'><img src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/d03d91464d0268a58b8c79303d0fbcd4_-queensland-gold-coast-city-upper-coomera-upper-coomera-skateparkhtml.jpg' alt='half pipe' className='homepage-tag-pipe'/></div>
           </Link>
           <Link to={`/skateparks/Bowl`} className='homepage-tag-grid'>
             <div className='homepage-tags-titles'>Bowl</div>
-            <div className='homepage-tag-img-divs'><img src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/West-Kelowna-4.jpg' className='homepage-tag-bowl'/></div>
+            <div className='homepage-tag-img-divs'><img src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/West-Kelowna-4.jpg' alt='skate bowl' className='homepage-tag-bowl'/></div>
           </Link>
           <Link to={`/skateparks/Street`} className='homepage-tag-grid'>
             <div className='homepage-tags-titles'>Street</div>
-            <div className='homepage-tag-img-divs'><img src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/Ulysses-Skate-Park_SpeakEasy-Colorado-Skate-Park-Directory-1.jpg' className='homepage-tag-street'/></div>
+            <div className='homepage-tag-img-divs'><img src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/Ulysses-Skate-Park_SpeakEasy-Colorado-Skate-Park-Directory-1.jpg' alt='street skatepark' className='homepage-tag-street'/></div>
           </Link>
           <Link to={`/skateparks/Pump Track`} className='homepage-tag-grid'>
             <div className='homepage-tags-titles'>Pump Track</div>
-            <div className='homepage-tag-img-divs'><img src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/velosolutions-pump-track-broomfield-image2.jpg' className='homepage-tag-pump'/></div>
+            <div className='homepage-tag-img-divs'><img src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/velosolutions-pump-track-broomfield-image2.jpg' alt='pump track' className='homepage-tag-pump'/></div>
           </Link>
         </div>
       </div>

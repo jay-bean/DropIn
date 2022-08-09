@@ -105,3 +105,18 @@
 .review-errors {
   color: red;
 }
+
+/* stars */
+.star-rating-div {
+  display: flex;
+  flex-direction: row;
+  max-width: 100px;
+  justify-content: flex-start;
+}
+
+.star-img {
+  display: flex;
+  flex-direction: row;
+  width: 22px;
+  height: 20px;
+}

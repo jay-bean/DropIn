@@ -10,6 +10,7 @@ function EditReviewForm({ review, setShowModal, skatepark }) {
 
   const [validationErrors, setValidationErrors] = useState([]);
   const [rating, setRating] = useState(review ? review.rating : 0);
+  const [hover, setHover] = useState(review ? review.rating : 0);
   const [comment, setComment] = useState(review ? review.comment : '');
 
   const handleCancel = () => {
@@ -56,14 +57,28 @@ function EditReviewForm({ review, setShowModal, skatepark }) {
         >
         {skatepark && <div className='new-review-skatepark-name'>{skatepark.name}</div>}
         <label className='new-review-label'>* Rating:</label>
-        <input
-          className='new-review-input'
-          type="rating"
-          required
-          value={rating}
-          onChange={(e) => setRating(e.target.value)}
-          />
-
+        <div className="star-rating-div">
+          {[...Array(5).keys()].map((index) => {
+            index += 1;
+            return (
+              <button
+                style={{backgroundColor: 'transparent', border: 'none', width: '22px', height: '20px'}}
+                type="button"
+                key={index}
+                className={index <= rating || hover ? "on" : "off"}
+                onClick={() => setRating(index)}
+                onMouseOver={() => setHover(index)}
+                onMouseOut={() => setHover(rating)}
+              >
+                <img
+                  className='star-img'
+                  src={index <= hover ? "https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/star+(5).png" : "https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/star+(4).png"}
+                  alt={index <= rating || hover ? "filled star" : "empty star"}
+                />
+              </button>
+            );
+          })}
+        </div>
         <label className='new-review-label'>* Comment:</label>
         <textarea
           rows={8}
