@@ -16,7 +16,6 @@ function AllReviews({ skatepark, reviews }) {
   if (filteredReviews) {
     filteredReviews.forEach(review => count += review.rating);
     average = Math.round(count / filteredReviews.length);
-    console.log(average)
   }
 
   return (
