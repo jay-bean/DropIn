@@ -16,14 +16,15 @@ function AllSkateparks({ tagId }) {
   const [tags, setTags] = useState([]);
   const [selectedTagButton, setSelectedTagButton] = useState(['all']);
   const [activeMarker, setActiveMarker] = useState(null);
-
+  console.log(selectedTagButton, 'tagbtn')
   let allParks;
   if (skateparks) {
     allParks = Object.values(skateparks);
   }
 
-  const handleTagClick = (index) => {
-    setSelectedTagButton([index]);
+  const handleTagClick = (id) => {
+    setSelectedTagButton([]);
+    setSelectedTagButton([id]);
     setActiveMarker(null);
   }
 
@@ -41,14 +42,18 @@ function AllSkateparks({ tagId }) {
     })();
   }, [dispatch]);
 
+  useEffect(() => {
+    tagId ? setSelectedTagButton([tagId]) : setSelectedTagButton(['all']);
+  }, [tagId])
+  
   return (
     <div id='skateparks-container'>
       <div id='tags-div'>
         <p id='tags-p'>Search goes here</p>
         <div className='tag-btn-div'>
-          <Link to={`/skateparks`}className={selectedTagButton.includes('all') ? 'tag-btn activebtn' : 'tag-btn'} onClick={() => handleTagClick('all')}>All</Link>
+          <Link to={`/skateparks`} className={selectedTagButton.includes('all') ? 'tag-btn activebtn' : 'tag-btn'} onClick={() => handleTagClick('all')}>All</Link>
           {tags && tags.length > 0 && tags.map((tag, index) => {
-            return <Link to={`/skateparks/${tag.type}`} key={index} className={selectedTagButton.includes(index) ? 'tag-btn activebtn' : 'tag-btn'} onClick={() => handleTagClick(index)}>{tag.type}</Link>
+            return <Link to={`/skateparks/${tag.type}`} key={index} className={selectedTagButton.includes(tag.id) ? 'tag-btn activebtn' : 'tag-btn'} onClick={() => handleTagClick(tag.id)}>{tag.type}</Link>
           })}
         </div>
       </div>
