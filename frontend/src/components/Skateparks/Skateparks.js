@@ -16,7 +16,6 @@ function AllSkateparks({ tagId }) {
   const [tags, setTags] = useState([]);
   const [selectedTagButton, setSelectedTagButton] = useState(['all']);
   const [activeMarker, setActiveMarker] = useState(null);
-  console.log(selectedTagButton, 'tagbtn')
   let allParks;
   if (skateparks) {
     allParks = Object.values(skateparks);
@@ -45,7 +44,7 @@ function AllSkateparks({ tagId }) {
   useEffect(() => {
     tagId ? setSelectedTagButton([tagId]) : setSelectedTagButton(['all']);
   }, [tagId])
-  
+
   return (
     <div id='skateparks-container'>
       <div id='tags-div'>

@@ -59,7 +59,6 @@ function EditSkateparkForm({ setDidUpdate, setShowEditForm }) {
       for (const image of Object.keys(images)) {
         formData.append('image', images[image]);
       }
-      console.log(selectedTag, 'selectedtaggg');
       for (const tag of selectedTag) {
         formData.append('tag', tag)
       }

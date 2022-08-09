@@ -14,7 +14,6 @@ function UsersReviews() {
   let usersReviews;
   if (reviews && sessionUser) {
     usersReviews = Object.values(reviews).filter(review => review.userId === sessionUser.id)
-    console.log(usersReviews, 'usersreviews')
   }
 
   useEffect(() => {
@@ -50,7 +49,6 @@ function UsersReviews() {
               <div className='all-container-profile'>
                 <div className='review-flex-column'>
                   {usersReviews && usersReviews.length ? usersReviews.map(review => {
-                    console.log(review,'review inside map')
                     return (
                      review &&
                        <div key={review.id}>
