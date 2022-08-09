@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { getFavorites } from '../../store/favorite';
 import { getReviews } from '../../store/review';
 import './profile.css';
@@ -27,7 +27,7 @@ function Profile() {
   }, [dispatch]);
 
   return(
-    sessionUser &&
+    sessionUser ?
      ( <div className='prof-page'>
         <div className='first-buffer'>
           <div className='first-buffer-flex'>
@@ -99,7 +99,7 @@ function Profile() {
           </div>
         </div>
         </div>
-      </div>)
+      </div>) :  <Redirect to="/explore" />
 
   );
 }
