@@ -49,7 +49,7 @@ function UsersSkateparks() {
              <div className='all-container-profile'>
               {usersSkateparks && usersSkateparks.length ? usersSkateparks.map(skatepark => {
                 return (
-                  <Skatepark skatepark={skatepark}/>
+                  <Skatepark key={skatepark.id} skatepark={skatepark}/>
                 );
               }) : null}
              </div>

@@ -63,7 +63,8 @@ function Map({ allParks, filteredParks, tagId, activeMarker, setActiveMarker }) 
             </MarkerF>
           );
          })}
-        {tagId && mappedSkateparks.map((sp, index) => {
+        {tagId && mappedSkateparks && mappedSkateparks.length && mappedSkateparks.map((sp, index) => {
+          console.log(mappedSkateparks,' mappedparks')
           return (
             <MarkerF
               key={index}

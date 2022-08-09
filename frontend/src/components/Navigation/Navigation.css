@@ -25,8 +25,14 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.profile-btn-holder {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  gap: 20px;
+}
 .profile-btn-container {
-  margin-right: 20px;
+  background-color: transparent;
 }
 
 .skatepark-nav {
@@ -39,31 +45,15 @@
   cursor: pointer;
 }
 
-.profile-dropdown {
-  position: relative;
-  transform: translate(10px, 140px);
-  background-color: #f9f9f9;
-  width: 200px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 0;
-  border-radius: 6px;
-  display: grid;
-  z-index: 1;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-}
-
-.prof-li {
-  padding-top: 10px;
-  padding-left: 12px;
-  list-style: none;
-  height: 32px;
-  align-self: center;
-  cursor: pointer;
-}
-
 .top {
   padding-top: 10px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.bottom {
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
 .prof-li:hover {
@@ -159,6 +149,7 @@
   display: flex;
   flex-direction: row;
   gap: 40px;
+  width: 20%;
 }
 
 #explore {
@@ -186,13 +177,22 @@
 .nav-prof {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
+  gap: 3px;
+  width: 20%;
 }
 
 .nav-prof-demo {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  width: 20%;
+}
+
+.prof-btn-container {
+  width: 30px;
+  position: relative;
+  display: inline-block;
 }
 
 .prof-btn {
@@ -200,9 +200,35 @@
   border: 0;
   outline: 0;
   background-color: #ffffff;
-  position: absolute;
 }
 
 .fa-thin.fa-circle-user {
   width: 50px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.profile-dropdown {
+  margin-top: 26px;
+  border-radius: 6px;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  padding: 0;
+}
+
+.prof-li {
+  padding-top: 10px;
+  padding-left: 12px;
+  list-style: none;
+  height: 32px;
+  align-self: center;
+  cursor: pointer;
 }

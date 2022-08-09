@@ -46,10 +46,10 @@ const fileFilter = (_req, file, cb) => {
     } else {
       cb(null, false);
       const err = new Error('Only .png, .jpg and .jpeg format allowed.')
-      err.statusCode = 500;
+      err.statusCode = 400;
       return cb(err);
     }
-  };
+};
 
 app.use(
   multer({ storage: fileStorage, fileFilter: fileFilter }).array('image', 10)

@@ -49,7 +49,7 @@ function UsersFavorites() {
                 <div className='review-flex-column'>
                   {favoritesArr && favoritesArr.length ? favoritesArr.map(favorite => {
                     return (
-                      <Skatepark skatepark={favorite.Skatepark}/>
+                      <Skatepark key={favorite.id} skatepark={favorite.Skatepark}/>
                     );
                   }) : null}
                 </div>
