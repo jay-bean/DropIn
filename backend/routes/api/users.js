@@ -5,6 +5,7 @@ const { check } = require('express-validator');
 const { setTokenCookie, requireAuth } = require('../../utils/auth');
 const { handleValidationErrors } = require('../../utils/validation');
 const { User } = require('../../db/models');
+const { handleSingleUpload } = require('../../middleware/upload');
 
 const router = express.Router();
 
@@ -38,10 +39,11 @@ router.get('/',
 // Sign up
 router.post(
   '/',
+  handleSingleUpload,
   validateSignup,
   asyncHandler(async (req, res) => {
     const { firstName, lastName, email, password } = req.body;
-
+    console.log(req.body, 'req.bdoy')
     let image;
     let picUrl;
     let user;
@@ -66,6 +68,7 @@ router.post(
 // edit profile
 router.put(
   '/:id(\\d+)',
+  handleSingleUpload,
   validateSignup,
   asyncHandler(async (req, res) => {
 

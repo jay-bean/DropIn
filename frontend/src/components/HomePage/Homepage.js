@@ -30,6 +30,7 @@ function Homepage() {
                 {skatepark.images && skatepark.images.length > 0 && <Link className='homepage-img-container' to={`/skateparks/${skatepark.id}`}><img className='homepage-banner-imgs' src={skatepark.images[0].url}/></Link>}
                 <div>
                   <div className='homepage-skatepark-name'>{skatepark.name}</div>
+                  <div className='homepage-skatepark-location'>{skatepark.address}</div>
                   <div className='homepage-skatepark-location'>{skatepark.city}, {skatepark.state}</div>
                 </div>
               </div>

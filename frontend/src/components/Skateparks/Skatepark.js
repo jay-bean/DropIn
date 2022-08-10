@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getSkateparks } from '../../store/skatepark';
 import Favorites from '../Favorites/Favorites';
+import AverageRating from './AverageRating';
 import './skatepark-card.css';
 
 function Skatepark({ skatepark, skateparkId }) {
@@ -24,6 +25,7 @@ function Skatepark({ skatepark, skateparkId }) {
           </Link>
           <div className='explore-card-word-section'>
             <Link to={`/skateparks/${skatepark.id}`} className='explore-card-park-name'>{skatepark.name}</Link>
+            <AverageRating skatepark={skatepark}/>
             <div className='explore-card-addy-fave-container'>
               <Link to={`/skateparks/${skatepark.id}`} className='explore-card-address-div'>
                 <div className='explore-card-address'>{skatepark.address}</div>

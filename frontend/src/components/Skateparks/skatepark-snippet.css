@@ -56,9 +56,10 @@
 
 .snippet-card-park-name {
   color: #333;
-  font-size: 20px;
+  font-size: 15px;
+  font-weight: 700;
   text-decoration: none;
-  margin-top: 6px;
+  margin-top: 10px;
 }
 
 #tags-div {
@@ -81,6 +82,8 @@
 }
 
 .snippet-card-address {
-  color: rgb(100, 100, 100);
   width: 140px;
+  font-size: 14px;
+  color: rgb(127, 127, 127);
+  line-height: 1.20;
 }

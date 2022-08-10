@@ -36,6 +36,7 @@
   grid-column: 1 / 2;
   margin: 0;
   margin-top: 40px;
+  margin-bottom: 20px;
   margin-left: 130px;
   height: 20px;
   font-family: Arial, Helvetica, sans-serif;
@@ -76,18 +77,19 @@
   gap: 16px;
 }
 
-
 .homepage-skatepark-name {
-  font-size: 20px;
+  font-size: 16px;
   margin-bottom: 6px;
+  font-weight: 700;
 }
 
 .homepage-skatepark-location {
-  font-size: 16px;
+  font-size: 14px;
+  color: rgb(127, 127, 127);
+  line-height: 1.20;
 }
 
 .homepage-banner-2 {
-  /* background-image: url(https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/EA525B01-6C5F-423C-AC96-98CFCFE9C02D.jpeg); */
   background-image: url(https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/C462D625-7DF3-49FC-A936-880FAD2D9899.jpeg);
   background-color: rgba(0, 0, 0, 0.362);
   height: 360px;
@@ -199,12 +201,4 @@
   height: 220px;
   border-radius: 50%;
   overflow: hidden;
-}
-
-.homepage-skatepark-name {
-  font-size: 20px;
-}
-
-.homepage-skatepark-location {
-
 }

@@ -149,7 +149,7 @@ function EditSkateparkForm({ setDidUpdate, setShowEditForm }) {
                 />
               <label className='skatepark-form-img-div'>
                 <i className="fa-solid fa-images"> Upload Images</i>
-                <p className='skatepark-form-p'>photo upload optional</p>
+                <p className='skatepark-form-p'>photo upload optional (1-10)</p>
                 <input
                   className='image-input'
                   type="file"
