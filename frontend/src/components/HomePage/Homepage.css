@@ -70,9 +70,20 @@
 
 .skatepark-card {
   width: 300px;
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   font-family: Arial, Helvetica, sans-serif;
+  gap: 16px;
+}
+
+
+.homepage-skatepark-name {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.homepage-skatepark-location {
+  font-size: 16px;
 }
 
 .homepage-banner-2 {
@@ -188,4 +199,12 @@
   height: 220px;
   border-radius: 50%;
   overflow: hidden;
+}
+
+.homepage-skatepark-name {
+  font-size: 20px;
+}
+
+.homepage-skatepark-location {
+
 }

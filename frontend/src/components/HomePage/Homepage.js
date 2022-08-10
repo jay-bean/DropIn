@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getSkateparks } from '../../store/skatepark';
 import { Link } from "react-router-dom";
-import FourTopSkateparks from '../Skateparks/FourTopSkateparks';
 
 function Homepage() {
   const dispatch = useDispatch();
@@ -29,14 +28,14 @@ function Homepage() {
             return (
               <div className='skatepark-card' key={skatepark.id}>
                 {skatepark.images && skatepark.images.length > 0 && <Link className='homepage-img-container' to={`/skateparks/${skatepark.id}`}><img className='homepage-banner-imgs' src={skatepark.images[0].url}/></Link>}
-                
-                <div>{skatepark.name}</div>
-                <div>{skatepark.city}, {skatepark.state}</div>
+                <div>
+                  <div className='homepage-skatepark-name'>{skatepark.name}</div>
+                  <div className='homepage-skatepark-location'>{skatepark.city}, {skatepark.state}</div>
+                </div>
               </div>
             );
           }) : null}
         </div>
-        <FourTopSkateparks skateparks={skateparks}/>
       </div>
       <div className='homepage-banner-2'>
 
