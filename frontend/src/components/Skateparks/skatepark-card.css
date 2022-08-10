@@ -16,7 +16,7 @@
   position: relative;
   max-width: 100%;
   border-radius: 16px;
-  height: 320px;
+  height: 340px;
   gap: 16px
 }
 
@@ -47,6 +47,7 @@
   transform: scale(1.1);
 }
 
+
 .explore-card-word-section {
   width: 352px;
   display: flex;
@@ -74,6 +75,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  height: 42px;
 }
 
 .explore-card-address-div {
