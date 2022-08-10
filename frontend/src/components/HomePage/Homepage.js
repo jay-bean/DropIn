@@ -29,7 +29,7 @@ function Homepage() {
             return (
               <div className='skatepark-card' key={skatepark.id}>
                 {skatepark.images && skatepark.images.length > 0 && <Link className='homepage-img-container' to={`/skateparks/${skatepark.id}`}><img className='homepage-banner-imgs' src={skatepark.images[0].url}/></Link>}
-                <div>Star rating here</div>
+                
                 <div>{skatepark.name}</div>
                 <div>{skatepark.city}, {skatepark.state}</div>
               </div>
