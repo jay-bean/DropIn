@@ -22,15 +22,16 @@ function Homepage() {
     <div id='homepage-container'>
       <div className='homepage-img'>{sessionUser ? <p className='home-page-title'>Ready to skate, {sessionUser.firstName}?</p> : <p className='home-page-title'>Ready to skate?</p>}</div>
       <div className='homepage-banner'>
-        <h2 className='homepage-banner-h2'>Highest rated skateparks</h2>
+        <h2 className='homepage-banner-h2'>Featured skateparks</h2>
         <div className='skate-card-container'>
           {skateparks && skateparkArr && skateparkArr.length > 0 ? skateparkArr.map(skatepark => {
             return (
               <div className='skatepark-card' key={skatepark.id}>
                 {skatepark.images && skatepark.images.length > 0 && <Link className='homepage-img-container' to={`/skateparks/${skatepark.id}`}><img className='homepage-banner-imgs' src={skatepark.images[0].url}/></Link>}
-                <div>Star rating here</div>
-                <div>{skatepark.name}</div>
-                <div>{skatepark.city}, {skatepark.state}</div>
+                <div>
+                  <div className='homepage-skatepark-name'>{skatepark.name}</div>
+                  <div className='homepage-skatepark-location'>{skatepark.city}, {skatepark.state}</div>
+                </div>
               </div>
             );
           }) : null}
