@@ -2,7 +2,7 @@
 
 ### Drop In is an AllTrails clone, but instead of trails it features skateparks.
 
-##### Drop In is an AllTrails clone. Instead of trails, it is based off of skateparks. I personally use AllTrails to locate and look up information on trails, and I thought 'this would be a cool idea for skateparks!', and so the idea was born. This is my second solo project I have completed so far. I have put a lot of time and care into this project and I am really proud of it. I hope you enjoy the site as well!
+#### I personally use AllTrails to locate and look up information on trails, and I thought 'this would be a cool idea for skateparks!', and so the idea was born. This is my second solo project I have completed so far. I have put a lot of time and care into this project and I am really proud of it. I hope you enjoy the site as well!
 
 #### Check out the live site [here](https://drop-in-skate.herokuapp.com/)!
 
