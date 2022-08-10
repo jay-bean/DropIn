@@ -49,7 +49,7 @@ function AllSkateparks({ tagId }) {
   return (
     <div id='skateparks-container'>
       <div id='tags-div'>
-        <div className='search-container'><SearchBar/></div>
+        <div className='search-container'><SearchBar skateparks={skateparks}/></div>
         <div className='tag-btn-div'>
           <Link to={`/skateparks`} className={selectedTagButton.includes('all') ? 'tag-btn activebtn' : 'tag-btn'} onClick={() => handleTagClick('all')}>All</Link>
           {tags && tags.length > 0 && tags.map((tag, index) => {

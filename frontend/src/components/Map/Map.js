@@ -16,7 +16,6 @@ const center = {
 
 function Map({ allParks, filteredParks, tagId, activeMarker, setActiveMarker }) {
   const mappedSkateparks = tagId ? filteredParks : allParks;
-  // const [activeMarker, setActiveMarker] = useState(null);
 
   const activeParkHandler = (marker) => {
     if (marker === activeMarker) {

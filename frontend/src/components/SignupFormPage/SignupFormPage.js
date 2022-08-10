@@ -14,7 +14,6 @@ function SignupFormPage() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
-  console.log(firstName, lastName, email, password)
   if (sessionUser) return <Redirect to="/" />;
 
   const handleSubmit = (e) => {
@@ -27,11 +26,9 @@ function SignupFormPage() {
       formData.append('email', email);
       formData.append('password', password);
       formData.append('image', picUrl);
-      console.log(formData, 'formdata');
       return dispatch(sessionActions.signup(formData))
         .catch(async (res) => {
           const data = await res.json();
-          console.log(data, 'data')
           if (data && data.errors) setErrors(data.errors);
         });
     }

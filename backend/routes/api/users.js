@@ -43,7 +43,6 @@ router.post(
   validateSignup,
   asyncHandler(async (req, res) => {
     const { firstName, lastName, email, password } = req.body;
-    console.log(req.body, 'req.bdoy')
     let image;
     let picUrl;
     let user;
