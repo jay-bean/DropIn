@@ -24,14 +24,20 @@ function Skatepark({ skatepark, skateparkId }) {
             {skatepark.images && skatepark.images.length > 0 && (<div className='explore-card-img-container' to={`/skateparks/${skatepark.id}`}><img className='explore-card-img' src={skatepark.images[0].url} style={{width: '200px'}}/></div>)}
           </Link>
           <div className='explore-card-word-section'>
-            <Link to={`/skateparks/${skatepark.id}`} className='explore-card-park-name'>{skatepark.name}</Link>
-            <AverageRating skatepark={skatepark}/>
-            <div className='explore-card-addy-fave-container'>
-              <Link to={`/skateparks/${skatepark.id}`} className='explore-card-address-div'>
-                <div className='explore-card-address'>{skatepark.address}</div>
-                <div className='explore-card-address'>{skatepark.city}, {skatepark.state} {skatepark.zipcode}</div>
-              </Link>
-              <Favorites skateparkId={skatepark.id}/>
+            <div className='explore-card-test'>
+              <div>
+              <Link to={`/skateparks/${skatepark.id}`} className='explore-card-park-name'>{skatepark.name}</Link>
+              <AverageRating skatepark={skatepark}/>
+              <div className='explore-card-addy-fave-container'>
+                <Link to={`/skateparks/${skatepark.id}`} className='explore-card-address-div'>
+                  <div className='explore-card-address'>{skatepark.address}</div>
+                  <div className='explore-card-address'>{skatepark.city}, {skatepark.state} {skatepark.zipcode}</div>
+                </Link>
+              </div>
+              </div>
+              <div className='favorite-div'>
+                <Favorites skateparkId={skatepark.id}/>
+              </div>
             </div>
           </div>
         </div>

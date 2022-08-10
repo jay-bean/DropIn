@@ -206,3 +206,9 @@
   border-radius: 50%;
   overflow: hidden;
 }
+
+.homepage-park-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

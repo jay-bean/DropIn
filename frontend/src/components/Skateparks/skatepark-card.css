@@ -87,3 +87,10 @@
   color: rgb(127, 127, 127);
   line-height: 1.20;
 }
+
+.explore-card-test {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
