@@ -18,3 +18,46 @@
 ![Homepage](https://user-images.githubusercontent.com/46910262/184025061-fd9d2cd1-5a3c-430d-8365-6106c222b6cf.png)
 ![Explore page](https://user-images.githubusercontent.com/46910262/184025144-278eb3a7-1e4f-4125-abcc-b838230bd723.png)
 
+## Local Setup
+1. Clone this repository
+
+   ```
+   git clone https://github.com/jay-bean/DropIn
+   ```
+
+2. Install dependencies
+
+``` npm install ``` in ``` ./backend```
+``` npm install ``` in ``` ./frontend```
+
+3. Create a **.env** file based on the example with proper settings for your
+   development environment
+   
+4. Setup your PostgreSQL user and password, and make sure it matches your **.env** file
+
+5. Create, migrate, and seed your database 
+
+   ```
+   npx dotenv sequelize db:create
+   ```
+
+   ```
+   npx dotenv sequelize db:migrate
+   ```
+
+   ```
+   npx dotenv sequelize db:seed:all
+   ```
+   
+ ``` npm start ``` in both back and frontend
+ 
+6. If browser does not open right away, navigate to localhost:3000 and enjoy!
+
+### Index
+* [Feature List](https://github.com/jay-bean/DropIn/wiki/feature-list)
+* [DataBase Schema](https://github.com/jay-bean/DropIn/wiki/database-schema)
+* [Frontend Routes Document](https://github.com/jay-bean/DropIn/wiki/front-end-routes)
+* [API Routes Document](https://github.com/jay-bean/DropIn/wiki/api-documentation)
+* [User Stories](https://github.com/jay-bean/DropIn/wiki/user-stories)
+* [State Shape](https://github.com/jay-bean/DropIn/wiki/State-Shape)
+* [Wireframes](https://github.com/jay-bean/DropIn/wiki/Wireframes)
