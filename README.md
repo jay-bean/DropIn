@@ -27,8 +27,8 @@
 
 2. Install dependencies
 
-``` npm install ``` in ``` ./backend```
-``` npm install ``` in ``` ./frontend```
+   ``` npm install ``` in ``` ./backend```
+   ``` npm install ``` in ``` ./frontend```
 
 3. Create a **.env** file based on the example with proper settings for your
    development environment
@@ -49,7 +49,7 @@
    npx dotenv sequelize db:seed:all
    ```
    
- ``` npm start ``` in both back and frontend
+   ``` npm start ``` in both back and frontend
  
 6. If browser does not open right away, navigate to localhost:3000 and enjoy!
 
