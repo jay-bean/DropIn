@@ -83,6 +83,10 @@
   font-weight: 700;
 }
 
+.top-location {
+  margin-top: 8px;
+}
+
 .homepage-skatepark-location {
   font-size: 14px;
   color: rgb(127, 127, 127);
