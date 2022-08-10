@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getSkateparks } from '../../store/skatepark';
 import { Link } from "react-router-dom";
+import FourTopSkateparks from '../Skateparks/FourTopSkateparks';
 
 function Homepage() {
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ function Homepage() {
     <div id='homepage-container'>
       <div className='homepage-img'>{sessionUser ? <p className='home-page-title'>Ready to skate, {sessionUser.firstName}?</p> : <p className='home-page-title'>Ready to skate?</p>}</div>
       <div className='homepage-banner'>
-        <h2 className='homepage-banner-h2'>Highest rated skateparks</h2>
+        <h2 className='homepage-banner-h2'>Featured skateparks</h2>
         <div className='skate-card-container'>
           {skateparks && skateparkArr && skateparkArr.length > 0 ? skateparkArr.map(skatepark => {
             return (
@@ -35,6 +36,7 @@ function Homepage() {
             );
           }) : null}
         </div>
+        <FourTopSkateparks skateparks={skateparks}/>
       </div>
       <div className='homepage-banner-2'>
 
