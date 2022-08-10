@@ -1,9 +1,10 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 const { Skatepark, Image, Parktag } = require('../../db/models');
+const { handleGeocode } = require('../../middleware/geocodeMiddleware');
 const { skateparkValidators, editSkateparkValidators } = require('../../validations/validations');
 const axios = require('axios').default;
-
+const { handleUpload } = require('../../middleware/upload');
 const router = express.Router();
 
 router.get('/',
@@ -24,9 +25,11 @@ router.get('/:id(\\d+)',
 );
 
 router.post('/',
+  handleUpload,
+  handleGeocode,
   skateparkValidators,
   asyncHandler( async (req, res) => {
-    const { name, description, address, city, state, zipcode, userId, tag } = req.body;
+    const { name, description, address, city, state, zipcode, userId, tag, lat, long } = req.body;
 
     if (!req.files.length) {
       return res.status(400).json({errors: ['You must provide at least one photo.']});
@@ -36,33 +39,13 @@ router.post('/',
       return res.status(400).json({errors: ['You must provide at least one tag to describe your park.']});
     }
 
-    // construct full addresss
-    const fullAddress = `${address}, ${city}, ${state}, ${zipcode}`;
-    // construct full url
-    const url = `${process.env.GEOCODING_BASE_URL}${fullAddress}&key=${process.env.GOOGLE_API_KEY}`;
-    // make api request using axios
-    const geocodeResponse = await axios.get(url);
-    // if no worky
-    if (!geocodeResponse.data.results.length) {
-      return res.status(400).json({errors: ['You must provide a valid address.']});
-    }
-    // extract lat and long from respone
-    const lat = geocodeResponse.data.results[0].geometry.location.lat;
-    const long = geocodeResponse.data.results[0].geometry.location.lng;
-
-    const formattedAddress = geocodeResponse.data.results[0].formatted_address.split(', ');
-    const formattedStreetAddress = formattedAddress[0];
-    const formattedCity = formattedAddress[1];
-    const formattedState = formattedAddress[2].split(' ')[0];
-    const formattedZipcode = formattedAddress[2].split(' ')[1];
-
     const skatePark = await Skatepark.build({
       name,
       description,
-      address: formattedStreetAddress,
-      city: formattedCity,
-      state: formattedState,
-      zipcode: formattedZipcode,
+      address,
+      city,
+      state,
+      zipcode,
       userId,
       lat,
       long
@@ -101,6 +84,7 @@ router.post('/',
 );
 
 router.put(`/:id(\\d+)`,
+  handleUpload,
   editSkateparkValidators,
   asyncHandler(async (req, res) => {
     if (!req.body.tag) {
