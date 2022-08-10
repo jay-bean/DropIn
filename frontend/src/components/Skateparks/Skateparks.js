@@ -7,6 +7,7 @@ import { getTags } from '../../store/parktag';
 import { getParktags } from '../../store/parktag';
 import Map from '../Map/Map';
 import './explore-page.css';
+import SearchBar from '../SearchBar/SearchBar';
 
 function AllSkateparks({ tagId }) {
   const dispatch = useDispatch();
@@ -48,7 +49,7 @@ function AllSkateparks({ tagId }) {
   return (
     <div id='skateparks-container'>
       <div id='tags-div'>
-        <p id='tags-p'>Search goes here</p>
+        <div className='search-container'><SearchBar/></div>
         <div className='tag-btn-div'>
           <Link to={`/skateparks`} className={selectedTagButton.includes('all') ? 'tag-btn activebtn' : 'tag-btn'} onClick={() => handleTagClick('all')}>All</Link>
           {tags && tags.length > 0 && tags.map((tag, index) => {

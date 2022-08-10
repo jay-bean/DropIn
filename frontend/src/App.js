@@ -19,6 +19,7 @@ import UsersReviews from "./components/Profile/UsersReviews";
 import UsersSkateparks from "./components/Profile/UsersSkateparks";
 import UsersFavorites from "./components/Profile/UsersFavorites";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
+import SearchBar from "./components/SearchBar/SearchBar";
 
 function App() {
   const dispatch = useDispatch();
@@ -94,6 +95,9 @@ function App() {
           </Route>
           <Route path="/" exact={true}>
             <Homepage/>
+          </Route>
+          <Route path="/search" exact={true}>
+            <SearchBar/>
           </Route>
           <Route path='*'>
             <PageNotFound/>
