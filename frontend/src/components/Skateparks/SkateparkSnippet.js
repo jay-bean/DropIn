@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import Favorites from '../Favorites/Favorites';
+import AverageRating from './AverageRating';
 import './skatepark-snippet.css';
+
 function SkateparkSnippet({ skatepark }) {
   return (
     skatepark &&
@@ -11,6 +13,7 @@ function SkateparkSnippet({ skatepark }) {
           </Link>
           <div className='snippet-card-word-section'>
             <Link to={`/skateparks/${skatepark.id}`} className='snippet-card-park-name'>{skatepark.name}</Link>
+            <AverageRating skatepark={skatepark}/>
             <div className='snippet-card-addy-fave-container'>
               <Link to={`/skateparks/${skatepark.id}`} className='snippet-card-address-div'>
                 <div className='snippet-card-address'>{skatepark.address}</div>
