@@ -56,16 +56,6 @@
   overflow-y: scroll;
 }
 
-/* .single-park-imgs-div {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto;
-  padding-bottom: 10px;
-  max-width: 280px;
-  height: max-content;
-  gap: 10px
-} */
-
 .single-park-imgs-div {
   display: flex;
   flex-flow: row wrap;
