@@ -68,6 +68,7 @@ router.post(
 // edit profile
 router.put(
   '/:id(\\d+)',
+  handleSingleUpload,
   validateSignup,
   asyncHandler(async (req, res) => {
 
