@@ -13,4 +13,4 @@
 ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
 
 ## Sneak Peak
-![Homepage](https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/24EBB843-7399-49CA-968F-E97D00C52CAB.png)
+![Homepage](https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/24EBB843-7399-49CA-968F-E97D00C52CAB.png) 
