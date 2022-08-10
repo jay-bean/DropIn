@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getSkateparks } from '../../store/skatepark';
 import { Link } from "react-router-dom";
+import Skatepark from '../Skateparks/Skatepark';
+import AverageRating from '../Skateparks/AverageRating';
 
 function Homepage() {
   const dispatch = useDispatch();
@@ -30,7 +32,8 @@ function Homepage() {
                 {skatepark.images && skatepark.images.length > 0 && <Link className='homepage-img-container' to={`/skateparks/${skatepark.id}`}><img className='homepage-banner-imgs' src={skatepark.images[0].url}/></Link>}
                 <div>
                   <div className='homepage-skatepark-name'>{skatepark.name}</div>
-                  <div className='homepage-skatepark-location'>{skatepark.address}</div>
+                  <AverageRating skatepark={skatepark}/>
+                  <div className='homepage-skatepark-location top-location'>{skatepark.address}</div>
                   <div className='homepage-skatepark-location'>{skatepark.city}, {skatepark.state}</div>
                 </div>
               </div>
