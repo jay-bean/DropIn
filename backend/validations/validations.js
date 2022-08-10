@@ -88,7 +88,7 @@ const reviewValidators = [
     .exists({ checkFalsy: true })
     .withMessage('Please provide a rating.')
     .isInt({ min: 1, max: 5 })
-    .withMessage('Rating must be a number between 1 and 5.'),
+    .withMessage('Rating must be a star between 1 and 5.'),
   check('comment')
     .exists({ checkFalsy: true })
     .withMessage('Please provide a review for the skatepark.')
