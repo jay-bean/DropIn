@@ -9,10 +9,8 @@
   align-items: center;
   font-size: 100%;
   background: transparent;
-  padding-left: 40px;
-  padding-right: 40px;
   border-top: thin solid #a9a9a952;
-  gap: 300px;
+  gap: 260px;
 }
 
 .tag-btn-div {
@@ -20,6 +18,14 @@
   display: flex;
   flex-direction: row;
   gap: 30px;
+}
+
+.search-container {
+  height: 60px;
+  width: 400px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .tag-btn {
@@ -82,7 +88,7 @@
 }
 
 .activebtn {
-  background-color: #326c0b;
+  background-color: #428a13;
   color: #ffffff;
 }
 
