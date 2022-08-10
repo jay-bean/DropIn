@@ -3,9 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getSkateparks } from '../../store/skatepark';
 import { Link } from 'react-router-dom';
 
-function SearchBarList({ inputSearch }) {
+function SearchBarList({ inputSearch, skateparks }) {
   const dispatch = useDispatch();
-  const skateparks = useSelector(state => state.skateparks);
 
   let skateparksArr;
   if (skateparks) {
@@ -19,10 +18,6 @@ function SearchBarList({ inputSearch }) {
       else return skatepark.name.toLowerCase().includes(inputSearch);
     })
   }
-
-  useEffect(() => {
-    dispatch(getSkateparks());
-  }, [dispatch])
 
   return (
       <ul className='search-ul'>

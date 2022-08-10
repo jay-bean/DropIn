@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Skatepark from '../Skateparks/Skatepark';
 import AverageRating from '../Skateparks/AverageRating';
 import Favorites from '../Favorites/Favorites';
+import SearchBar from '../SearchBar/SearchBar';
 
 function Homepage() {
   const dispatch = useDispatch();
@@ -24,6 +25,11 @@ function Homepage() {
   return(
     <div id='homepage-container'>
       <div className='homepage-img'>{sessionUser ? <p className='home-page-title'>Ready to skate, {sessionUser.firstName}?</p> : <p className='home-page-title'>Ready to skate?</p>}</div>
+      {skateparks &&
+        <div className='homepage-search-div'>
+          <SearchBar skateparks={skateparks}/>
+        </div>
+      }
       <div className='homepage-banner'>
         <h2 className='homepage-banner-h2'>Featured skateparks</h2>
         <div className='skate-card-container'>
