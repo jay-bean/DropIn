@@ -49,6 +49,8 @@
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   padding: 0;
+  max-height: 400px;
+  overflow-y: scroll;
 }
 
 .search-li {
