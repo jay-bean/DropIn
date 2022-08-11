@@ -27,10 +27,9 @@ const fileFilter = (_req, file, cb) => {
     ) {
       cb(null, true);
     } else {
-      req.fileValidationError = 'Only .png, .jpg and .jpeg format allowed.'
       const err = new Error('Only .png, .jpg and .jpeg format allowed.')
       err.status = 400;
-      return cb(err, false, err);
+      return cb(err, false);
     }
 };
 
@@ -42,38 +41,25 @@ const handleUpload = (req, res, next) => {
       if (err.code === 'LIMIT_UNEXPECTED_FILE') {
         return res.status(400).json({errors: ['You cannot upload more than 10 photos at a time.']});
       }
-      if(req.fileValidationError){
-        console.log(req.fileValidationError, 'inside req file validatoin error');
-        return res.json({
-          title: err.title || 'Server Error',
-          message: fileValidationError,
-        });
-      }
       return next(err);
       // check if max count error. Validatoin error instance with our message. next(err)
 
     } else if (err) {
-      next(err);
+      return next(err);
       // An unknown error occurred when uploading.
     }
-    next();
+     return next();
   })
 }
 
 const uploadSingle = multer({ storage: fileStorage, fileFilter: fileFilter }).single('image');
 
 const handleSingleUpload = (req, res, next) => {
+  console.log('in handle single upload');
   uploadSingle(req, res, function (err) {
     if (err instanceof multer.MulterError) {
       if (err.code === 'LIMIT_UNEXPECTED_FILE') {
         return res.status(400).json({errors: ['You cannot upload more than 1 photo.']});
-      }
-      if(req.fileValidationError){
-        console.log(req.fileValidationError, 'inside req file validatoin error');
-        return res.json({
-          title: err.title || 'Server Error',
-          message: fileValidationError,
-        });
       }
       next(err);
       // check if max count error. Validatoin error instance with our message. next(err)
