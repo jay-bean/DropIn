@@ -78,7 +78,7 @@ function AllSkateparks({ tagId }) {
             : null}
           </div>
         </div>
-      {<div><Map setActiveMarker={setActiveMarker} activeMarker={activeMarker} allParks={allParks} filteredParks={filteredParks} tagId={tagId}/></div>}
+      {<div className='map-container'><Map setActiveMarker={setActiveMarker} activeMarker={activeMarker} allParks={allParks} filteredParks={filteredParks} tagId={tagId}/></div>}
       </div>
     </div>
   );
