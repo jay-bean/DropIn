@@ -81,6 +81,11 @@
   border: 2px solid transparent;
 }
 
+.signup-btn:hover {
+  border-color: #326c0b;
+  background-color: #326c0b;
+}
+
 .skatepark-form-p-signup {
   font-style: italic;
   color: #428a13;
