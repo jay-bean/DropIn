@@ -19,6 +19,7 @@ const fileStorage = multerS3({
 })
 
 const fileFilter = (_req, file, cb) => {
+  console.log(file.mimetype);
   if (
     file.mimetype === 'image/png' ||
     file.mimetype === 'image/jpg' ||
@@ -26,10 +27,10 @@ const fileFilter = (_req, file, cb) => {
     ) {
       cb(null, true);
     } else {
-      cb(null, false);
+      console.log('in else')
       const err = new Error('Only .png, .jpg and .jpeg format allowed.')
       err.statusCode = 400;
-      return cb(err);
+      return cb(err, false);
     }
 };
 

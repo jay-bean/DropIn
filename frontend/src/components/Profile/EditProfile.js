@@ -44,7 +44,10 @@ function EditProfile() {
     }
     catch (error) {
       const err = await error.json();
-      return setErrors(err.errors);
+      if (err.message) return setErrors([err.message]);
+      else if (err.errors) return setErrors(err.errors);
+      console.log(error, 'this is errorrrrr');
+      console.log(err, 'this is err')
     }
   };
 
