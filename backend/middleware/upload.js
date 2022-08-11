@@ -27,10 +27,10 @@ const fileFilter = (_req, file, cb) => {
     ) {
       cb(null, true);
     } else {
-      console.log('in else')
+      req.fileValidationError = 'Only .png, .jpg and .jpeg format allowed.'
       const err = new Error('Only .png, .jpg and .jpeg format allowed.')
       err.status = 400;
-      return cb(err, false);
+      return cb(err, false, err);
     }
 };
 
@@ -42,7 +42,14 @@ const handleUpload = (req, res, next) => {
       if (err.code === 'LIMIT_UNEXPECTED_FILE') {
         return res.status(400).json({errors: ['You cannot upload more than 10 photos at a time.']});
       }
-      next(err);
+      if(req.fileValidationError){
+        console.log(req.fileValidationError, 'inside req file validatoin error');
+        return res.json({
+          title: err.title || 'Server Error',
+          message: fileValidationError,
+        });
+      }
+      return next(err);
       // check if max count error. Validatoin error instance with our message. next(err)
 
     } else if (err) {
