@@ -6,7 +6,6 @@
 
 .explore-page-card-container {
   padding: 0;
-  margin: 32px 24px;
 }
 
 .explore-page-card {
@@ -14,33 +13,41 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  max-width: 100%;
   border-radius: 16px;
   height: 340px;
-  gap: 16px
+  /* width: 100%; */
+  margin-top: 5%;
 }
 
 .image-container {
-  width: 100%;
+  width: 86%;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
+  margin-left: 7%;
+  margin-right: 7%;
+  margin-bottom: 3%;
 }
 
 .explore-card-img-container {
-  width: 352px;
+  width: 100%;
   height: 234px;
-  overflow: hidden;
   border-radius: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .explore-card-img {
   object-fit: cover;
   flex-shrink: 0;
-  min-width: 352px;
+  min-width: 100%;
   min-height: 234px;
   border-radius: 16px;
   transition: transform .3s ease-in-out;
+  overflow: hidden;
 }
 
 .explore-card-img:hover {
@@ -49,11 +56,12 @@
 
 
 .explore-card-word-section {
-  width: 352px;
+  width: 86%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 0 auto;
+  margin-left: 7%;
+  margin-right: 7%;
 }
 
 .explore-card-park-name {
