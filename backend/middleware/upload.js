@@ -69,7 +69,7 @@ const handleSingleUpload = (req, res, next) => {
 
     } else if (err) {
       if(err.message === 'Only .png, .jpg and .jpeg format allowed.'){
-        return res.status(400).json({ message: err.message, wrongFormat: true });
+        return res.status(500).json({ message: err.message, wrongFormat: true });
       }
       return next(err);
       // An unknown error occurred when uploading.
