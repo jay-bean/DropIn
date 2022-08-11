@@ -5,7 +5,7 @@ import SkateparkSnippet from '../Skateparks/SkateparkSnippet';
 import '../Skateparks/skatepark-snippet.css';
 
 const containerStyle = {
-  width: '1328px',
+  width: '100%',
   height: '100%'
 };
 
@@ -42,6 +42,7 @@ function Map({ allParks, filteredParks, tagId, activeMarker, setActiveMarker }) 
 
   return isLoaded ? (
       <GoogleMap
+        className='map'
         onClick={() => setActiveMarker(null)}
         mapContainerStyle={containerStyle}
         center={center}

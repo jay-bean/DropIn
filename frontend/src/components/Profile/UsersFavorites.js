@@ -12,7 +12,7 @@ function UsersFavorites() {
 
   let favoritesArr;
   if (favorites) {
-    favoritesArr = Object.values(favorites);
+    favoritesArr = Object.values(favorites).reverse();
   }
 
   useEffect(() => {

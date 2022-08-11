@@ -30,17 +30,17 @@ function LoginForm() {
       <div className='login-form-div'>
         <form className='login-form' onSubmit={handleSubmit}>
           <h2 className="signup-form-header h2-head">Log in and let's skate</h2>
+            <label className='join-label'>* Email</label>
             <input
               className='signup-input'
-              placeholder='Email'
               type="text"
               value={credential}
               onChange={(e) => setCredential(e.target.value)}
               required
               />
+            <label className='join-label'>* Password</label>
             <input
               className='signup-input'
-              placeholder='Password'
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}

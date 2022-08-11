@@ -13,7 +13,7 @@ function UsersSkateparks() {
 
   let usersSkateparks;
   if (skateparks && sessionUser) {
-    usersSkateparks = Object.values(skateparks).filter(skatepark => skatepark.userId === sessionUser.id);
+    usersSkateparks = Object.values(skateparks).filter(skatepark => skatepark.userId === sessionUser.id).reverse();
   }
 
   useEffect(() => {
@@ -46,7 +46,7 @@ function UsersSkateparks() {
                  <h2 className='prof-headers'>Skateparks</h2>
                </div>
              </div>
-             <div className='all-container-profile'>
+             <div className='all-container-profile act'>
               {usersSkateparks && usersSkateparks.length ? usersSkateparks.map(skatepark => {
                 return (
                   <Skatepark key={skatepark.id} skatepark={skatepark}/>

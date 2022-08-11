@@ -14,3 +14,9 @@
 .add-descriptor {
   line-height: 1.60;
 }
+
+.act .explore-page-card-container {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}

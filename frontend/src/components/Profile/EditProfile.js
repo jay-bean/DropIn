@@ -24,7 +24,7 @@ function EditProfile() {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-
+      if (sessionUser.email === 'seeyou@laterboy.io') return setErrors(['At this time you cannot edit the demo user\'s profile.']);
       if (password === confirmPassword) {
         const formData = new FormData();
         formData.append('firstName', firstName);

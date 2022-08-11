@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import DemoUser from '../DemoUser/DemoUser';
+import { getUsers } from '../../store/user';
 
 function Navigation({ isLoaded }){
+  const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
+  const users = useSelector(state => state.users);
+  let demoUser;
+  if (users) {
+    demoUser = Object.values(users)[0];
+  }
+  useEffect(() => {
+    dispatch(getUsers())
+  }, [dispatch])
 
   let sessionLinks;
   if (sessionUser) {
@@ -19,7 +29,7 @@ function Navigation({ isLoaded }){
   } else {
     sessionLinks = (
       <div className='nav-prof-demo'>
-        <DemoUser/>
+        {demoUser && <DemoUser demoUser={demoUser}/>}
         <NavLink to="/signup"><button className='signup-nav-btn'>Sign Up</button></NavLink>
         <NavLink to="/login"><button className='login-nav-btn'>Log in</button></NavLink>
       </div>
