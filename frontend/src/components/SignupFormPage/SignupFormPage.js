@@ -40,42 +40,44 @@ function SignupFormPage() {
       <div className="signup-form-div">
         <form className="signup-form" onSubmit={handleSubmit}>
           <h2 className="signup-form-header h2-head">Create your free account</h2>
-          <label className="signup-labels">*All fields are required</label>
+          <div className="first-label">
+            <label className='join-label'>* First Name</label>
+            <label className="signup-labels">*All fields are required</label>
+          </div>
           <input
             className="signup-input"
-            placeholder="First Name"
             type="text"
             value={firstName}
             onChange={(e) => setfirstName(e.target.value)}
             required
             />
+          <label className='join-label'>* Last Name</label>
           <input
             className="signup-input"
-            placeholder="Last Name"
             type="text"
             value={lastName}
             onChange={(e) => setlastName(e.target.value)}
             required
             />
+          <label className='join-label'>* Email</label>
           <input
             className="signup-input"
-            placeholder="Email"
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
             />
+          <label className='join-label'>* Password</label>
           <input
             className="signup-input"
-            placeholder="Password"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
             />
+          <label className='join-label'>* Confirm Password</label>
           <input
             className="signup-input"
-            placeholder="Confirm Password"
             type="password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
@@ -83,7 +85,7 @@ function SignupFormPage() {
             />
           <label className='signup-img-div'>
             <i className="fa-solid fa-images">Upload Photo</i>
-            <p className='skatepark-form-p-signup'>*Optional</p>
+            <p className='skatepark-form-p-signup'>*Photo optional</p>
             <input
               className='image-input'
               type="file"

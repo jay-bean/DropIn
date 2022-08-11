@@ -13,7 +13,7 @@ function UsersSkateparks() {
 
   let usersSkateparks;
   if (skateparks && sessionUser) {
-    usersSkateparks = Object.values(skateparks).filter(skatepark => skatepark.userId === sessionUser.id);
+    usersSkateparks = Object.values(skateparks).filter(skatepark => skatepark.userId === sessionUser.id).reverse();
   }
 
   useEffect(() => {
