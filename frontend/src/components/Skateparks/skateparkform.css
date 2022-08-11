@@ -172,18 +172,13 @@
 /* image upload */
 .image-input {
   padding: 6px 0;
-  /* background-color: #ffffff; */
   font-size: 13px;
   font-weight: 700;
   line-height: 1.36;
   letter-spacing: 1px;
-  position: relative;
-  display: inline-flex;
-  flex-direction: row;
-  box-sizing: border-box;
   color: #414141;
-  /* border: 2px solid #b1b1b1; */
 }
+
 input::file-selector-button {
   padding: 6px 8px;
   background-color: #ffffff;
@@ -221,6 +216,7 @@ input::file-selector-button:hover {
   margin-left: 5%;
   margin-right: 5%;
   margin-bottom: 20px;
+  width: 90%;
 }
 
 .skatepark-form-btn-div {
