@@ -131,15 +131,16 @@ function NewSkateparkForm() {
               onChange={(e) => setDescription(e.target.value)}
               />
             <label className='skatepark-form-img-div'>
-              <i className="fa-solid fa-images"> Upload Images</i>
-              <p className='skatepark-form-p'>*please upload at least one photo. (1-10)</p>
+              {/* <i className="fa-solid fa-images"> Upload Images</i> */}
               <input
-                className='image-input'
+                className="image-input"
+                required
                 type="file"
                 multiple
                 name="file"
                 onChange={(e) => setImages(e.target.files)}
                 />
+              <p className='skatepark-form-p photo-amount'>*please upload at least one photo. (1-10)</p>
             </label>
             {validationErrors && validationErrors.length > 0 && (
               validationErrors.map(error => {
