@@ -49,11 +49,13 @@ function NewSkateparkForm() {
       }
     }
     catch (error) {
-      if (error.status === 503) setValidationErrors(['Only .png, .jpg and .jpeg format allowed.']);
+      if (error.status === 503) return setValidationErrors(['Only .png, .jpg and .jpeg format allowed.']);
       const err = await error.json();
-      if (error.status >= 500) setValidationErrors([err.message])
-      else setValidationErrors(err.errors);
-    }
+      if (error.status >= 500) return setValidationErrors([err.message])
+      // else setValidationErrors(err.errors);{
+      if (err.errors && err.errors.length > 0) return setValidationErrors(err.errors);
+      if (err.message && err.wrongFormat) return setValidationErrors([err.message]);
+      };
   }
 
   return (
