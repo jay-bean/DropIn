@@ -28,7 +28,7 @@ function SignupFormPage() {
       formData.append('image', picUrl);
       return dispatch(signup(formData))
         .catch(async (res) => {
-          if (res.status === 503) setErrors(['Only .png, .jpg and .jpeg format allowed.'])
+          if (res.status === 503) setErrors(['Only .png, .jpg and .jpeg format allowed.']);
           const data = await res.json();
           console.log(data, data.message, 'errrorrssss')
           if (data) {
