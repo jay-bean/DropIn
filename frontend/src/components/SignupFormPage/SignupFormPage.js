@@ -89,14 +89,13 @@ function SignupFormPage() {
             required
             />
           <label className='signup-img-div'>
-            <i className="fa-solid fa-images">Upload Photo</i>
-            <p className='skatepark-form-p-signup'>*Photo optional</p>
             <input
               className='image-input'
               type="file"
               name="file"
               onChange={(e) => setPicUrl(e.target.files[0])}
             />
+            <p className='skatepark-form-p-signup'>*Photo optional</p>
           </label>
           <ul>
             {errors.map((error, idx) => <li className='signup-errors' key={idx}>{error}</li>)}
