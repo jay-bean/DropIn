@@ -29,7 +29,7 @@ const fileFilter = (_req, file, cb) => {
     } else {
       console.log('in else')
       const err = new Error('Only .png, .jpg and .jpeg format allowed.')
-      err.statusCode = 400;
+      err.status = 400;
       return cb(err, false);
     }
 };
