@@ -60,6 +60,10 @@
   color: rgb(0, 8, 255);
 }
 
+.photo-amount {
+  width: 60%;
+}
+
 .skatepark-form-label {
   margin: 10px;
 }
@@ -166,20 +170,33 @@
 }
 
 /* image upload */
-.fa-solid {
-  margin-left: 6px;
+.image-input {
+  padding: 6px 0;
+  /* background-color: #ffffff; */
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.36;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  color: #414141;
+  /* border: 2px solid #b1b1b1; */
+}
+input::file-selector-button {
+  padding: 6px 8px;
   background-color: #ffffff;
   font-size: 13px;
   font-weight: 700;
   line-height: 1.36;
   letter-spacing: 1px;
   height: 32px;
-  padding: 20px 16px;
   position: relative;
   display: inline-flex;
   flex-direction: row;
   box-sizing: border-box;
-  max-width: 100%;
+  max-width: 40%;
   align-items: center;
   justify-content: center;
   border-radius: 30px;
@@ -189,19 +206,20 @@
   border: 2px solid #b1b1b1;
 }
 
-.fa-solid:hover {
+input::file-selector-button:hover {
   background-color: #ebebeb;
 }
 
-input[type="file"] {
+/* input[type="file"] {
   display: none;
-}
+} */
 
 .skatepark-form-img-div {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  gap: 10px;
+  align-items: flex-start;
+  margin-left: 5%;
+  margin-right: 5%;
   margin-bottom: 20px;
 }
 
