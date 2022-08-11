@@ -32,7 +32,7 @@ function SignupFormPage() {
           console.log(data, data.message, 'errrorrssss')
           if (data) {
             if (data.errors && data.errors.length > 0) setErrors(data.errors);
-            else if (data.message) setErrors([data.message]);
+            else if (data.message && data.wrongFormat) setErrors([data.message]);
           };
         });
     }

@@ -64,6 +64,7 @@ app.use((err, _req, res, _next) => {
   console.error('in catch all', err);
   return res.json({
     title: err.title || 'Server Error',
+    errors: err.errors || [],
     message: err.message,
     stack: isProduction ? null : err.stack
   });
