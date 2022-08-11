@@ -46,9 +46,9 @@ router.post(
     let image;
     let picUrl;
     let user;
-    if (req.files.length) {
-      image = req.files;
-      picUrl = image[0].location;
+    if (req.file.length) {
+      image = req.file;
+      picUrl = image.location;
       user = await User.signup({ firstName, lastName, email, password, picUrl });
     }
     else {
