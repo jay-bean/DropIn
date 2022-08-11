@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
-import * as sessionActions from "../../store/session";
+import { signup } from "../../store/session";
 import './SignupForm.css';
 
 function SignupFormPage() {
@@ -26,7 +26,7 @@ function SignupFormPage() {
       formData.append('email', email);
       formData.append('password', password);
       formData.append('image', picUrl);
-      return dispatch(sessionActions.signup(formData))
+      return dispatch(signup(formData))
         .catch(async (res) => {
           const data = await res.json();
           console.log(data, data.message, 'errrorrssss')
