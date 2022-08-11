@@ -45,8 +45,9 @@ function EditProfile() {
     catch (error) {
       if (error.status === 503) setErrors(['Only .png, .jpg and .jpeg format allowed.']);
       const err = await error.json();
+      console.log(err)
+      if (err.errors) return setErrors(err.errors);
       if (err.message) return setErrors([err.message]);
-      else if (err.errors) return setErrors(err.errors);
       console.log(error, 'this is errorrrrr');
       console.log(err, 'this is err')
     }
