@@ -57,6 +57,9 @@ const uploadSingle = multer({ storage: fileStorage, fileFilter: fileFilter }).si
 const handleSingleUpload = (req, res, next) => {
   console.log('in handle single upload');
   uploadSingle(req, res, function (err) {
+    console.log(req.body);
+    const dummy = req.body;
+    console.log(dummy);
     if (err instanceof multer.MulterError) {
       if (err.code === 'LIMIT_UNEXPECTED_FILE') {
         return res.status(400).json({errors: ['You cannot upload more than 1 photo.']});
