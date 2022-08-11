@@ -45,6 +45,9 @@ const handleUpload = (req, res, next) => {
       // check if max count error. Validatoin error instance with our message. next(err)
 
     } else if (err) {
+      if(err.message === 'Only .png, .jpg and .jpeg format allowed.'){
+        return res.status(400).json({ message: err.message, wrongFormat: true });
+      }
       return next(err);
       // An unknown error occurred when uploading.
     }
