@@ -68,7 +68,13 @@ const handleSingleUpload = (req, res, next) => {
       if (err.code === 'LIMIT_UNEXPECTED_FILE') {
         return res.status(400).json({errors: ['You cannot upload more than 1 photo.']});
       }
-      console.log(err, 'err')
+      if(req.fileValidationError){
+        console.log(req.fileValidationError, 'inside req file validatoin error');
+        return res.json({
+          title: err.title || 'Server Error',
+          message: fileValidationError,
+        });
+      }
       next(err);
       // check if max count error. Validatoin error instance with our message. next(err)
 
