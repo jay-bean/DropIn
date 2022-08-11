@@ -62,6 +62,7 @@ app.use((err, _req, _res, next) => {
 app.use((err, _req, res, _next) => {
   res.status(err.status || 500);
   console.error('in catch all', err);
+  if (res.status === 503 ) return res.json({ message: err.message, wrongFormat: true })
   return res.json({
     title: err.title || 'Server Error',
     errors: err.errors || [],
