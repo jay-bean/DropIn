@@ -209,6 +209,10 @@ input::file-selector-button:hover {
   display: none;
 } */
 
+.hidden-image-for-now {
+  display: none;
+}
+
 .skatepark-form-img-div {
   display: flex;
   flex-direction: row;

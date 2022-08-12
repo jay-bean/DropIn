@@ -74,12 +74,12 @@ const editSkateparkValidators = [
     .isLength({ min: 1, max: 100 })
     .withMessage('State must not exceed 100 characters.'),
   check('zipcode')
-  .exists({ checkFalsy: true })
-  .withMessage('Please provide a zipcode.')
-  .isInt()
-  .withMessage('Zipcode must be a number.')
-  .isPostalCode('US')
-  .withMessage('Zipcode must be a valid US Postal Code.'),
+    .exists({ checkFalsy: true })
+    .withMessage('Please provide a zipcode.')
+    .isInt()
+    .withMessage('Zipcode must be a number.')
+    .isPostalCode('US')
+    .withMessage('Zipcode must be a valid US Postal Code.'),
   handleValidationErrors
 ];
 
