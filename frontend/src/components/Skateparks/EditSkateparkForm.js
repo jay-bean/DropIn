@@ -46,7 +46,7 @@ function EditSkateparkForm({ setDidUpdate, setShowEditForm }) {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-
+      console.log(name, description, address,city,state,zipcode)
       const formData = new FormData();
       formData.append('name', name);
       formData.append('description', description);
@@ -149,7 +149,7 @@ function EditSkateparkForm({ setDidUpdate, setShowEditForm }) {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 />
-              <label className='skatepark-form-img-div'>
+              <label className='hidden-image-for-now'>
                 <input
                   className='image-input'
                   type="file"

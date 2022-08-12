@@ -87,6 +87,7 @@ router.put(`/:id(\\d+)`,
   handleUpload,
   editSkateparkValidators,
   asyncHandler(async (req, res) => {
+    console.log(req.body,'reqbody')
     if (!req.body.tag) {
       return res.status(400).json({errors: ['You must provide at least one tag to describe your park.']});
     }

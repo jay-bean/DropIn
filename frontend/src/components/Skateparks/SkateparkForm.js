@@ -140,7 +140,7 @@ function NewSkateparkForm() {
                 name="file"
                 onChange={(e) => setImages(e.target.files)}
                 />
-              <p className='skatepark-form-p photo-amount'>*please upload at least one photo. (1-10)</p>
+              <p className='skatepark-form-p photo-amount'>*Please upload at least one photo. Currently photos can only be added now, and they can't be deleted once added. (1-10)</p>
             </label>
             {validationErrors && validationErrors.length > 0 && (
               validationErrors.map(error => {
