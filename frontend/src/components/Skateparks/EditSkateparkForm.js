@@ -69,12 +69,9 @@ function EditSkateparkForm({ setDidUpdate, setShowEditForm }) {
       }
     }
     catch (error) {
-      console.log(error);
       if (error.status === 503) return setValidationErrors(['Only .png, .jpg and .jpeg format allowed.']);
       if (error.status >= 500) return setValidationErrors([err.message])
       const err = await error.json();
-      console.log(err)
-      // else setValidationErrors(err.errors);{
       if (err.message && err.wrongFormat) return setValidationErrors([err.message]);
       if (err.errors && err.errors.length > 0) return setValidationErrors(err.errors);
     }
