@@ -53,6 +53,10 @@
  
 6. If browser does not open right away, navigate to localhost:3000 and enjoy!
 
+### Future Features
+* Thumbnails when adding photos to skateparks
+* The ability to add and delete photos when editing a skatepark
+
 ### Index
 * [Feature List](https://github.com/jay-bean/DropIn/wiki/feature-list)
 * [DataBase Schema](https://github.com/jay-bean/DropIn/wiki/database-schema)
