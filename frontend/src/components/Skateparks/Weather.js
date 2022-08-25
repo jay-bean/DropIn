@@ -10,7 +10,7 @@ function Weather({ skatepark }) {
       const lat = skatepark.lat;
       const long = skatepark.long;
       const apiKey = '7489aa0d8dae4ecd951212610222408'
-      const res = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${lat},${long}&days=1`)
+      const res = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${lat},${long}&days=1`)
       let resData = await res.json();
       setWeatherData(resData)
     }
