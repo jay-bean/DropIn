@@ -81,10 +81,11 @@ function SingleSkatepark() {
                   </div>
                 )}
               </div>
-
                 <div className='single-park-map-div'>
-                  {skatepark && <Weather skatepark={skatepark}/>}
-                  {skatepark && <SingleParkMap skatepark={skatepark}/>}
+                  <div className='single-park-map-div2'>
+                    {skatepark && <Weather skatepark={skatepark}/>}
+                    {skatepark && <SingleParkMap skatepark={skatepark}/>}
+                  </div>
                 </div>
             </div>
           </div>

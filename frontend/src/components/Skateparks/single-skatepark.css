@@ -7,6 +7,7 @@
   flex-direction: row;
   height: calc(100vh - 124px);
   gap: 10px;
+  overflow: hidden;
 }
 
 /* .all-reviews-singlepark-container {
@@ -178,6 +179,11 @@
   width: 50%;
 }
 
+.single-park-map-div2 {
+  width: 100%;
+  margin-bottom: 2em;
+}
+
 .skatepark-review-name {
   font-size: 23px;
   text-align: center;
@@ -191,7 +197,7 @@
 
 .weather-container {
   width: 70%;
-  height: 26%;
+  height: 30%;
   background-color: #428a13;
   border-radius: 4px;
   margin: 1em 0;
@@ -216,6 +222,7 @@
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   height: 20%;
+  margin-bottom: 1em;
 }
 
 .weather-city-div {
@@ -235,11 +242,13 @@
 .weather-city {
   margin: 0;
   /* letter-spacing: .1em; */
+  letter-spacing: .1em;
 }
 
 .weather-date {
   font-size: 12px;
   margin: 0;
+  letter-spacing: .2em;
 }
 
 .weather-info-container {
@@ -257,11 +266,12 @@
 }
 
 .current-condition-icon {
-  height: 80%;
+  height: 90%;
 }
 
 .current-condition-text {
-  height: 20%;
+  height: 10%;
+  font-size: 14px;
 }
 
 .weather-info-div-two {
@@ -274,6 +284,12 @@
 .current-temp {
   font-size: 56px;
   margin: 0;
+  height: 90%;
+}
+
+.feels-like {
+  font-size: 14px;
+  height: 10%;
 }
 
 .weather-info-div-three {
@@ -286,15 +302,29 @@
 .rain-snow-div {
   display: flex;
   flex-direction: row;
+  align-items: flex-end;
   gap: 1em;
 }
 
 .min-max-temp {
   margin: 0;
+  height: 10%;
+}
+
+.arrows {
+  width: 14px;
+  margin-right: .1em;
+}
+
+.elements-container {
+  height: 88%;
+  font-size: 14px;
 }
 
 .wind {
   margin: 0;
+  margin-top: 1em;
+  margin-bottom: 2%;
 }
 
 .rain {
