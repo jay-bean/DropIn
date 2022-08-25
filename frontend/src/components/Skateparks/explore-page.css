@@ -102,15 +102,15 @@
 
 .map-container {
   margin-left: 0px;
-  width: calc(100% - 400px);
+  width: calc(100vw - 400px);
   z-index: 0;
   margin-right: 0;
   display: flex;
   flex-direction: row;
 }
 
-@media only screen and (min-width: 520px) and (max-width: 768px) {
-  
+.sort-btn {
+  display: none;
 }
 
 @media only screen and (max-width: 768px) {
@@ -131,20 +131,52 @@
     margin-right: 0;
     /* display: block; */
     /* flex-direction: column; */
+  }
+
+  .skatepark-card-holder {
+    background-color: #ffffff;
+    width: 100%;
+    height: calc(100% - 300px);
+    box-shadow: 2px 0 4px 0 rgb(0 0 0 / 10%);
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
 }
 
-.skatepark-card-holder {
-  background-color: #ffffff;
-  width: 100%;
-  height: calc(100% - 400px);
-  box-shadow: 2px 0 4px 0 rgb(0 0 0 / 10%);
-  overflow-y: scroll;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-}
-}
-
-@media only screen and (max-width: 1408px) {
-
+@media only screen and (max-width: 1302px) {
+  .tag-btn-div {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    z-index: 3;
+    position: relative;
+    transform: translate(-14.6em, 16.3em);
+    background-color: rgb(177, 177, 177);
+    width: 186px;
+    border-radius: 4px;
+    padding: 1em;
+  }
+  .sort-btn {
+    font-family:  Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #333;
+    font-size: 14px;
+    border-radius: 24px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    height: 32px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0 3em;
+    box-sizing: content-box;
+    text-decoration: none;
+    position: relative;
+    width: 100px;
+  }
 }
