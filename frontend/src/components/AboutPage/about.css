@@ -1,6 +1,6 @@
 .about-page {
   margin: auto 10%;
-  height: 100%;
+  height: calc(90vh - 1px);
 }
 
 .first-buffer-about {
@@ -44,7 +44,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px;
   margin: auto;
   text-align: center;
   font-size: 20px;
@@ -52,8 +51,9 @@
   line-height: 1.20;
   color: #414141;
   width: 480px;
-  margin-bottom: 24px;
   margin-top: 40px;
+  margin-bottom: 10em;
+  height: 20%;
 }
 
 .about-title-span {
@@ -73,10 +73,10 @@
 .about-me-container {
   display: flex;
   flex-direction: row;
-  height: 300px;
-
+  height: 30%;
+  width: 100%;
   align-items: center;
-  /* margin-bottom: 20px; */
+  margin-bottom: 1em;
 }
 
 .about-me-img {
@@ -93,40 +93,180 @@
 }
 
 .about-me-img-links {
-  width: 40px;
-  margin-right: 8px;
+  width: 30px;
+}
+
+.about-me-img-links:first-child {
+  margin-left: 1em;
+}
+
+.about-me-p-div {
+  width: 80%;
 }
 
 .about-me-p {
   width: 80%;
-  margin-left: 60px;
+  margin-left: 1em;
   line-height: 1.60;
-}
-
-.frameworks-container {
-  display: flex;
-  flex-direction: row;
-  gap: 120px;
-  align-items: center;
-  margin-top: 6%;
 }
 
 .frameworks-title {
   font-size: 18px;
   font-weight: bold;
+  width: 40%;
 }
 
 .frameworks-div {
   display: flex;
   flex-direction: row;
-  gap: 50px;
+  justify-content: center;
+  width: 100%;
+  height: 9%;
 }
 
 .framework {
   background-color: #ffffff;
-  padding: 10px 23px;
-  /* border-radius: 10px; */
-  border-top: 4px solid rgb(181, 181, 181);
-  border-bottom: 4px solid rgb(200, 200, 200);
+  padding: 1em 1em;
+  border-top: 2px solid rgb(181, 181, 181);
+  border-bottom: 2px solid rgb(200, 200, 200);
+}
+
+.about-me-links-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.about-me-links-div2 {
+  display: flex;
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 589px) {
+  .about-title-section {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 16px;
+    margin-top: 0;
+  }
+  .about-title-h2 {
+    font-size: 18px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 1em;
+  }
+  .about-page {
+    width: 100%;
+    margin: 0;
+  }
+  .about-me-container {
+    flex-direction: column;
+    height: 50%;
+    margin-top: 6em;
+    margin-bottom: 0;
+    gap: 1em;
+  }
+  .about-title-section {
+    margin-bottom: 0;
+  }
+  .about-me-p {
+    width: 100%;
+    margin: 0;
+  }
+  .about-me-link-div {
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 80%;
+    gap: 3em;
+  }
+  .about-me-links-div2 {
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 80%;
+    gap: 1em;
+  }
+  .frameworks-div {
+    flex-flow: row wrap;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 1em;
+  }
+  .framework {
+    padding: 0 6px;
+    margin-top: .3em;
+  }
+  .about-me-img {
+    width: 100px;
+    border-radius: 20px;
+  }
+  .about-me-img-links:first-child {
+    margin-left: 0;
+    margin-right: 1em;
+  }
+  .about-dropin {
+    margin-left: 1em;
+  }
+}
+
+@media only screen and (min-width: 589px) and (max-width: 813px) {
+  .about-dropin {
+    margin-left: 1em;
+  }
+  .about-page {
+    width: 100%;
+    margin: 0;
+  }
+  .about-me-container {
+    flex-direction: column;
+    height: 50%;
+    margin-top: 3em;
+    margin-bottom: 2em;
+  }
+  .about-title-section {
+    margin-bottom: 0;
+  }
+  .about-me-p {
+    width: 100%;
+    margin: 0;
+  }
+  .about-me-link-div {
+    justify-content: flex-start;
+    width: 80%;
+  }
+}
+
+
+@media only screen and (min-width: 813px) and (max-width: 1293px) {
+  .about-me-p-div {
+    width: 70%;
+  }
+  .about-me-container {
+    gap: 2em;
+    margin-bottom: 2.6em;
+  }
+  /* .about-me-links-div {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 1%;
+    width: 30%;
+    letter-spacing: 2px;
+  } */
+  /* .about-me-links-div2 {
+    flex-direction: row;
+    justify-content: center;
+  } */
+  .about-me-link-div {
+    width: 40%;
+  }
+  .about-me-p-div {
+    width: 60%;
+  }
+  .about-me-p {
+    width: 100%;
+    margin: 0;
+  }
 
 }
