@@ -24,42 +24,61 @@
 
 .homepage-banner {
   height: 400px;
-  padding-bottom: 80px;
+  padding-bottom: 1em;
   background-color: #f2f2f2;
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: center;
+  overflow-x: hidden;
+  padding-top: 2.4em;
+
 }
+
+.homepage-banner .skate-card-container {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 1em;
+  overflow-x: scroll;
+  height: 90%;
+}
+.homepage-banner .skate-card-container::-webkit-scrollbar { width: 0 !important }
 
 .homepage-banner-h2 {
   margin: 0;
-  margin-top: 60px;
-  margin-bottom: 20px;
-  height: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  width: 80%;
-  padding-bottom: 10px;
-}
-
-.skate-card-container {
+  margin-bottom: .6em;
+  margin-left:  1em;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  gap: 30px;
+  align-items: flex-end;
+  height: 10%;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
 }
-
 
 .homepage-img-container {
   max-width: 300px;
-  max-height: 225.2px;
-  border-radius: 15px;
+  min-width: 300px;
+  height: 80%;
+  max-height: 80%;
+}
+
+.homepage-img-hover {
+  max-width: 300px;
+  min-width: 300px;
+  /* min-height: 80%;
+  max-height: 80%; */
+  height: 90%;
   overflow: hidden;
+  border-radius: 15px;
 }
 
 .homepage-banner-imgs {
   max-width: 300px;
-  min-height: 225.2px;
+  min-width: 300px;
+  height: 100%;
   border-radius: 15px;
   transition: transform .3s ease-in-out;
   object-fit: cover;
@@ -74,7 +93,15 @@
   display: flex;
   flex-direction: column;
   font-family: Arial, Helvetica, sans-serif;
-  gap: 16px;
+  height: 90%;
+}
+
+.skatepark-card:first-child {
+  margin-left: .6em;
+}
+
+.skatepark-card:last-child {
+  margin-right: .6em;
 }
 
 .homepage-skatepark-name {
@@ -109,14 +136,12 @@
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  align-items:center;
+  align-items: flex-start;
   justify-content: flex-start;
-  width: 100%;
-  gap: 3%;
-}
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
 
-.home-page-tags-h2-p-div {
-  margin-right: 50%;
 }
 
 .homepage-tags-section-h2 {
@@ -135,15 +160,18 @@
   font-weight: bold;
   font-size: 20px;
   margin-bottom: 10px;
+  height: 10%;
 }
 
 .homepage-tags-container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  gap: 2%;
-  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  gap: 3em;
+  width: 90%;
   height: 100%;
+  margin: auto 5%;
 }
 
 .homepage-tag-pipe {
@@ -198,14 +226,14 @@
   text-align: center;
   text-decoration: none;
   color: #333;
-  width: 17%;
+  width: 25%;
   height: 100%;
-  gap: 4%;
+  gap: 1em;
 }
 
 .homepage-tag-img-divs {
-  width: 70%;
-  height: 70%;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   overflow: hidden;
 }
@@ -214,6 +242,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  height: 20%;
 }
 
 .homepage-search-div {
@@ -270,7 +299,6 @@
 /* media queries */
 
 @media only screen and (max-width: 450px) {
-
   #homepage-container {
     height: 100%;
   }
@@ -280,20 +308,20 @@
   .home-page-title {
     font-size: 30px;
   }
-  .skate-card-container {
-    flex-direction: column;
-  }
-  .homepage-banner {
-    height: 100%;
-  }
   .homepage-banner-2 {
     height: 250px;
   }
+  .homepage-banner-h2 {
+    margin-bottom: .6em;
+  }
   .homepage-tags-section {
     height: 320px;
+    width: 100%;
+    margin: .1em;
   }
   .home-page-tags-h2-p-div {
-    margin: .1em 1em;
+    margin: .1em 4%;
+    width: 92%;
   }
   .homepage-tags-section-h2 {
     height: .8em;
@@ -308,14 +336,13 @@
     justify-content: space-between;
     width: 90%;
     height: 100%;
-    margin: 0 5%;
+    margin: 0 0;
     gap: 0;
+
   }
   .homepage-tag-grid {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
     text-decoration: none;
     color: #333;
@@ -326,6 +353,7 @@
   .homepage-tag-img-divs {
     width: 80px;
     height: 80px;
+    margin: 0.3em;
   }
   .homepage-tag-pipe {
     width: 80px;
@@ -340,9 +368,72 @@
   .homepage-search-div .main {
     display: flex;
     width: 80%;
-    height: 20px;
+    padding-top: .8em;
   }
   .homepage-search-div .main .search div {
     height: 50px;
+  }
+  .homepage-search-div .main .search-ul {
+    margin-top: 2em;
+    width: 80%;
+    max-height: 200px;
+  }
+  .homepage-banner {
+    padding-bottom: 1em;
+    overflow-x: hidden;
+  }
+}
+
+@media only screen and (min-width: 451px) and  (max-width: 668px) {
+  #homepage-container {
+    height: 1500px;
+  }
+  .homepage-tag-img-divs {
+    width: 90px;
+    height: 90px;
+  }
+  .homepage-tags-container {
+    width: 95%;
+    margin: 0 2.5%;
+    gap: .5em;
+  }
+  .homepage-tags-section {
+    height: 20%;
+  }
+  .homepage-search-div .main {
+    display: flex;
+    width: 60%;
+    padding-top: .8em;
+  }
+  .homepage-search-div .main .search div {
+    height: 50px;
+  }
+  .homepage-search-div .main .search-ul {
+    margin-top: 2em;
+    width: 60%;
+    max-height: 200px;
+  }
+}
+
+
+@media only screen and (min-width: 669px) and  (max-width: 985px) {
+  .homepage-search-div .main {
+    display: flex;
+    width: 60%;
+    padding-top: .8em;
+  }
+  .homepage-search-div .main .search div {
+    height: 50px;
+  }
+  .homepage-search-div .main .search-ul {
+    margin-top: 2em;
+    width: 60%;
+    max-height: 200px;
+  }
+  .homepage-tag-img-divs {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
   }
 }
