@@ -9,6 +9,7 @@ import { getParktags } from '../../store/parktag';
 import EditSkateparkForm from './EditSkateparkForm';
 import './single-skatepark.css';
 import SingleParkMap from '../Map/SingleParkMap';
+import Weather from './Weather';
 
 function SingleSkatepark() {
   const dispatch = useDispatch();
@@ -48,15 +49,15 @@ function SingleSkatepark() {
 
       <div className='single-park-page'>
         <div className='single-park-container'>
-          {reviews && <AllReviews className='all-reviews-singlepark-container' reviews={reviews} skatepark={skatepark}/>}
+          {reviews && <AllReviews reviews={reviews} skatepark={skatepark}/>}
           <div className='single-park-details-container'>
             <div className='single-park-imgs-div'>
               {skatepark && skatepark.images.length > 0 && skatepark.images.map(image => <img className='single-park-imgs' key={image.id} src={image.url}/>)}
             </div>
             <div className='single-park-details-div'>
-              <div>
+              <div className='single-park-details-left-column'>
                 {skatepark && (
-                  <div className='single-park-details-left-column'>
+                  <div >
                     <div className='single-park-name-flex'>
                       <div className='single-park-name'>{skatepark.name}</div>
                       {skatepark && <Favorites skateparkId={skatepark.id}/>}
@@ -80,7 +81,9 @@ function SingleSkatepark() {
                   </div>
                 )}
               </div>
+
                 <div className='single-park-map-div'>
+                  {skatepark && <Weather skatepark={skatepark}/>}
                   {skatepark && <SingleParkMap skatepark={skatepark}/>}
                 </div>
             </div>

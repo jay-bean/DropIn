@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getSkateparks } from '../../store/skatepark';
 import { Link } from "react-router-dom";
-import Skatepark from '../Skateparks/Skatepark';
+// import Skatepark from '../Skateparks/Skatepark';
 import AverageRating from '../Skateparks/AverageRating';
 import Favorites from '../Favorites/Favorites';
 import SearchBar from '../SearchBar/SearchBar';

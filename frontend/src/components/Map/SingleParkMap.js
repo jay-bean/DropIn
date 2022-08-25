@@ -5,14 +5,9 @@ import SkateparkSnippet from '../Skateparks/SkateparkSnippet';
 import '../Skateparks/skatepark-snippet.css';
 
 const containerStyle = {
-  width: '500px',
+  width: '100%',
   height: '400px'
 };
-
-// const center = {
-//   lat: 38.8338816,
-//   lng: -104.8213634
-// };
 
 function SingleParkMap({ skatepark }) {
   const [activeMarker, setActiveMarker] = useState(null);
