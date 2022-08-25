@@ -10,14 +10,14 @@
   font-size: 100%;
   background: transparent;
   border-top: thin solid #a9a9a952;
-  gap: 260px;
+  gap: 5em;
 }
 
 .tag-btn-div {
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
-  gap: 30px;
+  gap: 1em;
 }
 
 .search-container {
@@ -68,7 +68,7 @@
 
 .skatepark-card-holder {
   background-color: #ffffff;
-  width: 23%;
+  width: 400px;
   height: 100%;
   box-shadow: 2px 0 4px 0 rgb(0 0 0 / 10%);
   overflow-y: scroll;
@@ -80,7 +80,6 @@
 .skatepark-card-div {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
-
   background-color: #ffffff;
   width: 100%;
   height: 100%;
@@ -103,13 +102,49 @@
 
 .map-container {
   margin-left: 0px;
-  width: 77%;
+  width: calc(100% - 400px);
   z-index: 0;
   margin-right: 0;
   display: flex;
   flex-direction: row;
 }
 
-.map {
-  /* z-index: -4; */
+@media only screen and (min-width: 520px) and (max-width: 768px) {
+  
+}
+
+@media only screen and (max-width: 768px) {
+  .map-list-container {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    /* position: relative;
+    height: calc(100vh - 124px); */
+    width: 100%;
+  }
+
+  .map-container {
+    margin-left: 0px;
+    width: 100%;
+    height: 300px;
+    z-index: 0;
+    margin-right: 0;
+    /* display: block; */
+    /* flex-direction: column; */
+}
+
+.skatepark-card-holder {
+  background-color: #ffffff;
+  width: 100%;
+  height: calc(100% - 400px);
+  box-shadow: 2px 0 4px 0 rgb(0 0 0 / 10%);
+  overflow-y: scroll;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+}
+
+@media only screen and (max-width: 1408px) {
+
 }

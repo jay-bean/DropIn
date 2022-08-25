@@ -102,3 +102,29 @@
   justify-content: space-between;
   width: 100%;
 }
+
+@media only screen and (min-width: 520px) and (max-width: 768px) {
+  .explore-card-img {
+    object-fit: cover;
+    flex-shrink: 0;
+    min-width: 100%;
+    height: 300px;
+    border-radius: 16px;
+    transition: transform .3s ease-in-out;
+    overflow: hidden;
+  }
+  .explore-page-card-container {
+    padding: 0;
+    height: 400px;
+  }
+  .explore-page-card {
+    margin-top: 1em;
+    height: 400px;
+  }
+  .image-container {
+    height: 300px;
+  }
+  .explore-card-img-container {
+    height: 300px;
+  }
+}
