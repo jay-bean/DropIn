@@ -57,9 +57,7 @@ function AllReviews({ skatepark, reviews }) {
         </div>
 
       </div>
-      <div className='all-reviews-flex'>
         {skatepark && filteredReviews && filteredReviews.length > 0 && filteredReviews.map(review => <Review key={review.id} review={review} skatepark={skatepark}/>)}
-      </div>
     </div>
   );
 }
