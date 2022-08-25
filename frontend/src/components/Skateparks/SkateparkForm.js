@@ -71,8 +71,8 @@ function NewSkateparkForm() {
             encType="multipart/form-data"
             >
             <div className='skatepark-form-required'>
-              <label className='skatepark-form-label'>*Name of Park:</label>
-              <p className='skatepark-form-p'>* all fields are required</p>
+              <label className='park-name'>*Name of Park:</label>
+              <p className='skatepark-form-p all-required'>* all fields are required</p>
             </div>
             <input
               className='skatepark-form-input'
@@ -117,7 +117,7 @@ function NewSkateparkForm() {
                 onChange={(e) => setZipcode(e.target.value)}
                 />
             </div>
-            <p className='skatepark-form-p'>From the drop down below choose at least one feature to describe the park.</p>
+            <p className='skatepark-form-p drop-down-choose'>From the drop down below choose at least one feature to describe the park.</p>
             <TagSelect selectedTag={selectedTag} setSelectedTag={setSelectedTag}/>
             <label className='skatepark-form-label'>*Description:</label>
             <textarea
