@@ -5,20 +5,6 @@ import './single-skatepark.css';
 function Weather({ skatepark }) {
   const [weatherData, setWeatherData] = useState({});
 
-  // useEffect(() => {
-  //   async function fetchWeatherData() {
-  //     const lat = skatepark.lat;
-  //     const long = skatepark.long;
-  //     const apiKey = '72e1254d82dca8a4820cbebc1fa55825'
-  //     const res = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${apiKey}&units=imperial`);
-  //     // const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&units=imperial`)
-  //     let resData = await res.json();
-  //     console.log(resData, 'res dataaaaaaaaaaaa')
-  //     setWeatherData(resData)
-  //   }
-  //   fetchWeatherData();
-  // }, [])
-
   useEffect(() => {
     async function fetchWeatherData() {
       const lat = skatepark.lat;
@@ -26,9 +12,7 @@ function Weather({ skatepark }) {
       const apiKey = '7489aa0d8dae4ecd951212610222408'
       const res = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${lat},${long}&days=1`)
       let resData = await res.json();
-      console.log(resData, 'res dataaaaaaaaaaaa new dealio')
       setWeatherData(resData)
-      console.log(weatherData, 'this is the weather dataaaaaa')
     }
     fetchWeatherData();
   }, [])
@@ -37,7 +21,6 @@ function Weather({ skatepark }) {
     <div className="weather-container">
         {weatherData && weatherData.current &&
           <div className="weather-div">
-            {console.log(weatherData)}
             <div className="name-date-div">
               <div className="weather-city-div">
                 <img className="weather-location-icon" src="https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/C92DF9C4-7053-4DA7-A8F6-0BD9E45487A8_4_5005_c.jpeg"/>
