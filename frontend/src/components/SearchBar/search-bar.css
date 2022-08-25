@@ -38,13 +38,13 @@
 }
 
 .search-ul {
-  margin-top: 2.5%;
-  margin-left: 1.5%;
+  margin-top: 2.6em;
+  margin-left: .6em;
   border-radius: 6px;
   position: absolute;
   left: 0;
   background-color: #f9f9f9;
-  width: 19.5%;
+  width: 380px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   padding: 0;
@@ -67,5 +67,20 @@
 @media only screen and (max-width: 450px) {
   .search-container {
     width: 100%;
+  }
+  .search-ul {
+    margin-top: 2.6em;
+    margin-left: 1em;
+    border-radius: 6px;
+    position: absolute;
+    left: 0;
+    background-color: #f9f9f9;
+    width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: scroll;
+    width: 90%;
   }
 }
