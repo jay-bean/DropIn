@@ -22,15 +22,17 @@ function TagSelect({ selectedTag, setSelectedTag, tagIdArr }) {
   }
 
   return (
-    <Multiselect
-      className='tag-select-comp'
-      options={tags}
-      displayValue="label"
-      selectedValues={tagIdArr ? tags.filter(tag => tagIdArr.includes(tag.value)): ''}
-      onSelect={tagHandler}
-      onRemove={tagHandler}
-      on
-    />
+    <div className='select-container'>
+      <Multiselect
+        className='tag-select-comp'
+        options={tags}
+        displayValue="label"
+        selectedValues={tagIdArr ? tags.filter(tag => tagIdArr.includes(tag.value)): ''}
+        onSelect={tagHandler}
+        onRemove={tagHandler}
+        on
+      />
+    </div>
   );
 }
 

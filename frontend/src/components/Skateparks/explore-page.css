@@ -113,6 +113,12 @@
   display: none;
 }
 
+.select-container {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
 @media only screen and (max-width: 768px) {
   .map-list-container {
     display: flex;
