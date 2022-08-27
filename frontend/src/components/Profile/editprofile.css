@@ -103,15 +103,14 @@
 
 @media only screen and (max-width: 450px) {
   .profile-edit-form {
-    width: 100%;
+    width: 90%;
     padding: 0;
     display: flex;
     flex-direction: column;
     background: #fff;
     margin: auto;
   }
-}
-
-@media only screen and (max-width: 1158px) {
-
+  .edit-prof-container {
+    overflow-y:unset !important;
+  }
 }

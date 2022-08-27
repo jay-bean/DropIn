@@ -75,7 +75,7 @@ function EditProfile() {
                     <h2 className='prof-headers'>{sessionUser.firstName} {sessionUser.lastName}</h2>
                   </div>
                 </div>
-                <div className='all-container-profile'>
+                <div className='all-container-profile edit-prof-container'>
                   <form
                     onSubmit={handleSubmit}
                     className='profile-edit-form'

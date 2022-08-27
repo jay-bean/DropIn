@@ -330,14 +330,24 @@
     margin-right: 5%;
     width: 90%;
   }
+  .edit-btn-container {
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+  }
   .profile-edit-btn {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
     line-height: 1;
-    padding: 4px 6px;
+    padding: 2px 4px;
+    height: 80%;
   }
   .image-name-container {
-    gap: 15%;
+    gap: 10%;
+    margin: auto;
+    width: 80%;
   }
   .profile-name {
     font-size: 20px;
@@ -350,15 +360,15 @@
     justify-content: center;
   }
   .profile-p {
-    width: 100%;
-    margin-left: 0;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
     font-size: 16px;
   }
-  .review-flex-column h4 {
-    width: 100%;
-  }
   .review-h4 {
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
     font-size: 20px;
   }
 }
