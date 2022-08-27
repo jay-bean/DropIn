@@ -126,3 +126,30 @@
   flex-direction: row;
   justify-content: space-between;
 }
+
+@media only screen and (max-width: 450px) {
+  .signup-page {
+    background-image: none;
+    height: 100%;
+  }
+  .signup-form-div {
+    padding: 0;
+  }
+  .signup-img-div {
+    flex-direction: column;
+    gap: 0;
+  }
+  .skatepark-form-p-signup {
+    margin: 0;
+  }
+  .signup-form {
+    max-width: 480px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: none;
+    margin: auto;
+  }
+}

@@ -25,7 +25,7 @@ function Skatepark({ skatepark, skateparkId }) {
           </Link>
           <div className='explore-card-word-section'>
             <div className='explore-card-test'>
-              <div>
+              <div className='explore-card-inside-test'>
               <Link to={`/skateparks/${skatepark.id}`} className='explore-card-park-name'>{skatepark.name}</Link>
               <AverageRating skatepark={skatepark}/>
               <div className='explore-card-addy-fave-container'>

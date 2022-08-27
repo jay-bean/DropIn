@@ -72,7 +72,7 @@ function EditProfile() {
               <div className='profile-column-one'>
                 <div className='profile-container-header'>
                   <div className='profile-container-header-flex'>
-                    <h2 className='prof-headers'>Edit Profile</h2>
+                    <h2 className='prof-headers'>{sessionUser.firstName} {sessionUser.lastName}</h2>
                   </div>
                 </div>
                 <div className='all-container-profile'>

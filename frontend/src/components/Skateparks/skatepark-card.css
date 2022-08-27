@@ -103,6 +103,11 @@
   width: 100%;
 }
 
+.explore-card-inside-test {
+  width: 70%;
+  text-align: left;
+}
+
 @media only screen and (min-width: 520px) and (max-width: 768px) {
   .explore-card-img {
     object-fit: cover;

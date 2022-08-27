@@ -25,14 +25,15 @@
 .homepage-banner {
   height: 400px;
   padding-bottom: 1em;
+  padding-left: 10%;
+  padding-right: 10%;
   background-color: #f2f2f2;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 80%;
   align-items: center;
   overflow-x: hidden;
   padding-top: 2.4em;
-
 }
 
 .homepage-banner .skate-card-container {
@@ -68,8 +69,6 @@
 .homepage-img-hover {
   max-width: 300px;
   min-width: 300px;
-  /* min-height: 80%;
-  max-height: 80%; */
   height: 90%;
   overflow: hidden;
   border-radius: 15px;
@@ -118,6 +117,30 @@
   font-size: 14px;
   color: rgb(127, 127, 127);
   line-height: 1.20;
+}
+
+.view-more {
+  text-decoration: none;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  border: thin solid rgb(218, 218, 218);
+  transition: none;
+  transform: none;
+  color: #414141;
+  font-weight: 700;
+  line-height: 3.4em;
+  text-indent: 1.6em;
+}
+
+.view-more:hover {
+  color: #326c0b;
+  border: thin solid #326c0b;
+}
+
+.view-more:hover {
+  transform: none;
 }
 
 .homepage-banner-2 {

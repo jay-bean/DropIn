@@ -18,7 +18,8 @@ body {
   display: flex;
   flex-direction: row;
   width: 100%;
-  gap: 5em;
+  /* gap: 5em; */
+  justify-content: space-between;
   color: #333;;
 }
 
@@ -90,8 +91,9 @@ body {
   text-decoration: underline;
 }
 
-.footer-img-container {
+.footer-image-container {
   width: 50%;
+  margin-top: .8em;
 }
 
 .footer-img-flex {
@@ -107,9 +109,10 @@ body {
 
 .footer-wheels-header {
   margin-bottom: 0;
-  margin-left: 10px;
   letter-spacing: 1px;
   font-family: 'Rubik', sans-serif;;
+  width: 40%;
+
 }
 
 .footer-wheels-div {
@@ -118,12 +121,17 @@ body {
   align-items: flex-end;
   text-align: center;
   gap: 3em;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .footer-icons-div {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   gap: 10px;
+  width: 60%;
 }
 
 .footer-icons {
@@ -294,13 +302,14 @@ body {
 
 @media only screen and (min-width: 600px) and (max-width: 1060px) {
   .footer {
-    padding: .5em;
-    padding-left: 2em;
+    padding: .5em 3em;
+    /* padding-left: 2em; */
   }
   .footer-flex {
     padding: 0;
     width: 100%;
-    gap: 0;
+    gap: 3em;
+    justify-content: flex-start;
   }
   #footer-explore {
     width: 30%;

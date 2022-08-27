@@ -80,8 +80,7 @@
 
 .profile-box {
   background: #f2f2f2;
-  padding-bottom: 50px;
-  height: 92%;
+  height: 100%;
   box-shadow: 2px 0 4px 0 rgb(0 0 0 / 10%);
   border: 1px solid #ccc;
   width: 100%;
@@ -97,13 +96,13 @@
 .profile-column-one {
   width: 65%;
   height: 100%;
-  background-color: #ccc;
+  background: #f2f2f2;
 }
 
 .profile-container-header  {
   background: #f2f2f2;
   border: 1px solid #e6e6e6;
-  height: 60px;
+  height: 6%;
 }
 
 .profile-container-header-flex {
@@ -112,10 +111,15 @@
   justify-content: space-between;
   margin: auto 30px;
   align-items: center;
+  height: 100%;
 }
 
 .prof-headers {
-  font-size: 20px;
+  font-size: 20px
+}
+
+.edit-btn-container {
+  height: 60%;
 }
 
 .profile-edit-btn {
@@ -124,7 +128,7 @@
   font-size: 13px;
   font-weight: 700;
   line-height: 1.36;
-  height: 32px;
+  height: 100%;
   padding: 6px 10px;
   border-radius: 9999px;
   cursor: pointer;
@@ -138,12 +142,28 @@
 }
 
 .profile-image-div {
-  height: 27.7%;
+  height: 27%;
   background-color: #ffffff;
+  width: 100%;
+}
+
+.image-con {
+  width: 30%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 40px;
+}
+
+.image-name-container {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  gap: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 100%;
+  align-items: center;
 }
 
 .image-flex-column {
@@ -159,7 +179,7 @@
 
 .profile-img {
   border: none;
-  line-height: 20px;
+  /* line-height: 20px; */
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -169,9 +189,7 @@
 }
 
 .profile-image {
-  margin-left: 30px;
-  width: 120px;
-  height: 120px;
+  height: 60%;
   border-radius: 50%;
   padding: 5px;
   border: thin solid rgba(194, 194, 194, 0.442);
@@ -180,6 +198,7 @@
 .profile-name-div {
   display: flex;
   flex-direction: column;
+  width: 70%;
 }
 
 .profile-name {
@@ -197,7 +216,7 @@
 /* review and favorite section */
 
 .second-containers {
-  height: 46px;
+  height: 6%;
 }
 
 .second-flex {
@@ -205,7 +224,7 @@
 }
 
 .review-div {
-  height: 28.7%;
+  height: 27%;
   background-color: #ffffff;
   display: flex;
   flex-direction: row;
@@ -214,8 +233,16 @@
 }
 
 .review-flex-column {
+  width: 100%;
+  text-align: center;
+}
+
+.review-flex-column .single-review-container {
   width: 80%;
   text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 0;
 }
 
 .review-flex-comments {
@@ -245,6 +272,7 @@
   margin-top: 30px;
   margin-left: 5%;
   margin-right: 5%;
+  width: 95%;
 }
 
 .add-park-contribute-flex {
@@ -254,6 +282,8 @@
   gap: 10px;
   height: 50px;
   text-decoration: none;
+  width: 95%;
+
 }
 
 .plus-sign {
@@ -272,5 +302,87 @@
 }
 
 .profile-p {
-  margin: auto 16%;
+  margin: auto 10%;
+}
+
+@media only screen and (max-width: 450px) {
+  .prof-page {
+    margin-bottom: 0;
+  }
+  .profile-flex-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+  .profile-box {
+    overflow-y: scroll;
+  }
+  .profile-box::-webkit-scrollbar { width: 0 !important }
+  .profile-column-one {
+    width: 100%;
+  }
+  .profile-column-two {
+    width: 100%;
+  }
+  .profile-container-header-flex {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+  }
+  .profile-edit-btn {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 4px 6px;
+  }
+  .image-name-container {
+    gap: 15%;
+  }
+  .profile-name {
+    font-size: 20px;
+  }
+  .profile-name-p {
+    font-size: 16px;
+  }
+  .review-div {
+    width: 100%;
+    justify-content: center;
+  }
+  .profile-p {
+    width: 100%;
+    margin-left: 0;
+    font-size: 16px;
+  }
+  .review-flex-column h4 {
+    width: 100%;
+  }
+  .review-h4 {
+    width: 100%;
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .profile-page-content {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .first-buffer-flex {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+  .second-buffer-flex {
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-left: 0;
+    gap: 0;
+    width: 90%;
+    font-size: 14px;
+    justify-content: space-between;
+  }
+  .profile-edit-btn {
+    padding: 6px 10px;
+  }
+
 }
