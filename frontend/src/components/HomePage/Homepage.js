@@ -51,6 +51,11 @@ function Homepage() {
               </div>
             );
           }) : null}
+          <div className='skatepark-card'>
+            <div className='homepage-img-container'>
+              <Link className='homepage-img-hover view-more' to='/skateparks'>Show more</Link><img src='' />
+            </div>
+          </div>
         </div>
       </div>
       <div className='homepage-banner-2'>

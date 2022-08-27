@@ -49,17 +49,19 @@ function Profile() {
             <div className='profile-column-one'>
               <div className='profile-container-header'>
                 <div className='profile-container-header-flex'>
-                  <h2 className='prof-headers'>Profile</h2><Link to='/profile/edit'><button className='profile-edit-btn'>Edit Profile</button></Link>
+                  <h2 className='prof-headers'>Profile</h2><Link className='edit-btn-container' to='/profile/edit'><button className='profile-edit-btn'>Edit Profile</button></Link>
                 </div>
               </div>
               <div className='profile-image-div'>
-                <div className='image-flex-column'>
-                  {sessionUser.picUrl ? <img className='profile-image' src={sessionUser.picUrl}/> : <img className='profile-image' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/73-730477_first-name-profile-image-placeholder-png.png'/>}
-                  {!sessionUser.picUrl && <Link className='add-profile-photo' to='profile/edit'><i className="fa-solid fa-plus profile-img">Add photo</i></Link>}
-                </div>
-                <div className='profile-name-div'>
-                  <h3 className='profile-name'>{sessionUser.firstName} {sessionUser.lastName}</h3>
-                  <p className='profile-name-p'>{sessionUser.email}</p>
+                <div className='image-name-container'>
+                  <div className='image-con'>
+                    {sessionUser.picUrl ? <img className='profile-image' src={sessionUser.picUrl}/> : <img className='profile-image' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/73-730477_first-name-profile-image-placeholder-png.png'/>}
+                    {!sessionUser.picUrl && <Link className='add-profile-photo' to='profile/edit'><i className="fa-solid fa-plus profile-img">Add photo</i></Link>}
+                  </div>
+                  <div className='profile-name-div'>
+                    <h3 className='profile-name'>{sessionUser.firstName} {sessionUser.lastName}</h3>
+                    <p className='profile-name-p'>{sessionUser.email}</p>
+                  </div>
                 </div>
               </div>
 
@@ -70,7 +72,7 @@ function Profile() {
               </div>
               <div className='review-div'>
                 <div className='review-flex-column'>
-                  {usersReviews && usersReviews.length ? <><h4>You currently have {usersReviews.length} reviews.</h4><p className='profile-p'> Head on over to your <Link className='profile-favorite-explore' to='/profile/reviews'>reviews</Link> tab if you would like to make any changes.</p></> : <p className='profile-p'>You currently don't have any reviews. <Link className='profile-favorite-explore' to='/skateparks'>Explore</Link></p>}
+                  {usersReviews && usersReviews.length ? <><h4 className='review-h4'>You currently have {usersReviews.length} reviews.</h4><p className='profile-p'> Head on over to your <Link className='profile-favorite-explore' to='/profile/reviews'>reviews</Link> tab if you would like to make any changes.</p></> : <p className='profile-p'>You currently don't have any reviews. <Link className='profile-favorite-explore' to='/skateparks'>Explore</Link></p>}
                 </div>
               </div>
 
@@ -81,7 +83,7 @@ function Profile() {
               </div>
               <div className='review-div'>
                 <div className='review-flex-column'>
-                  {favoritesArr && favoritesArr.length ? <><h4>You have favorited {favoritesArr.length} skateparks!</h4><p className='profile-p'> Head on over to your <Link className='profile-favorite-explore' to='/profile/favorites'>favorites</Link> tab if you would like to see which parks those are.</p></> : <p className='profile-p'>You currently don't have any favorites. <Link className='profile-favorite-explore' to='/skateparks'>Explore</Link></p>}
+                  {favoritesArr && favoritesArr.length ? <><h4 className='review-h4'>You have favorited {favoritesArr.length} skateparks!</h4><p className='profile-p'> Head on over to your <Link className='profile-favorite-explore' to='/profile/favorites'>favorites</Link> tab if you would like to see which parks those are.</p></> : <p className='profile-p'>You currently don't have any favorites. <Link className='profile-favorite-explore' to='/skateparks'>Explore</Link></p>}
                 </div>
               </div>
             </div>

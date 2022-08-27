@@ -258,7 +258,7 @@ input::file-selector-button:hover {
 .tag-select-comp {
   margin: auto;
   margin-bottom: 10px;
-  width: 90%;
+  width: 100%;
 }
 
 .chip {
@@ -272,7 +272,6 @@ input::file-selector-button:hover {
 }
 
 .multiselect-container {
-  width: 85%;
   margin-bottom: 0;
   height: 44px;
 }

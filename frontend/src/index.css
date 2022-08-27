@@ -3,4 +3,11 @@ body {
   width: 100%;
   margin: 0;
   color: #414141;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+body::-webkit-scrollbar { width: 0 !important }
+
+#full-page-container {
+  width: 100%;
 }
