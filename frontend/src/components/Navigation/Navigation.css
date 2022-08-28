@@ -1,8 +1,7 @@
 .nav-ul {
-  margin: 0;
-  padding: 0;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 2%;
+  padding-right: 2%;
+  width: 96%;
 }
 
 .navbar-container {
@@ -37,7 +36,8 @@
 
 .skatepark-nav {
   font-size: 18px;
-  margin-right: 4px;
+  width: 90%;
+  text-align: right;
 }
 
 .fa-regular {
@@ -148,7 +148,7 @@
   display: flex;
   flex-direction: row;
   gap: 40px;
-  width: 20%;
+  width: 40%;
 }
 
 #explore {
@@ -167,7 +167,7 @@
   color: #2a2a2aad;
   position: relative;
   text-align: center;
-  width: 40%;
+  width: 20%;
   box-sizing: border-box;
   margin: 0 auto;
 }
@@ -177,8 +177,8 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  gap: 3px;
-  width: 20%;
+  gap: 5%;
+  width: 40%;
 }
 
 .nav-prof-demo {
@@ -190,7 +190,7 @@
 }
 
 .prof-btn-container {
-  width: 30px;
+  width: 5%;
   position: relative;
   display: inline-block;
 }
@@ -231,4 +231,8 @@
   height: 32px;
   align-self: center;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 510px){
+
 }

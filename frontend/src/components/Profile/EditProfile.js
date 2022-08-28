@@ -66,8 +66,8 @@ function EditProfile() {
                 <Link className={'profile-links'} to='/profile/reviews'>Reviews</Link>
               </div>
             </div>
-            <div className='profile-page-content'>
-          <div className='profile-box'>
+            <div className='profile-page-content edit-profile-page-content'>
+          <div className='profile-box edit-profile-box'>
             <div className='profile-flex-container'>
               <div className='profile-column-one'>
                 <div className='profile-container-header'>
@@ -144,7 +144,7 @@ function EditProfile() {
 
               </div>
 
-              <div className='profile-column-two'>
+              <div className='profile-column-two edit-column-two'>
                 <div className='contribute'>
                   <h3>Contribute</h3>
                     <Link className='add-park-contribute-flex' to='/skateparks/new'><p className='plus-sign'>+</p><p className='profile-add-contribute'>Add a skatepark</p></Link>

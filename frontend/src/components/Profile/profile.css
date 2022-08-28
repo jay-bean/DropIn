@@ -344,6 +344,9 @@
     padding: 2px 4px;
     height: 80%;
   }
+  .profile-image-div {
+    height: 150px;
+  }
   .image-name-container {
     gap: 10%;
     margin: auto;
@@ -354,6 +357,9 @@
   }
   .profile-name-p {
     font-size: 16px;
+  }
+  .profile-p {
+    margin-bottom: 1em;
   }
   .review-div {
     width: 100%;
@@ -394,5 +400,4 @@
   .profile-edit-btn {
     padding: 6px 10px;
   }
-
 }

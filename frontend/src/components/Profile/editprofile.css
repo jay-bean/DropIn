@@ -102,6 +102,9 @@
 }
 
 @media only screen and (max-width: 450px) {
+  .edit-profile-page-content {
+    height: 100%;
+  }
   .profile-edit-form {
     width: 90%;
     padding: 0;
@@ -112,5 +115,14 @@
   }
   .edit-prof-container {
     overflow-y:unset !important;
+  }
+  .edit-profile-box {
+    overflow-y: unset !important;
+  }
+  .edit-column-one {
+    height: 80%;
+  }
+  .edit-column-two {
+    height: 20%;
   }
 }
