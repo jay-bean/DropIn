@@ -42,7 +42,7 @@ function Profile() {
               <Link className={'profile-links'} to='/profile/reviews'>Reviews</Link>
             </div>
           </div>
-        <div className='profile-page-content'>
+        <div className='profile-page-content edit-profile-page-content'>
         <div className='profile-box'>
           <div className='profile-flex-container'>
 

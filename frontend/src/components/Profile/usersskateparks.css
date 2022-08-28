@@ -7,7 +7,6 @@
   overflow-y: scroll;
   width: 100%;
 }
-
 .all-container-profile::-webkit-scrollbar { width: 0 !important }
 
 .add-descriptor-div {
@@ -29,4 +28,12 @@
     width: 100%;
   }
 
+}
+
+@media only screen and (min-width: 1230px) {
+  .act .explore-page-card-container .explore-page-card {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
 }

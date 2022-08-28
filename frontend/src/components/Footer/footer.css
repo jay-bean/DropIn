@@ -204,11 +204,6 @@ body {
   .footer {
     padding: .3em;
   }
-  .footer-tags {
-    border: thin solid grey;
-    border-radius: 4px;
-    padding: .3em;
-  }
   .footer-flex {
     padding: 0;
     display: flex;
@@ -229,6 +224,12 @@ body {
   .footer-tags-container {
     flex-flow: row wrap;
     gap: .4em;
+    width: 90%;
+  }
+  .footer-tags {
+    border: thin solid grey;
+    border-radius: 4px;
+    padding: .3em;
   }
   .footer-prof {
     width: 100%;
@@ -239,13 +240,14 @@ body {
   .prof-p-container {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
-    width: 98%;
+    width: 90%;
+    gap: 5%;
   }
   .footer-prof-p {
     font-weight: 700;
     text-decoration: underline;
     line-height: 100%;
+    font-size: 14px;
   }
   .footer-image {
     width: 100%;

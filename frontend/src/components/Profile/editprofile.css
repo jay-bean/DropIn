@@ -102,16 +102,27 @@
 }
 
 @media only screen and (max-width: 450px) {
+  .edit-profile-page-content {
+    height: 100%;
+  }
   .profile-edit-form {
-    width: 100%;
+    width: 90%;
     padding: 0;
     display: flex;
     flex-direction: column;
     background: #fff;
     margin: auto;
   }
-}
-
-@media only screen and (max-width: 1158px) {
-
+  .edit-prof-container {
+    overflow-y:unset !important;
+  }
+  .edit-profile-box {
+    overflow-y: unset !important;
+  }
+  .edit-column-one {
+    height: 80%;
+  }
+  .edit-column-two {
+    height: 20%;
+  }
 }

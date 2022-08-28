@@ -32,7 +32,7 @@ function ProfileButton() {
 
   return (
     <div className="prof-btn-container">
-      <i onMouseOver={handleShowMenu} className="fa-regular fa-circle-user"></i>
+      <i onMouseOver={handleShowMenu} onClick={handleShowMenu} className="fa-regular fa-circle-user"></i>
       {showMenu && (
         <ul className="profile-dropdown">
           <Link to='/profile'><li className="prof-li top">Profile</li></Link>
