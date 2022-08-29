@@ -87,10 +87,6 @@
   overflow-y: scroll;
 }
 
-.skatepark-card-div div {
- width: 100%;
-}
-
 .activebtn {
   background-color: #428a13;
   color: #ffffff;
@@ -124,8 +120,6 @@
     display: flex;
     flex-direction: column-reverse;
     justify-content: flex-end;
-    /* position: relative;
-    height: calc(100vh - 124px); */
     width: 100%;
     height: 900px;
   }
@@ -136,8 +130,6 @@
     height: 300px;
     z-index: 0;
     margin-right: 0;
-    /* display: block; */
-    /* flex-direction: column; */
   }
 
   .skatepark-card-holder {
@@ -151,9 +143,36 @@
     grid-template-rows: 1fr;
     min-height: 600px;
   }
+
+  #tags-div {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    top: 0;
+    height: 120px;
+    width: 100%;
+  }
+
+  .search-container {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .search-container .main {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
 }
 
-@media only screen and (max-width: 1302px) {
+@media only screen and (min-width: 769px) and (max-width: 1302px) {
   .tag-btn-div {
     display: flex;
     flex-direction: column;

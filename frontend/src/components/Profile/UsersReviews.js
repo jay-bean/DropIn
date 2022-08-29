@@ -46,7 +46,7 @@ function UsersReviews() {
                   <h2 className='prof-headers'>Reviews</h2>
                 </div>
               </div>
-              <div className='all-container-profile'>
+              <div className='all-container-profile act'>
                 <div className='review-flex-column'>
                   {usersReviews && usersReviews.length ? usersReviews.map(review => {
                     return (

@@ -13,6 +13,10 @@
   overflow: hidden;
 }
 
+.gm-style-iw-d {
+  max-height: none !important;
+}
+
 .snippet-card {
   text-decoration: none;
   display: flex;
@@ -62,11 +66,11 @@
   margin-top: 10px;
 }
 
-#tags-div {
+/* #tags-div {
   display: flex;
   flex-direction: row;
   width: 100%;
-}
+} */
 
 .snippet-card-addy-fave-container {
   width: 100%;
@@ -86,4 +90,9 @@
   font-size: 14px;
   color: rgb(127, 127, 127);
   line-height: 1.20;
+}
+
+.gm-ui-hover-effect {
+  padding-top: 5px !important;
+  padding-right: 34px !important;
 }

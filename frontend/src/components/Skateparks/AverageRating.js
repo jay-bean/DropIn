@@ -28,7 +28,7 @@ function AverageRating({ skatepark }) {
       {reviewsArr && reviewsArr.length ?
         <div className='single-park-star-name-container'>
           <div className="single-park-average-star-rating-div">
-            <div>
+            {/* <div className=""> */}
               {[...Array(5).keys()].map((index) => {
                 index += 1;
                 return (
@@ -46,7 +46,7 @@ function AverageRating({ skatepark }) {
                   </button>
                 );
               })}
-            </div>
+            {/* </div> */}
             {reviewsArr.length === 1 ? <p className='average-star-park-p'>({reviewsArr.length})</p> : <p className='average-star-park-p'>({reviewsArr.length})</p>}
           </div>
         </div> : null}

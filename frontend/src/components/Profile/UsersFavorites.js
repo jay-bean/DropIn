@@ -54,7 +54,7 @@ function UsersFavorites() {
                   <h2 className='prof-headers'>Favorites</h2>
                 </div>
               </div>
-              <div className='all-container-profile'>
+              <div className='all-container-profile act'>
                 <div className='review-flex-column'>
                   {usersFavorites && usersFavorites.length ? usersFavorites.map(favorite => {
                     return (
