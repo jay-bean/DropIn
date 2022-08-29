@@ -22,7 +22,7 @@ function Navigation({ isLoaded }){
   if (sessionUser) {
     sessionLinks = (
       <div className='nav-prof'>
-        <NavLink className='skatepark-nav'exact to="/skateparks/new"><span>+</span> Skatepark</NavLink>
+        <NavLink className='skatepark-nav'exact to="/skateparks/new"><button className='skatepark-nav-btn'>Add Skatepark</button></NavLink>
         <ProfileButton user={sessionUser} />
       </div>
     );
