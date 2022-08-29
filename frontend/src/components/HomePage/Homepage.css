@@ -6,7 +6,7 @@
 .homepage-img {
   background-image: url(https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/AA065D57-400F-4691-B03F-5B2512CF2137.jpeg);
   background-color: rgba(0, 0, 0, 0.362);
-  height: 358px;
+  height: 320px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -279,7 +279,7 @@
 
 .homepage-search-div .main {
   display: flex;
-  width: 30%;
+  width: 38%;
   height: 80px;
   align-items: center;
   flex-direction: column;
@@ -299,16 +299,16 @@
 
 .homepage-search-div .main .search-ul {
   margin-left: 0;
-  margin-top: 3.5%;
+  margin-top: 3.6em;
   border-radius: 6px;
   position: absolute;
   left: auto;
   right: auto;
   transform: translate(0, 12px);
   background-color: #f9f9f9;
-  width: 30%;
+  width: 38%;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 2;
+  z-index: 20;
   padding: 0;
   max-height: 420px;
   overflow-y: scroll;
@@ -432,7 +432,7 @@
     height: 50px;
   }
   .homepage-search-div .main .search-ul {
-    margin-top: 2em;
+    margin-top: 2.4em;
     width: 60%;
     max-height: 200px;
   }
@@ -449,7 +449,7 @@
     height: 50px;
   }
   .homepage-search-div .main .search-ul {
-    margin-top: 2em;
+    margin-top: 2.4em;
     width: 60%;
     max-height: 200px;
   }

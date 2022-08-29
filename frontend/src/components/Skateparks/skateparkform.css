@@ -337,3 +337,10 @@ input::file-selector-button:hover {
     margin: 1em 0;
   }
 }
+
+@media only screen and (max-width: 625px) {
+  .skatepark-form-page {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
