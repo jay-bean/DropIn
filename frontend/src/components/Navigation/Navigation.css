@@ -60,7 +60,6 @@
 }
 
 .top {
-  padding-top: 10px;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 }
@@ -260,16 +259,32 @@
 }
 
 .prof-li {
-  padding-top: 10px;
-  padding-left: 12px;
+  padding: .5em 1em;
   list-style: none;
   height: 32px;
   align-self: center;
   cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-@media only screen and (max-width: 510px){
+.navbar-dropdown {
+  display: none;
+}
 
+@media only screen and (max-width: 540px){
+  .navbar-dropdown {
+    display: flex;
+    width: 23px;
+  }
+  .explore-about-div {
+    position: relative;
+    flex-direction: column;
+    gap: 40px;
+    width: 40%;
+  }
 }
 
 @media only screen and (max-width: 800px) {
