@@ -1,5 +1,5 @@
 import { useHistory, useParams, Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSkateparks, removeSkatepark } from '../../store/skatepark';
 import AllReviews from '../Reviews/Reviews';
@@ -21,6 +21,7 @@ function SingleSkatepark() {
   const parktags = useSelector(state => state.parktags);
   const [showEditForm, setShowEditForm] = useState(false);
   const [didUpdate, setDidUpdate] = useState(false);
+  const scrollToRef = useRef();
 
   let skateparkTags;
   if (parktags && skatepark) {
@@ -47,7 +48,6 @@ function SingleSkatepark() {
   return (
 
     !showEditForm ?
-
       <div className='single-park-page'>
         <div className='first-buffer-park'>
         {skatepark &&
@@ -62,15 +62,36 @@ function SingleSkatepark() {
               {skatepark && skatepark.images.length > 0 && <div className='park-main-img-div'><img className='park-main-img' src={skatepark.images[0].url}/></div>}
             </div>
             <div className='green-buffer'>
-              <div className='green-divs'>
+              <div className='green-divs'
+                onClick={() =>
+                  window.scrollTo({
+                    left: 0,
+                    top: 950,
+                    behavior: "smooth",
+                  })
+                }>
                 <img className='green-img' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/6F53C9DC-B567-48C2-B832-39B82195CE2E_4_5005_c.jpeg'/>
                 <p className='green-p'>Weather</p>
               </div>
-              <div className='green-divs'>
+              <div className='green-divs'
+                onClick={() =>
+                  window.scrollTo({
+                    left: 0,
+                    top: 1175,
+                    behavior: "smooth",
+                  })
+                }>
                 <img className='green-img' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/87C4C128-74CB-4A81-9F42-EEC138EAFE99_4_5005_c.jpeg'/>
                 <p className='green-p'>Map</p>
               </div>
-              <div className='green-divs'>
+              <div className='green-divs'
+                onClick={() =>
+                  window.scrollTo({
+                    left: 0,
+                    top: 1660,
+                    behavior: "smooth",
+                  })
+                }>
                 <img className='green-img' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/656AE96B-EEC6-4594-835B-2F2270178164_4_5005_c.jpeg'/>
                 <p className='green-p'>Reviews</p>
               </div>
@@ -109,6 +130,7 @@ function SingleSkatepark() {
                     {skatepark && <SingleParkMap skatepark={skatepark}/>}
                   </div>
                 </div>
+              <p ref={scrollToRef}></p>
               {reviews && <AllReviews reviews={reviews} skatepark={skatepark}/>}
             </div>
           </div>

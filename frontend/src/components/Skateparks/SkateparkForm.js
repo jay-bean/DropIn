@@ -127,7 +127,7 @@ function NewSkateparkForm() {
                 onChange={(e) => setZipcode(e.target.value)}
                 />
             </div>
-            <p className='skatepark-form-p drop-down-choose'>From the drop down below choose at least one feature to describe the park.</p>
+            <p className='skatepark-form-p drop-down-choose'>From the drop down below choose at least one feature to describe the park</p>
             <TagSelect selectedTag={selectedTag} setSelectedTag={setSelectedTag}/>
             <label className='skatepark-form-label'>*Description:</label>
             <textarea
@@ -149,7 +149,7 @@ function NewSkateparkForm() {
                 name="file"
                 onChange={(e) => setImages(e.target.files)}
                 />
-              <p className='skatepark-form-p photo-amount'>*Please upload at least one photo. Currently photos can only be added now, and they can't be deleted once added. (1-10)</p>
+              <p className='skatepark-form-p photo-amount'>*Please upload at least one photo (1-10)</p>
             </label>
             {images && images.length && (
                   <div className="thumbnail-container">
