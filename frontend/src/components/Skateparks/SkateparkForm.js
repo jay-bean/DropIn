@@ -36,7 +36,7 @@ function NewSkateparkForm() {
       formData.append('state', state);
       formData.append('zipcode', zipcode);
       formData.append('userId', sessionUser.id);
-
+      console.log(images, 'inside submit')
       for (const image of Object.keys(images)) {
         formData.append('image', images[image]);
       }
@@ -57,6 +57,16 @@ function NewSkateparkForm() {
       if (err.message && err.wrongFormat) return setValidationErrors([err.message]);
       };
   }
+
+  let imagesArr;
+  if (images && images.length) {
+    imagesArr = Object.values(images);
+  }
+
+  const removeSelectedImage = (index) => {
+    imagesArr.splice(index, 1);
+    setImages(imagesArr)
+  };
 
   return (
     sessionUser ?
@@ -117,7 +127,7 @@ function NewSkateparkForm() {
                 onChange={(e) => setZipcode(e.target.value)}
                 />
             </div>
-            <p className='skatepark-form-p drop-down-choose'>From the drop down below choose at least one feature to describe the park.</p>
+            <p className='skatepark-form-p drop-down-choose'>From the drop down below choose at least one feature to describe the park</p>
             <TagSelect selectedTag={selectedTag} setSelectedTag={setSelectedTag}/>
             <label className='skatepark-form-label'>*Description:</label>
             <textarea
@@ -131,17 +141,35 @@ function NewSkateparkForm() {
               onChange={(e) => setDescription(e.target.value)}
               />
             <label className='skatepark-form-img-div'>
-              {/* <i className="fa-solid fa-images"> Upload Images</i> */}
+              <i className="fa-solid fa-images image-input img-input"> <p className='img-upload-p'>Upload Images</p></i>
               <input
-                className="image-input"
                 required
                 type="file"
                 multiple
                 name="file"
                 onChange={(e) => setImages(e.target.files)}
                 />
-              <p className='skatepark-form-p photo-amount'>*Please upload at least one photo. Currently photos can only be added now, and they can't be deleted once added. (1-10)</p>
+              <p className='skatepark-form-p photo-amount'>*Please upload at least one photo (1-10)</p>
             </label>
+            {images && images.length && (
+                  <div className="thumbnail-container">
+                  {imagesArr.map((image, index) => {
+                    console.log(image, index ,'this is inside the returnnnnnn')
+                    return (
+                      <div className='thumbnail-divs'>
+                        <button className='thumbnail-remove-btn' onClick={() => removeSelectedImage(index)}>
+                          X
+                        </button>
+                        <img
+                          style={{maxWidth: "100%", maxHeight: '320px' }}
+                          src={URL.createObjectURL(image)}
+                          alt='thumbnail'
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+            )}
             {validationErrors && validationErrors.length > 0 && (
               validationErrors.map(error => {
                 return <div className='signup-errors' key={error}>{error}</div>

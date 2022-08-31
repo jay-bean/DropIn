@@ -1,53 +1,127 @@
-.single-park-details-left-column {
-  width: 50%;
+.single-park-page {
+  background-color: #f2f2f2;
+  padding-bottom: 40px;
 }
 
 .single-park-container {
   display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  width: 1024px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border: thin solid rgb(191, 191, 191);
+}
+
+.first-buffer-park {
+  height: 60px;
+  height: fit-content;
+  color: #000000;
+  position: relative;
+  border-top: 1px solid rgba(159, 159, 159, 0.405);
+}
+
+.first-buffer-flex-park {
+  display: flex;
   flex-direction: row;
-  height: calc(100vh - 124px);
-  gap: 10px;
-  overflow: hidden;
-}
-
-/* .all-reviews-singlepark-container {
-  background-color: #ffffff;
-  width: 30%;
-  height: 100%;
-  box-shadow: 2px 0 4px 0 rgb(0 0 0 / 10%);
-  overflow-y: scroll;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-} */
-
-.all-reviews-div {
-  /* grid-column: 1 / 2;
-  grid-row: 1 / 2; */
-  background-color: #ffffff;
-  width: 23%;
-  height: 100%;
-  box-shadow: 2px 0 4px 0 rgb(0 0 0 / 10%);
-  overflow: hidden;
-  overflow-y: scroll;
-  justify-content: center;
+  margin: 8px auto;
+  line-height: 20px;
+  letter-spacing: 1px;
+  font-size: 12px;
+  width: 1024px;
   align-items: center;
-  margin: 0;
 }
 
-.all-reviews-flex div .review {
-  margin: 20px 0;
+.skateparks-link {
+  text-decoration: none;
+  color: #000000;
+}
+
+.skateparks-link:hover {
+  text-decoration: underline;
+}
+
+.carrot {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .single-park-details-container {
-  margin-top: 10px;
-  width: 78%;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   overflow-y: scroll;
 }
+
+.park-main-img-div {
+  max-height: 367px;
+  width: 100%;
+}
+
+.park-main-img {
+  height: 367px;
+  width: 100%;
+}
+
+.green-buffer {
+  height: 55px;
+  width: 100%;
+  background-color: #3b7613;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 14em;
+  transform: translate(0, -55px);
+}
+
+.green-divs {
+  height: 100%;
+  transform: translate(0 ,-20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 30%;
+  cursor: pointer;
+}
+
+.green-img {
+  border-radius: 50%;
+  width: 48px;
+}
+
+.green-p {
+  margin: 0;
+  color: white;
+}
+
+.p {
+  height: 0;
+}
+
+.all-reviews-div {
+  background-color: #ffffff;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  transform: translate(0, -30px);
+}
+
+.all-reviews-container {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.all-reviews-flex div .review {
+  margin: 20px 0;
+}
+
 
 .single-park-imgs-div {
   display: flex;
@@ -67,36 +141,50 @@
 .single-park-details-div {
   border-top: thin solid rgba(206, 206, 206, 0.455);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   height: 100%;
+  transform: translate(0, -55px);
+}
+
+.single-park-flex {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 2%;
 }
 
 .single-park-name-flex {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  margin-top: 23px;
+  justify-content: space-between;
+  align-items: center;
   gap: 40px;
+}
+
+.single-park-name-flex img {
+  padding: 0;
 }
 
 .single-park-name {
   font-size: 23px;
-  margin-bottom: 30px;
-  padding: 12px 0;
+  color: #414141;
 }
 
 .single-park-description {
-  width: 96%;
   line-height: 1.30;
-  margin: 30px 0;
+  margin: 40px 0;
+  margin-top: 60px;
   font-size: 18px;
+  color: #414141;
 }
 
 .single-park-tags-div {
   display: flex;
   flex-direction: row;
   gap: 6px;
+  margin-top: 20px;
+  margin-bottom: 3em;
 }
 
 .single-park-tag {
@@ -115,7 +203,11 @@
 }
 
 .single-park-btns {
-  margin-top: 30px;
+  text-align: right;
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-bottom: 2em;
+  width: 90%;
 }
 
 .single-park-edit-btn {
@@ -175,8 +267,8 @@
 }
 
 .single-park-map-div {
-  margin-right: 1em;
-  width: 50%;
+  width: 90%;
+  margin: auto;
 }
 
 .single-park-map-div2 {
@@ -196,53 +288,88 @@
 /* weather component */
 
 .weather-container {
-  width: 60%;
-  height: 30%;
-  background-color: #428a13;
-  border-radius: 4px;
-  margin: 1em 0;
-  margin-left: 40%;
-  color: white;
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 180px;
+}
+
+.weather-none {
+  display: none;
+}
+
+/* current weather section */
+
+.weather-btn-container {
+  display: flex;
+  flex-direction: row;
+  border-bottom: thin solid rgb(206, 206, 206);
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  gap: 1em;
+}
+
+.weather-btn {
+  background-color: white;
+  border: none;
+  padding-bottom: 1em;
+  font-size: 16px;
+  font-weight: 700;
+  color: #6e6e6e;
+  cursor: pointer;
+}
+
+.weather-btn:hover {
+  border-bottom: 1px solid #a8a8a8;
+}
+
+.active-weather-btn {
+  color: #414141;
+  border-bottom: 1px solid #3b7613;
+}
+
+.current-weather-container {
+  width: 100%;
+  height: 100%;
+  color: #6e6e6e;
   font-family: Arial, Helvetica, sans-serif;
-  box-shadow: 0 0 , 0 0 .4em rgba(0, 0, 0, 0.387);
 }
 
 .weather-div {
   width: 100%;
-  height: 100%;
+  margin-top: 20px;
+  height: 160px;
 }
 
 .name-date-div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: .6em 1em;
   align-items: flex-end;
-  background-color: #3b7613;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  height: 20%;
   margin-bottom: 1em;
 }
 
 .weather-city-div {
   font-size: 18px;
   margin: 0;
+  margin-left: 1em;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .weather-location-icon {
-  width: 18px;
-  margin-bottom: .2em;
+  width: 16px;
+  margin-right: .1em;
 }
 
 .weather-city {
   margin: 0;
-  /* letter-spacing: .1em; */
-  letter-spacing: .1em;
+  font-size: 16px;
 }
 
 .weather-date {
@@ -252,7 +379,7 @@
 }
 
 .weather-info-container {
-  max-height: 80%;
+  max-height: 100%;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -265,12 +392,8 @@
   align-items: center;
 }
 
-.current-condition-icon {
-  height: 90%;
-}
-
 .current-condition-text {
-  height: 10%;
+  margin: 0;
   font-size: 14px;
 }
 
@@ -282,21 +405,26 @@
 }
 
 .current-temp {
-  font-size: 56px;
+  font-size: 46px;
   margin: 0;
-  height: 90%;
 }
 
 .feels-like {
   font-size: 14px;
-  height: 10%;
+  margin: 0;
+  margin-top: 6px;
 }
 
 .weather-info-div-three {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+}
+
+.max-min-temp {
+  font-size: 14px;
+  margin: 0;
 }
 
 .rain-snow-div {
@@ -304,11 +432,7 @@
   flex-direction: row;
   align-items: flex-end;
   gap: 1em;
-}
-
-.min-max-temp {
-  margin: 0;
-  height: 10%;
+  font-size: 14px;
 }
 
 .arrows {
@@ -317,15 +441,12 @@
 }
 
 .elements-container {
-  height: 88%;
   font-size: 14px;
 }
 
 .wind {
   margin: 0;
-  margin-top: 1em;
-  margin-bottom: 2%;
-  margin-left: .15em;
+  font-size: 14px;
 }
 
 .rain {
@@ -334,4 +455,81 @@
 
 .snow {
   margin: 0;
+}
+
+/* forecast section */
+
+.forecast-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 180px;
+  margin: auto;
+}
+
+.forecast-card {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.forecast-min-max {
+  display: flex;
+  flex-direction: row;
+}
+
+.forecast-weekday {
+  font-size: 16px;
+  color: #6e6e6e;
+  margin: 0;
+}
+
+.forecast-temps {
+  font-size: 14px;
+  color: #6e6e6e;
+}
+
+.forecast-img {
+  width: 60px;
+}
+
+/* daylight section */
+
+.daylight-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 180px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  gap: 40%;
+}
+
+.daylight-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.daylight-img {
+  width: 60px;
+}
+
+.daylight-p-sun {
+  text-align: center;
+  color: #6e6e6e;
+  margin: 1em 0;
+  font-size: 16px;
+}
+
+.daylight-p {
+  text-align: center;
+  color: #6e6e6e;
+  margin: 1em 0;
+  font-size: 14px;
 }

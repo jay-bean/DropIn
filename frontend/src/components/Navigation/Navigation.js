@@ -40,6 +40,7 @@ function Navigation({ isLoaded }){
     <>
       <ul className='nav-ul'>
         <li className='navbar-container'>
+          {/* <img className='navbar-dropdown' onClick={handleNavDropDown} src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/18E64E17-F182-4BE4-BC76-D69B29BF9EA6_4_5005_c.jpeg'/> */}
           <div className='explore-about-div'>
             <NavLink id='explore' exact to="/skateparks">Explore</NavLink>
             <NavLink className='about-me' exact to="/about">About</NavLink>

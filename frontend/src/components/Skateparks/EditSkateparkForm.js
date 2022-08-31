@@ -20,6 +20,7 @@ function EditSkateparkForm({ setDidUpdate, setShowEditForm }) {
   const [city, setCity] = useState(skatepark ? skatepark.city : '');
   const [state, setState] = useState(skatepark ? skatepark.state : '');
   const [zipcode, setZipcode] = useState(skatepark ? skatepark.zipcode : 0);
+  const [oldImages, setOldImages] = useState(skatepark ? skatepark.images : []);
   const [images, setImages] = useState({});
 
   let skateparkTags;
@@ -46,6 +47,7 @@ function EditSkateparkForm({ setDidUpdate, setShowEditForm }) {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
+      if (oldImages.length > 10 || images.length > 10 || oldImages.length + images.length > 10) return setValidationErrors(['Only ten photos allowed.']);
       const formData = new FormData();
       formData.append('name', name);
       formData.append('description', description);
@@ -75,6 +77,29 @@ function EditSkateparkForm({ setDidUpdate, setShowEditForm }) {
       if (err.errors && err.errors.length > 0) return setValidationErrors(err.errors);
     }
   }
+
+  let imagesArr;
+  if (images && images.length) {
+    imagesArr = Object.values(images);
+  }
+
+  const removeNewSelectedImage = (index) => {
+    imagesArr.splice(index, 1);
+    setImages(imagesArr)
+  };
+
+  let oldImagesArr;
+  if (oldImages && oldImages.length) {
+    oldImagesArr = Object.values(oldImages);
+  }
+
+  const removeOldSelectedImage = (index) => {
+    console.log(index, 'index in remove old');
+    oldImagesArr.splice(index, 1);
+    console.log(oldImagesArr,'after the spliceee');
+    setOldImages(oldImagesArr);
+  };
+  console.log(oldImages, 'old images state after splice')
 
   return (
     sessionUser ?
@@ -148,9 +173,9 @@ function EditSkateparkForm({ setDidUpdate, setShowEditForm }) {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 />
-              <label className='hidden-image-for-now'>
+              <label className='skatepark-form-img-div'>
+                <i className="fa-solid fa-images image-input img-input"> <p className='img-upload-p'>Upload Images</p></i>
                 <input
-                  className='image-input'
                   type="file"
                   multiple
                   name="file"
@@ -158,6 +183,43 @@ function EditSkateparkForm({ setDidUpdate, setShowEditForm }) {
                 />
                 <p className='skatepark-form-p'>photo upload optional (1-10)</p>
               </label>
+              {images && images.length ? (
+                <div className="thumbnail-container">
+                  {imagesArr.map((image, index) => {
+                    console.log(image, index ,'this is inside the returnnnnnn')
+                    return (
+                      <div className='thumbnail-divs'>
+                        <button className='thumbnail-remove-btn' onClick={() => removeNewSelectedImage(index)}>
+                          X
+                        </button>
+                        <img
+                          style={{maxWidth: "100%", maxHeight: '320px' }}
+                          src={URL.createObjectURL(image)}
+                          alt='thumbnail'
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+              ) : null}
+              {oldImages && oldImages.length && (
+                <div className="thumbnail-container">
+                  {oldImagesArr.map((image, index) => {
+                    return (
+                      <div className='thumbnail-divs'>
+                        <button className='thumbnail-remove-btn' onClick={() => removeOldSelectedImage(index)}>
+                          X
+                        </button>
+                        <img
+                          style={{maxWidth: "100%", maxHeight: '320px' }}
+                          src={image.url}
+                          alt='thumbnail'
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
               {validationErrors && validationErrors.length > 0 && (
                 validationErrors.map(error => {
                   return <div className='signup-errors' key={error}>{error}</div>

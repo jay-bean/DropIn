@@ -20,10 +20,9 @@ function AllReviews({ skatepark, reviews }) {
 
   return (
     <div className='all-reviews-div'>
-      <div>
-        <div>
+      <div className='review-form-container'>
           {skatepark &&
-            <div>
+            <div className='reviews-container'>
               <p className='skatepark-review-name'>{skatepark.name}'s Reviews</p>
               <div>
                 {filteredReviews && filteredReviews.length ?
@@ -51,13 +50,14 @@ function AllReviews({ skatepark, reviews }) {
               </div>
             </div>
           }
-        </div>
-        <div>
+        <div className='reviews-container'>
           {skatepark && <NewReviewFormModal skatepark={skatepark}/>}
         </div>
 
       </div>
+      <div className='all-reviews-container'>
         {skatepark && filteredReviews && filteredReviews.length > 0 && filteredReviews.map(review => <Review key={review.id} review={review} skatepark={skatepark}/>)}
+      </div>
     </div>
   );
 }

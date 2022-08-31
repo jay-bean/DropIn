@@ -1,6 +1,23 @@
+.review-form-container {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin: 5% 5%;
+  justify-content: center;
+  align-items: center;
+}
+
+.reviews-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .single-review-container {
-  height: 30%;
-  padding: 1em;
+  height: 226px;
+  padding: 6px;
 }
 
 .review {
@@ -9,9 +26,7 @@
   align-items: flex-start;
   width: 100%;
   border-top: thin solid #b4b4b481;
-  padding-top: 1em;
   height: 100%;
-  margin: 10% 0;
 }
 
 .review-rating {
@@ -20,30 +35,27 @@
 }
 
 .review-comment {
-  min-height: 50%;
+  min-height: 80px;
   width: 100%;
   word-wrap: break-word;
   text-align: left;
   line-height: 1.50;
-  overflow-y: scroll;
-  margin-top: 1em;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 5px 0;
 }
 
+
 .review-edit-btn {
-  margin-left: 20px;
   border-color: #428a13;
   background-color: #428a13;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 13px;
   font-weight: 700;
   line-height: 1.36;
-  height: 60%;
-  padding: 0 16px;
-  position: relative;
-  display: inline-flex;
+  padding: 4px 16px;
+  display: flex;
   flex-direction: row;
-  box-sizing: border-box;
-  max-width: 100%;
   align-items: center;
   justify-content: center;
   border-radius: 9999px;
@@ -65,12 +77,9 @@
   font-size: 13px;
   font-weight: 700;
   line-height: 1.36;
-  height: 60%;
-  padding: 0 16px;
-  position: relative;
-  display: inline-flex;
+  padding: 4px 16px;
+  display: flex;
   flex-direction: row;
-  box-sizing: border-box;
   max-width: 100%;
   align-items: center;
   justify-content: center;
@@ -88,10 +97,17 @@
 .review-user-info {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 30px;
-  max-height: 30%;
-  min-height: 30%;
+  height: 100px;
   width: 100%;
+  margin-top: 10px;
+}
+
+.users-img {
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
 }
 
 .review-user-name {
@@ -107,8 +123,7 @@
   flex-direction: row;
   justify-content: flex-end;
   width: 100%;
-  min-height: 20%;
-  padding-top: .3em;
+  height: 30px;
 }
 
 /* stars */
@@ -134,6 +149,7 @@
   width: 18px;
   height: 18px;
 }
+
 
 /* all reviews page stars */
 
