@@ -11,4 +11,4 @@ body::-webkit-scrollbar { width: 0 !important }
 #full-page-container {
   width: 100%;
 }
-html, body {width: auto!important; overflow-x: hidden!important} 
+html, body {width: auto!important; overflow-x: hidden!important}
