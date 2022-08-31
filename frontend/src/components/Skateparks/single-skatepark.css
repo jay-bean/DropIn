@@ -1,29 +1,81 @@
-.single-park-details-left-column {
-  width: 50%;
+.single-park-page {
+  background-color: #f2f2f2;
 }
 
 .single-park-container {
   display: flex;
-  flex-direction: row;
-  height: calc(100vh - 124px);
-  gap: 10px;
+  flex-direction: column;
+  height: 100%;
   overflow: hidden;
+  width: 1024px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border: thin solid rgb(191, 191, 191);
 }
 
-/* .all-reviews-singlepark-container {
-  background-color: #ffffff;
-  width: 30%;
+.first-buffer-park {
+  height: 60px;
+  height: fit-content;
+  color: #000000;
+  position: relative;
+  border-top: 1px solid rgba(159, 159, 159, 0.405);
+}
+
+.first-buffer-flex-park {
+  display: flex;
+  flex-direction: row;
+  margin: 8px auto;
+  line-height: 20px;
+  letter-spacing: 1px;
+  font-size: 12px;
+  width: 1024px;
+  align-items: center;
+}
+
+.skateparks-link {
+  text-decoration: none;
+  color: #000000;
+}
+
+.skateparks-link:hover {
+  text-decoration: underline;
+}
+
+.carrot {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.single-park-details-container {
+  width: 100%;
   height: 100%;
-  box-shadow: 2px 0 4px 0 rgb(0 0 0 / 10%);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   overflow-y: scroll;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-} */
+}
+
+.park-main-img-div {
+  max-height: 367px;
+  width: 100%;
+}
+
+.park-main-img {
+  height: 367px;
+  width: 100%;
+}
+
+.green-buffer {
+  height: 55px;
+  width: 100%;
+  background-color: #3b7613;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  transform: translate(0, -55px);
+}
 
 .all-reviews-div {
-  /* grid-column: 1 / 2;
-  grid-row: 1 / 2; */
   background-color: #ffffff;
   width: 23%;
   height: 100%;
@@ -39,15 +91,6 @@
   margin: 20px 0;
 }
 
-.single-park-details-container {
-  margin-top: 10px;
-  width: 78%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  overflow-y: scroll;
-}
 
 .single-park-imgs-div {
   display: flex;
@@ -67,9 +110,16 @@
 .single-park-details-div {
   border-top: thin solid rgba(206, 206, 206, 0.455);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   height: 100%;
+  transform: translate(0, -55px);
+}
+
+.single-park-flex {
+  width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
 }
 
 .single-park-name-flex {
@@ -176,7 +226,7 @@
 
 .single-park-map-div {
   margin-right: 1em;
-  width: 50%;
+  width: 100%;
 }
 
 .single-park-map-div2 {
