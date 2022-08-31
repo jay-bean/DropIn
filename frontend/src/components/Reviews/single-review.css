@@ -35,13 +35,14 @@
 }
 
 .review-comment {
-  min-height: 90px;
+  min-height: 80px;
   width: 100%;
   word-wrap: break-word;
   text-align: left;
   line-height: 1.50;
   overflow-x: hidden;
   overflow-y: auto;
+  margin: 5px 0;
 }
 
 

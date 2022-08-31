@@ -1,5 +1,6 @@
 .single-park-page {
   background-color: #f2f2f2;
+  padding-bottom: 40px;
 }
 
 .single-park-container {
@@ -72,7 +73,35 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  gap: 14em;
   transform: translate(0, -55px);
+}
+
+.green-divs {
+  height: 100%;
+  transform: translate(0 ,-20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 30%;
+}
+
+.green-img {
+  border-radius: 50%;
+  width: 48px;
+}
+
+.green-p {
+  margin: 0;
+  color: white;
+  transition: 1s;
+}
+
+.green-p:hover {
+  scale: 1.1;
+  transition: 1s;
 }
 
 .all-reviews-div {
@@ -122,33 +151,40 @@
   width: 90%;
   margin-left: 5%;
   margin-right: 5%;
+  margin-top: 2%;
 }
 
 .single-park-name-flex {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  margin-top: 23px;
+  justify-content: space-between;
+  align-items: center;
   gap: 40px;
+}
+
+.single-park-name-flex img {
+  padding: 0;
 }
 
 .single-park-name {
   font-size: 23px;
-  margin-bottom: 30px;
-  padding: 12px 0;
+  color: #414141;
 }
 
 .single-park-description {
-  width: 96%;
   line-height: 1.30;
-  margin: 30px 0;
+  margin: 40px 0;
+  margin-top: 60px;
   font-size: 18px;
+  color: #414141;
 }
 
 .single-park-tags-div {
   display: flex;
   flex-direction: row;
   gap: 6px;
+  margin-top: 20px;
+  margin-bottom: 3em;
 }
 
 .single-park-tag {

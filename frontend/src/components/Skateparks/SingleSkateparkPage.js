@@ -61,7 +61,20 @@ function SingleSkatepark() {
             <div>
               {skatepark && skatepark.images.length > 0 && <div className='park-main-img-div'><img className='park-main-img' src={skatepark.images[0].url}/></div>}
             </div>
-            <div className='green-buffer'></div>
+            <div className='green-buffer'>
+              <div className='green-divs'>
+                <img className='green-img' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/6F53C9DC-B567-48C2-B832-39B82195CE2E_4_5005_c.jpeg'/>
+                <p className='green-p'>Weather</p>
+              </div>
+              <div className='green-divs'>
+                <img className='green-img' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/87C4C128-74CB-4A81-9F42-EEC138EAFE99_4_5005_c.jpeg'/>
+                <p className='green-p'>Map</p>
+              </div>
+              <div className='green-divs'>
+                <img className='green-img' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/656AE96B-EEC6-4594-835B-2F2270178164_4_5005_c.jpeg'/>
+                <p className='green-p'>Reviews</p>
+              </div>
+            </div>
             {/* <div className='single-park-imgs-div'>
               {skatepark && skatepark.images.length > 0 && skatepark.images.map(image => <img className='single-park-imgs' key={image.id} src={image.url}/>)}
             </div> */}
