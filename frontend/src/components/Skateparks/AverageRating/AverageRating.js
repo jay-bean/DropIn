@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getReviews } from "../../store/review";
+import { getReviews } from "../../../store/review";
 import './average-rating.css';
 
 function AverageRating({ skatepark }) {

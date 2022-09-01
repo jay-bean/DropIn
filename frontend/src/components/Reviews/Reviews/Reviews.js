@@ -1,5 +1,5 @@
 import Review from './Review';
-import NewReviewFormModal from './NewReviewFormModal';
+import NewReviewFormModal from '../ReviewForms/NewReviewFormModal';
 import './single-review.css';
 
 function AllReviews({ skatepark, reviews }) {

@@ -64,6 +64,7 @@
 .park-main-img {
   height: 367px;
   width: 100%;
+  cursor: pointer;
 }
 
 .green-buffer {

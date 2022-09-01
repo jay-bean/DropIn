@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getSkateparks } from '../../store/skatepark';
-import Favorites from '../Favorites/Favorites';
-import AverageRating from './AverageRating';
-import './skatepark-card.css';
+import { getSkateparks } from '../../../store/skatepark';
+import Favorites from '../../Favorites/Favorites';
+import AverageRating from '../AverageRating/AverageRating';
+import '../ExplorePage/skatepark-card.css';
 
 function Skatepark({ skatepark, skateparkId }) {
   const dispatch = useDispatch();

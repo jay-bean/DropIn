@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import EditReviewFormModal from "./EditReviewFormModal";
-import { removeReview } from '../../store/review';
+import EditReviewFormModal from "../ReviewForms/EditReviewFormModal";
+import { removeReview } from '../../../store/review';
 import './single-review.css';
 import { useEffect } from "react";
-import { getUsers } from "../../store/user";
+import { getUsers } from "../../../store/user";
 
 
 function Review({ review, skatepark }) {

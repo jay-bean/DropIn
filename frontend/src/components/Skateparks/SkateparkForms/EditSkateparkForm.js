@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Redirect } from 'react-router-dom';
-import { getParktags } from '../../store/parktag';
-import { getSkateparks, editSkatepark } from '../../store/skatepark';
-import TagSelect from './TagSelect';
+import { getParktags } from '../../../store/parktag';
+import { getSkateparks, editSkatepark } from '../../../store/skatepark';
+import TagSelect from '../ParkTags/TagSelect';
 import './skateparkform.css';
 
 function EditSkateparkForm({ setDidUpdate, setShowEditForm }) {

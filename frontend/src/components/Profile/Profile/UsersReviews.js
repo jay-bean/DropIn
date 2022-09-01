@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
-import { getReviews } from '../../store/review';
-import Review from '../Reviews/Review';
-import Skatepark from '../Skateparks/Skatepark';
+import { getReviews } from '../../../store/review';
+import Review from '../../Reviews/Reviews/Review';
+import Skatepark from '../../Skateparks/SingleSkatePark/Skatepark';
 import './profile.css';
 
 function UsersReviews() {

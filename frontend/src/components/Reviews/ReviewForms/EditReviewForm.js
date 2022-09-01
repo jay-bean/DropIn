@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { addReview } from '../../store/review';
+import { useParams, Redirect } from 'react-router-dom';
+import { editReview } from '../../../store/review';
 
-import './new-review.css';
-
-function NewReviewForm({ setShowModal, skatepark }) {
+function EditReviewForm({ review, setShowModal, skatepark }) {
   const dispatch = useDispatch();
   const skateparkParam = useParams();
   const sessionUser = useSelector(state => state.session.user);
 
   const [validationErrors, setValidationErrors] = useState([]);
-  const [rating, setRating] = useState(0);
-  const [hover, setHover] = useState(0);
-  const [comment, setComment] = useState('');
+  const [rating, setRating] = useState(review ? review.rating : 0);
+  const [hover, setHover] = useState(review ? review.rating : 0);
+  const [comment, setComment] = useState(review ? review.comment : '');
 
   const handleCancel = () => {
     setValidationErrors([]);
@@ -30,12 +28,12 @@ function NewReviewForm({ setShowModal, skatepark }) {
         rating,
         comment,
         userId: sessionUser.id,
-        skateparkId: skateparkParam.id
+        skateparkId: skateparkParam ? skateparkParam.id : skatepark.id
       }
 
-      const newReview = await dispatch(addReview(data));
+      const updatedReview = await dispatch(editReview(data, review.id));
 
-      if (newReview) {
+      if (updatedReview) {
         setRating('');
         setComment('');
         setValidationErrors([]);
@@ -44,12 +42,12 @@ function NewReviewForm({ setShowModal, skatepark }) {
     }
     catch (error) {
       const err = await error.json();
-      if (error.status >= 500) setValidationErrors([err.message])
-      else setValidationErrors(err.errors);
+      setValidationErrors(err.errors);
     }
   }
 
   return (
+    sessionUser ?
     <div className='new-review-form-container'>
       <div className='new-review-cancelbtn-div'>
         <button className='new-review-cancel-btn' type="button" onClick={handleCancel}><img className='new-review-cancel-img' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/close.png' alt='x'/></button>
@@ -101,8 +99,8 @@ function NewReviewForm({ setShowModal, skatepark }) {
           <button className='new-review-submit' type="submit">Submit</button>
         </div>
       </form>
-    </div>
+    </div> : <Redirect to="/" />
   );
 }
 
-export default NewReviewForm;
+export default EditReviewForm;

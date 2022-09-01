@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Skatepark from './Skatepark';
-import { getSkateparks } from '../../store/skatepark';
-import { getTags } from '../../store/parktag';
-import { getParktags } from '../../store/parktag';
-import Map from '../Map/Map';
+import Skatepark from '../SingleSkatePark/Skatepark';
+import { getSkateparks } from '../../../store/skatepark';
+import { getTags } from '../../../store/parktag';
+import { getParktags } from '../../../store/parktag';
+import Map from '../../Map/MapPages/Map';
 import './explore-page.css';
-import SearchBar from '../SearchBar/SearchBar';
+import SearchBar from '../../SearchBar/SearchBar';
 
 function AllSkateparks({ tagId }) {
   const dispatch = useDispatch();

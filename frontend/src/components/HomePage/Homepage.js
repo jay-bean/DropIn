@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { getSkateparks } from '../../store/skatepark';
 import { Link } from "react-router-dom";
 // import Skatepark from '../Skateparks/Skatepark';
-import AverageRating from '../Skateparks/AverageRating';
+import AverageRating from '../Skateparks/AverageRating/AverageRating';
 import Favorites from '../Favorites/Favorites';
 import SearchBar from '../SearchBar/SearchBar';
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory, Link, Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import * as sessionActions from "../../store/session";
+import * as sessionActions from "../../../store/session";
 import './editprofile.css';
 
 function EditProfile() {

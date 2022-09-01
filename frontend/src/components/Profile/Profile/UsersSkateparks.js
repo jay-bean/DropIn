@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
-import { getSkateparks } from '../../store/skatepark';
-import Skatepark from '../Skateparks/Skatepark';
+import { getSkateparks } from '../../../store/skatepark';
+import Skatepark from '../../Skateparks/SingleSkatePark/Skatepark';
 import './profile.css';
 import './usersskateparks.css';
 

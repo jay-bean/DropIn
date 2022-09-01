@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import Favorites from '../Favorites/Favorites';
-import AverageRating from './AverageRating';
+import Favorites from '../../Favorites/Favorites';
+import AverageRating from '../../Skateparks/AverageRating/AverageRating';
 import './skatepark-snippet.css';
 
 function SkateparkSnippet({ skatepark }) {

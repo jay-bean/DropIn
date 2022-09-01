@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { GoogleMap, useJsApiLoader, MarkerF, InfoWindowF } from '@react-google-maps/api';
-import '../Skateparks/explore-page.css';
-import SkateparkSnippet from '../Skateparks/SkateparkSnippet';
-import '../Skateparks/skatepark-snippet.css';
+import SkateparkSnippet from '../SkateParkInfoMarker/SkateparkSnippet';
+import '../../Skateparks/ExplorePage/explore-page.css';
+import '../SkateParkInfoMarker/skatepark-snippet.css';
 
 const containerStyle = {
   width: '100%',

@@ -1,15 +1,16 @@
 import { useHistory, useParams, Link } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getSkateparks, removeSkatepark } from '../../store/skatepark';
-import AllReviews from '../Reviews/Reviews';
-import { getReviews } from '../../store/review';
-import Favorites from '../Favorites/Favorites';
-import { getParktags } from '../../store/parktag';
-import EditSkateparkForm from './EditSkateparkForm';
+import { getSkateparks, removeSkatepark } from '../../../store/skatepark';
+import AllReviews from '../../Reviews/Reviews/Reviews';
+import { getReviews } from '../../../store/review';
+import Favorites from '../../Favorites/Favorites';
+import { getParktags } from '../../../store/parktag';
+import EditSkateparkForm from '../SkateparkForms/EditSkateparkForm';
+import SingleParkMap from '../../Map/MapPages/SingleParkMap';
+import Weather from '../WeatherAPI/Weather';
+import ImageCarousel from '../ImageModal/ImageCarousel';
 import './single-skatepark.css';
-import SingleParkMap from '../Map/SingleParkMap';
-import Weather from './Weather';
 
 function SingleSkatepark() {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ function SingleSkatepark() {
   const reviews = useSelector(state => state.reviews);
   const parktags = useSelector(state => state.parktags);
   const [showEditForm, setShowEditForm] = useState(false);
+  const [imgShow, setImgShow] = useState(false);
   const [didUpdate, setDidUpdate] = useState(false);
   const scrollToRef = useRef();
 
@@ -45,6 +47,19 @@ function SingleSkatepark() {
     dispatch(getParktags());
   }, [dispatch]);
 
+  // useEffect(() => {
+  //   if (!imgShow) return;
+
+  //   const closeMenu = () => {
+  //     setImgShow(false);
+  //   };
+
+  //   const el = document.getElementById('image-modal-container');
+  //   el.addEventListener('click', closeMenu);
+
+  //   return () => el.removeEventListener("click", closeMenu);
+  // }, [imgShow]);
+
   return (
 
     !showEditForm ?
@@ -59,14 +74,17 @@ function SingleSkatepark() {
         <div className='single-park-container'>
           <div className='single-park-details-container'>
             <div>
-              {skatepark && skatepark.images.length > 0 && <div className='park-main-img-div'><img className='park-main-img' src={skatepark.images[0].url}/></div>}
+              {skatepark && skatepark.images.length > 0 && <div className='park-main-img-div'><img onClick={() => setImgShow(true)} className='park-main-img' src={skatepark.images[0].url}/></div>}
+            </div>
+            <div id='image-modal-container'>
+              {imgShow ? <ImageCarousel skatepark={skatepark} imgShow={imgShow} setImgShow={setImgShow}/> : null}
             </div>
             <div className='green-buffer'>
               <div className='green-divs'
                 onClick={() =>
                   window.scrollTo({
                     left: 0,
-                    top: 950,
+                    top: 850,
                     behavior: "smooth",
                   })
                 }>
@@ -77,7 +95,7 @@ function SingleSkatepark() {
                 onClick={() =>
                   window.scrollTo({
                     left: 0,
-                    top: 1175,
+                    top: 1080,
                     behavior: "smooth",
                   })
                 }>
@@ -88,7 +106,7 @@ function SingleSkatepark() {
                 onClick={() =>
                   window.scrollTo({
                     left: 0,
-                    top: 1660,
+                    top: 1580,
                     behavior: "smooth",
                   })
                 }>
