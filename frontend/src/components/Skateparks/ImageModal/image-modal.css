@@ -48,6 +48,7 @@
   border: thin solid rgb(186, 186, 186);
   z-index: 101;
   cursor: pointer;
+  box-shadow: 0 4px 8px -2px rgb(0 0 0 / 30%);
 }
 
 .modal-img-btn-left:hover {
@@ -62,6 +63,7 @@
   border: thin solid rgb(186, 186, 186);
   z-index: 101;
   cursor: pointer;
+  box-shadow: 0 4px 8px -2px rgb(0 0 0 / 30%);
 }
 
 .modal-img-btn-right:hover {
@@ -76,6 +78,7 @@
   width: 30px;
   height: 30px;
   cursor: pointer;
+  box-shadow: 0 4px 8px -2px rgb(0 0 0 / 30%);
 }
 
 .modal-img-cancel:hover {
