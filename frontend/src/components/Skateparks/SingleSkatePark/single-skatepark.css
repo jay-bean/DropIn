@@ -534,3 +534,11 @@
   margin: 1em 0;
   font-size: 14px;
 }
+
+@media only screen and (max-width: 1024px) {
+  .single-park-container {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

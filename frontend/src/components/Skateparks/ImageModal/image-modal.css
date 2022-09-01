@@ -1,21 +1,33 @@
-#modal-img-container {
+.modal-img-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
-  display: flex;
   justify-content: center;
   align-items: center;
   z-index: 99;
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+#modal-img-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
 .modal-img-div {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  width: 1000px;
+  width: 80%;
   overflow: hidden;
   z-index: 101;
 }
@@ -23,21 +35,17 @@
 .modal-img-movement {
   white-space: nowrap;
   transition: transform 2s;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
+  z-index: 101;
 }
 
 .modal-img {
-  min-width: 900px;
-  max-width: 900px;
+  width: 90%;
   z-index: 101;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-right: 50px;
-  margin-left: 50px;
+  margin-right: 5%;
+  margin-left: 5%;
 }
 
 .modal-img-btn-left {
@@ -83,4 +91,38 @@
 
 .modal-img-cancel:hover {
   background-color: rgb(229, 229, 229);
+}
+
+.circle-div {
+  display: flex;
+  flex-direction: row;
+  width: 100px;
+  height: 100px;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.img-circle {
+  width: 10px;
+  height: 10px;
+  background-color: rgb(235, 235, 235);
+  border-radius: 50%;
+}
+
+.active-circle {
+  background-color: #326c0b;
+}
+
+@media only screen and (max-width: 1180px) {
+  .modal-img-cancel {
+    transform: translate(-52px, -210px);
+  }
+  .modal-img-btn-left {
+    width: 40px;
+    height: 40px;
+  }
+  .modal-img-btn-right {
+    width: 40px;
+    height: 40px;
+  }
 }
