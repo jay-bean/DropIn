@@ -87,7 +87,6 @@ router.put(`/:id(\\d+)`,
   handleUpload,
   editSkateparkValidators,
   asyncHandler(async (req, res) => {
-    console.log(req.body, 'req bodyyyyyy')
     if (!req.body.tag) {
       return res.status(400).json({errors: ['You must provide at least one tag to describe your park.']});
     }
@@ -137,20 +136,20 @@ router.put(`/:id(\\d+)`,
       raw: true
     })
 
-    let imagesToDelete = [];
     if (req.body.oldImage && req.body.oldImage.length && currentImages.length) {
-      for (let i = 0; i < req.body.oldImage.length; i++) {
-        const foundImg = currentImages.find(img => img.id == req.body.oldImage[i]);
-        if (foundImg) 
-        if (currentImages.includes())
+      for (let i = 0; i < req.body.oldImage.length; i++)  {
+        for (let j = 0; j < currentImages.length; j++) {
+          if (currentImages[j].id === Number(req.body.oldImage[i])) {
+            currentImages.splice(j, 1);
+          }
+        }
       }
-      // for (let i = 0; i < req.body.oldImage.length; i++)  {
-      //   for (let j = 0; j < currentImages.length; j++) {
-      //     if (currentImages[j].id != req.body.oldImage[i] && !imagesToDelete.includes(currentImages[j])) imagesToDelete.push(currentImages[j])
-      //   }
-      // }
+      await Promise.all(currentImages.map(async img => {
+        const deleteImg = await Image.findByPk(img.id);
+        await deleteImg.destroy();
+        return deleteImg.id;
+      }))
     }
-    console.log(imagesToDelete, imagesToDelete.length, 'this is the imgs that i should be deleting ')
     let tags;
     if (typeof req.body.tag === 'string') {
       tags = [req.body.tag];
@@ -195,14 +194,6 @@ router.put(`/:id(\\d+)`,
         return newParktag;
       }));
     }
-
-    await Promise.all(imagesToDelete.map(async img => {
-      const deleteImg = await Image.findByPk(img.id);
-      await deleteImg.destroy();
-      return deleteImg.id;
-    }))
-
-    // await Promise.all(imagesToDelete.map(async (image) => await image.destroy()));
 
     await Promise.all(imageObjs.map(async (image) => await image.save()));
 

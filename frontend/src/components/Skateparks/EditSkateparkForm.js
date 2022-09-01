@@ -47,7 +47,6 @@ function EditSkateparkForm({ setDidUpdate, setShowEditForm }) {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      console.log(oldImages, images)
       if (oldImages.length > 10 || images.length > 10 || oldImages.length + images.length > 10) return setValidationErrors(['Only ten photos allowed.']);
       if (oldImages.length === 0 && Object.values(images).length === 0) return setValidationErrors(['Please upload at least one photo.']);
 
@@ -192,7 +191,6 @@ function EditSkateparkForm({ setDidUpdate, setShowEditForm }) {
               {images && images.length ? (
                 <div className="thumbnail-container">
                   {imagesArr.map((image, index) => {
-                    console.log(image, index ,'this is inside the returnnnnnn')
                     return (
                       <div key={index} className='thumbnail-divs'>
                         <button type='button' className='thumbnail-remove-btn' onClick={(e) => removeNewSelectedImage(e, index)}>
