@@ -3,10 +3,9 @@ import './image-modal.css'
 
 function ImageCarousel({ skatepark, imgShow, setImgShow }) {
   const [activeIndex, setActiveIndex] = useState(0)
-
   const updateIndex = (index) => {
-    // if (index < 0) index = skatepark.images.length - 1;
-    // else if (index >= skatepark.images.length) index = 0;
+    if (index < 0) index = skatepark.images.length - 1;
+    else if (index >= skatepark.images.length) index = 0;
     setActiveIndex(index);
   }
 
@@ -19,7 +18,7 @@ function ImageCarousel({ skatepark, imgShow, setImgShow }) {
           onClick={() => {updateIndex(activeIndex-1)}}
           className='modal-img-btn-left' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/488796E1-0435-45B7-9BE2-6788680809AF_4_5005_c.jpeg'/>
         <div className='modal-img-div'>
-          <div className='modal-img-movement' style={{ transform: `translateX(-${activeIndex * 20}%)`}}>
+          <div className='modal-img-movement' style={{ transform: `translateX(-${activeIndex * 1000}px)`}}>
             {skatepark.images.map((image, index) => {
               return <img className='modal-img' key={index} src={image.url}/>
             })}

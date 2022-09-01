@@ -14,6 +14,7 @@
 .modal-img-div {
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
   width: 1000px;
   overflow: hidden;
   z-index: 101;
@@ -25,10 +26,12 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: flex-start;
 }
 
 .modal-img {
-  width: 900px;
+  min-width: 900px;
+  max-width: 900px;
   z-index: 101;
   display: inline-flex;
   align-items: center;
@@ -41,7 +44,7 @@
   border-radius: 50%;
   width: 50px;
   height: 50px;
-  transform: translate(-60px, 0);
+  transform: translate(-10px, 0);
   border: thin solid rgb(186, 186, 186);
   z-index: 101;
   cursor: pointer;
@@ -55,7 +58,7 @@
   border-radius: 50%;
   width: 50px;
   height: 50px;
-  transform: translate(60px, 0);
+  transform: translate(10px, 0);
   border: thin solid rgb(186, 186, 186);
   z-index: 101;
   cursor: pointer;
