@@ -36,6 +36,32 @@
   padding-top: 2.4em;
 }
 
+.modal-homepage-img-movement {
+  white-space: nowrap;
+  transition: transform 2s;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.modal-homepage-img-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 1280px;
+  overflow: hidden;
+  z-index: 101;
+}
+
+.homepage-banner .skate-card-container-top {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  width: 100%;
+  height: 90%;
+}
+
 .homepage-banner .skate-card-container {
   display: flex;
   flex-flow: row;
@@ -46,6 +72,44 @@
   height: 90%;
 }
 .homepage-banner .skate-card-container::-webkit-scrollbar { width: 0 !important }
+
+.homepage-arrow-divs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.modal-homepage-img-btn-left {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  transform: translate(-10px, -36px);
+  border: thin solid rgb(186, 186, 186);
+  z-index: 101;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.modal-homepage-img-btn-left:hover {
+  background-color: rgb(229, 229, 229);
+}
+
+.modal-homepage-img-btn-right {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  transform: translate(10px, -36px);
+  border: thin solid rgb(186, 186, 186);
+  z-index: 101;
+  cursor: pointer;
+}
+
+.modal-homepage-img-btn-right:hover {
+  background-color: rgb(229, 229, 229);
+}
+
 
 .homepage-banner-h2 {
   margin: 0;
@@ -74,6 +138,14 @@
   border-radius: 15px;
 }
 
+/* .homepage-img-hover:first-child {
+  margin-left: 0;
+}
+
+.homepage-img-hover:last-child {
+  margin-right: 0;
+} */
+
 .homepage-banner-imgs {
   max-width: 300px;
   min-width: 300px;
@@ -89,6 +161,8 @@
 
 .skatepark-card {
   width: 300px;
+  margin-left: 10px;
+  margin-right: 10px;
   display: flex;
   flex-direction: column;
   font-family: Arial, Helvetica, sans-serif;

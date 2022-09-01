@@ -4,10 +4,10 @@ import { useEffect } from 'react';
 import { getSkateparks } from '../../store/skatepark';
 import { Link } from "react-router-dom";
 // import Skatepark from '../Skateparks/Skatepark';
-import AverageRating from '../Skateparks/AverageRating';
-import Favorites from '../Favorites/Favorites';
+// import AverageRating from '../Skateparks/AverageRating/AverageRating';
+// import Favorites from '../Favorites/Favorites';
 import SearchBar from '../SearchBar/SearchBar';
-
+import HomePageImgCarousel from './HomePageImgCarousel';
 function Homepage() {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user)
@@ -32,7 +32,8 @@ function Homepage() {
       }
       <div className='homepage-banner'>
         <h2 className='homepage-banner-h2'>Featured skateparks</h2>
-        <div className='skate-card-container'>
+        <HomePageImgCarousel skateparks={skateparks} skateparkArr={skateparkArr}/>
+        {/* <div className='skate-card-container'>
           {skateparks && skateparkArr && skateparkArr.length > 0 ? skateparkArr.map(skatepark => {
             return (
               <div className='skatepark-card' key={skatepark.id}>
@@ -56,7 +57,7 @@ function Homepage() {
               <Link className='homepage-img-hover view-more' to='/skateparks'>Show more</Link><img src='' />
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className='homepage-banner-2'>
 

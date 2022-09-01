@@ -131,6 +131,25 @@ router.put(`/:id(\\d+)`,
       return image;
     })
 
+    const currentImages = await Image.findAll({
+      where: { skateparkId: req.params.id},
+      raw: true
+    })
+
+    if (req.body.oldImage && req.body.oldImage.length && currentImages.length) {
+      for (let i = 0; i < req.body.oldImage.length; i++)  {
+        for (let j = 0; j < currentImages.length; j++) {
+          if (currentImages[j].id === Number(req.body.oldImage[i])) {
+            currentImages.splice(j, 1);
+          }
+        }
+      }
+      await Promise.all(currentImages.map(async img => {
+        const deleteImg = await Image.findByPk(img.id);
+        await deleteImg.destroy();
+        return deleteImg.id;
+      }))
+    }
     let tags;
     if (typeof req.body.tag === 'string') {
       tags = [req.body.tag];

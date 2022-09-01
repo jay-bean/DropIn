@@ -5,19 +5,19 @@ import SignupFormPage from "./components/SignupFormPage/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation/Navigation";
 import LoginForm from "./components/LoginFormPage/LoginFormPage";
-import NewSkateparkForm from "./components/Skateparks/SkateparkForm";
-import EditSkateparkForm from "./components/Skateparks/EditSkateparkForm";
-import AllSkateparks from "./components/Skateparks/Skateparks";
-import SingleSkatepark from "./components/Skateparks/SingleSkateparkPage"
+import NewSkateparkForm from "./components/Skateparks/SkateparkForms/SkateparkForm";
+import EditSkateparkForm from "./components/Skateparks/SkateparkForms/EditSkateparkForm";
+import AllSkateparks from "./components/Skateparks/ExplorePage/Skateparks";
+import SingleSkatepark from "./components/Skateparks/SingleSkatePark/SingleSkateparkPage";
 import Homepage from "./components/HomePage/Homepage";
 import './index.css';
-import Profile from "./components/Profile/Profile";
-import EditProfile from "./components/Profile/EditProfile";
+import Profile from './components/Profile/Profile/Profile'
+import EditProfile from "./components/Profile/EditProfile/EditProfile";
 import Footer from "./components/Footer/Footer";
 import AboutPage from "./components/AboutPage/AboutPage";
-import UsersReviews from "./components/Profile/UsersReviews";
-import UsersSkateparks from "./components/Profile/UsersSkateparks";
-import UsersFavorites from "./components/Profile/UsersFavorites";
+import UsersReviews from "./components/Profile/Profile/UsersReviews";
+import UsersSkateparks from "./components/Profile/Profile/UsersSkateparks";
+import UsersFavorites from "./components/Profile/Profile/UsersFavorites";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
 import SearchBar from "./components/SearchBar/SearchBar";
 

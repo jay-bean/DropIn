@@ -1,0 +1,536 @@
+.single-park-page {
+  background-color: #f2f2f2;
+  padding-bottom: 40px;
+}
+
+.single-park-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  width: 1024px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border: thin solid rgb(191, 191, 191);
+}
+
+.first-buffer-park {
+  height: 60px;
+  height: fit-content;
+  color: #000000;
+  position: relative;
+  border-top: 1px solid rgba(159, 159, 159, 0.405);
+}
+
+.first-buffer-flex-park {
+  display: flex;
+  flex-direction: row;
+  margin: 8px auto;
+  line-height: 20px;
+  letter-spacing: 1px;
+  font-size: 12px;
+  width: 1024px;
+  align-items: center;
+}
+
+.skateparks-link {
+  text-decoration: none;
+  color: #000000;
+}
+
+.skateparks-link:hover {
+  text-decoration: underline;
+}
+
+.carrot {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.single-park-details-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.park-main-img-div {
+  max-height: 367px;
+  width: 100%;
+}
+
+.park-main-img {
+  height: 367px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.green-buffer {
+  height: 55px;
+  width: 100%;
+  background-color: #3b7613;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 14em;
+  transform: translate(0, -55px);
+}
+
+.green-divs {
+  height: 100%;
+  transform: translate(0 ,-20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 30%;
+  cursor: pointer;
+}
+
+.green-img {
+  border-radius: 50%;
+  width: 48px;
+}
+
+.green-p {
+  margin: 0;
+  color: white;
+}
+
+.p {
+  height: 0;
+}
+
+.all-reviews-div {
+  background-color: #ffffff;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  transform: translate(0, -30px);
+}
+
+.all-reviews-container {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.all-reviews-flex div .review {
+  margin: 20px 0;
+}
+
+
+.single-park-imgs-div {
+  display: flex;
+  flex-flow: row wrap;
+  padding-bottom: 10px;
+  height: max-content;
+  gap: 10px;
+  width: 100%;
+}
+
+.single-park-imgs {
+  max-width: 280px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.single-park-details-div {
+  border-top: thin solid rgba(206, 206, 206, 0.455);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  transform: translate(0, -55px);
+}
+
+.single-park-flex {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 2%;
+}
+
+.single-park-name-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.single-park-name-flex img {
+  padding: 0;
+}
+
+.single-park-name {
+  font-size: 23px;
+  color: #414141;
+}
+
+.single-park-description {
+  line-height: 1.30;
+  margin: 40px 0;
+  margin-top: 60px;
+  font-size: 18px;
+  color: #414141;
+}
+
+.single-park-tags-div {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  margin-top: 20px;
+  margin-bottom: 3em;
+}
+
+.single-park-tag {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.36;
+  padding: 5.5px 12px;
+  color: #326c0b;
+  border: 1px solid #326c0b;
+  border-radius: 8px;
+}
+
+.single-park-address {
+  color: #535353;
+}
+
+.single-park-btns {
+  text-align: right;
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-bottom: 2em;
+  width: 90%;
+}
+
+.single-park-edit-btn {
+  margin-left: 20px;
+  border-color: #428a13;
+  background-color: #428a13;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.36;
+  height: 32px;
+  padding: 0 18px;
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all .2s ease-out;
+  color: #ffffff;
+  border: 2px solid transparent;
+}
+
+.single-park-edit-btn:hover {
+  border-color: #326c0b;
+  background-color: #326c0b;
+}
+
+.single-park-delete-btn {
+  margin-left: 9px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.36;
+  height: 32px;
+  padding: 0 18px;
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all .2s ease-out;
+  color: #414141;
+  border: 2px solid #9f9f9f;
+  background-color: transparent;
+}
+
+.single-park-delete-btn:hover {
+  background-color: #ececec;
+}
+
+.single-park-map-div {
+  width: 90%;
+  margin: auto;
+}
+
+.single-park-map-div2 {
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+.skatepark-review-name {
+  font-size: 23px;
+  text-align: center;
+}
+
+.skatepark-average-rating {
+  text-align: center;
+}
+
+/* weather component */
+
+.weather-container {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 180px;
+}
+
+.weather-none {
+  display: none;
+}
+
+/* current weather section */
+
+.weather-btn-container {
+  display: flex;
+  flex-direction: row;
+  border-bottom: thin solid rgb(206, 206, 206);
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  gap: 1em;
+}
+
+.weather-btn {
+  background-color: white;
+  border: none;
+  padding-bottom: 1em;
+  font-size: 16px;
+  font-weight: 700;
+  color: #6e6e6e;
+  cursor: pointer;
+}
+
+.weather-btn:hover {
+  border-bottom: 1px solid #a8a8a8;
+}
+
+.active-weather-btn {
+  color: #414141;
+  border-bottom: 1px solid #3b7613;
+}
+
+.current-weather-container {
+  width: 100%;
+  height: 100%;
+  color: #6e6e6e;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.weather-div {
+  width: 100%;
+  margin-top: 20px;
+  height: 160px;
+}
+
+.name-date-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1em;
+}
+
+.weather-city-div {
+  font-size: 18px;
+  margin: 0;
+  margin-left: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.weather-location-icon {
+  width: 16px;
+  margin-right: .1em;
+}
+
+.weather-city {
+  margin: 0;
+  font-size: 16px;
+}
+
+.weather-date {
+  font-size: 12px;
+  margin: 0;
+  letter-spacing: .2em;
+}
+
+.weather-info-container {
+  max-height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.weather-info-div-one {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.current-condition-text {
+  margin: 0;
+  font-size: 14px;
+}
+
+.weather-info-div-two {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.current-temp {
+  font-size: 46px;
+  margin: 0;
+}
+
+.feels-like {
+  font-size: 14px;
+  margin: 0;
+  margin-top: 6px;
+}
+
+.weather-info-div-three {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.max-min-temp {
+  font-size: 14px;
+  margin: 0;
+}
+
+.rain-snow-div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 1em;
+  font-size: 14px;
+}
+
+.arrows {
+  width: 14px;
+  margin-right: .1em;
+}
+
+.elements-container {
+  font-size: 14px;
+}
+
+.wind {
+  margin: 0;
+  font-size: 14px;
+}
+
+.rain {
+  margin: 0;
+}
+
+.snow {
+  margin: 0;
+}
+
+/* forecast section */
+
+.forecast-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 180px;
+  margin: auto;
+}
+
+.forecast-card {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.forecast-min-max {
+  display: flex;
+  flex-direction: row;
+}
+
+.forecast-weekday {
+  font-size: 16px;
+  color: #6e6e6e;
+  margin: 0;
+}
+
+.forecast-temps {
+  font-size: 14px;
+  color: #6e6e6e;
+}
+
+.forecast-img {
+  width: 60px;
+}
+
+/* daylight section */
+
+.daylight-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 180px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  gap: 40%;
+}
+
+.daylight-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.daylight-img {
+  width: 60px;
+}
+
+.daylight-p-sun {
+  text-align: center;
+  color: #6e6e6e;
+  margin: 1em 0;
+  font-size: 16px;
+}
+
+.daylight-p {
+  text-align: center;
+  color: #6e6e6e;
+  margin: 1em 0;
+  font-size: 14px;
+}
