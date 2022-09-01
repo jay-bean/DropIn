@@ -30,7 +30,7 @@ function Weather({ skatepark }) {
       <div className="weather-btn-container">
         {weatherBtns.map((btn, index) => {
           return (
-            <button className={selectedWeatherButton === index ? 'weather-btn active-weather-btn' : 'weather-btn'} onClick={() => handleWeatherClick(index)}>{btn}</button>
+            <button key={index} className={selectedWeatherButton === index ? 'weather-btn active-weather-btn' : 'weather-btn'} onClick={() => handleWeatherClick(index)}>{btn}</button>
           );
         })}
       </div>
@@ -69,7 +69,7 @@ function Weather({ skatepark }) {
       <div style={{ display: selectedWeatherButton === 1 ? 'flex' : 'none' }} className="forecast-container">
         {weatherData && weatherData.forecast && weatherData.forecast.forecastday.map(day => {
           return (
-            <div className="forecast-card">
+            <div key={day.date} className="forecast-card">
               <p className="forecast-weekday">{dayjs(day.date).format('dddd')}</p>
               <img className="forecast-img" src={day.day.condition.icon}/>
               <div className="forecast-min-max">

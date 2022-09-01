@@ -12,7 +12,7 @@ function NewReviewFormModal({ skatepark }) {
   return (
     <>
 
-      {sessionUser ? <button className='review-create-btn' onClick={() => setShowModal(true)}>Write Review</button> : <Link to='/login'><button className='review-create-btn' onClick={() => setShowModal(true)}>Write Review</button></Link>}
+      {sessionUser ? <button className='review-create-btn' onClick={() => setShowModal(true)}>Write Review</button> : <Link className='review-link-login' to='/login'><button className='review-create-btn' onClick={() => setShowModal(true)}>Write Review</button></Link>}
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <NewReviewForm skatepark={skatepark} setShowModal={setShowModal}/>

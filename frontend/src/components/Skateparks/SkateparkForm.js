@@ -36,7 +36,6 @@ function NewSkateparkForm() {
       formData.append('state', state);
       formData.append('zipcode', zipcode);
       formData.append('userId', sessionUser.id);
-      console.log(images, 'inside submit')
       for (const image of Object.keys(images)) {
         formData.append('image', images[image]);
       }
@@ -63,7 +62,8 @@ function NewSkateparkForm() {
     imagesArr = Object.values(images);
   }
 
-  const removeSelectedImage = (index) => {
+  const removeSelectedImage = (e, index) => {
+    e.preventDefault();
     imagesArr.splice(index, 1);
     setImages(imagesArr)
   };
@@ -154,10 +154,9 @@ function NewSkateparkForm() {
             {images && images.length && (
                   <div className="thumbnail-container">
                   {imagesArr.map((image, index) => {
-                    console.log(image, index ,'this is inside the returnnnnnn')
                     return (
                       <div className='thumbnail-divs'>
-                        <button className='thumbnail-remove-btn' onClick={() => removeSelectedImage(index)}>
+                        <button type='button' className='thumbnail-remove-btn' onClick={(e) => removeSelectedImage(e, index)}>
                           X
                         </button>
                         <img
@@ -172,7 +171,7 @@ function NewSkateparkForm() {
             )}
             {validationErrors && validationErrors.length > 0 && (
               validationErrors.map(error => {
-                return <div className='signup-errors' key={error}>{error}</div>
+                return <div className='signup-errors sp-errors' key={error}>{error}</div>
               })
             )}
             <div className='skatepark-form-btn-div'>

@@ -47,7 +47,10 @@ function EditSkateparkForm({ setDidUpdate, setShowEditForm }) {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
+      console.log(oldImages, images)
       if (oldImages.length > 10 || images.length > 10 || oldImages.length + images.length > 10) return setValidationErrors(['Only ten photos allowed.']);
+      if (oldImages.length === 0 && Object.values(images).length === 0) return setValidationErrors(['Please upload at least one photo.']);
+
       const formData = new FormData();
       formData.append('name', name);
       formData.append('description', description);
@@ -56,6 +59,10 @@ function EditSkateparkForm({ setDidUpdate, setShowEditForm }) {
       formData.append('state', state);
       formData.append('zipcode', zipcode);
       formData.append('userId', sessionUser.id);
+
+      for (const oldImage of oldImages) {
+        formData.append('oldImage', oldImage.id)
+      }
 
       for (const image of Object.keys(images)) {
         formData.append('image', images[image]);
@@ -83,7 +90,8 @@ function EditSkateparkForm({ setDidUpdate, setShowEditForm }) {
     imagesArr = Object.values(images);
   }
 
-  const removeNewSelectedImage = (index) => {
+  const removeNewSelectedImage = (e, index) => {
+    e.preventDefault();
     imagesArr.splice(index, 1);
     setImages(imagesArr)
   };
@@ -93,13 +101,11 @@ function EditSkateparkForm({ setDidUpdate, setShowEditForm }) {
     oldImagesArr = Object.values(oldImages);
   }
 
-  const removeOldSelectedImage = (index) => {
-    console.log(index, 'index in remove old');
+  const removeOldSelectedImage = (e, index) => {
+    e.preventDefault();
     oldImagesArr.splice(index, 1);
-    console.log(oldImagesArr,'after the spliceee');
     setOldImages(oldImagesArr);
   };
-  console.log(oldImages, 'old images state after splice')
 
   return (
     sessionUser ?
@@ -188,8 +194,8 @@ function EditSkateparkForm({ setDidUpdate, setShowEditForm }) {
                   {imagesArr.map((image, index) => {
                     console.log(image, index ,'this is inside the returnnnnnn')
                     return (
-                      <div className='thumbnail-divs'>
-                        <button className='thumbnail-remove-btn' onClick={() => removeNewSelectedImage(index)}>
+                      <div key={index} className='thumbnail-divs'>
+                        <button type='button' className='thumbnail-remove-btn' onClick={(e) => removeNewSelectedImage(e, index)}>
                           X
                         </button>
                         <img
@@ -202,12 +208,12 @@ function EditSkateparkForm({ setDidUpdate, setShowEditForm }) {
                   })}
                 </div>
               ) : null}
-              {oldImages && oldImages.length && (
+              {oldImages && oldImages.length ? (
                 <div className="thumbnail-container">
                   {oldImagesArr.map((image, index) => {
                     return (
-                      <div className='thumbnail-divs'>
-                        <button className='thumbnail-remove-btn' onClick={() => removeOldSelectedImage(index)}>
+                      <div key={index} className='thumbnail-divs'>
+                        <button className='thumbnail-remove-btn' onClick={(e) => removeOldSelectedImage(e, index)}>
                           X
                         </button>
                         <img
@@ -219,10 +225,10 @@ function EditSkateparkForm({ setDidUpdate, setShowEditForm }) {
                     );
                   })}
                 </div>
-              )}
+              ) : null}
               {validationErrors && validationErrors.length > 0 && (
                 validationErrors.map(error => {
-                  return <div className='signup-errors' key={error}>{error}</div>
+                  return <div className='signup-errors sp-errors' key={error}>{error}</div>
                 })
               )}
               <div className='skatepark-form-btn-div'>
