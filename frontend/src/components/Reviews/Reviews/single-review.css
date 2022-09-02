@@ -181,3 +181,20 @@
   margin: 0;
   font-size: 16px;
 }
+
+@media only screen and (max-width: 500px) {
+  .review-form-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .reviews-container {
+    width: 100%;
+  }
+  .review-comment {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .single-review-container {
+    height: 260px;
+  }
+}
