@@ -44,7 +44,7 @@ function Favorites({ skateparkId }) {
   }, [dispatch])
 
   return (
-    <div>
+    <div className="heart-div">
       <div onClick={favoritesHandler}>
         {existingFavorite ? <img className="heart" src="https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/heart.png"/> : <img className="heart" src="https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/heart+(1).png"/>}
       </div>

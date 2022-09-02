@@ -83,6 +83,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
 }
+.skatepark-card-holder::-webkit-scrollbar { width: 0 !important }
 
 .skatepark-card-div {
   grid-column: 1 / 2;
