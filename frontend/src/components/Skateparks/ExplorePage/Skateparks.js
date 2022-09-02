@@ -17,6 +17,8 @@ function AllSkateparks({ tagId }) {
   const [tags, setTags] = useState([]);
   const [selectedTagButton, setSelectedTagButton] = useState(['all']);
   const [activeMarker, setActiveMarker] = useState(null);
+  const [sortBtn, setSortBtn] = useState(false)
+
   let allParks;
   if (skateparks) {
     allParks = Object.values(skateparks);
@@ -50,12 +52,16 @@ function AllSkateparks({ tagId }) {
     <div id='skateparks-container'>
       <div id='tags-div'>
         <div className='search-container'><SearchBar skateparks={skateparks}/></div>
-        <button className='sort-btn'>Sort ^</button>
-        <div className='tag-btn-div'>
-          <Link to={`/skateparks`} className={selectedTagButton.includes('all') ? 'tag-btn activebtn' : 'tag-btn'} onClick={() => handleTagClick('all')}>All</Link>
-          {tags && tags.length > 0 && tags.map((tag, index) => {
-            return <Link to={`/skateparks/${tag.type}`} key={index} className={selectedTagButton.includes(tag.id) ? 'tag-btn activebtn' : 'tag-btn'} onClick={() => handleTagClick(tag.id)}>{tag.type}</Link>
-          })}
+        <div className='sort-container'>
+          <div className='sort-div'>
+            <button onClick={() => sortBtn ? setSortBtn(false) : setSortBtn(true)} className='sort-btn'>Sort <img className={ sortBtn ? 'sort-arrow sort-arrow-active' : 'sort-arrow'} src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/C9D833C8-7EC7-4D53-9CF0-DDEB416E4A81_4_5005_c.jpeg'/></button>
+            <div style={{visibility: sortBtn ? 'visible' : 'hidden'}} className='tag-btn-div'>
+              <Link to={`/skateparks`} className={selectedTagButton.includes('all') ? 'tag-btn activebtn' : 'tag-btn'} onClick={() => {handleTagClick('all'); setSortBtn(false)}}>All</Link>
+              {tags && tags.length > 0 && tags.map((tag, index) => {
+                return <Link to={`/skateparks/${tag.type}`} key={index} className={selectedTagButton.includes(tag.id) ? 'tag-btn activebtn' : 'tag-btn'} onClick={() => {handleTagClick(tag.id); setSortBtn(false)}}>{tag.type}</Link>
+              })}
+            </div>
+        </div>
         </div>
       </div>
       <div className='map-list-container'>
