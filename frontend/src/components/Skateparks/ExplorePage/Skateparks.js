@@ -61,8 +61,14 @@ function AllSkateparks({ tagId }) {
                 return <Link to={`/skateparks/${tag.type}`} key={index} className={selectedTagButton.includes(tag.id) ? 'tag-btn activebtn' : 'tag-btn'} onClick={() => {handleTagClick(tag.id); setSortBtn(false)}}>{tag.type}</Link>
               })}
             </div>
+          </div>
         </div>
-        </div>
+        {/* <div className='tag-btn-div-2'>
+            <Link to={`/skateparks`} className={selectedTagButton.includes('all') ? 'tag-btn activebtn' : 'tag-btn'} onClick={() => {handleTagClick('all')}}>All</Link>
+              {tags && tags.length > 0 && tags.map((tag, index) => {
+                return <Link to={`/skateparks/${tag.type}`} key={index} className='tag-btn' onClick={() => {handleTagClick(tag.id)}}>{tag.type}</Link>
+              })}
+        </div> */}
       </div>
       <div className='map-list-container'>
         <div className='skatepark-card-holder'>
