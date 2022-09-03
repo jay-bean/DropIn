@@ -32,6 +32,7 @@ function ProfileButton() {
 
   return (
     <div className="prof-btn-container">
+      <Link className="profile" onMouseOver={handleShowMenu} onClick={handleShowMenu}>Profile <img className={ showMenu ? 'sort-arrow-prof sort-arrow-prof-active' : 'sort-arrow-prof'} src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/C9D833C8-7EC7-4D53-9CF0-DDEB416E4A81_4_5005_c.jpeg'/></Link>
       <i onMouseOver={handleShowMenu} onClick={handleShowMenu} className="fa-regular fa-circle-user"></i>
       {showMenu && (
         <ul className="profile-dropdown">
