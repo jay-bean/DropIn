@@ -25,7 +25,7 @@ function Navigation({ isLoaded }){
     sessionLinks = (
       <div className='nav-prof'>
         <NavLink className='skatepark-nav'exact to="/skateparks/new"><button className='skatepark-nav-btn'>Add Skatepark</button></NavLink>
-        <ProfileButton user={sessionUser} />
+        <ProfileButton setSideNav={setSideNav} user={sessionUser} />
       </div>
     );
   } else {
@@ -33,8 +33,8 @@ function Navigation({ isLoaded }){
       <div className='nav-prof-demo'>
           <p className='sidenav-p'>Thanks for visiting.</p>
           <p className='sidenav-p'>Now go find a park and skate!</p>
-          <NavLink className='signup-nav-link' to="/signup"><button className='signup-nav-btn'>Sign Up</button></NavLink>
-          <NavLink className='login-nav-link' to="/login"><button className='login-nav-btn'>Log in</button></NavLink>
+          <NavLink onClick={() => setSideNav(false)} className='signup-nav-link' to="/signup"><button className='signup-nav-btn'>Sign Up</button></NavLink>
+          <NavLink onClick={() => setSideNav(false)} className='login-nav-link' to="/login"><button className='login-nav-btn'>Log in</button></NavLink>
         </div>
     );
   }

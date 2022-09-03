@@ -119,7 +119,7 @@
   display: inline-flex;
   flex-direction: row;
   box-sizing: border-box;
-  width: 80%;
+  width: 100%;
   align-items: center;
   justify-content: center;
   border-radius: 9999px;
@@ -137,14 +137,14 @@
 }
 
 .signup-nav-link {
-  width: 50%;
+  width: 70%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 }
 
 .login-nav-link {
-  width: 50%;
+  width: 30%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -162,7 +162,7 @@
   display: inline-flex;
   flex-direction: row;
   box-sizing: border-box;
-  width: 50%;
+  width: 36%;
   align-items: center;
   justify-content: center;
   border-radius: 9999px;
@@ -170,6 +170,11 @@
   transition: all .2s ease-out;
   color: #414141;
   border: 2px solid #9f9f9f;
+  color: #219AD8;
+  background-color: none;
+  border: none;
+  font-size: 16px;
+  padding: 0;
 }
 
 .login-nav-btn:hover {
@@ -189,7 +194,8 @@
   display: inline-flex;
   flex-direction: row;
   box-sizing: border-box;
-  width: 80%;
+  width: 46%;
+  margin-right: 10%;
   align-items: center;
   justify-content: center;
   border-radius: 9999px;
@@ -332,6 +338,34 @@
   display: none;
 }
 
+@media only screen and (max-width: 1390px) {
+  /* .nav-prof-demo {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    height: 100%;
+  } */
+  .signup-nav-link {
+    width: 80%;
+    justify-content: center;
+  }
+  .login-nav-link {
+    width: 80%;
+    justify-content: center;
+  }
+  .signup-nav-btn {
+    width: 100%;
+  }
+  .login-nav-btn {
+    width: 100%;
+  }
+  .demo-nav-btn {
+    width: 100%;
+  }
+}
+
 @media only screen and (max-width: 800px) {
   .explore-about-div {
     width: 30%;
@@ -433,6 +467,7 @@
   .signup-nav-btn {
     width: 100%;
     padding: 20px 24px;
+    margin-right: 0;
   }
   .login-nav-btn {
     width: 100%;
@@ -542,3 +577,4 @@
     }
   }
 }
+
