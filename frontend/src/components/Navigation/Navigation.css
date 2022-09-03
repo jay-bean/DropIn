@@ -405,7 +405,7 @@
     /* left: -288px; */
     background-color: #219AD8;
     width: 258px;
-    height: 100vh;
+    height: calc(100vh + 40px);
     z-index: 99999999;
     background-color: #ffffff;
     list-style: none;
@@ -577,4 +577,3 @@
     }
   }
 }
-
