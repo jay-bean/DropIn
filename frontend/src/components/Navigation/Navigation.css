@@ -54,6 +54,11 @@
   font-weight: 700;
 }
 
+.skatepark-nav-btn:hover {
+  border-color: #326c0b;
+  background-color: #326c0b;
+}
+
 .fa-regular {
   font-size: 18px;
   cursor: pointer;
@@ -114,7 +119,7 @@
   display: inline-flex;
   flex-direction: row;
   box-sizing: border-box;
-  max-width: 100%;
+  width: 100%;
   align-items: center;
   justify-content: center;
   border-radius: 9999px;
@@ -122,6 +127,27 @@
   transition: all .2s ease-out;
   color: #414141;
   border: 2px solid #9f9f9f;
+}
+
+.demo-div {
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.signup-nav-link {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.login-nav-link {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 .demo-nav-btn {
@@ -136,7 +162,7 @@
   display: inline-flex;
   flex-direction: row;
   box-sizing: border-box;
-  max-width: 100%;
+  width: 36%;
   align-items: center;
   justify-content: center;
   border-radius: 9999px;
@@ -144,6 +170,11 @@
   transition: all .2s ease-out;
   color: #414141;
   border: 2px solid #9f9f9f;
+  color: #219AD8;
+  background-color: none;
+  border: none;
+  font-size: 16px;
+  padding: 0;
 }
 
 .login-nav-btn:hover {
@@ -151,7 +182,6 @@
 }
 
 .signup-nav-btn {
-  margin-left: 20px;
   border-color: #428a13;
   background-color: #428a13;
   font-family: Arial, Helvetica, sans-serif;
@@ -164,7 +194,8 @@
   display: inline-flex;
   flex-direction: row;
   box-sizing: border-box;
-  max-width: 100%;
+  width: 46%;
+  margin-right: 10%;
   align-items: center;
   justify-content: center;
   border-radius: 9999px;
@@ -205,6 +236,19 @@
   margin: 0 auto;
 }
 
+#drop-in-user {
+  font-family: 'Rubik', sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: #2a2a2aad;
+  position: relative;
+  text-align: center;
+  width: 20%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-left: 100px
+}
+
 
 .nav-prof {
   display: flex;
@@ -217,9 +261,8 @@
 .nav-prof-demo {
   display: flex;
   flex-direction: row;
-  width: 40%;
+  width: 20%;
   justify-content: flex-end;
-  gap: 10px;
 }
 
 .prof-btn-container {
@@ -274,32 +317,58 @@
   display: none;
 }
 
-@media only screen and (max-width: 540px){
-  .navbar-dropdown {
-    display: flex;
-    width: 23px;
-  }
-  .explore-about-div {
-    position: relative;
+.second-nav {
+  display: none;
+}
+
+.navbar-dropdown-img-div {
+  width: 25%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.navbar-dropdown-img {
+  width: 20px;
+}
+.sidenav-p {
+  display: none;
+}
+.profile {
+  display: none;
+}
+
+@media only screen and (max-width: 1390px) {
+  /* .nav-prof-demo {
     flex-direction: column;
-    gap: 40px;
-    width: 40%;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    height: 100%;
+  } */
+  .signup-nav-link {
+    width: 80%;
+    justify-content: center;
+  }
+  .login-nav-link {
+    width: 80%;
+    justify-content: center;
+  }
+  .signup-nav-btn {
+    width: 100%;
+  }
+  .login-nav-btn {
+    width: 100%;
+  }
+  .demo-nav-btn {
+    width: 100%;
   }
 }
 
 @media only screen and (max-width: 800px) {
-  .nav-prof-demo {
-    gap: 0;
-    width: 30%;
-  }
   .explore-about-div {
     width: 30%;
-  }
-  .login-nav-btn {
-    display: none;
-  }
-  .signup-nav-btn {
-    display: none;
   }
   .demo-nav-btn {
     color: #219AD8;
@@ -315,8 +384,197 @@
     color: #2a2a2aad;
     position: relative;
     text-align: center;
-    width: 40%;
+    width: 50%;
     box-sizing: border-box;
     margin: 0 auto;
   }
+  .first-nav {
+    display: none;
+  }
+  .second-nav {
+    display: flex;
+  }
+  .demo-nav-btn {
+    justify-content: flex-end;
+    width: 25%;
+  }
+  .sidenav-ul {
+    display: none;
+    position: absolute;
+    top: 0;
+    /* left: -288px; */
+    background-color: #219AD8;
+    width: 258px;
+    height: 100vh;
+    z-index: 99999999;
+    background-color: #ffffff;
+    list-style: none;
+  }
+  .sidenav-ul-active {
+    display: flex;
+    left: 0;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-left: 13px;
+    transition-delay: 5s;
+    animation: moveToRight 1s ease-in-out;
+    animation-delay: 0s;
+    animation-duration: 1.0s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+  .hide-sidenav-btn {
+    background-color: #ffffff !important;
+    border: none;
+    width: 20px;
+    margin-bottom: 50px;
+  }
+  .sidenav-close {
+    width: 20px;
+  }
+  #explore,
+  .about-me {
+    font-size: 30px;
+  }
+  .sidenav-li {
+    margin-bottom: 20px;
+    margin-right: 13px;
+  }
+  .sidenav-li:last-child {
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 2px solid rgb(198, 198, 198);
+    height: 250px;
+  }
+  .nav-prof-demo {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    height: 100%;
+  }
+  .signup-nav-link {
+    width: 100%;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  .login-nav-link {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .signup-nav-btn {
+    width: 100%;
+    padding: 20px 24px;
+    margin-right: 0;
+  }
+  .login-nav-btn {
+    width: 100%;
+    padding: 20px 24px;
+  }
+  .sidenav-p {
+    display: flex;
+    margin: 0;
+    font-size: 16px;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    color: #787878;
+  }
+  #drop-in-user {
+    margin-left: 10px
+  }
+  #drop-in {
+    margin-left: 0;
+  }
+  .nav-prof {
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+  }
+  .skatepark-nav {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .skatepark-nav-btn {
+    padding: 20px 24px;
+    width: 100%;
+    line-height: 1.36;
+    display: inline-flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    border: 2px solid transparent;
+  }
+  .prof-btn-container {
+    width: 100%;
+  }
+  .profile {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 30px;
+    color: #414141;
+    font-weight: 700;
+    /* border-bottom: 2px solid rgb(198, 198, 198); */
+    gap: 10px;
+  }
+  .sort-arrow-prof {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    transition: 1s;
+  }
+  .sort-arrow-prof-active {
+    transform: rotate(180deg);
+  }
+  .fa-thin, .fa-circle-user {
+    display: none;
+  }
+  .profile-dropdown {
+    margin-top: 17px;
+    border-radius: 6px;
+    position: absolute;
+    left: 0;
+    background-color: #ffffff;
+    width: 100%;
+    box-shadow: none;
+    z-index: 1;
+    padding: 0;
+    transition: 5s;
+    animation: slideDown 1s ease-in-out;
+    animation-delay: 0s;
+    animation-duration: 1.0s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    background-color: transparent;
+  }
+  .prof-li {
+    font-size: 16px;
+  }
+  @keyframes moveToRight {
+    from {
+      transform: translateX(-288px);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  @keyframes slideDown {
+    from {
+      transform: translateY(-30px);
+    }
+    to {
+      transform: translateY(0px);
+    }
+  }
 }
+

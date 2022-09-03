@@ -264,12 +264,12 @@
 .homepage-tags-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  gap: 3em;
-  width: 90%;
+  gap: 0;
+  width: 100%;
   height: 100%;
-  margin: auto 5%;
+  margin: auto;
 }
 
 .homepage-tag-pipe {
@@ -324,7 +324,9 @@
   text-align: center;
   text-decoration: none;
   color: #333;
-  width: 25%;
+  width: 300px;
+  margin-left: 10px;
+  margin-right: 10px;
   height: 100%;
   gap: 1em;
 }
@@ -394,11 +396,30 @@
   margin: 0;
 }
 
+/* homepage tag section */
+.homepage-tag-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 1280px;
+  overflow: hidden;
+  z-index: 101;
+}
+
+.homepage-tag-movement {
+  white-space: nowrap;
+  transition: transform 2s;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 /* media queries */
 
 @media only screen and (max-width: 450px) {
   #homepage-container {
-    height: 100%;
+    height: 1460px;
   }
   .homepage-img {
     height: 250px;
@@ -412,56 +433,30 @@
   .homepage-banner-h2 {
     margin-bottom: .6em;
   }
-  .homepage-tags-section {
+  /* .homepage-tags-section {
     height: 320px;
     width: 100%;
     margin: .1em;
-  }
+  } */
   .home-page-tags-h2-p-div {
     margin: .1em 4%;
     width: 92%;
+    height: 30%;
+    margin-bottom: 0;
   }
   .homepage-tags-section-h2 {
-    height: .8em;
+    height: 50%;
+    margin-bottom: 0;
+  }
+  .homepage-tags-section {
+    height: 32%;
   }
   .homepage-tags-p {
-    height: 1em;
+    height: 50%;
+    margin-top: 0;
   }
   .homepage-tags-titles {
     font-size: 18px;
-  }
-  .homepage-tags-container {
-    justify-content: space-between;
-    width: 90%;
-    height: 100%;
-    margin: 0 5%;
-    gap: 0;
-
-  }
-  .homepage-tag-grid {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    text-decoration: none;
-    color: #333;
-    width: 100%;
-    height: 100%;
-    gap: 0;
-  }
-  .homepage-tag-img-divs {
-    width: 80px;
-    height: 80px;
-    margin: 0.3em;
-  }
-  .homepage-tag-pipe {
-    width: 80px;
-    height: 80px;
-  }
-  .homepage-tags-titles {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    min-height: 40px;
-    margin-bottom: 10px;
   }
   .homepage-search-div .main {
     display: flex;
@@ -484,19 +479,7 @@
 
 @media only screen and (min-width: 451px) and  (max-width: 668px) {
   #homepage-container {
-    height: 1500px;
-  }
-  .homepage-tag-img-divs {
-    width: 90px;
-    height: 90px;
-  }
-  .homepage-tags-container {
-    width: 95%;
-    margin: 0 2.5%;
-    gap: .5em;
-  }
-  .homepage-tags-section {
-    height: 20%;
+    height: 1600px;
   }
   .homepage-search-div .main {
     display: flex;
@@ -528,12 +511,6 @@
     width: 60%;
     max-height: 200px;
   }
-  .homepage-tag-img-divs {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    overflow: hidden;
-  }
 }
 
 @media only screen and (max-width: 1400px) {
@@ -556,4 +533,15 @@
   .modal-homepage-img-div {
     width: 100%;
   }
+  .homepage-tags-section {
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+  .homepage-tag-movement {
+    overflow-x: scroll;
+    gap: 30px;
+  }
+  .homepage-tag-movement::-webkit-scrollbar { width: 0 !important }
+
 }
