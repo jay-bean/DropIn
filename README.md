@@ -17,8 +17,9 @@
 ## Sneak Peak
 ![Homepage](https://user-images.githubusercontent.com/46910262/184025061-fd9d2cd1-5a3c-430d-8365-6106c222b6cf.png)
 ![Explore page](https://user-images.githubusercontent.com/46910262/184025144-278eb3a7-1e4f-4125-abcc-b838230bd723.png)
+[![Skatepark page](https://user-images.githubusercontent.com/46910262/189010344-38b97e23-8930-435b-b623-0b4f1ccfdcbc.jpeg)]
 
-## Local Setup![6EE564B9-58BF-4416-92FD-AA4BAF9C1049_1_102_o](https://user-images.githubusercontent.com/46910262/189010344-38b97e23-8930-435b-b623-0b4f1ccfdcbc.jpeg)
+## Local Setup
 
 1. Clone this repository
 
