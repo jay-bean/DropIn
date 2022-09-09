@@ -116,16 +116,6 @@
   display: none;
 }
 
-.select-container {
-  width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
-.select-container div:first-child {
-  height: fit-content;
-}
-
 @media only screen  and (max-width: 1300px) {
   #tags-div {
     gap: 1em;
