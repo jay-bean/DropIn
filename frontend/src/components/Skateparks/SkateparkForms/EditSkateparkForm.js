@@ -19,7 +19,7 @@ function EditSkateparkForm({ setDidUpdate, setShowEditForm }) {
   const [address, setAddress] = useState(skatepark ? skatepark.address : '');
   const [city, setCity] = useState(skatepark ? skatepark.city : '');
   const [state, setState] = useState(skatepark ? skatepark.state : '');
-  const [zipcode, setZipcode] = useState(skatepark ? skatepark.zipcode : 0);
+  const [zipcode, setZipcode] = useState(skatepark ? skatepark.zipcode : null);
   const [oldImages, setOldImages] = useState(skatepark ? skatepark.images : []);
   const [images, setImages] = useState({});
 

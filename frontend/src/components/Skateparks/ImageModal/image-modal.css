@@ -80,7 +80,7 @@
 
 .modal-img-cancel {
   color: rgb(229, 229, 229);
-  transform: translate(-42px, -360px);
+  transform: translate(-42px, -310px);
   z-index: 102;
   border-radius: 50%;
   width: 30px;
@@ -159,8 +159,9 @@
     margin-left: 1%;
   }
   .modal-img-cancel {
-    /* transform: translate(330px, -360px); */
+    /* transform: translate(330px, -330px); */
     z-index: 103;
+    top: 80px;
   }
 }
 

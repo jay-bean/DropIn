@@ -38,11 +38,8 @@ const skateparkValidators = [
     .withMessage('State must not exceed 100 characters.'),
   check('zipcode')
     .exists({ checkFalsy: true })
-    .withMessage('Please provide a zipcode.')
     .isInt()
-    .withMessage('Zipcode must be a number.')
-    .isPostalCode('US')
-    .withMessage('Zipcode must be a valid US Postal Code.'),
+    .withMessage('Please provide a valid address.'),
   handleValidationErrors
 ];
 
@@ -75,11 +72,8 @@ const editSkateparkValidators = [
     .withMessage('State must not exceed 100 characters.'),
   check('zipcode')
     .exists({ checkFalsy: true })
-    .withMessage('Please provide a zipcode.')
     .isInt()
-    .withMessage('Zipcode must be a number.')
-    .isPostalCode('US')
-    .withMessage('Zipcode must be a valid US Postal Code.'),
+    .withMessage('Please provide a valid address.'),
   handleValidationErrors
 ];
 

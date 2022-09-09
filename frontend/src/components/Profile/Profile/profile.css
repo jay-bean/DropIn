@@ -129,7 +129,7 @@
   font-weight: 700;
   line-height: 1.36;
   height: 100%;
-  padding: 6px 10px;
+  padding: 0 10px;
   border-radius: 9999px;
   cursor: pointer;
   transition: all .2s ease-out;
@@ -313,6 +313,29 @@
   margin: auto 10%;
 }
 
+@media only screen and (max-width: 680px) {
+  .profile-page-content {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .first-buffer-flex {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+  .second-buffer-flex {
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-left: 0;
+    gap: 0;
+    width: 90%;
+    font-size: 14px;
+    justify-content: space-between;
+  }
+  .profile-edit-btn {
+    padding: 0 10px;
+  }
+}
+
 @media only screen and (max-width: 450px) {
   .prof-page {
     margin-bottom: 0;
@@ -325,6 +348,7 @@
   }
   .profile-box {
     overflow-y: scroll;
+    margin-bottom: 20px;
   }
   .profile-box::-webkit-scrollbar { width: 0 !important }
   .profile-column-one {
@@ -349,8 +373,8 @@
     font-size: 14px;
     font-weight: 700;
     line-height: 1;
-    padding: 2px 4px;
-    height: 80%;
+    padding: 8px 10px;
+    height: 100%;
   }
   .profile-image-div {
     height: 250px;
@@ -402,28 +426,5 @@
     margin-left: 5%;
     margin-right: 5%;
     font-size: 20px;
-  }
-}
-
-@media only screen and (max-width: 680px) {
-  .profile-page-content {
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .first-buffer-flex {
-    margin-left: 1em;
-    margin-right: 1em;
-  }
-  .second-buffer-flex {
-    margin-left: 5%;
-    margin-right: 5%;
-    padding-left: 0;
-    gap: 0;
-    width: 90%;
-    font-size: 14px;
-    justify-content: space-between;
-  }
-  .profile-edit-btn {
-    padding: 6px 10px;
   }
 }

@@ -12,7 +12,9 @@ function Review({ review, skatepark }) {
   const user = useSelector(state => state.users[review.userId]);
 
   const deleteHandler = async () => {
-    await dispatch(removeReview(review));
+    if (window.confirm('Are you sure you want to delete this review?')) {
+      await dispatch(removeReview(review));
+    }
   }
 
   useEffect(() => {
