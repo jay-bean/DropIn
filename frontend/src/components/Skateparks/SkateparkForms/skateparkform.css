@@ -264,17 +264,11 @@ input[type="file"] {
 /* multiselect */
 
 .select-container {
-  /* width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
-  padding: 12px 16px;
-  border-radius: 8px; */
   width: 100%;
 }
 
 .select-container div:first-child {
   height: fit-content;
-  /* padding: 12px 16px; */
 }
 
 .select-container div:first-child .tag-select-comp {
@@ -297,6 +291,12 @@ input[type="file"] {
   padding: 12px 16px;
   border-radius: 8px;
   line-height: 1.5;
+}
+
+.select-container div:first-child .optionListContainer {
+  width: 85%;
+  margin-left: 7.5%;
+  margin-right: 7.5%;
 }
 
 .multiselect-container {
