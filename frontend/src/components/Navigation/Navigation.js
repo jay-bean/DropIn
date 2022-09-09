@@ -24,7 +24,7 @@ function Navigation({ isLoaded }){
   if (sessionUser) {
     sessionLinks = (
       <div className='nav-prof'>
-        <NavLink className='skatepark-nav'exact to="/skateparks/new"><button className='skatepark-nav-btn'>Add Skatepark</button></NavLink>
+        <NavLink onClick={() => setSideNav(false)} className='skatepark-nav'exact to="/skateparks/new"><button className='skatepark-nav-btn'>Add Skatepark</button></NavLink>
         <ProfileButton setSideNav={setSideNav} user={sessionUser} />
       </div>
     );

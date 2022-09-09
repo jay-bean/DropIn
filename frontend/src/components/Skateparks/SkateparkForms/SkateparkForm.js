@@ -15,7 +15,7 @@ function NewSkateparkForm() {
   const [address, setAddress] = useState('');
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
-  const [zipcode, setZipcode] = useState(0);
+  const [zipcode, setZipcode] = useState(null);
   const [images, setImages] = useState({});
   const [selectedTag, setSelectedTag] = useState([])
 
@@ -143,7 +143,6 @@ function NewSkateparkForm() {
             <label className='skatepark-form-img-div'>
               <i className="fa-solid fa-images image-input img-input"> <p className='img-upload-p'>Upload Images</p></i>
               <input
-                required
                 type="file"
                 multiple
                 name="file"
@@ -151,7 +150,7 @@ function NewSkateparkForm() {
                 />
               <p className='skatepark-form-p photo-amount'>*Please upload at least one photo (1-10)</p>
             </label>
-            {images && images.length && (
+            {images && images.length ? (
                   <div className="thumbnail-container">
                   {imagesArr.map((image, index) => {
                     return (
@@ -168,7 +167,7 @@ function NewSkateparkForm() {
                     );
                   })}
                 </div>
-            )}
+            ) : null}
             {validationErrors && validationErrors.length > 0 && (
               validationErrors.map(error => {
                 return <div className='signup-errors sp-errors' key={error}>{error}</div>
