@@ -38,7 +38,7 @@ const handleUpload = (req, res, next) => {
   upload(req, res, function (err) {
     if (err instanceof multer.MulterError) {
       if (err.code === 'LIMIT_UNEXPECTED_FILE') {
-        return res.status(400).json({errors: ['You cannot upload more than 10 photos at a time.']});
+        return res.status(400).json({errors: ['You cannot upload more than 10 photos.']});
       }
       return next(err);
       // check if max count error. Validatoin error instance with our message. next(err)
