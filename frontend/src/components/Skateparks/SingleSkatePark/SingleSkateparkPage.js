@@ -88,7 +88,7 @@ function SingleSkatepark() {
                     behavior: "smooth",
                   })
                 }>
-                <img className='green-img' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/6F53C9DC-B567-48C2-B832-39B82195CE2E_4_5005_c.jpeg'/>
+                <img className='green-img' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/B98301AC-D1C4-4D75-A5B7-E8F1112D1B50_4_5005_c.jpeg'/>
                 <p className='green-p'>Weather</p>
               </div>
               <div className='green-divs'
@@ -99,7 +99,7 @@ function SingleSkatepark() {
                     behavior: "smooth",
                   })
                 }>
-                <img className='green-img' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/87C4C128-74CB-4A81-9F42-EEC138EAFE99_4_5005_c.jpeg'/>
+                <img className='green-img' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/073F6124-67B1-4391-A2C4-A996DC74427A_4_5005_c.jpeg'/>
                 <p className='green-p'>Map</p>
               </div>
               <div className='green-divs'
@@ -110,8 +110,14 @@ function SingleSkatepark() {
                     behavior: "smooth",
                   })
                 }>
-                <img className='green-img' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/656AE96B-EEC6-4594-835B-2F2270178164_4_5005_c.jpeg'/>
+                <img className='green-img' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/40038A5E-133D-41D1-B83F-E0960B8460CA_4_5005_c.jpeg'/>
                 <p className='green-p'>Reviews</p>
+              </div>
+              <div className='green-divs'
+                onClick={() => setImgShow(true)}
+              >
+                <img className='green-img' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/C897863F-765F-46DC-B06C-454CB38A1FD0_4_5005_c.jpeg'/>
+                <p className='green-p'>Photos</p>
               </div>
             </div>
             {/* <div className='single-park-imgs-div'>

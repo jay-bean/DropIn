@@ -169,7 +169,6 @@
   border-radius: 9999px;
   cursor: pointer;
   transition: all .2s ease-out;
-  color: #414141;
   border: 2px solid #9f9f9f;
   color: #219AD8;
   background-color: none;
@@ -331,6 +330,7 @@
 
 .navbar-dropdown-img {
   width: 20px;
+  cursor: pointer;
 }
 .sidenav-p {
   display: none;
@@ -349,13 +349,16 @@
     justify-content: center;
   }
   .signup-nav-btn {
-    width: 100%;
+    width: 90%;
+    margin-right: 5%;
   }
   .login-nav-btn {
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
   }
   .demo-nav-btn {
-    width: 100%;
+    margin-right: 10px;
+    width: 50%;
   }
 }
 
@@ -369,6 +372,8 @@
     border: none;
     font-size: 16px;
     padding: 0;
+    justify-content: flex-end;
+    width: 25%;
   }
   #drop-in {
     font-family: 'Rubik', sans-serif;
@@ -386,10 +391,6 @@
   }
   .second-nav {
     display: flex;
-  }
-  .demo-nav-btn {
-    justify-content: flex-end;
-    width: 25%;
   }
   .sidenav-ul {
     display: none;
@@ -424,6 +425,7 @@
   }
   .sidenav-close {
     width: 20px;
+    cursor: pointer;
   }
   #explore,
   .about-me {
@@ -519,6 +521,7 @@
     font-weight: 700;
     /* border-bottom: 2px solid rgb(198, 198, 198); */
     gap: 10px;
+    cursor: pointer;
   }
   .sort-arrow-prof {
     width: 18px;
