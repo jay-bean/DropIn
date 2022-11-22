@@ -3,30 +3,34 @@ import { getTags } from '../../store/parktag';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { getSkateparks } from '../../store/skatepark';
 
 function Footer() {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const [tags, setTags] = useState([]);
+  const skateparks = useSelector(state => state.skateparks);
 
   useEffect(() => {
     (async () => {
       const allTags = await getTags();
       setTags(allTags)
     })();
+    dispatch(getSkateparks());
   }, [dispatch])
 
   return (
+    Object.values(skateparks).length ?
     <div className="footer">
       <div className='footer-flex'>
         <div id='footer-explore'>
           <Link className='footer-headers footer-explore-h2' to='/skateparks'><h2>Explore</h2></Link>
           <div className='footer-tags-container'>
-            {tags && tags.length && tags.map(tag => {
+            {tags && tags.length ? tags.map(tag => {
               return (
                 <Link to={`/skateparks/${tag.type}`} className='footer-tags' key={tag.id}>{tag.type}</Link>
               );
-            })}
+            }): null}
           </div>
         </div>
         {sessionUser &&
@@ -68,7 +72,7 @@ function Footer() {
           </div>
         </div>
       </div>
-    </div>
+    </div> : null
   );
 }
 

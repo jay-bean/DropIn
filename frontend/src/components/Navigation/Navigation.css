@@ -132,9 +132,6 @@
 
 .demo-div {
   width: 20%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
 }
 
 .signup-nav-link {
@@ -163,7 +160,7 @@
   display: inline-flex;
   flex-direction: row;
   box-sizing: border-box;
-  width: 36%;
+  width: 100%;
   align-items: center;
   justify-content: center;
   border-radius: 9999px;
@@ -243,12 +240,17 @@
   color: #2a2a2aad;
   position: relative;
   text-align: center;
-  width: 20%;
+  width: 50%;
   box-sizing: border-box;
   margin: 0 auto;
-  margin-left: 100px
 }
 
+#account-div {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
 
 .nav-prof {
   display: flex;
@@ -261,7 +263,7 @@
 .nav-prof-demo {
   display: flex;
   flex-direction: row;
-  width: 20%;
+  width: 60%;
   justify-content: flex-end;
 }
 
@@ -351,14 +353,21 @@
   .signup-nav-btn {
     width: 90%;
     margin-right: 5%;
+    font-size: 12px;
   }
   .login-nav-btn {
     width: 90%;
     margin-left: 5%;
   }
+  .demo-div {
+    width: 35%;
+  }
   .demo-nav-btn {
     margin-right: 10px;
-    width: 50%;
+    width: 100%;
+  }
+  .nav-prof {
+    width: 60%;
   }
 }
 

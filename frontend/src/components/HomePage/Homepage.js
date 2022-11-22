@@ -1,19 +1,16 @@
 import './Homepage.css';
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect, useState } from 'react';
+
 import { getSkateparks } from '../../store/skatepark';
-import { Link } from "react-router-dom";
-// import Skatepark from '../Skateparks/Skatepark';
-// import AverageRating from '../Skateparks/AverageRating/AverageRating';
-// import Favorites from '../Favorites/Favorites';
 import SearchBar from '../SearchBar/SearchBar';
 import HomePageImgCarousel from './HomePageImgCarousel';
 import HomepageTagCarousel from './HomepageTagCarousel';
+
 function Homepage() {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const skateparks = useSelector(state => state.skateparks);
-  const [activeIndex, setActiveIndex] = useState(0);
 
   let skateparkArr;
   if (skateparks) {
@@ -25,20 +22,19 @@ function Homepage() {
   }, [dispatch]);
 
   return(
-    <div id='homepage-container'>
-      <div className='homepage-img'>{sessionUser ? <p className='home-page-title'>Ready to skate, {sessionUser.firstName}?</p> : <p className='home-page-title'>Ready to skate?</p>}</div>
-      {skateparks &&
+
+      <div id='homepage-container'>
+        <div className='homepage-img'>{sessionUser ? <p className='home-page-title'>Ready to skate, {sessionUser.firstName}?</p> : <p className='home-page-title'>Ready to skate?</p>}</div>
         <div className='homepage-search-div'>
           <SearchBar skateparks={skateparks}/>
         </div>
-      }
-      <div className='homepage-banner'>
-        <h2 className='homepage-banner-h2'>Featured skateparks</h2>
-        <HomePageImgCarousel skateparks={skateparks} skateparkArr={skateparkArr}/>
+        <div className='homepage-banner'>
+          <h2 className='homepage-banner-h2'>Featured skateparks</h2>
+          <HomePageImgCarousel skateparks={skateparks} skateparkArr={skateparkArr}/>
+        </div>
+        <div className='homepage-banner-2'></div>
+        <HomepageTagCarousel/>
       </div>
-      <div className='homepage-banner-2'></div>
-      <HomepageTagCarousel/>
-    </div>
   );
 }
 

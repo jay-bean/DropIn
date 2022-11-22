@@ -11,6 +11,7 @@ function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
   const users = useSelector(state => state.users);
   const [sideNav, setSideNav] = useState(false);
+  const [demoDivHidden, setDemoDivHidden] = useState(false);
 
   let demoUser;
   if (users) {
@@ -25,13 +26,13 @@ function Navigation({ isLoaded }){
     sessionLinks = (
       <div className='nav-prof'>
         <NavLink onClick={() => setSideNav(false)} className='skatepark-nav'exact to="/skateparks/new"><button className='skatepark-nav-btn'>Add Skatepark</button></NavLink>
-        <ProfileButton setSideNav={setSideNav} user={sessionUser} />
+        <ProfileButton setSideNav={setSideNav} user={sessionUser} setDemoDivHidden={setDemoDivHidden} />
       </div>
     );
   } else {
     sessionLinks = (
       <div className='nav-prof-demo'>
-          <p className='sidenav-p'>Thanks for visiting.</p>
+          <p className='sidenav-p'>Thanks for visiting the site.</p>
           <p className='sidenav-p'>Now go find a park and skate!</p>
           <NavLink onClick={() => setSideNav(false)} className='signup-nav-link' to="/signup"><button className='signup-nav-btn'>Sign Up</button></NavLink>
           <NavLink onClick={() => setSideNav(false)} className='login-nav-link' to="/login"><button className='login-nav-btn'>Log in</button></NavLink>
@@ -52,10 +53,12 @@ function Navigation({ isLoaded }){
             <NavLink className='about-me' exact to="/about">About</NavLink>
           </div>
           <NavLink id={!sessionUser ? 'drop-in' : 'drop-in-user'} exact to="/">Drop In</NavLink>
-          <div className='demo-div'>
-            {!sessionUser && demoUser && <DemoUser demoUser={demoUser}/>}
+          <div id='account-div'>
+            <div className='demo-div' style={{display : demoDivHidden ? 'none' : 'flex'}}>
+              {!sessionUser && demoUser && <DemoUser demoUser={demoUser} setDemoDivHidden={setDemoDivHidden}/>}
+            </div>
+            {isLoaded && sessionLinks}
           </div>
-          {isLoaded && sessionLinks}
         </li>
       </ul>
       <ul className='nav-ul second-nav'>
@@ -84,7 +87,7 @@ function Navigation({ isLoaded }){
             </li>
           </ul>
           <NavLink id='drop-in' exact to="/">Drop In</NavLink>
-          {!sessionUser && demoUser && <DemoUser demoUser={demoUser}/>}
+          {!sessionUser && demoUser && <DemoUser demoUser={demoUser} setDemoDivHidden={setDemoDivHidden}/>}
         </li>
       </ul>
     </>

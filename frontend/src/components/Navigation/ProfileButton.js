@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import { Link, useHistory }from 'react-router-dom';
 
-function ProfileButton({ setSideNav }) {
+function ProfileButton({ setSideNav, setDemoDivHidden }) {
   const dispatch = useDispatch();
   const history = useHistory();
   const [showMenu, setShowMenu] = useState(false);
@@ -15,6 +15,7 @@ function ProfileButton({ setSideNav }) {
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
+    setDemoDivHidden(false);
     history.push('/');
   };
 
