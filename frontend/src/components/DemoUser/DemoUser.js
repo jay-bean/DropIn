@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import  demoUser from './constant';
-import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
 
-function DemoUser() {
+import * as sessionActions from "../../store/session";
+import  demoUser from './constant';
+
+function DemoUser({ setDemoDivHidden }) {
   const dispatch = useDispatch();
 
   const [errors, setErrors] = useState([]);
@@ -12,6 +13,7 @@ function DemoUser() {
 
   const handleDemoLogin = () => {
     setErrors([]);
+    setDemoDivHidden(true);
     return dispatch(sessionActions.login({ credential, password })).catch(
       async (res) => {
         const data = await res.json();

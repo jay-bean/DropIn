@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { getSkateparks } from '../../../store/skatepark';
 import Skatepark from '../../Skateparks/SingleSkatePark/Skatepark';
 import './profile.css';

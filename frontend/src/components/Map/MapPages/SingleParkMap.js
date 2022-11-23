@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { GoogleMap, useJsApiLoader, MarkerF, InfoWindowF } from '@react-google-maps/api';
+
 import SkateparkSnippet from '../SkateParkInfoMarker/SkateparkSnippet';
 import '../../Skateparks/ExplorePage/explore-page.css';
 import '../SkateParkInfoMarker/skatepark-snippet.css';

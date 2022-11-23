@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { getFavorites, addFavorite, removeFavorite } from "../../store/favorite";
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from "react-router-dom";
+
+import { getFavorites, addFavorite, removeFavorite } from "../../store/favorite";
 import './favorite.css';
 
 function Favorites({ skateparkId }) {

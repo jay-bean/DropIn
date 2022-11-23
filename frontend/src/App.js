@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
-import SignupFormPage from "./components/SignupFormPage/SignupFormPage";
+
 import * as sessionActions from "./store/session";
+import SignupFormPage from "./components/SignupFormPage/SignupFormPage";
 import Navigation from "./components/Navigation/Navigation";
 import LoginForm from "./components/LoginFormPage/LoginFormPage";
 import NewSkateparkForm from "./components/Skateparks/SkateparkForms/SkateparkForm";
@@ -10,7 +11,6 @@ import EditSkateparkForm from "./components/Skateparks/SkateparkForms/EditSkatep
 import AllSkateparks from "./components/Skateparks/ExplorePage/Skateparks";
 import SingleSkatepark from "./components/Skateparks/SingleSkatePark/SingleSkateparkPage";
 import Homepage from "./components/HomePage/Homepage";
-import './index.css';
 import Profile from './components/Profile/Profile/Profile'
 import EditProfile from "./components/Profile/EditProfile/EditProfile";
 import Footer from "./components/Footer/Footer";
@@ -20,10 +20,12 @@ import UsersSkateparks from "./components/Profile/Profile/UsersSkateparks";
 import UsersFavorites from "./components/Profile/Profile/UsersFavorites";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
 import SearchBar from "./components/SearchBar/SearchBar";
+import './index.css';
 
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);

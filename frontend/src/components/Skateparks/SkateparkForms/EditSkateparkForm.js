@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Redirect } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+
 import { getParktags } from '../../../store/parktag';
 import { getSkateparks, editSkatepark } from '../../../store/skatepark';
 import TagSelect from '../ParkTags/TagSelect';
@@ -19,7 +20,7 @@ function EditSkateparkForm({ setDidUpdate, setShowEditForm }) {
   const [address, setAddress] = useState(skatepark ? skatepark.address : '');
   const [city, setCity] = useState(skatepark ? skatepark.city : '');
   const [state, setState] = useState(skatepark ? skatepark.state : '');
-  const [zipcode, setZipcode] = useState(skatepark ? skatepark.zipcode : null);
+  const [zipcode, setZipcode] = useState(skatepark ? skatepark.zipcode : '');
   const [oldImages, setOldImages] = useState(skatepark ? skatepark.images : []);
   const [images, setImages] = useState({});
 

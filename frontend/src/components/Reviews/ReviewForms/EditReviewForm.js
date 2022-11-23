@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Redirect } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+
 import { editReview } from '../../../store/review';
 
 function EditReviewForm({ review, setShowModal, skatepark }) {

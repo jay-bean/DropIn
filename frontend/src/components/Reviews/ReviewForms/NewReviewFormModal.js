@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 import { Modal } from '../../../context/Modal';
 import NewReviewForm from './NewReviewForm';
 import './new-review.css';
-import { useSelector } from 'react-redux';
 
 function NewReviewFormModal({ skatepark }) {
   const [showModal, setShowModal] = useState(false);
