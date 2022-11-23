@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+
 import AverageRating from '../Skateparks/AverageRating/AverageRating';
 import Favorites from '../Favorites/Favorites';
 

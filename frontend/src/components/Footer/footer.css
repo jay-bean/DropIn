@@ -37,6 +37,7 @@ body {
 .footer-tags-container {
   display: flex;
   flex-flow: column wrap;
+  margin-bottom: 20px;
 }
 
 .footer-tags {
@@ -77,7 +78,7 @@ body {
 }
 
 .footer-prof {
-  width: 16%;
+  width: 15%;
 }
 
 .footer-prof-p {
@@ -232,7 +233,8 @@ body {
     padding: .3em;
   }
   .footer-prof {
-    width: 100%;
+    width: 80%;
+    margin: 0 10%;
   }
   .footer-prof a h2 {
     margin-bottom: 0;
@@ -263,12 +265,13 @@ body {
   }
   .footer-about {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: .1em;
-    width: 98%;
+    width: 90%;
+    margin-left: 1%;
+    margin-bottom: 20px;
   }
   .footer-social-links {
-    gap: .1em;
     font-weight: 700;
     width: 40%;
   }
@@ -309,17 +312,17 @@ body {
   }
   .footer-flex {
     padding: 0;
-    width: 100%;
+    width: 90%;
     gap: 3em;
-    justify-content: flex-start;
+    justify-content: space-between;
   }
   #footer-explore {
-    width: 30%;
+    width: 20%;
   }
   .footer-image-container {
     display: none;
   }
   .footer-prof {
-    width: 30%;
+    width: 20%;
   }
 }

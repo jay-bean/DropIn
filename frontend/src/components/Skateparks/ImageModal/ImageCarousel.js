@@ -1,7 +1,8 @@
 import { useState } from 'react';
+
 import './image-modal.css'
 
-function ImageCarousel({ skatepark, imgShow, setImgShow }) {
+function ImageCarousel({ skatepark, setImgShow }) {
   const [activeIndex, setActiveIndex] = useState(0)
   const updateIndex = (index) => {
     if (index < 0) index = skatepark.images.length - 1;

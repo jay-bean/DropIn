@@ -135,17 +135,19 @@
 }
 
 .signup-nav-link {
-  width: 70%;
+  width: 46%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  margin-right: 2%;
 }
 
 .login-nav-link {
-  width: 30%;
+  width: 46%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  margin-left: 2%;
 }
 
 .demo-nav-btn {
@@ -191,8 +193,7 @@
   display: inline-flex;
   flex-direction: row;
   box-sizing: border-box;
-  width: 46%;
-  margin-right: 10%;
+  width: 100%;
   align-items: center;
   justify-content: center;
   border-radius: 9999px;
@@ -250,6 +251,7 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  gap: 10px;
 }
 
 .nav-prof {
@@ -263,7 +265,7 @@
 .nav-prof-demo {
   display: flex;
   flex-direction: row;
-  width: 60%;
+  width: 45%;
   justify-content: flex-end;
 }
 
@@ -366,7 +368,8 @@
     margin-right: 10px;
     width: 100%;
   }
-  .nav-prof {
+  .nav-prof,
+  .nav-prof-demo {
     width: 60%;
   }
 }

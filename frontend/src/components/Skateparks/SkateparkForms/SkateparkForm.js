@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, Redirect } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+
 import { addSkatepark } from '../../../store/skatepark';
 import TagSelect from '../ParkTags/TagSelect';
 import './skateparkform.css';
@@ -15,7 +16,7 @@ function NewSkateparkForm() {
   const [address, setAddress] = useState('');
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
-  const [zipcode, setZipcode] = useState(null);
+  const [zipcode, setZipcode] = useState('');
   const [images, setImages] = useState({});
   const [selectedTag, setSelectedTag] = useState([])
 

@@ -1,11 +1,12 @@
-import { useHistory, useParams, Link } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
+import { useHistory, useParams, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { getSkateparks, removeSkatepark } from '../../../store/skatepark';
-import AllReviews from '../../Reviews/Reviews/Reviews';
 import { getReviews } from '../../../store/review';
-import Favorites from '../../Favorites/Favorites';
 import { getParktags } from '../../../store/parktag';
+import AllReviews from '../../Reviews/Reviews/Reviews';
+import Favorites from '../../Favorites/Favorites';
 import EditSkateparkForm from '../SkateparkForms/EditSkateparkForm';
 import SingleParkMap from '../../Map/MapPages/SingleParkMap';
 import Weather from '../WeatherAPI/Weather';

@@ -1,4 +1,3 @@
-import './Homepage.css';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -6,6 +5,7 @@ import { getSkateparks } from '../../store/skatepark';
 import SearchBar from '../SearchBar/SearchBar';
 import HomePageImgCarousel from './HomePageImgCarousel';
 import HomepageTagCarousel from './HomepageTagCarousel';
+import './Homepage.css';
 
 function Homepage() {
   const dispatch = useDispatch();

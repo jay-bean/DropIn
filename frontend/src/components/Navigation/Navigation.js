@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import ProfileButton from './ProfileButton';
-import './Navigation.css';
-import DemoUser from '../DemoUser/DemoUser';
+
 import { getUsers } from '../../store/user';
+import ProfileButton from './ProfileButton';
+import DemoUser from '../DemoUser/DemoUser';
+import './Navigation.css';
 
 function Navigation({ isLoaded }){
   const dispatch = useDispatch();
@@ -49,10 +50,10 @@ function Navigation({ isLoaded }){
       <ul className='nav-ul first-nav'>
         <li className='navbar-container'>
           <div className='explore-about-div'>
-            <NavLink id='explore' exact to="/skateparks">Explore</NavLink>
-            <NavLink className='about-me' exact to="/about">About</NavLink>
+            <NavLink id='explore' to="/skateparks">Explore</NavLink>
+            <NavLink className='about-me' to="/about">About</NavLink>
           </div>
-          <NavLink id={!sessionUser ? 'drop-in' : 'drop-in-user'} exact to="/">Drop In</NavLink>
+          <NavLink id={!sessionUser ? 'drop-in' : 'drop-in-user'} to="/">Drop In</NavLink>
           <div id='account-div'>
             <div className='demo-div' style={{display : demoDivHidden ? 'none' : 'flex'}}>
               {!sessionUser && demoUser && <DemoUser demoUser={demoUser} setDemoDivHidden={setDemoDivHidden}/>}
@@ -71,16 +72,19 @@ function Navigation({ isLoaded }){
                <button className='hide-sidenav-btn' type="button"><img onClick={() => setSideNav(false)} className='sidenav-close' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/close.png' alt='x'/></button>
             </li>
             <li className='sidenav-li'>
-                <NavLink onClick={() => setSideNav(false)} id='explore' exact to="/skateparks">Explore</NavLink>
+                <NavLink onClick={() => setSideNav(false)} id='explore' to="/skateparks">Explore</NavLink>
             </li>
             <li className='sidenav-li'>
-                <NavLink onClick={() => setSideNav(false)} className='about-me' exact to="/about">About</NavLink>
+                <NavLink onClick={() => setSideNav(false)} className='about-me' to="/about">About</NavLink>
             </li>
             <li className='sidenav-li'>
-                <a href='https://www.linkedin.com/in/jay-hutts-300ab9180/' onClick={() => setSideNav(false)} className='about-me' exact to="/about">LinkedIn</a>
+                <a href='https://www.jayhutts.dev/' onClick={() => setSideNav(false)} className='about-me' to="/about">Portfolio</a>
             </li>
             <li className='sidenav-li'>
-                <a href='https://github.com/jay-bean' onClick={() => setSideNav(false)} className='about-me' exact to="/about">Github</a>
+                <a href='https://www.linkedin.com/in/jay-hutts-300ab9180/' onClick={() => setSideNav(false)} className='about-me' to="/about">LinkedIn</a>
+            </li>
+            <li className='sidenav-li'>
+                <a href='https://github.com/jay-bean' onClick={() => setSideNav(false)} className='about-me' to="/about">Github</a>
             </li>
             <li className='sidenav-li'>
                 {isLoaded && sessionLinks}

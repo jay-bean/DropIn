@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import  demoUser from './constant';
-import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
+
+import * as sessionActions from "../../store/session";
+import  demoUser from './constant';
 
 function DemoUser({ setDemoDivHidden }) {
   const dispatch = useDispatch();

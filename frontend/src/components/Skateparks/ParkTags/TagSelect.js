@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
+
 import { getTags } from '../../../store/parktag';
 import { Multiselect } from "multiselect-react-dropdown";
 
-function TagSelect({ selectedTag, setSelectedTag, tagIdArr }) {
+function TagSelect({ setSelectedTag, tagIdArr }) {
   const [tags, setTags] = useState([]);
   useEffect(() => {
     (async () =>{

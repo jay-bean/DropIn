@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import dayjs from 'dayjs';
+
 import '../SingleSkatePark/single-skatepark.css';
 
 const weatherBtns = ["Current Weather", "Weekly Forecast", "Daylight"];

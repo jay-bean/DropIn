@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { getFavorites } from '../../../store/favorite';
 import { getReviews } from '../../../store/review';
 import './profile.css';
