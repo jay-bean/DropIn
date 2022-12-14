@@ -464,11 +464,13 @@
   .signup-nav-link {
     width: 100%;
     justify-content: center;
+    margin: 0;
     margin-top: 40px;
   }
   .login-nav-link {
     width: 100%;
     justify-content: center;
+    margin: 0;
     margin-top: 10px;
   }
   .signup-nav-btn {
@@ -479,6 +481,7 @@
   .login-nav-btn {
     width: 100%;
     padding: 20px 24px;
+    margin: 0;
   }
   .sidenav-p {
     display: flex;
