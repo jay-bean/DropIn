@@ -71,7 +71,7 @@ function UsersFavorites() {
                   <Link className='add-park-contribute-flex' to='/skateparks/new'><p className='plus-sign'>+</p><p className='profile-add-contribute'>Add a skatepark</p></Link>
               </div>
               <div className='add-descriptor-div'>
-                {usersFavorites && usersFavorites.length ? <p className='add-descriptor'>To your left is all of the skateparks you have favorited. Click on any of them to view more details.</p> : <p className='add-descriptor'>You currently don't have any favorites. <Link className='profile-favorite-explore' to='/skateparks'>Explore</Link></p>}
+                {usersFavorites && usersFavorites.length ? <p className='add-descriptor'>Here are all of the skateparks you have favorited. Click on any of them to view more details.</p> : <p className='add-descriptor'>You currently don't have any favorites. <Link className='profile-favorite-explore' to='/skateparks'>Explore</Link></p>}
               </div>
             </div>
 
