@@ -68,7 +68,7 @@ function UsersReviews() {
                   <Link className='add-park-contribute-flex' to='/skateparks/new'><p className='plus-sign'>+</p><p className='profile-add-contribute'>Add a skatepark</p></Link>
               </div>
               <div className='add-descriptor-div'>
-                {usersReviews && usersReviews.length ? <p className='add-descriptor'>To your left is all of the reviews you have made. You can edit and delete your reviews from here. If you want to checkout the park you left the review on click the image for more details.</p> : <p className='add-descriptor'>You currently don't have any reviews. <Link className='profile-favorite-explore' to='/skateparks'>Explore</Link></p>}
+                {usersReviews && usersReviews.length ? <p className='add-descriptor'>Here are all of the reviews you have made. You can edit and delete your reviews from here. If you want to checkout the park you left the review on click the image for more details.</p> : <p className='add-descriptor'>You currently don't have any reviews. <Link className='profile-favorite-explore' to='/skateparks'>Explore</Link></p>}
               </div>
             </div>
           </div>
