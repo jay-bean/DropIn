@@ -580,3 +580,15 @@
     margin-left: 10px;
   }
 }
+
+@media only screen and (max-width: 530px) {
+  .weather-info-div-three {
+    align-items: flex-end;
+  }
+  .forecast-weekday {
+    font-size: 13px;
+  }
+  .forecast-temps {
+    font-size: 10px;
+  }
+}
