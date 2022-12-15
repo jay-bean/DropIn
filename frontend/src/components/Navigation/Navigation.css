@@ -411,7 +411,7 @@
     /* left: -288px; */
     background-color: #219AD8;
     width: 258px;
-    height: calc(100vh + 40px);
+    height: max-content;
     z-index: 99999999;
     background-color: #ffffff;
     list-style: none;
@@ -451,7 +451,7 @@
     margin-top: 26px;
     padding-top: 20px;
     border-top: 2px solid rgb(198, 198, 198);
-    height: 250px;
+    height: 200px;
   }
   .nav-prof-demo {
     flex-direction: column;
@@ -552,11 +552,10 @@
   }
   .profile-dropdown {
     margin-top: 17px;
-    border-radius: 6px;
+    border-radius: 0;
     position: absolute;
-    left: 0;
+    left: -13px;
     background-color: #ffffff;
-    width: 100%;
     box-shadow: none;
     z-index: 1;
     padding: 0;
@@ -566,7 +565,7 @@
     animation-duration: 1.0s;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
-    background-color: transparent;
+    width: 271px;
   }
   .prof-li {
     font-size: 16px;
