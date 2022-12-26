@@ -14,12 +14,12 @@ function AboutPage() {
         </div>
         <div className="about-me-container">
             <div className='about-me-link-div'>
-              <a href='https://jayhutts.dev/'><img className="about-me-img" src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/aboutmeimage.jpeg' alt="jay"/></a>
+              <a href='https://jayhutts.dev/' target="_blank"><img className="about-me-img" src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/aboutmeimage.jpeg' alt="jay"/></a>
               <div className='about-me-links-div2'>
-                <a className='about-me-name-link' href='https://jayhutts.dev/'><h3 className="about-me-name">Jay Hutts</h3></a>
+                <a className='about-me-name-link' href='https://jayhutts.dev/' target="_blank"><h3 className="about-me-name">Jay Hutts</h3></a>
                 <div className='about-me-icons-div'>
-                  <a href="https://github.com/jay-bean"><img className='about-me-img-links' src="https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/Github-Logo.png" alt="github logo"/></a>
-                  <a href="https://www.linkedin.com/in/jay-hutts-300ab9180/"><img className='about-me-img-links' src="https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/Linkedin-logo.png" alt="linked-in logo"/></a>
+                  <a href="https://github.com/jay-bean" target="_blank"><img className='about-me-img-links' src="https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/Github-Logo.png" alt="github logo"/></a>
+                  <a href="https://www.linkedin.com/in/jay-hutts-300ab9180/" target="_blank"><img className='about-me-img-links' src="https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/Linkedin-logo.png" alt="linked-in logo"/></a>
                 </div>
               </div>
           </div>

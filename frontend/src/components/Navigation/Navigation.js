@@ -78,13 +78,13 @@ function Navigation({ isLoaded }){
                 <NavLink onClick={() => setSideNav(false)} className='about-me' to="/about">About</NavLink>
             </li>
             <li className='sidenav-li'>
-                <a href='https://www.jayhutts.dev/' onClick={() => setSideNav(false)} className='about-me' to="/about">Portfolio</a>
+                <a href='https://www.jayhutts.dev/' target="_blank" onClick={() => setSideNav(false)} className='about-me' to="/about">Portfolio</a>
             </li>
             <li className='sidenav-li'>
-                <a href='https://www.linkedin.com/in/jay-hutts-300ab9180/' onClick={() => setSideNav(false)} className='about-me' to="/about">LinkedIn</a>
+                <a href='https://www.linkedin.com/in/jay-hutts-300ab9180/' target="_blank" onClick={() => setSideNav(false)} className='about-me' to="/about">LinkedIn</a>
             </li>
             <li className='sidenav-li'>
-                <a href='https://github.com/jay-bean' onClick={() => setSideNav(false)} className='about-me' to="/about">Github</a>
+                <a href='https://github.com/jay-bean' target="_blank" onClick={() => setSideNav(false)} className='about-me' to="/about">Github</a>
             </li>
             <li className='sidenav-li'>
                 {isLoaded && sessionLinks}

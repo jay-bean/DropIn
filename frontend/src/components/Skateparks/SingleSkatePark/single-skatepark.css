@@ -57,12 +57,12 @@
 }
 
 .park-main-img-div {
-  max-height: 367px;
+  height: 367px;
   width: 100%;
+  overflow-y: hidden;
 }
 
 .park-main-img {
-  height: 367px;
   width: 100%;
   cursor: pointer;
 }
