@@ -591,4 +591,8 @@
   .forecast-temps {
     font-size: 10px;
   }
+  .park-main-img {
+    height: 100%;
+    width: auto;
+  }
 }
