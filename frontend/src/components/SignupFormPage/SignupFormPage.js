@@ -89,6 +89,7 @@ function SignupFormPage() {
             required
             />
           <label className='signup-img-div'>
+            <i className="fa-solid fa-images image-input img-input"> <p className='img-upload-p'>Upload Image</p></i>
             <input
               className='image-input'
               type="file"

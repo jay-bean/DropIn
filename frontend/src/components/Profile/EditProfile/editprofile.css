@@ -101,6 +101,13 @@
   background-color: #b1b1b1;
 }
 
+@media only screen and (max-width: 865px) {
+  .edit-prof-img-div {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
 @media only screen and (max-width: 450px) {
   .edit-profile-page-content {
     height: 100%;

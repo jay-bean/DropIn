@@ -281,6 +281,12 @@ input[type="file"] {
   background-color: #0144ff;
 }
 
+.highlightOption {
+  background-color: #0144ff !important;
+}
+.option:hover {
+  background-color: #0144ff !important;
+}
 .select-container div:first-child .search-wrapper {
   border-radius: 8px;
   background-color: #ffffff;

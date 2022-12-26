@@ -47,9 +47,9 @@ function Footer() {
           <div>
             <Link className='footer-headers' to='/about'><h2>About</h2></Link>
             <div className='footer-about'>
-            <a className='footer-social-links' href="https://www.jayhutts.dev/"><img className='footer-socials' src="https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/DFD01411-79E8-4256-B284-689523CA0C18.png" alt="github logo"/>Portfolio</a>
-              <a className='footer-social-links' href="https://github.com/jay-bean"><img className='footer-socials' src="https://t2marketinginternational.com/wp-content/uploads/2018/06/Github-Logo-450x450.png" alt="github logo"/>Github</a>
-              <a className='footer-social-links' href="https://www.linkedin.com/in/jay-hutts-300ab9180/"><img className='footer-socials' src="https://www.maryville.edu/wp-content/uploads/2015/11/Linkedin-logo-1-550x550-300x300.png" alt="linked-in logo"/>Linkedin</a>
+            <a className='footer-social-links' href="https://www.jayhutts.dev/" target="_blank"><img className='footer-socials' src="https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/DFD01411-79E8-4256-B284-689523CA0C18.png" alt="github logo"/>Portfolio</a>
+              <a className='footer-social-links' href="https://github.com/jay-bean" target="_blank"><img className='footer-socials' src="https://t2marketinginternational.com/wp-content/uploads/2018/06/Github-Logo-450x450.png" alt="github logo"/>Github</a>
+              <a className='footer-social-links' href="https://www.linkedin.com/in/jay-hutts-300ab9180/" target="_blank"><img className='footer-socials' src="https://www.maryville.edu/wp-content/uploads/2015/11/Linkedin-logo-1-550x550-300x300.png" alt="linked-in logo"/>Linkedin</a>
             </div>
           </div>
         {!sessionUser &&
