@@ -122,7 +122,8 @@ function EditProfile() {
                         onChange={(e) => setConfirmPassword(e.target.value)}
                         required
                         />
-                    <label className='signup-img-div'>
+                    <label className='signup-img-div edit-prof-img-div'>
+                      <i className="fa-solid fa-images image-input img-input"> <p className='img-upload-p'>Upload Image</p></i>
                       <input
                         className='image-input'
                         type="file"

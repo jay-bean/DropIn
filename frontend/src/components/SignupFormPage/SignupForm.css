@@ -89,7 +89,6 @@
 .skatepark-form-p-signup {
   font-style: italic;
   color: #428a13;
-  width: 100%;
   text-align: left;
 }
 
@@ -145,7 +144,7 @@
   }
   .signup-img-div {
     flex-direction: column;
-    gap: 0;
+    gap: 8px !important;
   }
   .skatepark-form-p-signup {
     margin: 0;
