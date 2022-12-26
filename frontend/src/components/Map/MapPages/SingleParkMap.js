@@ -37,7 +37,7 @@ function SingleParkMap({ skatepark }) {
         onClick={() => setActiveMarker(null)}
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={9}
+        zoom={12}
       >
 
             <MarkerF
