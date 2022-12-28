@@ -46,7 +46,7 @@ function Favorites({ skateparkId }) {
   return (
     <div>
       <div onClick={favoritesHandler}>
-        {existingFavorite ? <img className="heart" src="https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/heart.png"/> : <img className="heart" src="https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/heart+(1).png"/>}
+        {existingFavorite ? <img className="heart" src="https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/heart.png" alt="full-heart"/> : <img className="heart" src="https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/heart+(1).png" alt="empty-heart"/>}
       </div>
     </div>
   );

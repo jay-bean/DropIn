@@ -19,14 +19,16 @@ function HomePageImgCarousel({ skateparkArr }) {
         <img
           style={{visibility: activeIndex === 0 ? 'hidden' : 'visible'}}
           onClick={() => {updateIndex(0)}}
-          className='modal-homepage-img-btn-left' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/488796E1-0435-45B7-9BE2-6788680809AF_4_5005_c.jpeg'/>
+          className='modal-homepage-img-btn-left' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/488796E1-0435-45B7-9BE2-6788680809AF_4_5005_c.jpeg'
+          alt='left arrow'
+        />
       </div>
       <div className='modal-homepage-img-div'>
         <div className='modal-homepage-img-movement' style={{ transform: `translateX(-${activeIndex * 1280}px)`}}>
           {sevenParks && sevenParks.length > 0 ? sevenParks.map(skatepark => {
             return (
               <div className='skatepark-card' key={skatepark.id}>
-                {skatepark.images && skatepark.images.length > 0 && <Link className='homepage-img-container' to={`/skateparks/${skatepark.id}`}><div className='homepage-img-hover'><img className='homepage-banner-imgs' src={skatepark.images[0].url}/></div></Link>}
+                {skatepark.images && skatepark.images.length > 0 && <Link className='homepage-img-container' to={`/skateparks/${skatepark.id}`}><div className='homepage-img-hover'><img className='homepage-banner-imgs' src={skatepark.images[0].url} alt='skatepark'/></div></Link>}
                 <div className='homepage-park-flex'>
                   <div className='homepage-rating-container'>
                     <div className='homepage-skatepark-name'>{skatepark.name}</div>
@@ -52,7 +54,9 @@ function HomePageImgCarousel({ skateparkArr }) {
         <img
           style={{visibility: activeIndex === 1 ? 'hidden' : 'visible'}}
           onClick={() => {updateIndex(1)}}
-          className='modal-homepage-img-btn-right' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/23251A57-5A07-4B1A-9B49-C089989DF7B6_4_5005_c.jpeg'/>
+          className='modal-homepage-img-btn-right' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/23251A57-5A07-4B1A-9B49-C089989DF7B6_4_5005_c.jpeg'
+          alt='right-arrow'
+        />
       </div>
     </div>
   );

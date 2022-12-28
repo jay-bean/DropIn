@@ -47,9 +47,9 @@ function Footer() {
           <div>
             <Link className='footer-headers' to='/about'><h2>About</h2></Link>
             <div className='footer-about'>
-            <a className='footer-social-links' href="https://www.jayhutts.dev/" target="_blank"><img className='footer-socials' src="https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/DFD01411-79E8-4256-B284-689523CA0C18.png" alt="github logo"/>Portfolio</a>
-              <a className='footer-social-links' href="https://github.com/jay-bean" target="_blank"><img className='footer-socials' src="https://t2marketinginternational.com/wp-content/uploads/2018/06/Github-Logo-450x450.png" alt="github logo"/>Github</a>
-              <a className='footer-social-links' href="https://www.linkedin.com/in/jay-hutts-300ab9180/" target="_blank"><img className='footer-socials' src="https://www.maryville.edu/wp-content/uploads/2015/11/Linkedin-logo-1-550x550-300x300.png" alt="linked-in logo"/>Linkedin</a>
+            <a className='footer-social-links' href="https://www.jayhutts.dev/" target="_blank"><img className='footer-socials' src="https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/DFD01411-79E8-4256-B284-689523CA0C18.png" alt="portfolio"/>Portfolio</a>
+              <a className='footer-social-links' href="https://github.com/jay-bean" target="_blank"><img className='footer-socials' src="https://t2marketinginternational.com/wp-content/uploads/2018/06/Github-Logo-450x450.png" alt="github"/>Github</a>
+              <a className='footer-social-links' href="https://www.linkedin.com/in/jay-hutts-300ab9180/" target="_blank"><img className='footer-socials' src="https://www.maryville.edu/wp-content/uploads/2015/11/Linkedin-logo-1-550x550-300x300.png" alt="linked-in"/>Linkedin</a>
             </div>
           </div>
         {!sessionUser &&
@@ -61,15 +61,15 @@ function Footer() {
           </div>
         }
         <div className='footer-image-container'>
-          <img className='footer-image' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/Los_Angeles_skateboarders.jpeg'/>
+          <img className='footer-image' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/Los_Angeles_skateboarders.jpeg' alt='people-skating'/>
           <div className='footer-wheels-div'>
             <h2 className='footer-wheels-header'>All Wheels Welcomed</h2>
             <div className='footer-icons-div'>
-              <img className='footer-icons' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/skateboard.png'></img>
-              <img className='footer-icons'  src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/rollerskate.png'></img>
-              <img className='footer-icons' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/rollerblade.png'></img>
-              <img className='footer-icons' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/bicycle.png'></img>
-              <img className='footer-icons' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/kick-scooter.png'></img>
+              <img className='footer-icons' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/skateboard.png' alt='skateboard'></img>
+              <img className='footer-icons'  src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/rollerskate.png' alt='rollerskate'></img>
+              <img className='footer-icons' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/rollerblade.png' alt='rollerblade'></img>
+              <img className='footer-icons' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/bicycle.png' alt='bicycle'></img>
+              <img className='footer-icons' src='https://drop-in-skate-bucket.s3.us-west-1.amazonaws.com/kick-scooter.png' alt='scooter'></img>
             </div>
           </div>
         </div>
